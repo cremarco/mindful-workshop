@@ -2,6 +2,7 @@
 theme: apple-basic
 layout: cover
 routeAlias: intro
+class: intro-slide
 title: Intelligenza artificiale al servizio della psicopatologia
 author: Marco Cremaschi
 aspectRatio: 16/9
@@ -16,15 +17,22 @@ info: |
   Sessione: Psichiatria Digitale I.
 ---
 
-# Intelligenza artificiale
-
-# al servizio della psicopatologia
-
-Modelli generativi, digital phenotyping e nuove forme della relazione clinica
-
-**Marco Cremaschi**  
-IX Giornata Scientifica AIPP  
-Piacenza, 12 giugno 2026
+<section class="intro-cover">
+  <div class="intro-meta">IX Giornata Scientifica AIPP - Psichiatria Digitale I</div>
+  <div class="intro-copy">
+    <h1>
+      <span class="intro-gradient-text">Intelligenza artificiale</span>
+      <span>al servizio della psicopatologia</span>
+    </h1>
+    <p class="intro-subtitle">
+      Modelli generativi, digital phenotyping e nuove forme della relazione clinica
+    </p>
+  </div>
+  <div class="intro-footer">
+    <strong>Marco Cremaschi</strong>
+    <span>Piacenza, 12 giugno 2026</span>
+  </div>
+</section>
 
 <!--
 Aprire collocando l'intervento nella giornata AIPP: nativi digitali, socialità, psicopatologie emergenti e prospettive terapeutiche. Dire subito che l'IA è già entrata nella salute mentale, ma spesso dalla porta sbagliata: non attraverso servizi validati e governati, ma attraverso smartphone, chatbot e motori generativi usati dai pazienti. L'obiettivo non è promuovere l'IA, ma capire quando può servire davvero la psicologia e la psichiatria.
@@ -33,6 +41,7 @@ Aprire collocando l'intervento nella giornata AIPP: nativi digitali, socialità,
 ---
 layout: two-cols
 routeAlias: marco-cremaschi
+class: bio-slide
 ---
 
 #  Marco Cremaschi
@@ -57,11 +66,8 @@ Presentarsi in modo coerente con il pubblico clinico: non come psichiatra o psic
 ---
 layout: default
 routeAlias: llmpatients-test-relazione
+class: conversation-slide
 ---
-
-# LLMPatients-App: quando il test diventa relazione
-
-_Giovanna, sessione Erika, SCID. Estratto tradotto e leggermente adattato._
 
 <div class="chat-thread">
   <div class="chat-balloon therapist">
@@ -97,11 +103,8 @@ Questa slide usa una conversazione reale con il profilo originale LLMPatients, q
 ---
 layout: default
 routeAlias: llmpatients-non-dipendenza
+class: conversation-slide
 ---
-
-# LLMPatients-App: il punto non è “dipendenza”
-
-_La stessa domanda clinica può essere vissuta come giudizio, prova o minaccia._
 
 <div class="chat-thread">
   <div class="chat-balloon therapist">
