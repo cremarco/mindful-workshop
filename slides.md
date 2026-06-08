@@ -520,7 +520,7 @@ routeAlias: esempio-ia-medico
 | detection rate | almeno non inferiore allo standard |
 | carico di lettura | riduzione circa 44% |
 
-```mermaid
+```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '16px' }}
 flowchart LR
   A["Immagine"] --> B["Sistema IA"]
   B --> C["Priorita o supporto alla lettura"]
@@ -541,7 +541,7 @@ routeAlias: workflow-non-magia
 
 # Workflow, non magia
 
-```mermaid
+```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '16px' }}
 flowchart LR
   A["Input standardizzato"] --> B["Compito delimitato"]
   B --> C["Output operativo"]
@@ -807,7 +807,7 @@ Digital phenotyping:
 - pattern longitudinali;
 - segnali precoci contestualizzati.
 
-```mermaid
+```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '16px' }}
 flowchart LR
   A["Paziente"] --> B["Dati digitali"]
   B --> C["Pattern longitudinali"]

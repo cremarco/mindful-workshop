@@ -1,3 +1,6 @@
+/* ============================================================
+   COVER — slide 1 (intro). DO NOT CHANGE.
+   ============================================================ */
 .slidev-layout.cover.intro-slide,
 .intro-slide .slidev-layout.cover {
   position: relative;
@@ -107,20 +110,315 @@
   font-size: 1.18rem;
 }
 
+/* ============================================================
+   APPLE-STYLE DESIGN SYSTEM
+   Applies to every slide EXCEPT the cover (.intro-slide).
+   ============================================================ */
+
+:root {
+  --aipp-bg: #f6f5f2;
+  --aipp-surface: #ffffff;
+  --aipp-ink: #1d1d1f;
+  --aipp-ink-soft: #6e6e73;
+  --aipp-ink-faint: #a3a1a0;
+  --aipp-line: rgba(0, 0, 0, 0.08);
+  --aipp-red: #d71932;
+  --aipp-orange: #ff6a1a;
+  --aipp-teal: #0099b8;
+  --aipp-radius: 20px;
+  --aipp-radius-sm: 13px;
+  --aipp-shadow: 0 1px 2px rgba(20, 12, 10, 0.05), 0 14px 44px rgba(20, 12, 10, 0.07);
+  --aipp-shadow-soft: 0 1px 2px rgba(20, 12, 10, 0.04), 0 8px 28px rgba(20, 12, 10, 0.06);
+  --aipp-font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+/* Force the clean light canvas regardless of OS dark mode. */
+html.dark {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--aipp-bg);
+}
+
+/* ---- Base surface + typography for all non-cover slides ---- */
+.slidev-layout:not(.intro-slide) {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  padding: 3.1rem 4.8rem 3rem;
+  background: var(--aipp-bg);
+  color: var(--aipp-ink);
+  font-family: var(--aipp-font);
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Headings ---- */
+.slidev-layout:not(.intro-slide) h1 {
+  margin: 0 0 1.3rem;
+  color: var(--aipp-ink);
+  font-size: 2.55rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.026em;
+}
+
+.slidev-layout:not(.intro-slide) h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.95rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--aipp-red), var(--aipp-orange));
+}
+
+.slidev-layout:not(.intro-slide) h2 {
+  margin: 0 0 0.8rem;
+  color: var(--aipp-ink);
+  font-size: 1.55rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.slidev-layout:not(.intro-slide) h3 {
+  color: var(--aipp-red);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+/* ---- Body copy ---- */
+.slidev-layout:not(.intro-slide) p {
+  margin: 0 0 0.85rem;
+  color: var(--aipp-ink-soft);
+  font-size: 1.16rem;
+  line-height: 1.5;
+}
+
+.slidev-layout:not(.intro-slide) h1 + p {
+  margin-top: -0.3rem;
+  color: var(--aipp-ink-soft);
+  font-size: 1.22rem;
+}
+
+.slidev-layout:not(.intro-slide) strong,
+.slidev-layout:not(.intro-slide) b {
+  color: var(--aipp-ink);
+  font-weight: 640;
+}
+
+.slidev-layout:not(.intro-slide) em {
+  color: var(--aipp-ink-soft);
+  font-style: italic;
+}
+
+/* ---- Lists with refined gradient markers ---- */
+.slidev-layout:not(.intro-slide) ul {
+  list-style: none;
+  margin: 0.3rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.slidev-layout:not(.intro-slide) ol {
+  list-style: none;
+  counter-reset: aipp-step;
+  margin: 0.3rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.slidev-layout:not(.intro-slide) li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.7rem;
+  color: var(--aipp-ink);
+  font-size: 1.13rem;
+  line-height: 1.45;
+}
+
+.slidev-layout:not(.intro-slide) ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.05rem;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--aipp-red), var(--aipp-orange));
+}
+
+.slidev-layout:not(.intro-slide) ol > li {
+  padding-left: 2.4rem;
+}
+
+.slidev-layout:not(.intro-slide) ol > li::before {
+  counter-increment: aipp-step;
+  content: counter(aipp-step);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: rgba(215, 25, 50, 0.1);
+  color: var(--aipp-red);
+  font-size: 0.86rem;
+  font-weight: 680;
+  letter-spacing: 0;
+}
+
+/* ---- Tables as Apple-style cards ---- */
+.slidev-layout:not(.intro-slide) table {
+  width: 100%;
+  margin: 0.5rem 0 0.6rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--aipp-surface);
+  border-radius: var(--aipp-radius);
+  overflow: hidden;
+  box-shadow: var(--aipp-shadow-soft);
+  font-size: 1.01rem;
+}
+
+.slidev-layout:not(.intro-slide) thead th {
+  background: #f3f2ef;
+  color: var(--aipp-ink-soft);
+  font-size: 0.74rem;
+  font-weight: 640;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slidev-layout:not(.intro-slide) th,
+.slidev-layout:not(.intro-slide) td {
+  padding: 0.72rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border: 0;
+  border-bottom: 1px solid var(--aipp-line);
+}
+
+.slidev-layout:not(.intro-slide) th:first-child,
+.slidev-layout:not(.intro-slide) td:first-child {
+  padding-left: 1.5rem;
+}
+
+.slidev-layout:not(.intro-slide) th:last-child,
+.slidev-layout:not(.intro-slide) td:last-child {
+  padding-right: 1.5rem;
+}
+
+.slidev-layout:not(.intro-slide) td {
+  color: var(--aipp-ink);
+  line-height: 1.34;
+}
+
+.slidev-layout:not(.intro-slide) tbody td:first-child {
+  font-weight: 600;
+  color: var(--aipp-ink);
+}
+
+.slidev-layout:not(.intro-slide) tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.slidev-layout:not(.intro-slide) tr {
+  border: 0;
+}
+
+/* ---- Pinned "key takeaway" callout (blockquote) ---- */
+.slidev-layout:not(.intro-slide):has(blockquote) {
+  position: relative;
+}
+
+.slidev-layout.default:has(blockquote),
+.slidev-layout.image-right:has(blockquote),
+.slidev-layout.image-left:has(blockquote) {
+  padding-bottom: 7.4rem;
+}
+
+.slidev-layout:not(.intro-slide) blockquote {
+  position: absolute;
+  right: 4.8rem;
+  bottom: 2.4rem;
+  left: 4.8rem;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+  padding: 0.95rem 1.25rem 0.95rem 1.4rem;
+  border: 0;
+  border-left: 3px solid var(--aipp-red);
+  border-radius: var(--aipp-radius-sm);
+  background: var(--aipp-surface);
+  box-shadow: var(--aipp-shadow-soft);
+  color: var(--aipp-ink-soft);
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.slidev-layout:not(.intro-slide) blockquote strong {
+  color: var(--aipp-ink);
+}
+
+.slidev-layout:not(.intro-slide) blockquote > * {
+  margin: 0;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p + p {
+  margin-top: 0.35rem;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p::before,
+.slidev-layout:not(.intro-slide) blockquote p::after {
+  content: none !important;
+}
+
+/* ---- Default / image layouts ---- */
 .slidev-layout.default,
 .slidev-layout.image-right,
 .slidev-layout.image-left {
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 100%;
-  min-height: 100%;
 }
 
 .slidev-layout.default > :not(blockquote),
 .slidev-layout.image-right > :not(blockquote),
 .slidev-layout.image-left > :not(blockquote) {
   width: 100%;
+}
+
+/* Image side of image-right gets rounded corners + soft shadow */
+.slidev-layout.image-right + div,
+.slidev-layout.image-left + div {
+  border-radius: var(--aipp-radius);
+  box-shadow: var(--aipp-shadow);
+}
+
+/* ---- Two-column layout ---- */
+.slidev-layout.two-columns {
+  padding: 3.1rem 4.8rem 3rem;
+  gap: 3.2rem;
 }
 
 .slidev-layout.two-columns .col-left,
@@ -143,12 +441,12 @@
 .slidev-layout.two-columns:has(.bio-slide)::before {
   content: "";
   position: absolute;
-  top: -9rem;
-  right: -6rem;
-  width: 28rem;
-  height: 28rem;
+  top: -8rem;
+  right: -5rem;
+  width: 26rem;
+  height: 26rem;
   background: url("/images/aipp-marco-bg.png") center / contain no-repeat;
-  opacity: 0.58;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
 }
@@ -158,49 +456,123 @@
   z-index: 1;
 }
 
-.slidev-layout:has(blockquote) {
+/* ============================================================
+   HERO LAYOUTS — statement / quote / section / fact
+   ============================================================ */
+.slidev-layout.statement,
+.slidev-layout.quote,
+.slidev-layout.section,
+.slidev-layout.fact {
+  padding: 3.4rem 6rem;
+}
+
+.slidev-layout.statement {
+  text-align: center;
+}
+
+.slidev-layout.statement h1 {
+  margin: 0 auto;
+  max-width: 17ch;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+}
+
+.slidev-layout.statement h1::after {
+  margin: 1.3rem auto 0;
+}
+
+.slidev-layout.statement p {
+  max-width: 56ch;
+  margin: 1.5rem auto 0;
+  color: var(--aipp-ink-soft);
+  font-size: 1.4rem;
+  line-height: 1.42;
+}
+
+.slidev-layout.fact {
+  text-align: center;
+}
+
+.slidev-layout.fact h1 {
+  font-size: 6.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.slidev-layout.fact h1::after {
+  display: none;
+}
+
+.slidev-layout.fact h1 + p {
+  margin-top: 0.6rem;
+  font-size: 1.5rem;
+  color: var(--aipp-ink-soft);
+}
+
+/* Section dividers echo the cover's animated gradient wordmark */
+.slidev-layout.section h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: transparent;
+  background: linear-gradient(90deg, #d71932 0%, #ff6a1a 30%, #9b1230 55%, #0099b8 80%, #d71932 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: intro-title-colors 7s ease-in-out infinite;
+}
+
+.slidev-layout.section h1::after {
+  width: 4rem;
+  margin-top: 1.4rem;
+}
+
+/* Quote layout — large editorial pull-quote */
+.slidev-layout.quote {
   position: relative;
 }
 
-.slidev-layout.default:has(blockquote),
-.slidev-layout.image-right:has(blockquote),
-.slidev-layout.image-left:has(blockquote) {
-  padding-bottom: 9rem;
+.slidev-layout.quote h1 {
+  max-width: 20ch;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
 }
 
-.slidev-layout blockquote {
-  position: absolute;
-  right: 3.5rem;
-  bottom: 2.5rem;
-  left: 3.5rem;
-  box-sizing: border-box;
-  width: auto !important;
-  margin: 0;
-  padding: 0.72rem 1rem;
-  border: 0;
-  border-radius: 6px;
-  background: #eadbd4;
-  box-shadow: none;
-  color: #3b2a24;
-  font-size: 0.86rem;
-  font-style: normal;
+.slidev-layout.quote h1::after {
+  display: none;
+}
+
+.slidev-layout.quote h1 + p {
+  margin-top: 1.4rem;
+  color: var(--aipp-ink-soft);
+  font-size: 1.32rem;
   font-weight: 500;
-  line-height: 1.32;
 }
 
-.slidev-layout blockquote p {
-  margin: 0;
+.slidev-layout.quote::before {
+  content: "\201C";
+  position: absolute;
+  top: 2.2rem;
+  left: 5.4rem;
+  color: rgba(215, 25, 50, 0.14);
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
 }
 
-.slidev-layout blockquote p::before,
-.slidev-layout blockquote p::after {
-  content: none !important;
-}
-
+/* ============================================================
+   CONVERSATION SLIDES — iMessage-style chat
+   ============================================================ */
 .chat-thread {
   display: flex;
   flex-direction: column;
-  gap: 0.48rem;
+  gap: 0.5rem;
   max-width: 980px;
 }
 
@@ -209,69 +581,78 @@
 }
 
 .chat-balloon {
-  color: #fff;
   font-size: 0.9rem;
-  line-height: 1.25;
-  padding: 0.62rem 0.82rem;
+  line-height: 1.3;
+  padding: 0.66rem 0.92rem;
 }
 
 .chat-thread.compact .chat-balloon {
   font-size: 0.82rem;
-  padding: 0.68rem 0.82rem;
 }
 
 .chat-balloon.therapist {
   align-self: flex-end;
   max-width: 72%;
-  background: #292524;
-  border-radius: 14px 14px 4px 14px;
+  color: #fff;
+  background: linear-gradient(180deg, #2c9bff 0%, #0a84ff 100%);
+  border-radius: 20px 20px 6px 20px;
 }
 
 .chat-balloon.patient {
   align-self: flex-start;
   max-width: 78%;
-  background: #365314;
-  border-radius: 14px 14px 14px 4px;
+  color: var(--aipp-ink);
+  background: #e9e9eb;
+  border-radius: 20px 20px 20px 6px;
+}
+
+.chat-balloon .chat-speaker {
+  display: inline-block;
+  margin-bottom: 0.12rem;
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
 }
 
 .chat-balloon.therapist .chat-speaker {
-  color: #84cc16;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .chat-balloon.patient .chat-speaker {
-  color: #bef264;
+  color: var(--aipp-ink-soft);
 }
 
 .slidev-layout.default.conversation-slide {
   justify-content: center;
-  padding: 3.2rem 4.2rem !important;
+  padding: 3.2rem 4.6rem !important;
 }
 
 .slidev-layout.default.conversation-slide .chat-thread {
   width: 100%;
   height: 100%;
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
   justify-content: space-between;
-  gap: 0.62rem;
+  gap: 0.6rem;
 }
 
 .slidev-layout.default.conversation-slide .chat-balloon {
-  max-width: 68%;
-  padding: 0.82rem 1.02rem;
-  font-size: 0.95rem;
-  line-height: 1.3;
+  max-width: 66%;
+  padding: 0.82rem 1.05rem;
+  font-size: 0.96rem;
+  line-height: 1.32;
+  box-shadow: var(--aipp-shadow-soft);
   opacity: 0;
   transform: translateY(18px) scale(0.985);
   animation: chat-balloon-enter 520ms cubic-bezier(0.2, 0.72, 0.18, 1) forwards;
 }
 
 .slidev-layout.default.conversation-slide .chat-balloon.therapist {
-  margin-right: 1.2rem;
+  margin-right: 1.1rem;
 }
 
 .slidev-layout.default.conversation-slide .chat-balloon.patient {
-  margin-left: 1.2rem;
+  margin-left: 1.1rem;
 }
 
 .slidev-layout.default.conversation-slide .chat-balloon:nth-child(1) {
@@ -313,10 +694,49 @@
   }
 }
 
+/* A conversation embedded inside a normal content slide */
+.slidev-layout:not(.conversation-slide) .chat-balloon {
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+/* ============================================================
+   SCREENSHOTS
+   ============================================================ */
 .app-screenshot {
   display: block;
-  width: min(100%, 980px);
-  max-height: 540px;
+  width: min(100%, 940px);
+  max-height: 500px;
   object-fit: contain;
-  margin: 0.45rem auto 0;
+  margin: 0.6rem auto 0;
+  border-radius: var(--aipp-radius-sm);
+  border: 1px solid var(--aipp-line);
+  background: #fff;
+  box-shadow: var(--aipp-shadow);
+}
+
+/* ============================================================
+   MERMAID DIAGRAMS
+   The SVG is rendered inside a Shadow DOM, so its internal colors
+   cannot be reached from here — they are themed per-diagram via the
+   ```mermaid {theme: 'base', themeVariables: {...}} fence in slides.md.
+   Only the host element is styled here (centering + sizing).
+   ============================================================ */
+.slidev-layout:not(.intro-slide) .mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.slidev-layout:not(.intro-slide) .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   SLIDE PROGRESS BAR
+   ============================================================ */
+.slidev-progress-bar,
+#slidev-progress-bar {
+  background: linear-gradient(90deg, var(--aipp-red), var(--aipp-orange)) !important;
 }

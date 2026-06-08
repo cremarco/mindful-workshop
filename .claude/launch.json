@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "slidev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["slidev", "--port", "3033"],
+      "port": 3033
+    },
+    {
+      "name": "dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-s", "dist", "-l", "4044"],
+      "port": 4044
+    }
+  ]
+}
