@@ -1,10 +1,52 @@
-.slidev-page-1 {
-  background-image: url("/images/aipp-cover-bg.png") !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 100% !important;
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+  max-width: 980px;
 }
 
-.slidev-page-1 .slidev-layout {
-  background: transparent !important;
+.chat-thread.compact {
+  gap: 0.7rem;
+}
+
+.chat-balloon {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  padding: 0.62rem 0.82rem;
+}
+
+.chat-thread.compact .chat-balloon {
+  font-size: 0.82rem;
+  padding: 0.68rem 0.82rem;
+}
+
+.chat-balloon.therapist {
+  align-self: flex-end;
+  max-width: 72%;
+  background: #292524;
+  border-radius: 14px 14px 4px 14px;
+}
+
+.chat-balloon.patient {
+  align-self: flex-start;
+  max-width: 78%;
+  background: #365314;
+  border-radius: 14px 14px 14px 4px;
+}
+
+.chat-balloon.therapist .chat-speaker {
+  color: #84cc16;
+}
+
+.chat-balloon.patient .chat-speaker {
+  color: #bef264;
+}
+
+.app-screenshot {
+  display: block;
+  width: min(100%, 980px);
+  max-height: 540px;
+  object-fit: contain;
+  margin: 0.45rem auto 0;
 }

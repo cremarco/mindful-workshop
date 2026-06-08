@@ -1,11 +1,12 @@
 ---
 theme: apple-basic
 layout: cover
+routeAlias: intro
 title: Intelligenza artificiale al servizio della psicopatologia
 author: Marco Cremaschi
-transition: slide-left
 aspectRatio: 16/9
 canvasWidth: 1280
+background: /images/aipp-cover-bg.png
 duration: 45min
 drawings:
   persist: false
@@ -31,6 +32,7 @@ Aprire collocando l'intervento nella giornata AIPP: nativi digitali, socialità,
 
 ---
 layout: two-cols
+routeAlias: marco-cremaschi
 ---
 
 #  Marco Cremaschi
@@ -54,38 +56,36 @@ Presentarsi in modo coerente con il pubblico clinico: non come psichiatra o psic
 
 ---
 layout: default
-background: '#ffffff'
+routeAlias: llmpatients-test-relazione
 ---
 
 # LLMPatients-App: quando il test diventa relazione
 
-<div style="font-size: 0.78rem; color: #57534e; margin-top: -0.4rem; margin-bottom: 0.8rem;">
-Giovanna, sessione Erika, SCID. Estratto tradotto e leggermente adattato.
-</div>
+_Giovanna, sessione Erika, SCID. Estratto tradotto e leggermente adattato._
 
-<div style="display: flex; flex-direction: column; gap: 0.45rem; max-width: 980px;">
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+<div class="chat-thread">
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     Oggi proseguiamo con la SCID. È una parte strutturata della consultazione: serve a capire meglio le tue difficoltà e a pensare insieme ai prossimi passi.
   </div>
-  <div style="align-self: flex-start; max-width: 76%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Quindi è un test. Per avere un “quadro più chiaro” di tutti i modi in cui sono rotta, giusto?
   </div>
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     Ti è difficile prendere decisioni quotidiane senza consigli o rassicurazioni?
   </div>
-  <div style="align-self: flex-start; max-width: 76%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Sì. È questa la risposta giusta? Vorrei solo che questa parte finisse. Mi fa stare malissimo.
   </div>
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     Puoi farmi qualche esempio delle decisioni per cui chiedi consiglio?
   </div>
-  <div style="align-self: flex-start; max-width: 76%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.88rem; line-height: 1.23;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Cose stupide. Cosa indossare se devo incontrare un suo amico. Cosa scrivere per non sembrare pazza o disperata. È tutto. Va bene così?
   </div>
 </div>
@@ -96,38 +96,36 @@ Questa slide usa una conversazione reale con il profilo originale LLMPatients, q
 
 ---
 layout: default
-background: '#ffffff'
+routeAlias: llmpatients-non-dipendenza
 ---
 
 # LLMPatients-App: il punto non è “dipendenza”
 
-<div style="font-size: 0.78rem; color: #57534e; margin-top: -0.4rem; margin-bottom: 0.8rem;">
-La stessa domanda clinica può essere vissuta come giudizio, prova o minaccia.
-</div>
+_La stessa domanda clinica può essere vissuta come giudizio, prova o minaccia._
 
-<div style="display: flex; flex-direction: column; gap: 0.48rem; max-width: 980px;">
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+<div class="chat-thread">
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     Ti capita di fare cose sgradevoli o irragionevoli pur di evitare che qualcuno si allontani?
   </div>
-  <div style="align-self: flex-start; max-width: 78%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Chi è che si prende cura di me? Nessuno. È il contrario: sono io che faccio cose solo per non farli andare via.
   </div>
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     Stare da sola ti mette a disagio?
   </div>
-  <div style="align-self: flex-start; max-width: 78%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Il silenzio diventa fortissimo. O sono vuota, o sono piena di rumore. Entrambe le cose fanno paura.
   </div>
-  <div style="align-self: flex-end; max-width: 72%; background: #292524; color: white; border-radius: 14px 14px 4px 14px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #84cc16;">Erika</strong><br>
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Erika</strong><br>
     È perché hai bisogno che qualcuno si occupi di te?
   </div>
-  <div style="align-self: flex-start; max-width: 78%; background: #365314; color: white; border-radius: 14px 14px 14px 4px; padding: 0.62rem 0.82rem; font-size: 0.9rem; line-height: 1.25;">
-    <strong style="color: #bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     No. Pago le bollette, lavoro. Non è quello. Se nessuno c’è, sembra che non ci sia neanche io. Come se potessi sparire nel silenzio.
   </div>
 </div>
@@ -138,7 +136,7 @@ Qui la sequenza diventa più clinicamente interessante: una domanda pensata per 
 
 ---
 layout: default
-background: '#ffffff'
+routeAlias: cosa-ha-giovanna
 ---
 
 # Cosa ha Giovanna?
@@ -161,12 +159,11 @@ Aprire la slide come domanda al pubblico: "Cosa ha Giovanna?". Lasciare qualche 
 
 ---
 layout: image-right
+routeAlias: giovanna
 image: /images/patients/juanita_delgado/base.png
 ---
 
 # Giovanna
-
-**Profilo clinico simulato**
 
 - 33 anni, isolamento sociale, vergogna intensa, autostima fragile.
 - Episodi depressivi maggiori ricorrenti.
@@ -175,19 +172,20 @@ image: /images/patients/juanita_delgado/base.png
 - Binge eating in risposta a vuoto e disregolazione affettiva.
 - Dissociazione da stress, sospettosità interpersonale e uso di sostanze.
 
-> Non una sola etichetta: una formulazione longitudinale.
-
 <!--
 Questa slide risponde alla domanda precedente senza chiuderla troppo presto. Dire che Giovanna è costruita come profilo clinico complesso: depressione ricorrente e organizzazione borderline sono le diagnosi esplicite del profilo, ma i test e la conversazione mostrano anche disregolazione alimentare, rischio suicidario, dissociazione, fragilità identitaria e difficoltà relazionali. Sottolineare che non è l'IA a "diagnosticare Giovanna": l'app usa un profilo clinico progettato e poi controlla se la simulazione mantiene coerenza psicopatologica. Questo è il punto formativo: non sostituire il ragionamento clinico, ma offrire un caso sintetico abbastanza consistente da allenare osservazione, ipotesi e risposta terapeutica.
 -->
 
 ---
 layout: default
+routeAlias: giovanna-ia
 ---
 
 # Giovanna è un'IA
 
 **Un paziente sintetico, non una persona reale.**
+
+_Adattato da DSM-5 Clinical Cases, caso 18.5 “Fragile and Angry” (Juanita Delgado): disturbo borderline di personalità, 301.83 / F60.3._
 
 - Il caso è definito in un profilo strutturato: storia clinica, diagnosi, farmaci, obiettivi, funzionamento e tratti emotivi.
 - All'avvio della seduta l'app inizializza un paziente esterno e una sessione terapeutica.
@@ -203,77 +201,63 @@ Spiegare in modo semplice che Giovanna non è una paziente reale e non va presen
 
 ---
 layout: default
-background: '#f8fafc'
+routeAlias: llmpatients-schermata-lavoro
 ---
 
 # LLMPatients-App: schermata di lavoro
 
-<div style="display: grid; grid-template-columns: 0.34fr 0.66fr; gap: 1rem; height: 470px; margin-top: 0.2rem;">
-  <div style="background: #111827; color: white; border-radius: 18px; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);">
-    <div style="font-size: 0.78rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em;">LLMPatients</div>
-    <div style="display: flex; gap: 0.7rem; align-items: center; background: rgba(255,255,255,0.08); border-radius: 14px; padding: 0.7rem;">
-      <img :src="'/images/patients/juanita_delgado/base.png'" style="width: 58px; height: 58px; object-fit: cover; border-radius: 50%; border: 2px solid #84cc16;" />
-      <div>
-        <div style="font-weight: 700;">Giovanna</div>
-        <div style="font-size: 0.74rem; color: #d1d5db;">Step 3 · SCID</div>
-      </div>
-    </div>
-    <div style="display: grid; gap: 0.45rem; font-size: 0.78rem; color: #d1d5db;">
-      <div style="display:flex; justify-content:space-between;"><span>Emozione</span><strong style="color:#bef264;">vergogna</strong></div>
-      <div style="display:flex; justify-content:space-between;"><span>Alleanza</span><strong style="color:#facc15;">fragile</strong></div>
-      <div style="display:flex; justify-content:space-between;"><span>Rischio</span><strong style="color:#fb7185;">da monitorare</strong></div>
-    </div>
-    <div style="margin-top: auto; font-size: 0.72rem; color: #9ca3af; line-height: 1.35;">Profilo strutturato, memoria della seduta e tracciamento degli scambi per debriefing clinico.</div>
-  </div>
-  <div style="background: white; border: 1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12); overflow: hidden; display: flex; flex-direction: column;">
-    <div style="height: 42px; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.42rem; padding: 0 0.85rem;">
-      <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
-      <span style="margin-left: 0.6rem; font-size: 0.72rem; color: #6b7280;">sessione terapeutica simulata</span>
-    </div>
-    <div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.82rem; line-height: 1.28;">
-      <div style="align-self:flex-end; max-width:72%; background:#292524; color:white; border-radius:14px 14px 4px 14px; padding:0.68rem 0.82rem;"><strong style="color:#84cc16;">Terapeuta</strong><br>Quando ti senti sola, che cosa succede dentro di te?</div>
-      <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:14px 14px 14px 4px; padding:0.68rem 0.82rem;"><strong style="color:#bef264;">Giovanna</strong><br>Prima mi convinco che non importi a nessuno. Poi mi vergogno anche di averlo pensato.</div>
-      <div style="align-self:flex-end; max-width:72%; background:#292524; color:white; border-radius:14px 14px 4px 14px; padding:0.68rem 0.82rem;"><strong style="color:#84cc16;">Terapeuta</strong><br>Ti va di restare un momento su quella vergogna?</div>
-      <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:14px 14px 14px 4px; padding:0.68rem 0.82rem;"><strong style="color:#bef264;">Giovanna</strong><br>Se ci resto, ho paura che diventi l'unica cosa vera di me.</div>
-    </div>
-  </div>
-</div>
+<img class="app-screenshot" :src="'/images/screenshots/sessione_chat_juanita_delgado.png'" alt="Screenshot della sessione chat di Juanita Delgado" />
 
 <!--
-Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia, ma mostrare concretamente il setting di simulazione. Evidenziare tre elementi: profilo del paziente, conversazione in character e tracciamento utile al debriefing. Specificare verbalmente che la schermata è una rappresentazione sintetica/editabile della logica dell'app se non si usa uno screenshot reale.
+Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia, ma mostrare concretamente il setting di simulazione. Evidenziare tre elementi: profilo del paziente, conversazione in character e tracciamento utile al debriefing.
 -->
 
 ---
 layout: default
-background: '#ffffff'
+routeAlias: llmpatients-esplora-pazienti-griglia
+---
+
+# LLMPatients-App: esplora pazienti
+
+<img class="app-screenshot" :src="'/images/screenshots/esplora_pazienti_griglia.png'" alt="Screenshot della griglia di esplorazione dei pazienti" />
+
+<!--
+Mostrare la griglia come vista di selezione degli scenari clinici: ogni paziente sintetico è un caso progettato con focus, storia e obiettivi formativi, non un'etichetta diagnostica vivente.
+-->
+
+---
+layout: default
+routeAlias: llmpatients-dashboard-percorsi-terapeutici
+---
+
+# LLMPatients-App: dashboard percorsi terapeutici
+
+<img class="app-screenshot" :src="'/images/screenshots/dashboard_percorsi_terapeutici.png'" alt="Screenshot della dashboard dei percorsi terapeutici" />
+
+<!--
+Usare la dashboard per spiegare che la simulazione non è solo chat libera: il percorso terapeutico definisce step, compiti clinici, monitoraggio e materiale per revisione o debriefing.
+-->
+
+---
+layout: image-right
+routeAlias: llmpatients-pazienti-simulati
+image: /images/patients/juanita_delgado/base.png
 ---
 
 # LLMPatients: carrellata di pazienti simulati
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.82rem; margin-top: 0.8rem;">
-  <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; background:#f9fafb;">
-    <img :src="'/images/patients/juanita_delgado/base.png'" style="width:100%; height:148px; object-fit:cover; object-position:center top;" />
-    <div style="padding:0.72rem;"><strong>Giovanna</strong><br><span style="font-size:0.76rem; color:#57534e;">depressione ricorrente · borderline · binge eating</span></div>
-  </div>
-  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
-    <div style="width:64px; height:64px; border-radius:50%; background:#dbeafe; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#1d4ed8;">M</div>
-    <div><strong>Matteo</strong><br><span style="font-size:0.76rem; color:#57534e;">ansia sociale · evitamento · ritiro universitario</span></div>
-  </div>
-  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
-    <div style="width:64px; height:64px; border-radius:50%; background:#fee2e2; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#b91c1c;">S</div>
-    <div><strong>Sara</strong><br><span style="font-size:0.76rem; color:#57534e;">trauma complesso · iperarousal · dissociazione</span></div>
-  </div>
-  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
-    <div style="width:64px; height:64px; border-radius:50%; background:#dcfce7; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#15803d;">L</div>
-    <div><strong>Luca</strong><br><span style="font-size:0.76rem; color:#57534e;">episodio maniacale · insonnia · impulsività</span></div>
-  </div>
-</div>
+| Paziente | Focus clinico |
+|---|---|
+| **Giovanna** | depressione ricorrente, borderline, binge eating |
+| **Matteo** | ansia sociale, evitamento, ritiro universitario |
+| **Sara** | trauma complesso, iperarousal, dissociazione |
+| **Luca** | episodio maniacale, insonnia, impulsività |
 
-<div style="margin-top: 1rem; display:grid; grid-template-columns: repeat(3, 1fr); gap:0.8rem; font-size:0.84rem;">
-  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Storia clinica</strong><br><span style="color:#57534e;">timeline, diagnosi, farmaci, eventi critici</span></div>
-  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Stile relazionale</strong><br><span style="color:#57534e;">difese, alleanza, sensibilità alla critica</span></div>
-  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Obiettivo formativo</strong><br><span style="color:#57534e;">anamnesi, rischio, riparazione, debriefing</span></div>
-</div>
+**Dimensioni di progettazione**
+
+- Storia clinica: timeline, diagnosi, farmaci, eventi critici.
+- Stile relazionale: difese, alleanza, sensibilità alla critica.
+- Obiettivo formativo: anamnesi, rischio, riparazione, debriefing.
 
 <!--
 La carrellata serve a chiarire che Giovanna non è un caso isolato: l'idea degli LLM-patients è costruire pazienti sintetici differenti, ciascuno con storia, stile relazionale e obiettivo formativo. Non presentare i nomi come diagnosi viventi: sono scenari didattici per allenare il colloquio e il ragionamento clinico.
@@ -281,33 +265,31 @@ La carrellata serve a chiarire che Giovanna non è un caso isolato: l'idea degli
 
 ---
 layout: default
-background: '#ffffff'
+routeAlias: paziente-sintetico-critica
 ---
 
 # Quando il paziente sintetico reagisce alla critica
 
-<div style="display:flex; flex-direction:column; gap:0.72rem; max-width:1000px; margin-top:0.4rem;">
-  <div style="align-self:flex-end; max-width:68%; background:#292524; color:white; border-radius:18px 18px 5px 18px; padding:0.8rem 1rem; line-height:1.28;">
-    <strong style="color:#84cc16;">Terapeuta</strong><br>
+<div class="chat-thread">
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Terapeuta</strong><br>
     Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
   </div>
-  <div style="align-self:flex-start; max-width:74%; background:#365314; color:white; border-radius:18px 18px 18px 5px; padding:0.8rem 1rem; line-height:1.28;">
-    <strong style="color:#bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
   </div>
-  <div style="align-self:flex-end; max-width:68%; background:#292524; color:white; border-radius:18px 18px 5px 18px; padding:0.8rem 1rem; line-height:1.28;">
-    <strong style="color:#84cc16;">Terapeuta</strong><br>
+  <div class="chat-balloon therapist">
+    <strong class="chat-speaker">Terapeuta</strong><br>
     Proviamo a capire meglio: che cosa hai sentito quando ti ho detto così?
   </div>
-  <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:18px 18px 18px 5px; padding:0.8rem 1rem; line-height:1.28;">
-    <strong style="color:#bef264;">Giovanna</strong><br>
+  <div class="chat-balloon patient">
+    <strong class="chat-speaker">Giovanna</strong><br>
     Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
   </div>
 </div>
 
-<div style="margin-top:1rem; border-left:4px solid #84cc16; padding-left:0.8rem; color:#44403c; font-size:0.92rem;">
-  Il valore formativo non è la risposta perfetta del modello, ma la possibilità di osservare errore, rottura e riparazione dell'alleanza.
-</div>
+> Il valore formativo non è la risposta perfetta del modello, ma la possibilità di osservare errore, rottura e riparazione dell'alleanza.
 
 <!--
 Usare questa scena come piccolo micro-fallimento terapeutico. Il terapeuta formula un commento critico e Giovanna lo vive come conferma di vergogna e rifiuto. Il punto formativo è la riparazione: l'LLM-patient diventa utile quando permette di esercitare timing, tono, riconoscimento dell'impatto e recupero dell'alleanza.
@@ -315,6 +297,7 @@ Usare questa scena come piccolo micro-fallimento terapeutico. Il terapeuta formu
 
 ---
 layout: default
+routeAlias: indice
 ---
 
 # Indice del talk
@@ -333,6 +316,7 @@ Usare questa slide come promessa di percorso. Dopo il caso del paziente sintetic
 
 ---
 layout: default
+routeAlias: perche-parlarne-oggi
 ---
 
 # Perché parlarne qui, oggi?
@@ -350,6 +334,7 @@ Questa slide serve ad agganciare il pubblico. Non parlare dell'IA come oggetto e
 
 ---
 layout: statement
+routeAlias: socialita-digitale
 ---
 
 # La socialità digitale è già un dato clinico.
@@ -362,6 +347,7 @@ Collegare esplicitamente l'intervento al tema della giornata: la socialità dei 
 
 ---
 layout: default
+routeAlias: nuovo-terzo-nella-stanza
 ---
 
 # Un nuovo "terzo" nella stanza
@@ -378,6 +364,7 @@ Usare questa vignetta come apertura clinica dell'intervento. Non patologizzare a
 
 ---
 layout: statement
+routeAlias: ia-salute-mentale-cosa-pensiamo
 ---
 
 # Quando diciamo IA in salute mentale, a cosa pensiamo?
@@ -390,6 +377,7 @@ Usare questa slide come domanda di attivazione del pubblico. Chiedere rapidament
 
 ---
 layout: default
+routeAlias: che-cosa-intendiamo-per-ia
 ---
 
 # Che cosa intendiamo per IA
@@ -410,6 +398,7 @@ Questa è una slide di definizione: sei minuti circa, senza entrare subito nei d
 
 ---
 layout: default
+routeAlias: ia-generativa-cosa-cambia
 ---
 
 # Che cosa cambia con l'IA generativa?
@@ -426,6 +415,7 @@ Questa slide prepara la distinzione successiva. Un motore di ricerca restituisce
 
 ---
 layout: statement
+routeAlias: ia-aumenta-cura
 ---
 
 # L'IA è utile solo se aumenta la cura, non se la sostituisce.
@@ -436,6 +426,7 @@ Mettere subito la tesi. Il messaggio non è "l'IA sostituirà il clinico" e non 
 
 ---
 layout: default
+routeAlias: tre-criteri-clinici
 ---
 
 # Tre criteri per restare clinici
@@ -464,6 +455,7 @@ Spostare la discussione dal giudizio morale alla funzione clinica. Lo stesso com
 
 ---
 layout: two-cols
+routeAlias: due-incontri-psicopatologia
 ---
 
 # Due incontri con la psicopatologia
@@ -492,6 +484,7 @@ Distinguere subito le applicazioni clinician-facing da quelle patient-facing. Un
 
 ---
 layout: default
+routeAlias: clinician-facing-patient-facing
 ---
 
 # Clinician-facing e patient-facing
@@ -510,6 +503,7 @@ Fare un esempio concreto: un riassunto di colloquio revisionato dal clinico può
 
 ---
 layout: default
+routeAlias: esempio-ia-medico
 ---
 
 # Esempio di IA in campo medico
@@ -539,6 +533,7 @@ Usare il trial MASAI come esempio concreto di IA valutata dentro un workflow cli
 
 ---
 layout: default
+routeAlias: workflow-non-magia
 ---
 
 # Workflow, non magia
@@ -559,6 +554,7 @@ Questa è la lezione più importante da importare in salute mentale. L'IA divent
 
 ---
 layout: default
+routeAlias: tre-casi-regolati
 ---
 
 # Tre casi regolati, tre lezioni
@@ -577,6 +573,7 @@ Condensare gli esempi per non far diventare la relazione una lezione di radiolog
 
 ---
 layout: default
+routeAlias: idx-dr
 ---
 
 # IDx-DR: autonomia dentro confini stretti
@@ -594,6 +591,7 @@ Usare IDx-DR per mostrare che anche quando si parla di diagnosi autonoma, l'auto
 
 ---
 layout: default
+routeAlias: gi-genius-paige
 ---
 
 # GI Genius e Paige: due varianti del supporto
@@ -612,6 +610,7 @@ Questi due esempi servono a differenziare forme di supporto: in tempo reale, com
 
 ---
 layout: two-cols
+routeAlias: pixel-significato
 ---
 
 # Dal pixel al significato
@@ -642,6 +641,7 @@ Questa frase resta utile, ma come slide interna. Serve a dire che la psichiatria
 
 ---
 layout: default
+routeAlias: oggetto-clinico-non-immagine
 ---
 
 # Quando l'oggetto clinico non è un'immagine
@@ -660,6 +660,7 @@ Esplicitare la differenza epistemologica. In diagnostica per immagini il segnale
 
 ---
 layout: default
+routeAlias: condizioni-favorevoli-limite
 ---
 
 # Le condizioni favorevoli, e il limite
@@ -678,6 +679,7 @@ Questa slide è il ponte tra i due mondi. La differenza non giustifica immobilis
 
 ---
 layout: quote
+routeAlias: tumore-non-si-offende
 ---
 
 # "Un tumore non si offende. Un paziente sì."
@@ -690,6 +692,7 @@ Slide volutamente provocatoria. Dire subito che non minimizza l'errore in oncolo
 
 ---
 layout: default
+routeAlias: usi-realistici-oggi
 ---
 
 # Usi realistici oggi
@@ -710,6 +713,7 @@ Sottolineare la distinzione pratica: le applicazioni più mature sono quelle che
 
 ---
 layout: default
+routeAlias: documentazione
 ---
 
 # Documentazione: ridurre rumore, non pensiero
@@ -729,6 +733,7 @@ Questo è probabilmente uno degli usi più vicini alla pratica quotidiana. Può 
 
 ---
 layout: default
+routeAlias: screening-triage
 ---
 
 # Screening e triage: aiutare l'accesso
@@ -748,6 +753,7 @@ Qui il punto non è demonizzare il triage: i servizi hanno risorse limitate e bi
 
 ---
 layout: default
+routeAlias: monitoraggio-continuita
 ---
 
 # Monitoraggio: continuità tra gli incontri
@@ -767,6 +773,7 @@ Insistere sul fatto che la salute mentale è spesso longitudinale. Una notte ins
 
 ---
 layout: default
+routeAlias: adjunct-tra-sedute
 ---
 
 # Adjunct: supporto tra sedute
@@ -784,6 +791,7 @@ Un adjunct può essere utile se è integrato nel percorso e se il clinico sa cos
 
 ---
 layout: default
+routeAlias: psicopatologia-fuori-studio
 ---
 
 # La psicopatologia fuori dallo studio
@@ -811,6 +819,7 @@ Spiegare il potenziale ecologico: molti cambiamenti clinici avvengono tra una se
 
 ---
 layout: default
+routeAlias: monitoraggio-sorveglianza
 ---
 
 # Monitoraggio o sorveglianza?
@@ -830,6 +839,7 @@ Questa slide rende esplicita l'ambivalenza del digital phenotyping. Gli stessi d
 
 ---
 layout: default
+routeAlias: linguaggio-dato-clinico
 ---
 
 # Il linguaggio è dato clinico, ma non solo dato
@@ -849,6 +859,7 @@ NLP e LLM possono rilevare pattern linguistici, ma il linguaggio clinico non è 
 
 ---
 layout: default
+routeAlias: classificazione-conversazione
 ---
 
 # Dalla classificazione alla conversazione
@@ -869,6 +880,7 @@ Questa è la discontinuità clinica degli LLM. Un classificatore produce un punt
 
 ---
 layout: default
+routeAlias: conversazione-clinicamente-potente
 ---
 
 # Perché la conversazione è clinicamente potente?
@@ -889,6 +901,7 @@ Questa slide esplicita il passaggio clinico. In salute mentale le parole non son
 
 ---
 layout: default
+routeAlias: empatia-non-cura
 ---
 
 # Sembrare empatici non significa curare
@@ -911,6 +924,7 @@ Distinguere empatia percepita ed efficacia clinica. Una risposta calda e validan
 
 ---
 layout: default
+routeAlias: empatia-rischio
 ---
 
 # Quando l'empatia diventa rischio
@@ -930,6 +944,7 @@ Mettere a fuoco sycophancy e validazione eccessiva. In salute mentale una rispos
 
 ---
 layout: default
+routeAlias: sycophancy
 ---
 
 # Sycophancy: quando il modello compiace
@@ -949,6 +964,7 @@ Spiegare il termine sycophancy in modo semplice: la tendenza del modello ad asse
 
 ---
 layout: default
+routeAlias: oggetto-attaccamento
 ---
 
 # Non solo "strumento": oggetto di attaccamento
@@ -970,6 +986,7 @@ Riprendere la vignetta iniziale. Il chatbot può diventare un oggetto relazional
 
 ---
 layout: default
+routeAlias: anamnesi-cinque-domande
 ---
 
 # Cinque domande da aggiungere all'anamnesi
@@ -986,6 +1003,7 @@ Questa è una slide pratica, uno dei take-away clinici. Le domande vanno fatte c
 
 ---
 layout: default
+routeAlias: chiederlo-alleanza
 ---
 
 # Come chiederlo senza rompere l'alleanza
@@ -1003,6 +1021,7 @@ Questa slide traduce l'anamnesi digitale in stile di colloquio. Se il clinico co
 
 ---
 layout: section
+routeAlias: governance
 ---
 
 # Governance: non basta che funzioni
@@ -1013,6 +1032,7 @@ Entrare nell'ultima parte: regole, responsabilità e servizi. Un sistema può es
 
 ---
 layout: default
+routeAlias: adozione-servizi
 ---
 
 # Adozione nei servizi: partire piccolo
@@ -1029,6 +1049,7 @@ Questa slide serve ai servizi. Suggerire di partire da use case clinician-facing
 
 ---
 layout: default
+routeAlias: scenari-2026-2030
 ---
 
 # Cinque scenari realistici: 2026-2030
@@ -1045,6 +1066,7 @@ Evitare fantascienza. Parlare di integrazione nei PDTA e nei servizi. I co-pilot
 
 ---
 layout: default
+routeAlias: bibliografia-istituzionale
 ---
 
 # Bibliografia essenziale
@@ -1064,6 +1086,7 @@ Non leggere integralmente la bibliografia. Usarla per chiarire il primo livello 
 
 ---
 layout: default
+routeAlias: bibliografia-medicina
 ---
 
 # Bibliografia essenziale
@@ -1082,6 +1105,7 @@ Secondo livello di fonti: casi in cui l'IA in medicina dell'immagine è stata re
 
 ---
 layout: default
+routeAlias: bibliografia-salute-mentale
 ---
 
 # Bibliografia essenziale
