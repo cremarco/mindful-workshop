@@ -33,9 +33,7 @@ Aprire collocando l'intervento nella giornata AIPP: nativi digitali, socialità,
 layout: two-cols
 ---
 
-# Chi parla
-
-## Marco Cremaschi
+#  Marco Cremaschi
 
 Ricercatore presso l'Università degli Studi di Milano-Bicocca, Dipartimento di Informatica, Sistemistica e Comunicazione.
 
