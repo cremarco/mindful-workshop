@@ -46,7 +46,7 @@ Ricercatore presso l'Università degli Studi di Milano-Bicocca, Dipartimento di 
 - RAG e modelli linguistici su tassonomie cliniche come ICD-11.
 - Monitoraggio digitale, segnali longitudinali e continuità terapeutica.
 - Applicazioni per aderenza, psicoeducazione e supporto al clinico.
-- Pazienti simulati per formazione, supervisione e ragionamento clinico.
+- LLM in ambito PSY
 
 <!--
 Presentarsi in modo coerente con il pubblico clinico: non come psichiatra o psicoterapeuta, ma come ricercatore informatico che lavora sui sistemi di IA applicati alla salute mentale. Citare rapidamente le linee rilevanti: modelli linguistici su ICD-11 e tassonomie cliniche, monitoraggio digitale, applicazioni di aderenza e pazienti simulati come LLMPatients. Questa slide serve anche a dichiarare il perimetro: la prospettiva è tecnica e interdisciplinare, ma il criterio di giudizio resta clinico, etico e organizzativo.
