@@ -1,4 +1,57 @@
 /* ============================================================
+   DESIGN TOKENS — global palette, type and elevation
+
+   Dark/light mode is owned by Slidev: the slide canvas inherits
+   `bg-main` (#fff / #121212) and primary text inherits `text-main`
+   (#181818 / #ddd). So we deliberately DO NOT paint the slide
+   background and DO NOT hard-code primary text colors.
+
+   Every secondary tone, surface and hairline is derived from
+   `currentColor` via color-mix(), so it self-adapts to whichever
+   mode is active. The only colour that flips explicitly is
+   --aipp-fg, used to restore full-strength emphasis (<strong>)
+   inside softened text.
+   ============================================================ */
+
+:root {
+  /* Brand accents — read well on both white and near-black. */
+  --aipp-red: #a50036;
+  --aipp-orange: #ff6900;
+  --aipp-teal: #00b8db;
+  --aipp-accent-gradient: linear-gradient(90deg, var(--aipp-red) 0%, var(--aipp-orange) 35%, var(--aipp-teal) 70%, var(--aipp-red) 100%);
+
+  /* Emphasis colour (the one value that flips per mode). */
+  --aipp-fg: #1d1d1f;
+
+  /* Secondary text — a faded copy of the inherited foreground. */
+  --aipp-soft: color-mix(in srgb, currentColor 64%, transparent);
+  --aipp-faint: color-mix(in srgb, currentColor 42%, transparent);
+
+  /* Elevated surfaces & hairlines — tinted with the foreground. */
+  --aipp-surface: color-mix(in srgb, currentColor 4%, transparent);
+  --aipp-surface-2: color-mix(in srgb, currentColor 6.5%, transparent);
+  --aipp-line: color-mix(in srgb, currentColor 11%, transparent);
+  --aipp-callout-surface: color-mix(in srgb, var(--aipp-red) 7%, transparent);
+
+  --aipp-radius: 20px;
+  --aipp-radius-sm: 14px;
+  --aipp-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 18px 50px rgba(0, 0, 0, 0.08);
+  --aipp-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.06);
+  --aipp-font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+html.dark {
+  --aipp-fg: #f5f5f7;
+  /* Light overlays need a touch more presence on a dark canvas. */
+  --aipp-surface: color-mix(in srgb, currentColor 6%, transparent);
+  --aipp-surface-2: color-mix(in srgb, currentColor 9%, transparent);
+  --aipp-line: color-mix(in srgb, currentColor 14%, transparent);
+  --aipp-callout-surface: color-mix(in srgb, var(--aipp-red) 16%, transparent);
+  --aipp-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 50px rgba(0, 0, 0, 0.55);
+  --aipp-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
    COVER — slide 1 (intro). DO NOT CHANGE.
    ============================================================ */
 .slidev-layout.cover.intro-slide,
@@ -9,7 +62,7 @@
   min-height: 100%;
   padding: 0 !important;
   overflow: hidden;
-  color: #241713;
+  color: var(--aipp-fg);
   background: url("/images/aipp-cover-bg.png") center / cover no-repeat !important;
 }
 
@@ -22,12 +75,12 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  padding: 4.6rem 0 4.2rem 5.2rem;
+  padding: 5.2rem 0 3.6rem 5.2rem;
 }
 
 .intro-meta {
   width: fit-content;
-  color: #8a1f21;
+  color: var(--aipp-red);
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -44,7 +97,7 @@
   display: grid;
   gap: 0.22em;
   margin: 0;
-  color: #201513;
+  color: var(--aipp-fg);
   font-size: 4.35rem;
   font-weight: 760;
   line-height: 0.94;
@@ -58,7 +111,7 @@
 .intro-copy h1 .intro-gradient-text {
   width: fit-content;
   color: transparent;
-  background: linear-gradient(90deg, #d71932 0%, #ff6a1a 24%, #9b1230 48%, #0099b8 72%, #d71932 100%);
+  background: var(--aipp-accent-gradient);
   background-size: 240% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -89,7 +142,7 @@
 .intro-subtitle {
   max-width: 560px;
   margin: 0;
-  color: #49352d;
+  color: var(--aipp-soft);
   font-size: 1.34rem;
   font-weight: 450;
   line-height: 1.3;
@@ -100,13 +153,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  color: #5a3128;
+  color: var(--aipp-soft);
   font-size: 1.06rem;
   line-height: 1.25;
 }
 
 .intro-footer strong {
-  color: #231513;
+  color: var(--aipp-fg);
   font-size: 1.18rem;
 }
 
@@ -115,79 +168,48 @@
    Applies to every slide EXCEPT the cover (.intro-slide).
    ============================================================ */
 
-:root {
-  --aipp-bg: #f6f5f2;
-  --aipp-surface: #ffffff;
-  --aipp-ink: #1d1d1f;
-  --aipp-ink-soft: #6e6e73;
-  --aipp-ink-faint: #a3a1a0;
-  --aipp-line: rgba(0, 0, 0, 0.08);
-  --aipp-red: #d71932;
-  --aipp-orange: #ff6a1a;
-  --aipp-teal: #0099b8;
-  --aipp-radius: 20px;
-  --aipp-radius-sm: 13px;
-  --aipp-shadow: 0 1px 2px rgba(20, 12, 10, 0.05), 0 14px 44px rgba(20, 12, 10, 0.07);
-  --aipp-shadow-soft: 0 1px 2px rgba(20, 12, 10, 0.04), 0 8px 28px rgba(20, 12, 10, 0.06);
-  --aipp-font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Roboto, sans-serif;
-}
-
-/* Force the clean light canvas regardless of OS dark mode. */
-html.dark {
-  color-scheme: light;
-}
-
-html,
-body {
-  background: var(--aipp-bg);
-}
-
-/* ---- Base surface + typography for all non-cover slides ---- */
+/* ---- Base canvas: typography only, no colour/background ---- */
 .slidev-layout:not(.intro-slide) {
   position: relative;
   height: 100%;
   min-height: 100%;
-  padding: 3.1rem 4.8rem 3rem;
-  background: var(--aipp-bg);
-  color: var(--aipp-ink);
+  padding: 3.2rem 5rem 3rem;
   font-family: var(--aipp-font);
-  letter-spacing: -0.011em;
+  letter-spacing: -0.012em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* ---- Headings ---- */
+/* ---- Headings (inherit text-main; no hard-coded colour) ---- */
 .slidev-layout:not(.intro-slide) h1 {
   margin: 0 0 1.3rem;
-  color: var(--aipp-ink);
-  font-size: 2.55rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.06;
   letter-spacing: -0.026em;
 }
 
 .slidev-layout:not(.intro-slide) h1::after {
   content: "";
   display: block;
-  width: 3rem;
-  height: 4px;
+  width: 2.6rem;
+  height: 3px;
   margin-top: 0.95rem;
   border-radius: 3px;
-  background: linear-gradient(90deg, var(--aipp-red), var(--aipp-orange));
+  background: var(--aipp-red);
 }
 
 .slidev-layout:not(.intro-slide) h2 {
   margin: 0 0 0.8rem;
-  color: var(--aipp-ink);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
 
 .slidev-layout:not(.intro-slide) h3 {
   color: var(--aipp-red);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -197,25 +219,23 @@ body {
 /* ---- Body copy ---- */
 .slidev-layout:not(.intro-slide) p {
   margin: 0 0 0.85rem;
-  color: var(--aipp-ink-soft);
-  font-size: 1.16rem;
+  color: var(--aipp-soft);
+  font-size: 1.15rem;
   line-height: 1.5;
 }
 
 .slidev-layout:not(.intro-slide) h1 + p {
   margin-top: -0.3rem;
-  color: var(--aipp-ink-soft);
   font-size: 1.22rem;
 }
 
 .slidev-layout:not(.intro-slide) strong,
 .slidev-layout:not(.intro-slide) b {
-  color: var(--aipp-ink);
+  color: var(--aipp-fg);
   font-weight: 640;
 }
 
 .slidev-layout:not(.intro-slide) em {
-  color: var(--aipp-ink-soft);
   font-style: italic;
 }
 
@@ -241,7 +261,6 @@ body {
   position: relative;
   margin: 0;
   padding: 0 0 0 1.7rem;
-  color: var(--aipp-ink);
   font-size: 1.13rem;
   line-height: 1.45;
 }
@@ -254,7 +273,7 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--aipp-red), var(--aipp-orange));
+  background: var(--aipp-red);
 }
 
 .slidev-layout:not(.intro-slide) ol > li {
@@ -272,7 +291,7 @@ body {
   display: grid;
   place-content: center;
   border-radius: 50%;
-  background: rgba(215, 25, 50, 0.1);
+  background: color-mix(in srgb, var(--aipp-red) 14%, transparent);
   color: var(--aipp-red);
   font-size: 0.86rem;
   font-weight: 680;
@@ -286,6 +305,7 @@ body {
   border-collapse: separate;
   border-spacing: 0;
   background: var(--aipp-surface);
+  border: 1px solid var(--aipp-line);
   border-radius: var(--aipp-radius);
   overflow: hidden;
   box-shadow: var(--aipp-shadow-soft);
@@ -293,8 +313,8 @@ body {
 }
 
 .slidev-layout:not(.intro-slide) thead th {
-  background: #f3f2ef;
-  color: var(--aipp-ink-soft);
+  background: var(--aipp-surface-2);
+  color: var(--aipp-soft);
   font-size: 0.74rem;
   font-weight: 640;
   text-transform: uppercase;
@@ -321,13 +341,27 @@ body {
 }
 
 .slidev-layout:not(.intro-slide) td {
-  color: var(--aipp-ink);
   line-height: 1.34;
 }
 
 .slidev-layout:not(.intro-slide) tbody td:first-child {
   font-weight: 600;
-  color: var(--aipp-ink);
+  color: var(--aipp-fg);
+}
+
+.questionnaire-name {
+  display: grid;
+  gap: 0.16rem;
+}
+
+.questionnaire-name small {
+  display: block;
+  max-width: 24ch;
+  color: var(--aipp-soft);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .slidev-layout:not(.intro-slide) tbody tr:last-child td {
@@ -351,30 +385,44 @@ body {
 
 .slidev-layout:not(.intro-slide) blockquote {
   position: absolute;
-  right: 4.8rem;
+  right: 5rem;
   bottom: 2.4rem;
-  left: 4.8rem;
+  left: 5rem;
   box-sizing: border-box;
   width: auto;
   margin: 0;
-  padding: 0.95rem 1.25rem 0.95rem 1.4rem;
+  padding: 1rem 1.35rem 1rem 1.2rem;
   border: 0;
-  border-left: 3px solid var(--aipp-red);
-  border-radius: var(--aipp-radius-sm);
-  background: var(--aipp-surface);
+  border-radius: var(--aipp-radius);
+  background: var(--aipp-callout-surface);
   box-shadow: var(--aipp-shadow-soft);
-  color: var(--aipp-ink-soft);
+  color: var(--aipp-soft);
+  display: grid;
+  grid-template-columns: 1.55rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  align-items: center;
   font-size: 0.95rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.4;
 }
 
+.slidev-layout:not(.intro-slide) blockquote::before {
+  content: "";
+  width: 1.45rem;
+  height: 1.45rem;
+  align-self: center;
+  background: var(--aipp-red);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .slidev-layout:not(.intro-slide) blockquote strong {
-  color: var(--aipp-ink);
+  color: var(--aipp-fg);
 }
 
 .slidev-layout:not(.intro-slide) blockquote > * {
+  grid-column: 2;
   margin: 0;
 }
 
@@ -385,8 +433,17 @@ body {
   line-height: inherit;
 }
 
+.slidev-layout:not(.intro-slide) blockquote p > strong:first-child {
+  display: block;
+  margin-bottom: 0.12rem;
+  color: var(--aipp-fg);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .slidev-layout:not(.intro-slide) blockquote p + p {
-  margin-top: 0.35rem;
+  margin-top: 0.25rem;
 }
 
 .slidev-layout:not(.intro-slide) blockquote p::before,
@@ -415,9 +472,20 @@ body {
   box-shadow: var(--aipp-shadow);
 }
 
+.slidev-layout.giovanna-slide.image-right + div {
+  justify-self: center;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: var(--aipp-surface);
+  background-position: center bottom !important;
+  background-size: contain !important;
+}
+
 /* ---- Two-column layout ---- */
 .slidev-layout.two-columns {
-  padding: 3.1rem 4.8rem 3rem;
+  padding: 3.2rem 5rem 3rem;
   gap: 3.2rem;
 }
 
@@ -446,7 +514,6 @@ body {
   width: 26rem;
   height: 26rem;
   background: url("/images/aipp-marco-bg.png") center / contain no-repeat;
-  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
 }
@@ -454,6 +521,73 @@ body {
 .slidev-layout.two-columns:has(.bio-slide) > .col-left,
 .slidev-layout.two-columns:has(.bio-slide) > .col-right {
   z-index: 1;
+}
+
+/* ============================================================
+   PATIENT CARD GRID
+   ============================================================ */
+.slidev-layout.patient-carousel-slide {
+  overflow: hidden;
+}
+
+.patient-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.05rem;
+}
+
+.patient-card {
+  position: relative;
+  min-height: 24.4rem;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aipp-line);
+  border-radius: var(--aipp-radius-sm);
+  background: var(--patient-image) center top / cover no-repeat;
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+.patient-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(218deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.48) 24%, rgba(255, 255, 255, 0) 54%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
+}
+
+.slidev-layout.patient-carousel-slide .patient-card::before {
+  display: none;
+}
+
+.patient-card.name-light::before {
+  background:
+    linear-gradient(218deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.38) 24%, rgba(0, 0, 0, 0) 54%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.patient-card figcaption {
+  position: absolute;
+  top: 0.92rem;
+  right: 0.92rem;
+  z-index: 1;
+  max-width: 10.5ch;
+  margin: 0;
+  color: #1d1d1f;
+  font-size: 1.08rem;
+  font-weight: 760;
+  line-height: 1.02;
+  text-align: right;
+  letter-spacing: 0;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.82);
+}
+
+.patient-card.name-light figcaption {
+  color: #fff;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.72);
 }
 
 /* ============================================================
@@ -486,7 +620,7 @@ body {
 .slidev-layout.statement p {
   max-width: 56ch;
   margin: 1.5rem auto 0;
-  color: var(--aipp-ink-soft);
+  color: var(--aipp-soft);
   font-size: 1.4rem;
   line-height: 1.42;
 }
@@ -508,7 +642,7 @@ body {
 .slidev-layout.fact h1 + p {
   margin-top: 0.6rem;
   font-size: 1.5rem;
-  color: var(--aipp-ink-soft);
+  color: var(--aipp-soft);
 }
 
 /* Section dividers echo the cover's animated gradient wordmark */
@@ -518,7 +652,7 @@ body {
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: transparent;
-  background: linear-gradient(90deg, #d71932 0%, #ff6a1a 30%, #9b1230 55%, #0099b8 80%, #d71932 100%);
+  background: var(--aipp-accent-gradient);
   background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -549,7 +683,7 @@ body {
 
 .slidev-layout.quote h1 + p {
   margin-top: 1.4rem;
-  color: var(--aipp-ink-soft);
+  color: var(--aipp-soft);
   font-size: 1.32rem;
   font-weight: 500;
 }
@@ -559,7 +693,7 @@ body {
   position: absolute;
   top: 2.2rem;
   left: 5.4rem;
-  color: rgba(215, 25, 50, 0.14);
+  color: color-mix(in srgb, var(--aipp-red) 16%, transparent);
   font-size: 9rem;
   font-weight: 700;
   line-height: 1;
@@ -590,6 +724,7 @@ body {
   font-size: 0.82rem;
 }
 
+/* Therapist = iMessage blue. Stays blue in both modes. */
 .chat-balloon.therapist {
   align-self: flex-end;
   max-width: 72%;
@@ -598,11 +733,12 @@ body {
   border-radius: 20px 20px 6px 20px;
 }
 
+/* Patient = neutral grey bubble derived from the foreground,
+   so it darkens correctly in dark mode without hard-coding. */
 .chat-balloon.patient {
   align-self: flex-start;
   max-width: 78%;
-  color: var(--aipp-ink);
-  background: #e9e9eb;
+  background: color-mix(in srgb, currentColor 10%, transparent);
   border-radius: 20px 20px 20px 6px;
 }
 
@@ -619,7 +755,7 @@ body {
 }
 
 .chat-balloon.patient .chat-speaker {
-  color: var(--aipp-ink-soft);
+  color: var(--aipp-soft);
 }
 
 .slidev-layout.default.conversation-slide {
@@ -679,6 +815,68 @@ body {
   animation-delay: 820ms;
 }
 
+.slidev-layout.default.critique-conversation-slide {
+  padding: 3.25rem 4.7rem !important;
+}
+
+.critique-conversation {
+  display: grid;
+  grid-template-columns: 156px minmax(0, 1fr);
+  align-items: center;
+  gap: 2.25rem;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.slidev-layout.default.critique-conversation-slide .critique-conversation .chat-thread {
+  height: auto;
+  max-width: none;
+  margin: 0;
+  justify-content: flex-start;
+  gap: 0.68rem;
+}
+
+.slidev-layout.default.critique-conversation-slide .critique-conversation .chat-balloon {
+  max-width: 72%;
+}
+
+.slidev-layout.default.critique-conversation-slide .critique-conversation .chat-balloon.therapist {
+  margin-right: 0.25rem;
+}
+
+.slidev-layout.default.critique-conversation-slide .critique-conversation .chat-balloon.patient {
+  margin-left: 0.25rem;
+}
+
+.critique-patient-photo {
+  align-self: center;
+  justify-self: start;
+  width: 148px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  animation: chat-balloon-enter 520ms cubic-bezier(0.2, 0.72, 0.18, 1) 700ms forwards;
+}
+
+.critique-patient-photo img {
+  display: block;
+  width: 148px;
+  height: 148px;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: 16px;
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+.critique-patient-photo figcaption {
+  margin-top: 0.45rem;
+  color: var(--aipp-soft);
+  font-size: 0.7rem;
+  font-weight: 650;
+  text-align: center;
+}
+
 @keyframes chat-balloon-enter {
   to {
     opacity: 1;
@@ -687,7 +885,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slidev-layout.default.conversation-slide .chat-balloon {
+  .slidev-layout.default.conversation-slide .chat-balloon,
+  .critique-patient-photo {
     opacity: 1;
     transform: none;
     animation: none;
@@ -702,15 +901,97 @@ body {
 /* ============================================================
    SCREENSHOTS
    ============================================================ */
+.slidev-layout.screenshot-slide {
+  display: grid;
+  place-items: center;
+  padding: 1rem 2.7rem;
+}
+
+.slidev-layout.screenshot-slide.llmpatients-journey-slide {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.slidev-layout.screenshot-slide.llmpatients-journey-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/images/llmpatients-dashboard-percorsi-bg-v2.png") center / cover no-repeat;
+  pointer-events: none;
+}
+
+.slidev-layout.screenshot-slide > .mockup-browser.app-browser-mockup {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 740px);
+  margin: 0 auto;
+}
+
+.mockup-browser.app-browser-mockup {
+  overflow: hidden;
+  border: 1px solid var(--aipp-line);
+  border-radius: var(--aipp-radius-sm);
+  background: var(--aipp-surface);
+  box-shadow: var(--aipp-shadow);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+  height: 2.35rem;
+  padding: 0 0.9rem;
+  border-bottom: 1px solid var(--aipp-line);
+  background: var(--aipp-surface-2);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 50%;
+  background: var(--aipp-red);
+  box-shadow: 0.95rem 0 0 var(--aipp-orange), 1.9rem 0 0 var(--aipp-teal);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar .input {
+  flex: 1 1 auto;
+  height: 1.26rem;
+  margin-left: 1.9rem;
+  border: 1px solid var(--aipp-line);
+  border-radius: 999px;
+  background: var(--aipp-surface);
+}
+
+.mockup-browser.app-browser-mockup .app-browser-content {
+  background: var(--aipp-surface);
+}
+
+.mockup-browser.app-browser-mockup img.app-screenshot {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.slidev-layout.default > img.app-screenshot,
 .app-screenshot {
   display: block;
-  width: min(100%, 940px);
+  width: min(100%, 667px);
+  height: auto;
   max-height: 500px;
   object-fit: contain;
   margin: 0.6rem auto 0;
   border-radius: var(--aipp-radius-sm);
   border: 1px solid var(--aipp-line);
-  background: #fff;
+  background: var(--aipp-surface);
   box-shadow: var(--aipp-shadow);
 }
 
@@ -738,5 +1019,5 @@ body {
    ============================================================ */
 .slidev-progress-bar,
 #slidev-progress-bar {
-  background: linear-gradient(90deg, var(--aipp-red), var(--aipp-orange)) !important;
+  background: var(--aipp-accent-gradient) !important;
 }

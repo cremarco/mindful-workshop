@@ -48,7 +48,7 @@ class: bio-slide
 
 Ricercatore presso l'Università degli Studi di Milano-Bicocca, Dipartimento di Informatica, Sistemistica e Comunicazione.
 
-> Punto di vista: tecnologico e interdisciplinare, orientato a validazione, utilità clinica, sicurezza e responsabilità.
+> **Punto di vista** Tecnologico e interdisciplinare, orientato a validazione, utilità clinica, sicurezza e responsabilità.
 
 ::right::
 
@@ -144,17 +144,13 @@ routeAlias: cosa-ha-giovanna
 
 # Cosa ha Giovanna?
 
-LLMPatients-App. Risultati dei test psicometrici riportati nel paper.
-
 | Strumento | Risultato | Lettura clinica |
 |---|---|---|
-| **PHQ-9** | 27 / 27 | sintomatologia depressiva severa |
-| **BES** | 40 / 46 | binge eating in fascia severa |
-| **LPFS-BF 2.0** | 47 / 48 | compromissione molto elevata; Sé 24 / Interpersonale 23 |
-| **DSM-5-TR Level 1** | 12 domini sopra soglia | profilo multi-dominio: depressione, ansia, ideazione suicidaria, dissociazione, sostanze |
-| **SNAP-2** | elevazioni diffuse | borderline T=103, dependent T=111, paranoid T=88, depressive T=85; self-harm T=104 |
-
-> I risultati supportano una coerenza preliminare tra profilo atteso e comportamento simulato, ma sono una singola compilazione descrittiva: non misurano stabilità, varianza o validità diagnostica fine.
+| <span class="questionnaire-name"><strong>PHQ-9</strong><small>Patient Health Questionnaire-9</small></span> | 27 / 27 | sintomatologia depressiva severa |
+| <span class="questionnaire-name"><strong>BES</strong><small>Binge Eating Scale</small></span> | 40 / 46 | binge eating in fascia severa |
+| <span class="questionnaire-name"><strong>LPFS-BF 2.0</strong><small>Level of Personality Functioning Scale-Brief Form 2.0</small></span> | 47 / 48 | compromissione molto elevata; Sé 24 / Interpersonale 23 |
+| <span class="questionnaire-name"><strong>DSM-5-TR Level 1</strong><small>Self-Rated Level 1 Cross-Cutting Symptom Measure</small></span> | 12 domini sopra soglia | profilo multi-dominio: depressione, ansia, ideazione suicidaria, dissociazione, sostanze |
+| <span class="questionnaire-name"><strong>SNAP-2</strong><small>Schedule for Nonadaptive and Adaptive Personality - 2nd Edition</small></span> | elevazioni diffuse | borderline T=103, dependent T=111, paranoid T=88, depressive T=85; self-harm T=104 |
 
 <!--
 Aprire la slide come domanda al pubblico: "Cosa ha Giovanna?". Lasciare qualche secondo prima di mostrare che la tentazione è rispondere con un'etichetta diagnostica, mentre il punto formativo è costruire una formulazione clinica. I risultati psicometrici del paper mostrano una presentazione severa e multi-dominio: depressione, disregolazione alimentare, compromissione del funzionamento della personalità, ideazione suicidaria, dissociazione e tratti di personalità patologici. Spiegare che i questionari sono stati somministrati automaticamente al paziente simulato, con risposte in character e scoring deterministico. Non presentarlo come prova che il sistema "diagnostica" o "misura" davvero un paziente: è un controllo di coerenza della simulazione. Specificare che il paper stesso invita a interpretare i risultati come profilo puntuale, non come stima di stabilità o validità diagnostico-differenziale fine.
@@ -163,6 +159,7 @@ Aprire la slide come domanda al pubblico: "Cosa ha Giovanna?". Lasciare qualche 
 ---
 layout: image-right
 routeAlias: giovanna
+class: giovanna-slide
 image: /images/patients/juanita_delgado/base.png
 ---
 
@@ -188,7 +185,6 @@ routeAlias: giovanna-ia
 
 **Un paziente sintetico, non una persona reale.**
 
-_Adattato da DSM-5 Clinical Cases, caso 18.5 “Fragile and Angry” (Juanita Delgado): disturbo borderline di personalità, 301.83 / F60.3._
 
 - Il caso è definito in un profilo strutturato: storia clinica, diagnosi, farmaci, obiettivi, funzionamento e tratti emotivi.
 - All'avvio della seduta l'app inizializza un paziente esterno e una sessione terapeutica.
@@ -196,7 +192,8 @@ _Adattato da DSM-5 Clinical Cases, caso 18.5 “Fragile and Angry” (Juanita De
 - La risposta torna come messaggio in character, con emozione dominante, topic e traccia temporale.
 - Le interazioni vengono salvate per revisione, valutazione degli errori e formazione.
 
-> La simulazione è utile solo se resta dichiarata come simulazione.
+> **Caso di riferimento** Adattato da DSM-5 Clinical Cases, caso 18.5 “Fragile and Angry” (Juanita Delgado): disturbo borderline di personalità, 301.83 / F60.3.
+
 
 <!--
 Spiegare in modo semplice che Giovanna non è una paziente reale e non va presentata come tale. È un agente conversazionale costruito a partire da un profilo clinico strutturato: dati anagrafici, diagnosi, storia, farmaci, obiettivi terapeutici, funzionamento mentale e tratti emotivi. Nell'app, il profilo viene inizializzato dentro una sessione; poi ogni messaggio del terapeuta viene inviato al generatore insieme allo step del percorso e alla memoria della conversazione. Il modello restituisce una risposta in character e metadati come emozione, topic e andamento emotivo. Il valore formativo sta nella coerenza simulativa, non nell'autenticità esperienziale: Giovanna non soffre, ma può aiutare il clinico ad allenare osservazione, timing, errori e riparazioni.
@@ -205,11 +202,17 @@ Spiegare in modo semplice che Giovanna non è una paziente reale e non va presen
 ---
 layout: default
 routeAlias: llmpatients-schermata-lavoro
+class: screenshot-slide
 ---
 
-# LLMPatients-App: schermata di lavoro
-
-<img class="app-screenshot" :src="'/images/screenshots/sessione_chat_juanita_delgado.png'" alt="Screenshot della sessione chat di Juanita Delgado" />
+<div class="mockup-browser app-browser-mockup">
+  <div class="mockup-browser-toolbar">
+    <div class="input"></div>
+  </div>
+  <div class="app-browser-content">
+    <img class="app-screenshot" :src="'/images/screenshots/sessione_chat_juanita_delgado.png'" alt="Screenshot della sessione chat di Juanita Delgado" />
+  </div>
+</div>
 
 <!--
 Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia, ma mostrare concretamente il setting di simulazione. Evidenziare tre elementi: profilo del paziente, conversazione in character e tracciamento utile al debriefing.
@@ -218,11 +221,17 @@ Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia
 ---
 layout: default
 routeAlias: llmpatients-esplora-pazienti-griglia
+class: screenshot-slide
 ---
 
-# LLMPatients-App: esplora pazienti
-
-<img class="app-screenshot" :src="'/images/screenshots/esplora_pazienti_griglia.png'" alt="Screenshot della griglia di esplorazione dei pazienti" />
+<div class="mockup-browser app-browser-mockup">
+  <div class="mockup-browser-toolbar">
+    <div class="input"></div>
+  </div>
+  <div class="app-browser-content">
+    <img class="app-screenshot" :src="'/images/screenshots/esplora_pazienti_griglia.png'" alt="Screenshot della griglia di esplorazione dei pazienti" />
+  </div>
+</div>
 
 <!--
 Mostrare la griglia come vista di selezione degli scenari clinici: ogni paziente sintetico è un caso progettato con focus, storia e obiettivi formativi, non un'etichetta diagnostica vivente.
@@ -231,36 +240,47 @@ Mostrare la griglia come vista di selezione degli scenari clinici: ogni paziente
 ---
 layout: default
 routeAlias: llmpatients-dashboard-percorsi-terapeutici
+class: screenshot-slide llmpatients-journey-slide
 ---
 
-# LLMPatients-App: dashboard percorsi terapeutici
-
-<img class="app-screenshot" :src="'/images/screenshots/dashboard_percorsi_terapeutici.png'" alt="Screenshot della dashboard dei percorsi terapeutici" />
+<div class="mockup-browser app-browser-mockup">
+  <div class="mockup-browser-toolbar">
+    <div class="input"></div>
+  </div>
+  <div class="app-browser-content">
+    <img class="app-screenshot" :src="'/images/screenshots/dashboard_percorsi_terapeutici.png'" alt="Screenshot della dashboard dei percorsi terapeutici" />
+  </div>
+</div>
 
 <!--
 Usare la dashboard per spiegare che la simulazione non è solo chat libera: il percorso terapeutico definisce step, compiti clinici, monitoraggio e materiale per revisione o debriefing.
 -->
 
 ---
-layout: image-right
+layout: default
 routeAlias: llmpatients-pazienti-simulati
-image: /images/patients/juanita_delgado/base.png
+class: patient-carousel-slide
 ---
 
-# LLMPatients: carrellata di pazienti simulati
+# LLMPatients: pazienti simulati
 
-| Paziente | Focus clinico |
-|---|---|
-| **Giovanna** | depressione ricorrente, borderline, binge eating |
-| **Matteo** | ansia sociale, evitamento, ritiro universitario |
-| **Sara** | trauma complesso, iperarousal, dissociazione |
-| **Luca** | episodio maniacale, insonnia, impulsività |
-
-**Dimensioni di progettazione**
-
-- Storia clinica: timeline, diagnosi, farmaci, eventi critici.
-- Stile relazionale: difese, alleanza, sensibilità alla critica.
-- Obiettivo formativo: anamnesi, rischio, riparazione, debriefing.
+<div class="patient-card-grid">
+  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/alex_carter/base.png');">
+    <figcaption>Alex Carter</figcaption>
+  </figure>
+  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/crystal_smith/base.png');">
+    <figcaption>Crystal Smith</figcaption>
+  </figure>
+  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/daniel_isherwood/base.png');">
+    <figcaption>Daniel Isherwood</figcaption>
+  </figure>
+  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/jason_smith/base.png');">
+    <figcaption>Jason Smith</figcaption>
+  </figure>
+  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/juanita_delgado/base.png');">
+    <figcaption>Juanita Delgado</figcaption>
+  </figure>
+</div>
 
 <!--
 La carrellata serve a chiarire che Giovanna non è un caso isolato: l'idea degli LLM-patients è costruire pazienti sintetici differenti, ciascuno con storia, stile relazionale e obiettivo formativo. Non presentare i nomi come diagnosi viventi: sono scenari didattici per allenare il colloquio e il ragionamento clinico.
@@ -269,33 +289,39 @@ La carrellata serve a chiarire che Giovanna non è un caso isolato: l'idea degli
 ---
 layout: default
 routeAlias: paziente-sintetico-critica
+class: conversation-slide critique-conversation-slide
 ---
 
-# Quando il paziente sintetico reagisce alla critica
+<div class="critique-conversation">
+  <figure class="critique-patient-photo">
+    <img :src="'/images/patients/juanita_delgado/rage.png'" alt="Juanita Delgado arrabbiata">
+    <figcaption>Juanita</figcaption>
+  </figure>
 
-<div class="chat-thread">
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Terapeuta</strong><br>
-    Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
-    Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
-  </div>
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Terapeuta</strong><br>
-    Proviamo a capire meglio: che cosa hai sentito quando ti ho detto così?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
-    Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
+  <div class="chat-thread critique-chat">
+    <div class="chat-balloon therapist">
+      <strong class="chat-speaker">Terapeuta</strong><br>
+      Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
+    </div>
+    <div class="chat-balloon patient">
+      <strong class="chat-speaker">Giovanna</strong><br>
+      Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
+    </div>
+    <div class="chat-balloon therapist">
+      <strong class="chat-speaker">Terapeuta</strong><br>
+      Proviamo a capire meglio: che cosa hai sentito quando ti ho detto così?
+    </div>
+    <div class="chat-balloon patient">
+      <strong class="chat-speaker">Giovanna</strong><br>
+      Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
+    </div>
   </div>
 </div>
 
-> Il valore formativo non è la risposta perfetta del modello, ma la possibilità di osservare errore, rottura e riparazione dell'alleanza.
-
 <!--
 Usare questa scena come piccolo micro-fallimento terapeutico. Il terapeuta formula un commento critico e Giovanna lo vive come conferma di vergogna e rifiuto. Il punto formativo è la riparazione: l'LLM-patient diventa utile quando permette di esercitare timing, tono, riconoscimento dell'impatto e recupero dell'alleanza.
+
+Valore formativo: non è la risposta perfetta del modello, ma la possibilità di osservare errore, rottura e riparazione dell'alleanza.
 -->
 
 ---
@@ -311,7 +337,7 @@ routeAlias: indice
 4. **Rischi clinici**: empatia simulata, dipendenza, sycophancy, crisi.
 5. **Governance nei servizi**: responsabilità, supervisione, uso previsto.
 
-> La diagnostica per immagini è un confronto utile, non il modello da copiare.
+> **Analogia clinica** La diagnostica per immagini è un confronto utile, non il modello da copiare.
 
 <!--
 Usare questa slide come promessa di percorso. Dopo il caso del paziente sintetico, il talk si allarga al fatto che l'IA è già nella stanza di consultazione perché i pazienti la usano. La parte centrale confronta la maturità dell'IA in medicina dell'immagine con la complessità della psicopatologia. La parte finale torna ai servizi: usi realistici, rischi patient-facing e condizioni di governance. Chiarire che il filo non è "copiare la radiologia", ma imparare da validazione, workflow, responsabilità e limiti.
@@ -329,7 +355,7 @@ routeAlias: perche-parlarne-oggi
 - La clinica li incontra spesso dopo, quando hanno già prodotto significati.
 - La domanda non è se l'IA entrerà nei servizi, ma come governarla.
 
-> Domanda: quanti pazienti arrivano già con una diagnosi, un consiglio o una spiegazione ricevuta da un sistema generativo?
+> **Domanda** Quanti pazienti arrivano già con una diagnosi, un consiglio o una spiegazione ricevuta da un sistema generativo?
 
 <!--
 Questa slide serve ad agganciare il pubblico. Non parlare dell'IA come oggetto esterno alla clinica, ma come parte del paesaggio dei nativi digitali. Per molti pazienti chiedere a un chatbot informazioni su ansia, depressione, farmaci, relazioni o identità è già una pratica ordinaria. Il clinico spesso lo scopre solo dopo. Questo produce una nuova responsabilità anamnestica.
@@ -355,7 +381,7 @@ routeAlias: nuovo-terzo-nella-stanza
 
 # Un nuovo "terzo" nella stanza
 
-> “Un ragazzo di 19 anni, socialmente ritirato, arriva in consultazione. Prima di parlare con uno psicologo ha parlato per settimane con un chatbot. Gli ha chiesto se fosse depresso, se dovesse prendere farmaci, se i genitori fossero tossici, se la vita avesse senso.”
+> **Scenario clinico** “Un ragazzo di 19 anni, socialmente ritirato, arriva in consultazione. Prima di parlare con uno psicologo ha parlato per settimane con un chatbot. Gli ha chiesto se fosse depresso, se dovesse prendere farmaci, se i genitori fossero tossici, se la vita avesse senso.”
 
 **Come cambia l’anamnesi?**  
 **Come cambia la relazione terapeutica?**  
@@ -410,7 +436,7 @@ routeAlias: ia-generativa-cosa-cambia
 - **Forma**: non solo contenuti, ma dialogo personalizzato.
 - **Effetto**: produce spiegazioni che possono diventare significati clinici.
 
-> Il salto non è solo tecnologico: è relazionale.
+> **Punto chiave** Il salto non è solo tecnologico: è relazionale.
 
 <!--
 Questa slide prepara la distinzione successiva. Un motore di ricerca restituisce pagine, un social restituisce contenuti, un LLM restituisce una risposta conversazionale. Per un paziente in sofferenza questa differenza è enorme: la risposta sembra rivolta proprio a lui, spesso con tono accogliente, e può essere vissuta come comprensione.
@@ -450,7 +476,7 @@ Proporre questi tre criteri come bussola per tutta la relazione. Ogni tecnologia
 | riduce vergogna | rinforza evitamento |
 | apre una domanda di cura | sostituisce relazioni |
 
-> La domanda clinica non è "usa o non usa l'IA", ma quale funzione assume nella sua economia psichica.
+> **Domanda clinica** La domanda clinica non è "usa o non usa l'IA", ma quale funzione assume nella sua economia psichica.
 
 <!--
 Spostare la discussione dal giudizio morale alla funzione clinica. Lo stesso comportamento può avere funzioni diverse: un uso esplorativo e limitato può aiutare il paziente a chiedere aiuto; un uso totalizzante può alimentare isolamento e dipendenza. Questo passaggio prepara l'anamnesi digitale ampliata.
@@ -479,7 +505,7 @@ routeAlias: due-incontri-psicopatologia
 - simula comprensione;
 - può diventare oggetto di attaccamento.
 
-> La stessa parola "IA" copre rischi clinici molto diversi.
+> **Rischio clinico** La stessa parola "IA" copre rischi clinici molto diversi.
 
 <!--
 Distinguere subito le applicazioni clinician-facing da quelle patient-facing. Un sistema che aiuta il clinico a sintetizzare un colloquio è una cosa; un chatbot che parla direttamente con un adolescente in crisi è un'altra. La differenza non è solo tecnica ma clinica, etica e medico-legale.
@@ -498,7 +524,7 @@ routeAlias: clinician-facing-patient-facing
 | colloca l'output nel caso | influenza scelte e significati |
 | responsabilità più visibile | rischio relazionale più alto |
 
-> La distanza dal paziente vulnerabile è una variabile di rischio.
+> **Variabile di rischio** La distanza dal paziente vulnerabile è una variabile di rischio.
 
 <!--
 Fare un esempio concreto: un riassunto di colloquio revisionato dal clinico può sbagliare, ma viene intercettato dentro un processo professionale. Un chatbot usato da un paziente in crisi può produrre un effetto immediato senza mediazione. Non è la stessa tecnologia: è un diverso dispositivo clinico.
@@ -528,7 +554,7 @@ flowchart LR
   D --> E["Decisione clinica"]
 ```
 
-> Fonte: Lang et al., *Lancet Oncology*, 2023. DOI: 10.1016/S1470-2045(23)00298-X.
+> **Fonte** Lang et al., *Lancet Oncology*, 2023. DOI: 10.1016/S1470-2045(23)00298-X.
 
 <!--
 Usare il trial MASAI come esempio concreto di IA valutata dentro un workflow clinico. Non dire che l'IA sostituisce il radiologo: il dato interessante è la combinazione tra outcome, sicurezza e riduzione del carico. Questo prepara la slide successiva: workflow, non magia.
@@ -549,7 +575,7 @@ flowchart LR
   D --> E["Audit sugli esiti"]
 ```
 
-> La maturità non sta solo nell'algoritmo, ma nell'uso previsto e nel contesto di lavoro.
+> **Maturità clinica** La maturità non sta solo nell'algoritmo, ma nell'uso previsto e nel contesto di lavoro.
 
 <!--
 Questa è la lezione più importante da importare in salute mentale. L'IA diventa utile quando è inserita in una catena di responsabilità: cosa riceve, cosa produce, chi guarda l'output, quale decisione segue, come si controllano errori e bias. Senza workflow, anche un modello performante resta clinicamente fragile.
@@ -568,7 +594,7 @@ routeAlias: tre-casi-regolati
 | GI Genius | polipi in colonoscopia, tempo reale, secondo osservatore |
 | Paige Prostate Detect | vetrini digitali, aree sospette, supervisione del patologo |
 
-> L'IA funziona meglio quando il compito è delimitato, l'input è chiaro e l'esito è verificabile.
+> **Uso previsto** L'IA funziona meglio quando il compito è delimitato, l'input è chiaro e l'esito è verificabile.
 
 <!--
 Condensare gli esempi per non far diventare la relazione una lezione di radiologia o diagnostica. IDx-DR mostra un compito autonomo ma strettamente delimitato. GI Genius mostra un secondo osservatore in tempo reale. Paige mostra supporto alla lettura di vetrini digitalizzati. Il denominatore comune è l'uso previsto: sapere esattamente cosa il sistema può e non può fare.
@@ -586,7 +612,7 @@ routeAlias: idx-dr
 - Un contesto: primary care.
 - Un output: invio o non invio allo specialista.
 
-> Fonte: FDA, 2018. IDx-DR diabetic retinopathy.
+> **Fonte** FDA, 2018. IDx-DR diabetic retinopathy.
 
 <!--
 Usare IDx-DR per mostrare che anche quando si parla di diagnosi autonoma, l'autonomia è dentro confini molto stretti. Non è un sistema che "fa oftalmologia"; risponde a una domanda delimitata, con input e percorso successivo definiti. È questo tipo di precisione che spesso manca nei discorsi sull'IA in salute mentale.
@@ -605,7 +631,7 @@ routeAlias: gi-genius-paige
 | colonoscopia | vetrini digitalizzati |
 | decisione finale al medico | supervisione del patologo |
 
-> Fonte: FDA, 2021. GI Genius; Paige Prostate Detect.
+> **Fonte** FDA, 2021. GI Genius; Paige Prostate Detect.
 
 <!--
 Questi due esempi servono a differenziare forme di supporto: in tempo reale, come secondo osservatore, oppure come evidenziazione di aree sospette su immagini digitali. In nessuno dei due casi il messaggio è "il medico sparisce". Il messaggio è: compito circoscritto, supporto al workflow, responsabilità professionale.
@@ -636,7 +662,7 @@ routeAlias: pixel-significato
 - tempo;
 - significato.
 
-> Una mammografia è un'immagine. Un delirio è un'esperienza vissuta.
+> **Differenza clinica** Una mammografia è un'immagine. Un delirio è un'esperienza vissuta.
 
 <!--
 Questa frase resta utile, ma come slide interna. Serve a dire che la psichiatria non è arretrata: ha un oggetto più difficile da formalizzare. Un delirio non è solo un pattern linguistico; è un'esperienza vissuta, una trasformazione del rapporto con il mondo, una relazione con il clinico e spesso una traiettoria temporale.
@@ -707,7 +733,7 @@ routeAlias: usi-realistici-oggi
 | monitoraggio | sonno, attività, aderenza, segnali precoci |
 | adjunct | psicoeducazione, esercizi, supporto tra sedute |
 
-> Il caso d'uso più maturo oggi è clinician-facing, non patient-facing.  
+> **Caso d'uso maturo** Il caso d'uso più maturo oggi è clinician-facing, non patient-facing.  
 > Fonte: APA, *Applications of Artificial Intelligence in Mental Health Care*.
 
 <!--
@@ -728,7 +754,7 @@ L'IA può aiutare in:
 - lettere e relazioni;
 - estrazione di follow-up e impegni clinici.
 
-> Il testo prodotto va sempre revisionato: la cartella clinica è un atto professionale, non un output automatico.
+> **Revisione clinica** Il testo prodotto va sempre revisionato: la cartella clinica è un atto professionale, non un output automatico.
 
 <!--
 Questo è probabilmente uno degli usi più vicini alla pratica quotidiana. Può ridurre carico burocratico e liberare tempo clinico, ma introduce rischi: errori di attribuzione, omissioni, formulazioni troppo assertive, perdita di sfumature. Il clinico deve restare autore e responsabile del documento.
@@ -748,7 +774,7 @@ routeAlias: screening-triage
 | scale | bias non visibili |
 | segnalazione precoce | esclusione di casi complessi |
 
-> Un triage algoritmico deve spiegare chi entra, chi resta fuori e chi controlla gli errori.
+> **Triage responsabile** Un triage algoritmico deve spiegare chi entra, chi resta fuori e chi controlla gli errori.
 
 <!--
 Qui il punto non è demonizzare il triage: i servizi hanno risorse limitate e bisogno di priorità. Ma una priorità automatizzata può amplificare bias, penalizzare chi comunica peggio o rendere invisibili alcune forme di rischio. Il triage deve aumentare l'attenzione clinica, non sostituirla.
@@ -768,7 +794,7 @@ L'IA può cercare cambiamenti longitudinali in:
 - aderenza e abbandono;
 - segnali precoci di ricaduta.
 
-> Il valore non è il singolo dato, ma la traiettoria letta insieme al paziente.
+> **Traiettoria clinica** Il valore non è il singolo dato, ma la traiettoria letta insieme al paziente.
 
 <!--
 Insistere sul fatto che la salute mentale è spesso longitudinale. Una notte insonne non è una ricaduta, ma una traiettoria di sonno, ritiro e riduzione dell'attività può essere clinicamente rilevante. L'IA può aiutare a vedere pattern che il servizio non intercetta, ma la lettura resta contestuale.
@@ -786,7 +812,7 @@ routeAlias: adjunct-tra-sedute
 - Esercizi strutturati.
 - Preparazione del colloquio successivo.
 
-> Tra le sedute non significa fuori dal setting.
+> **Setting clinico** Tra le sedute non significa fuori dal setting.
 
 <!--
 Un adjunct può essere utile se è integrato nel percorso e se il clinico sa cosa fa. Può aiutare il paziente a ricordare un esercizio, preparare domande o rivedere materiali. Diventa problematico quando scivola verso una terapia parallela non supervisionata, soprattutto nei pazienti vulnerabili.
@@ -834,7 +860,7 @@ routeAlias: monitoraggio-sorveglianza
 | restituzione | controllo |
 | possibilità di scelta | dati senza significato condiviso |
 
-> Chi decide quando un segnale digitale diventa clinicamente rilevante?
+> **Domanda aperta** Chi decide quando un segnale digitale diventa clinicamente rilevante?
 
 <!--
 Questa slide rende esplicita l'ambivalenza del digital phenotyping. Gli stessi dati possono sostenere continuità di cura o produrre vissuti di controllo. Il criterio non è solo tecnico, ma relazionale e istituzionale: consenso, trasparenza, revisione, possibilità di disattivazione e discussione del significato con il paziente.
@@ -854,7 +880,7 @@ routeAlias: linguaggio-dato-clinico
 - Contenuti di rischio.
 - Disorganizzazione.
 
-> Il linguaggio non è solo un segnale: è anche una relazione.
+> **Linguaggio e relazione** Il linguaggio non è solo un segnale: è anche una relazione.
 
 <!--
 NLP e LLM possono rilevare pattern linguistici, ma il linguaggio clinico non è un campione neutro. Dipende dal contesto, dal destinatario, dalla vergogna, dalla cultura e dal momento della cura. Un paziente parla diversamente con un chatbot, con un familiare, con un infermiere o con uno psichiatra. L'analisi linguistica può essere un indizio, non una comprensione piena.
@@ -896,7 +922,7 @@ Perché una risposta può:
 - costruire dipendenza;
 - modificare la richiesta di cura.
 
-> Quando un sistema parla, non produce solo informazione: produce posizione relazionale.
+> **Posizione relazionale** Quando un sistema parla, non produce solo informazione: produce posizione relazionale.
 
 <!--
 Questa slide esplicita il passaggio clinico. In salute mentale le parole non sono un semplice veicolo di contenuto: possono contenere, ferire, confermare, aprire o chiudere possibilità. Per questo gli LLM patient-facing sono più delicati di molti sistemi di classificazione.
@@ -919,7 +945,7 @@ Ma la psicoterapia richiede:
 - lavoro sull'ambivalenza;
 - formulazione del caso.
 
-> Fonti: Lee et al., 2024; Welivita & Pu, 2024. Preprint arXiv.
+> **Fonti** Lee et al., 2024; Welivita & Pu, 2024. Preprint arXiv.
 
 <!--
 Distinguere empatia percepita ed efficacia clinica. Una risposta calda e validante può essere valutata positivamente dall'utente, ma la cura è un processo con responsabilità, setting, continuità, gestione della crisi e capacità di tollerare il conflitto. A volte il clinico non deve solo validare: deve porre limiti, esplorare ambivalenze, contraddire con tatto e proteggere.
@@ -939,7 +965,7 @@ routeAlias: empatia-rischio
 - Dipendenza e isolamento amplificato.
 - Auto-diagnosi rigide e terapia self-service.
 
-> Fonti: Grabb et al., 2024; Dohnany et al., 2025. Preprint arXiv.
+> **Fonti** Grabb et al., 2024; Dohnany et al., 2025. Preprint arXiv.
 
 <!--
 Mettere a fuoco sycophancy e validazione eccessiva. In salute mentale una risposta che conferma tutto può essere pericolosa: può rinforzare convinzioni persecutorie, aumentare rotture familiari, normalizzare ideazione suicidaria o promuovere evitamento. Segnalare che queste fonti sono preprint: utili per orientare il rischio, non definitive.
@@ -959,7 +985,7 @@ routeAlias: sycophancy
 | amplifica spiegazioni rigide | chiude la narrazione |
 | rende invisibile il limite | indebolisce il setting |
 
-> In clinica, a volte proteggere significa non confermare.
+> **Protezione clinica** In clinica, a volte proteggere significa non confermare.
 
 <!--
 Spiegare il termine sycophancy in modo semplice: la tendenza del modello ad assecondare l'utente o a produrre risposte che sembrano compiacenti. Non è solo un problema tecnico; in salute mentale diventa un problema clinico. Un paziente paranoide, gravemente depresso o dipendente può trovare nel chatbot una validazione potente ma non necessariamente terapeutica. La terapia richiede anche frizione, limite, interpretazione, attesa, responsabilità e lavoro sull'ambivalenza.
@@ -981,7 +1007,7 @@ Il chatbot può diventare:
 - rinforzo dell'evitamento;
 - testimone immaginario o "terapeuta" percepito.
 
-> Dobbiamo iniziare a chiedere non solo quali social usa il paziente, ma anche con quali IA parla?
+> **Nuova anamnesi** Dobbiamo iniziare a chiedere non solo quali social usa il paziente, ma anche con quali IA parla?
 
 <!--
 Riprendere la vignetta iniziale. Il chatbot può diventare un oggetto relazionale: sempre disponibile, non giudicante, adattivo, apparentemente intimo. Può contenere, ma anche isolare. La domanda clinica non è solo "quanto tempo passi online?", ma "che funzione ha quella relazione digitale quando stai male?".
@@ -1016,7 +1042,7 @@ routeAlias: chiederlo-alleanza
 3. Chiedere effetti concreti: decisioni, conflitti, farmaci, rischio.
 4. Integrare clinicamente: non giudicare l'uso, valutarne il ruolo.
 
-> La domanda giusta non è "perché lo usi?", ma "che cosa succede quando lo usi?"
+> **Domanda terapeutica** La domanda giusta non è "perché lo usi?", ma "che cosa succede quando lo usi?"
 
 <!--
 Questa slide traduce l'anamnesi digitale in stile di colloquio. Se il clinico comunica biasimo, il paziente tende a nascondere. Serve invece una curiosità clinica: quando lo usa, con quali domande, che cosa prova dopo, se ha cambiato comportamento, se lo preferisce alle persone reali. L'obiettivo è trasformare l'uso dell'IA in materiale clinico, non aprire un processo morale.
