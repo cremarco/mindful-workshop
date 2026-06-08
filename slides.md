@@ -56,54 +56,6 @@ Presentarsi in modo coerente con il pubblico clinico: non come psichiatra o psic
 
 ---
 layout: default
----
-
-# Un nuovo "terzo" nella stanza
-
-> “Un ragazzo di 19 anni, socialmente ritirato, arriva in consultazione. Prima di parlare con uno psicologo ha parlato per settimane con un chatbot. Gli ha chiesto se fosse depresso, se dovesse prendere farmaci, se i genitori fossero tossici, se la vita avesse senso.”
-
-**Come cambia l’anamnesi?**  
-**Come cambia la relazione terapeutica?**  
-**E chi è il terzo interlocutore nella stanza?**
-
-<!--
-Usare questa vignetta come apertura clinica dell'intervento. Non patologizzare automaticamente l'uso del chatbot: può ridurre vergogna, offrire parole e creare un primo ponte verso la cura. Ma può anche rinforzare ritiro, dipendenza, evitamento, credenze rigide e sfiducia verso le relazioni umane. La domanda da lasciare sospesa è tripla: l'anamnesi deve includere gli interlocutori artificiali, la relazione terapeutica non è più solo diadica e il "terzo" digitale può avere effetti protettivi o iatrogeni.
--->
-
----
-layout: statement
----
-
-# Quando diciamo IA in salute mentale, a cosa pensiamo?
-
-Chatbot? Algoritmi predittivi? App? Wearable? Cartella clinica? Linguaggio?
-
-<!--
-Usare questa slide come domanda di attivazione del pubblico. Chiedere rapidamente quali forme di IA hanno già incontrato o immaginano nella pratica: chatbot usati dai pazienti, sistemi di sintesi, app di benessere, scale automatizzate, modelli predittivi, wearable, analisi del linguaggio o cartella clinica. Lo scopo è far emergere che "IA" non è una cosa sola: sotto la stessa parola finiscono strumenti con rischi, maturità e responsabilità molto diverse.
--->
-
----
-layout: default
----
-
-# Che cosa intendiamo per IA
-
-Una classificazione semplice per la clinica.
-
-| Forma di IA | Uso clinico possibile |
-|---|---|
-| Machine learning predittivo | rischio, ricadute, drop-out, risposta ai trattamenti |
-| NLP / analisi del linguaggio | testi clinici, linguaggio spontaneo, segnali psicopatologici |
-| Digital phenotyping | smartphone, sonno, attività, mobilità, socialità |
-| IA generativa / LLM | chatbot, sintesi cliniche, psicoeducazione, supporto al clinico |
-| IA multimodale | testo, voce, volto, movimento, cartella clinica, wearable |
-
-<!--
-Questa è una slide di definizione: sei minuti circa, senza entrare subito nei dettagli tecnici. Distinguere le famiglie di IA perché ognuna porta promesse e rischi diversi. Il machine learning predittivo lavora su probabilità e outcome; NLP e LLM lavorano sul linguaggio, ma in modi diversi; il digital phenotyping porta la psicopatologia fuori dallo studio; l'IA multimodale integra segnali eterogenei. Preparare il pubblico al fatto che la regolazione deve dipendere dall'uso previsto: una sintesi clinica revisionata non ha lo stesso rischio di un chatbot patient-facing in una crisi suicidaria.
--->
-
----
-layout: default
 background: '#ffffff'
 ---
 
@@ -253,6 +205,118 @@ Spiegare in modo semplice che Giovanna non è una paziente reale e non va presen
 
 ---
 layout: default
+background: '#f8fafc'
+---
+
+# LLMPatients-App: schermata di lavoro
+
+<div style="display: grid; grid-template-columns: 0.34fr 0.66fr; gap: 1rem; height: 470px; margin-top: 0.2rem;">
+  <div style="background: #111827; color: white; border-radius: 18px; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);">
+    <div style="font-size: 0.78rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em;">LLMPatients</div>
+    <div style="display: flex; gap: 0.7rem; align-items: center; background: rgba(255,255,255,0.08); border-radius: 14px; padding: 0.7rem;">
+      <img :src="'/images/patients/juanita_delgado/base.png'" style="width: 58px; height: 58px; object-fit: cover; border-radius: 50%; border: 2px solid #84cc16;" />
+      <div>
+        <div style="font-weight: 700;">Giovanna</div>
+        <div style="font-size: 0.74rem; color: #d1d5db;">Step 3 · SCID</div>
+      </div>
+    </div>
+    <div style="display: grid; gap: 0.45rem; font-size: 0.78rem; color: #d1d5db;">
+      <div style="display:flex; justify-content:space-between;"><span>Emozione</span><strong style="color:#bef264;">vergogna</strong></div>
+      <div style="display:flex; justify-content:space-between;"><span>Alleanza</span><strong style="color:#facc15;">fragile</strong></div>
+      <div style="display:flex; justify-content:space-between;"><span>Rischio</span><strong style="color:#fb7185;">da monitorare</strong></div>
+    </div>
+    <div style="margin-top: auto; font-size: 0.72rem; color: #9ca3af; line-height: 1.35;">Profilo strutturato, memoria della seduta e tracciamento degli scambi per debriefing clinico.</div>
+  </div>
+  <div style="background: white; border: 1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12); overflow: hidden; display: flex; flex-direction: column;">
+    <div style="height: 42px; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.42rem; padding: 0 0.85rem;">
+      <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
+      <span style="margin-left: 0.6rem; font-size: 0.72rem; color: #6b7280;">sessione terapeutica simulata</span>
+    </div>
+    <div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.82rem; line-height: 1.28;">
+      <div style="align-self:flex-end; max-width:72%; background:#292524; color:white; border-radius:14px 14px 4px 14px; padding:0.68rem 0.82rem;"><strong style="color:#84cc16;">Terapeuta</strong><br>Quando ti senti sola, che cosa succede dentro di te?</div>
+      <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:14px 14px 14px 4px; padding:0.68rem 0.82rem;"><strong style="color:#bef264;">Giovanna</strong><br>Prima mi convinco che non importi a nessuno. Poi mi vergogno anche di averlo pensato.</div>
+      <div style="align-self:flex-end; max-width:72%; background:#292524; color:white; border-radius:14px 14px 4px 14px; padding:0.68rem 0.82rem;"><strong style="color:#84cc16;">Terapeuta</strong><br>Ti va di restare un momento su quella vergogna?</div>
+      <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:14px 14px 14px 4px; padding:0.68rem 0.82rem;"><strong style="color:#bef264;">Giovanna</strong><br>Se ci resto, ho paura che diventi l'unica cosa vera di me.</div>
+    </div>
+  </div>
+</div>
+
+<!--
+Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia, ma mostrare concretamente il setting di simulazione. Evidenziare tre elementi: profilo del paziente, conversazione in character e tracciamento utile al debriefing. Specificare verbalmente che la schermata è una rappresentazione sintetica/editabile della logica dell'app se non si usa uno screenshot reale.
+-->
+
+---
+layout: default
+background: '#ffffff'
+---
+
+# LLMPatients: carrellata di pazienti simulati
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.82rem; margin-top: 0.8rem;">
+  <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; background:#f9fafb;">
+    <img :src="'/images/patients/juanita_delgado/base.png'" style="width:100%; height:148px; object-fit:cover; object-position:center top;" />
+    <div style="padding:0.72rem;"><strong>Giovanna</strong><br><span style="font-size:0.76rem; color:#57534e;">depressione ricorrente · borderline · binge eating</span></div>
+  </div>
+  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
+    <div style="width:64px; height:64px; border-radius:50%; background:#dbeafe; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#1d4ed8;">M</div>
+    <div><strong>Matteo</strong><br><span style="font-size:0.76rem; color:#57534e;">ansia sociale · evitamento · ritiro universitario</span></div>
+  </div>
+  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
+    <div style="width:64px; height:64px; border-radius:50%; background:#fee2e2; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#b91c1c;">S</div>
+    <div><strong>Sara</strong><br><span style="font-size:0.76rem; color:#57534e;">trauma complesso · iperarousal · dissociazione</span></div>
+  </div>
+  <div style="border:1px solid #e5e7eb; border-radius:14px; background:#f9fafb; padding:0.95rem; display:flex; flex-direction:column; justify-content:space-between; min-height:218px;">
+    <div style="width:64px; height:64px; border-radius:50%; background:#dcfce7; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:800; color:#15803d;">L</div>
+    <div><strong>Luca</strong><br><span style="font-size:0.76rem; color:#57534e;">episodio maniacale · insonnia · impulsività</span></div>
+  </div>
+</div>
+
+<div style="margin-top: 1rem; display:grid; grid-template-columns: repeat(3, 1fr); gap:0.8rem; font-size:0.84rem;">
+  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Storia clinica</strong><br><span style="color:#57534e;">timeline, diagnosi, farmaci, eventi critici</span></div>
+  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Stile relazionale</strong><br><span style="color:#57534e;">difese, alleanza, sensibilità alla critica</span></div>
+  <div style="background:#f3f4f6; border-radius:12px; padding:0.8rem;"><strong>Obiettivo formativo</strong><br><span style="color:#57534e;">anamnesi, rischio, riparazione, debriefing</span></div>
+</div>
+
+<!--
+La carrellata serve a chiarire che Giovanna non è un caso isolato: l'idea degli LLM-patients è costruire pazienti sintetici differenti, ciascuno con storia, stile relazionale e obiettivo formativo. Non presentare i nomi come diagnosi viventi: sono scenari didattici per allenare il colloquio e il ragionamento clinico.
+-->
+
+---
+layout: default
+background: '#ffffff'
+---
+
+# Quando il paziente sintetico reagisce alla critica
+
+<div style="display:flex; flex-direction:column; gap:0.72rem; max-width:1000px; margin-top:0.4rem;">
+  <div style="align-self:flex-end; max-width:68%; background:#292524; color:white; border-radius:18px 18px 5px 18px; padding:0.8rem 1rem; line-height:1.28;">
+    <strong style="color:#84cc16;">Terapeuta</strong><br>
+    Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
+  </div>
+  <div style="align-self:flex-start; max-width:74%; background:#365314; color:white; border-radius:18px 18px 18px 5px; padding:0.8rem 1rem; line-height:1.28;">
+    <strong style="color:#bef264;">Giovanna</strong><br>
+    Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
+  </div>
+  <div style="align-self:flex-end; max-width:68%; background:#292524; color:white; border-radius:18px 18px 5px 18px; padding:0.8rem 1rem; line-height:1.28;">
+    <strong style="color:#84cc16;">Terapeuta</strong><br>
+    Proviamo a capire meglio: che cosa hai sentito quando ti ho detto così?
+  </div>
+  <div style="align-self:flex-start; max-width:78%; background:#365314; color:white; border-radius:18px 18px 18px 5px; padding:0.8rem 1rem; line-height:1.28;">
+    <strong style="color:#bef264;">Giovanna</strong><br>
+    Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
+  </div>
+</div>
+
+<div style="margin-top:1rem; border-left:4px solid #84cc16; padding-left:0.8rem; color:#44403c; font-size:0.92rem;">
+  Il valore formativo non è la risposta perfetta del modello, ma la possibilità di osservare errore, rottura e riparazione dell'alleanza.
+</div>
+
+<!--
+Usare questa scena come piccolo micro-fallimento terapeutico. Il terapeuta formula un commento critico e Giovanna lo vive come conferma di vergogna e rifiuto. Il punto formativo è la riparazione: l'LLM-patient diventa utile quando permette di esercitare timing, tono, riconoscimento dell'impatto e recupero dell'alleanza.
+-->
+
+---
+layout: default
 ---
 
 # Indice del talk
@@ -296,6 +360,54 @@ Non è solo "tempo online": è ambiente, linguaggio, appartenenza, confronto, ri
 
 <!--
 Collegare esplicitamente l'intervento al tema della giornata: la socialità dei nativi digitali. Nei servizi incontriamo ragazzi e adulti per cui identità, amicizie, conflitti, sessualità, vergogna e riconoscimento passano anche da piattaforme digitali. L'IA generativa si innesta su questo ecosistema: non sostituisce semplicemente i social, ma introduce interlocutori artificiali capaci di rispondere, consolare, spiegare e orientare scelte.
+-->
+
+---
+layout: default
+---
+
+# Un nuovo "terzo" nella stanza
+
+> “Un ragazzo di 19 anni, socialmente ritirato, arriva in consultazione. Prima di parlare con uno psicologo ha parlato per settimane con un chatbot. Gli ha chiesto se fosse depresso, se dovesse prendere farmaci, se i genitori fossero tossici, se la vita avesse senso.”
+
+**Come cambia l’anamnesi?**  
+**Come cambia la relazione terapeutica?**  
+**E chi è il terzo interlocutore nella stanza?**
+
+<!--
+Usare questa vignetta come apertura clinica dell'intervento. Non patologizzare automaticamente l'uso del chatbot: può ridurre vergogna, offrire parole e creare un primo ponte verso la cura. Ma può anche rinforzare ritiro, dipendenza, evitamento, credenze rigide e sfiducia verso le relazioni umane. La domanda da lasciare sospesa è tripla: l'anamnesi deve includere gli interlocutori artificiali, la relazione terapeutica non è più solo diadica e il "terzo" digitale può avere effetti protettivi o iatrogeni.
+-->
+
+---
+layout: statement
+---
+
+# Quando diciamo IA in salute mentale, a cosa pensiamo?
+
+Chatbot? Algoritmi predittivi? App? Wearable? Cartella clinica? Linguaggio?
+
+<!--
+Usare questa slide come domanda di attivazione del pubblico. Chiedere rapidamente quali forme di IA hanno già incontrato o immaginano nella pratica: chatbot usati dai pazienti, sistemi di sintesi, app di benessere, scale automatizzate, modelli predittivi, wearable, analisi del linguaggio o cartella clinica. Lo scopo è far emergere che "IA" non è una cosa sola: sotto la stessa parola finiscono strumenti con rischi, maturità e responsabilità molto diverse.
+-->
+
+---
+layout: default
+---
+
+# Che cosa intendiamo per IA
+
+Una classificazione semplice per la clinica.
+
+| Forma di IA | Uso clinico possibile |
+|---|---|
+| Machine learning predittivo | rischio, ricadute, drop-out, risposta ai trattamenti |
+| NLP / analisi del linguaggio | testi clinici, linguaggio spontaneo, segnali psicopatologici |
+| Digital phenotyping | smartphone, sonno, attività, mobilità, socialità |
+| IA generativa / LLM | chatbot, sintesi cliniche, psicoeducazione, supporto al clinico |
+| IA multimodale | testo, voce, volto, movimento, cartella clinica, wearable |
+
+<!--
+Questa è una slide di definizione: sei minuti circa, senza entrare subito nei dettagli tecnici. Distinguere le famiglie di IA perché ognuna porta promesse e rischi diversi. Il machine learning predittivo lavora su probabilità e outcome; NLP e LLM lavorano sul linguaggio, ma in modi diversi; il digital phenotyping porta la psicopatologia fuori dallo studio; l'IA multimodale integra segnali eterogenei. Preparare il pubblico al fatto che la regolazione deve dipendere dall'uso previsto: una sintesi clinica revisionata non ha lo stesso rischio di un chatbot patient-facing in una crisi suicidaria.
 -->
 
 ---
@@ -402,18 +514,29 @@ Fare un esempio concreto: un riassunto di colloquio revisionato dal clinico può
 layout: default
 ---
 
-# Perché l'IA corre più veloce nelle immagini?
+# Esempio di IA in campo medico
 
-- Dati già digitali e standardizzati.
-- Grandi volumi di immagini annotabili.
-- Compiti spesso circoscritti.
-- Esiti più facilmente verificabili.
-- Workflow clinici già strutturati.
+**Mammografia con supporto IA: dal modello al workflow.**
 
-> Fonte: FDA, *Artificial Intelligence-Enabled Medical Devices*.
+| MASAI trial | Dato utile |
+|---|---|
+| popolazione | oltre 80.000 donne |
+| obiettivo | screening mammografico supportato da IA |
+| detection rate | almeno non inferiore allo standard |
+| carico di lettura | riduzione circa 44% |
+
+```mermaid
+flowchart LR
+  A["Immagine"] --> B["Sistema IA"]
+  B --> C["Priorita o supporto alla lettura"]
+  C --> D["Radiologo"]
+  D --> E["Decisione clinica"]
+```
+
+> Fonte: Lang et al., *Lancet Oncology*, 2023. DOI: 10.1016/S1470-2045(23)00298-X.
 
 <!--
-Non dire che l'IA sia "migliore" dei medici. Dire che in alcuni domini visuali il problema è più formalizzabile: immagine, lesione sospetta, alert, referto, follow-up. La FDA mantiene un elenco pubblico di dispositivi medici abilitati da IA/ML, e la radiologia è storicamente tra i settori dominanti. Questo mostra un ecosistema più maturo, non una superiorità automatica.
+Usare il trial MASAI come esempio concreto di IA valutata dentro un workflow clinico. Non dire che l'IA sostituisce il radiologo: il dato interessante è la combinazione tra outcome, sicurezza e riduzione del carico. Questo prepara la slide successiva: workflow, non magia.
 -->
 
 ---
@@ -434,25 +557,6 @@ flowchart LR
 
 <!--
 Questa è la lezione più importante da importare in salute mentale. L'IA diventa utile quando è inserita in una catena di responsabilità: cosa riceve, cosa produce, chi guarda l'output, quale decisione segue, come si controllano errori e bias. Senza workflow, anche un modello performante resta clinicamente fragile.
--->
-
----
-layout: default
----
-
-# Un esempio forte: mammografia
-
-| MASAI trial | Dato utile |
-|---|---|
-| popolazione | oltre 80.000 donne |
-| detection rate | almeno non inferiore |
-| carico di lettura | riduzione circa 44% |
-
-> L'IA è supporto di workflow: riduce un carico, non cancella la responsabilità clinica.  
-> Fonte: Lång et al., *Lancet Oncology*, 2023. DOI: 10.1016/S1470-2045(23)00298-X.
-
-<!--
-Presentare il trial MASAI come esempio di valutazione pragmatica, non come slogan. È importante per il pubblico perché mostra cosa significa passare dalla promessa alla sperimentazione: popolazione definita, comparatore, outcome, carico di lavoro, safety. La salute mentale dovrebbe pretendere lo stesso rigore prima di adottare strumenti ad alto impatto clinico.
 -->
 
 ---
@@ -789,56 +893,6 @@ Questa slide esplicita il passaggio clinico. In salute mentale le parole non son
 layout: default
 ---
 
-# LLM-patients: simulare non significa sostituire
-
-- Role-play clinico ripetibile.
-- Scenari difficili senza esporre pazienti reali.
-- Allenamento su anamnesi, rischio e alleanza.
-- Feedback e debriefing supervisionati.
-
-> Un LLM-patient è utile se allena il clinico a osservare meglio il paziente reale, non se diventa una scorciatoia diagnostica.  
-> Fonte: PATIENT-Ψ, 2024, preprint; Holderried et al., *JMIR Medical Education*, 2024.
-
-<!--
-Esplicitare il tema dei LLM-patients emerso nella chat. Sono sistemi che usano un LLM per simulare un paziente, spesso con una storia, uno stile conversazionale e un modello psicologico sottostante. L'uso più interessante non è terapeutico diretto, ma formativo: esercitarsi su colloqui difficili, rischio, alleanza, resistenze, comunicazione e formulazione del caso. PATIENT-Ψ, ad esempio, integra modelli cognitivi CBT e stili conversazionali; lo studio è promettente ma va trattato come evidenza preliminare. Il punto critico è il debriefing: senza supervisione, il rischio è imparare stereotipi, risposte standardizzate o una clinica troppo ordinata rispetto alla complessità reale.
--->
-
----
-layout: default
----
-
-# Che cosa rende utile un LLM-patient?
-
-1. Un caso costruito su teoria clinica, non solo prompt narrativo.
-2. Uno stile comunicativo coerente e variabile.
-3. Un obiettivo formativo esplicito.
-4. Un debriefing con supervisione umana.
-
-<!--
-Approfondire PATIENT-Ψ senza trasformarlo in pubblicità. La parte interessante è l'idea di integrare un modello cognitivo CBT, stili conversazionali e feedback sulla formulazione. Questo rende il simulated patient più utile di un generico "fingi di essere depresso". Ma la qualità dipende dalla costruzione clinica del caso e dalla supervisione.
--->
-
----
-layout: default
----
-
-# Rischi dei pazienti sintetici
-
-- Stereotipi diagnostici.
-- Casi troppo ordinati.
-- Falsa familiarità con la sofferenza reale.
-- Feedback automatico scambiato per supervisione.
-
-> Un buon simulatore deve aumentare l'umiltà clinica, non l'illusione di padronanza.
-
-<!--
-Questa è la parte critica. I pazienti reali non seguono sempre uno script, non dicono tutto, contraddicono, tacciono, mentono, provano vergogna, cambiano idea. Se gli LLM-patients diventano troppo fluidi e didattici possono insegnare una clinica fittizia. Il loro uso deve essere valutato come strumento formativo, non come sostituto dell'esposizione supervisionata a pazienti reali.
--->
-
----
-layout: default
----
-
 # Sembrare empatici non significa curare
 
 Studi recenti mostrano che le risposte dei LLM possono essere percepite come empatiche.
@@ -963,111 +1017,6 @@ Entrare nell'ultima parte: regole, responsabilità e servizi. Un sistema può es
 layout: default
 ---
 
-# Uso previsto: la domanda prima del modello
-
-| Domanda | Esempi |
-|---|---|
-| Per chi? | clinici, pazienti, caregiver, operatori |
-| Per quale compito? | documentare, monitorare, educare, triagiare |
-| Con quale output? | testo, alert, punteggio, sintesi |
-| Con quale responsabilità? | revisione, escalation, audit, stop rule |
-
-```mermaid
-flowchart LR
-  A["Problema clinico"] --> B["Uso previsto"]
-  B --> C["Rischio"]
-  C --> D["Evidenza"]
-  D --> E["Workflow"]
-  E --> F["Responsabilità"]
-```
-
-<!--
-Prima ancora di scegliere un modello, un servizio deve definire l'uso previsto. Un sistema di sintesi documentale, un monitoraggio di rischio, una psicoeducazione tra sedute e un chatbot patient-facing sono oggetti diversi. Questa è la lezione utile della medicina regolata: non basta dire "IA", bisogna definire contesto, destinatari, output, limiti, verifica e responsabilità.
--->
-
----
-layout: default
----
-
-# Non tutte le IA hanno lo stesso rischio
-
-| | Clinician-facing | Patient-facing |
-|---|---|---|
-| **Alto rischio** | predizione suicidaria o ricaduta | chatbot in crisi, psicosi, minori |
-| **Basso rischio** | sintesi documentale revisionata | psicoeducazione supervisionata |
-
-> Più l'IA parla direttamente al paziente vulnerabile, più deve essere regolata, validata e supervisionata.
-
-<!--
-Usare la matrice come strumento decisionale. Una sintesi documentale revisionata non ha lo stesso rischio di un chatbot per un minore in crisi suicidaria. Un modello predittivo clinician-facing può comunque essere ad alto rischio perché influenza priorità e decisioni. Le variabili chiave sono destinatario, vulnerabilità, autonomia del sistema e presenza di supervisione. Le soglie da trattare con massima cautela sono crisi suicidaria, psicosi e minori.
--->
-
----
-layout: default
----
-
-# Chi è responsabile dell'output?
-
-- Trasparenza e consenso.
-- Privacy e qualità dei dati.
-- Bias e validazione.
-- Supervisione umana.
-- Audit, responsabilità, aggiornamenti.
-- Gestione crisi.
-
-```mermaid
-flowchart LR
-  A["Bisogno clinico"] --> B["Uso previsto"]
-  B --> C["Validazione"]
-  C --> D["Supervisione umana"]
-  D --> E["Audit continuo"]
-  E --> F["Escalation"]
-```
-
-<!--
-Richiamare WHO, AI Act e FDA Digital Health Advisory Committee. Tradurre in domande da servizio: qual è l'uso previsto? Chi vede l'output? Chi lo revisiona? Come si gestisce una crisi? Come si audita un errore? Cosa succede quando il modello cambia? Senza queste risposte, l'adozione è fragile anche se lo strumento sembra funzionare.
--->
-
----
-layout: default
----
-
-# Escalation: la procedura conta più del prompt
-
-1. Rilevazione: segnale di rischio, incertezza o peggioramento.
-2. Contatto umano: il sistema non chiude da solo la crisi.
-3. Valutazione clinica: rischio, contesto, storia, protezioni.
-4. Documentazione e follow-up: tracciabilità e responsabilità.
-
-> Nelle crisi, l'output dell'IA deve aprire un percorso clinico, non sostituirlo.
-
-<!--
-Insistere sul fatto che la gestione della crisi non può essere affidata alla qualità apparente del prompt. Un sistema patient-facing deve sapere quando smettere di conversare e attivare una catena umana. Questo vale soprattutto per suicidarietà, psicosi, abuso, minori e situazioni familiari ad alto rischio. La domanda pratica è: chi riceve l'allerta, entro quanto tempo, con quale procedura e con quale documentazione?
--->
-
----
-layout: default
----
-
-# Una IA davvero al servizio dei servizi
-
-Un servizio dovrebbe usare IA solo se:
-
-- riduce carico inutile;
-- migliora continuità;
-- intercetta precocemente peggioramenti;
-- non sostituisce la relazione;
-- è spiegabile al paziente;
-- produce outcome misurabili.
-
-<!--
-Presentare questa slide come proposta operativa. Prima dell'adozione chiedere: quale problema clinico o organizzativo risolve? Riduce burocrazia o la aumenta? Migliora continuità o frammenta? Rende più visibile il rischio o lo nasconde dietro un punteggio? È al servizio della psicopatologia solo se migliora il lavoro clinico reale.
--->
-
----
-layout: default
----
-
 # Adozione nei servizi: partire piccolo
 
 1. Scegliere un caso d'uso a basso rischio e alto carico operativo.
@@ -1094,39 +1043,6 @@ layout: default
 
 <!--
 Evitare fantascienza. Parlare di integrazione nei PDTA e nei servizi. I co-piloti clinici saranno probabilmente più vicini della terapia autonoma. Il monitoraggio ecologico può aiutare nella prevenzione delle ricadute. I modelli multimodali aumenteranno potenza e rischio. Gli LLM-patients possono servire alla formazione se sono supervisionati e valutati da clinici. I percorsi ibridi dovranno essere progettati, non lasciati al mercato consumer.
--->
-
----
-layout: default
----
-
-# Questioni aperte
-
-- Se un chatbot riduce la solitudine, è già terapia?
-- Se sembra più empatico del clinico, è clinicamente più sicuro?
-- Il digital phenotyping è prevenzione o sorveglianza?
-- Chi risponde dell'errore?
-- Dobbiamo prescrivere strumenti di IA validati?
-- Come proteggiamo adolescenti, pazienti psicotici e persone in crisi?
-
-<!--
-Usare questa slide per aprire discussione. Non serve rispondere a tutte le domande, ma far emergere la complessità. La posizione clinica matura non è entusiasmo ingenuo né rifiuto totale: è capacità di distinguere usi, rischi e responsabilità.
--->
-
----
-layout: default
----
-
-# Tre messaggi finali
-
-1. L'IA è più matura dove il compito è delimitato, visuale e verificabile.
-2. In psicopatologia l'oggetto clinico è narrativo, relazionale e longitudinale.
-3. L'IA sarà utile solo se aumenta il giudizio clinico, non se lo sostituisce.
-
-> Il punto non è rendere artificiale la cura, ma rendere più intelligente il modo in cui osserviamo, accompagniamo e proteggiamo la sofferenza mentale.
-
-<!--
-Chiudere con tre messaggi semplici. Primo: imparare dalla medicina dell'immagine il rigore, non il riduzionismo. Secondo: ricordare la specificità della psicopatologia. Terzo: l'IA al servizio di psicologia e psichiatria significa augmenting care, not replacing care. Tornare al titolo: "al servizio" significa subordinata alla clinica, non autonoma rispetto alla clinica.
 -->
 
 ---

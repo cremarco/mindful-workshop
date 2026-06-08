@@ -1,0 +1,10 @@
+.slidev-page-1 {
+  background-image: url("/images/aipp-cover-bg.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+.slidev-page-1 .slidev-layout {
+  background: transparent !important;
+}
