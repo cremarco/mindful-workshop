@@ -43,7 +43,7 @@ class: bio-slide
 
 # Marco Cremaschi
 
-Ricercatore presso l'Università degli Studi di Milano-Bicocca, Dipartimento di Informatica, Sistemistica e Comunicazione.
+Ricercatore all'Università degli Studi di Milano-Bicocca (Dipartimento di Informatica, Sistemistica e Comunicazione – DISCo) e in Whattadata, spin-off dell'Ateneo dedicato alla salute mentale digitale.
 
 > **Punto di vista** Tecnologico e interdisciplinare, orientato a validazione, utilità clinica, sicurezza e responsabilità.
 
@@ -54,7 +54,7 @@ Ricercatore presso l'Università degli Studi di Milano-Bicocca, Dipartimento di 
 - RAG e modelli linguistici su tassonomie cliniche come ICD-11.
 - Monitoraggio digitale, segnali longitudinali e continuità terapeutica.
 - Applicazioni per aderenza, psicoeducazione e supporto al clinico.
-- LLM in ambito PSY
+- LLM applicati alla salute mentale: LLMind e LLMPatients.
 
 <!--
 Note relatore:
@@ -62,7 +62,7 @@ Questa slide serve a dichiarare il punto di vista: non quello del clinico che so
 -->
 
 ---
-layout: two-cols
+layout: default
 routeAlias: dipps
 class: dipps-intro-slide
 ---
@@ -76,15 +76,11 @@ Un esempio concreto di ecosistema digitale per la salute mentale: non una singol
 - Evoluzione di **MiCare**.
 - Connessione terapeuta-paziente e continuità tra le sedute.
 - PsiTools per il clinico, PENguIN per il paziente, CDSS per il supporto decisionale.
-- Bando MIMIT – Accordi per l'Innovazione; progetto 2023–2026.
-
-::right::
-
-<img src="images/figma/dipps_cover.svg" style="width:100%; border-radius:22px; box-shadow:0 18px 45px rgba(0,0,0,.16);" />
+- Bando MIMIT – Accordi per l'Innovazione (primo sportello 2023): marzo 2023 – febbraio 2026, investimento ~€5,6 M.
 
 <!--
 Note relatore:
-Questa slide va subito dopo la presentazione dello speaker. Serve a dichiarare da quale esperienza concreta parlo: non solo letteratura e scenari futuri, ma progettazione di piattaforme reali. Sottolineare che DIPPS è utile come caso di studio: mostra il passaggio dalla singola app alla logica di ecosistema digitale. Non entrare ancora nei dettagli tecnici; basta fissare tre parole: continuità, monitoraggio, supporto decisionale.
+Questa slide va subito dopo la presentazione dello speaker. Serve a dichiarare da quale esperienza concreta parlo: non solo letteratura e scenari futuri, ma progettazione di piattaforme reali. Sottolineare che DIPPS è utile come caso di studio: mostra il passaggio dalla singola app alla logica di ecosistema digitale. Non entrare ancora nei dettagli tecnici; basta fissare tre parole: continuità, monitoraggio, supporto decisionale. Dettagli a voce se richiesti: Bando MIMIT – Accordi per l'Innovazione (Ministero delle Imprese e del Made in Italy, ex MISE), CUP B49J23001840005, investimento totale ~€5,629 M.
 -->
 ---
 layout: default
@@ -315,6 +311,45 @@ class: conversation-slide critique-conversation-slide
 
 ---
 layout: default
+routeAlias: giovanna-comportamento-adattivo
+---
+
+# Perché Giovanna si è chiusa
+
+<div class="bento-grid bento-3">
+  <div class="bento-card bento-accent span-2">
+    <span class="bento-title">Comportamento adattivo</span>
+    <p>Il modello valuta ogni intervento e aggiorna la risposta del paziente: interventi empatici riducono la resistenza e migliorano l'umore; giudizio, svalutazione o fretta producono difese e ritiro. La chiusura di Giovanna non è un bug: è il comportamento atteso.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Memoria duale</span>
+    <p>Breve termine nella sessione, lungo termine vettoriale: continuità e coerenza tra le sedute.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Errori del terapeuta</span>
+    <p>Non ascolta, svaluta, giudica, sfrutta, reagisce in modo inappropriato, appare incompetente.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Profilo strutturato</span>
+    <p>Storia, diagnosi, funzionamento e tratti guidano le risposte in character.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Emozione dominante</span>
+    <p>Ogni risposta porta un'emozione di base (rabbia, paura, tristezza, gioia, fiducia…).</p>
+  </div>
+</div>
+
+> **In formazione l'errore è sicuro** Si può sbagliare e riprovare senza danno: serve proprio a riconoscere l'errore prima del paziente reale.
+
+<small>Fonti: Wang et al., *PATIENT-Ψ*, EMNLP 2024; Li et al., *CureFun*, 2024; Louie et al., *Can LLM-Simulated Practice and Feedback Upskill Human Counselors?*, 2025.</small>
+
+<!--
+Note relatore:
+Questa slide chiude la sequenza-demo iniziale spiegandone il meccanismo. Riprendere il dialogo precedente: quando "il terapeuta" minimizza o spinge troppo, Giovanna si difende e si ritira. Non è un capriccio del modello: è il modulo di comportamento adattivo, che valuta l'intervento e ne modula la risposta. Sottolineare il valore formativo (errore sicuro, ripetibile, con memoria tra le sessioni) e citare velocemente PATIENT-Ψ e CureFun come stato dell'arte. Questo prepara l'idea, ripresa nel finale, che il laboratorio (pazienti sintetici) è diverso dal servizio (pazienti reali).
+-->
+
+---
+layout: default
 routeAlias: indice
 class: agenda-index-slide
 ---
@@ -348,6 +383,50 @@ class: agenda-index-slide
     <p>Dalla governance a un prototipo di IA realmente supervisionata.</p>
   </div>
 </div>
+
+---
+layout: default
+routeAlias: perche-adesso
+---
+
+# Perché adesso
+
+<div class="bento-grid bento-feature">
+  <div class="bento-card bento-accent span-2">
+    <span class="bento-eyebrow">Domanda di cura</span>
+    <span class="bento-title">La sofferenza mentale è diffusa e arriva presto</span>
+    <p>Accesso, continuità e intervento precoce sono il problema reale a cui strumenti digitali e IA provano a rispondere.</p>
+  </div>
+  <div class="bento-card bento-stat">
+    <span class="bento-figure">84 mln</span>
+    <span class="bento-label">UE · disturbi mentali</span>
+    <p>Circa 1 persona su 6; fino al 70% non riceve cure formali.</p>
+  </div>
+  <div class="bento-card bento-stat">
+    <span class="bento-figure">&gt;600 mld</span>
+    <span class="bento-label">Costo annuo in UE (€)</span>
+    <p>Impatto su sanità, scuola, lavoro e welfare.</p>
+  </div>
+  <div class="bento-card bento-stat">
+    <span class="bento-figure">50%</span>
+    <span class="bento-label">Esordi entro i 14 anni</span>
+    <p>75% entro la giovane età adulta: riconosciuti spesso troppo tardi.</p>
+  </div>
+  <div class="bento-card bento-stat">
+    <span class="bento-figure">1 / 2</span>
+    <span class="bento-label">Giovani 15–24 (2022)</span>
+    <p>Ha riferito bisogni di cura non soddisfatti.</p>
+  </div>
+</div>
+
+> **Terreno dell'AIPP** Prevenzione e intervento precoce sono lo spazio più naturale per l'IA, e quello che chiede più cautela.
+
+<small>Fonti: Amand-Eeckhout L., *Mental health in the EU*, EPRS, 2023; OECD, *A new benchmark for mental health systems*, 2021.</small>
+
+<!--
+Note relatore:
+Slide di contesto: serve a fissare la posta in gioco prima della parte scientifica. Non leggere tutti i numeri: scegliere due dati. Il messaggio per la giornata AIPP è l'esordio precoce (50% entro i 14 anni, 75% in giovane età adulta) e i bisogni non soddisfatti nei giovani: è proprio la popolazione dei nativi digitali che già usa chatbot e app. Collega la pressione epidemiologica (tanta domanda, accesso limitato) alla tentazione di delegare alla tecnologia, che è il rischio che il talk vuole governare.
+-->
 
 ---
 layout: default
@@ -444,7 +523,7 @@ Questa slide nasce dal tema dello stato dell'arte ICT in salute mentale. Il punt
 
 
 ---
-layout: two-cols
+layout: default
 routeAlias: dipps-ecosistema
 class: dipps-ecosistema-slide
 ---
@@ -458,10 +537,6 @@ Tre componenti con funzioni diverse:
 - **CDSS**: supporto decisionale su dati psicodiagnostici digitalizzati e segnali del percorso.
 
 > **Lezione per il talk** L'IA è più credibile quando è dentro un workflow, non quando resta una risposta isolata di un chatbot.
-
-::right::
-
-<img src="images/figma/dipps_componenti.svg" style="width:100%; border-radius:22px; box-shadow:0 18px 45px rgba(0,0,0,.16);" />
 
 <!--
 Note relatore:
@@ -909,6 +984,8 @@ routeAlias: ml-psicologia-qualita
     <p>Accuratezza non dimostra miglioramento di percorso, prognosi o alleanza.</p>
   </div>
 </div>
+
+> **Incertezza strutturale** Comorbidità, soggettività dei sintomi e traiettorie nel tempo introducono un'incertezza che nessun algoritmo elimina del tutto (Fried, 2020; McGrath, 2020; Yan et al., 2022).
 
 <!--
 Note relatore:
@@ -1658,7 +1735,47 @@ Questa slide rende esplicito il collegamento con le slide Figma: se l'adozione i
 
 
 ---
-layout: two-cols
+layout: default
+routeAlias: llmind-prototipo
+---
+
+# LLMind: dal concetto al prototipo
+
+Non solo un'ipotesi: un primo prototipo **clinician-facing**, già testato su casi benchmark.
+
+<div class="bento-grid bento-3">
+  <div class="bento-card bento-accent span-2">
+    <span class="bento-title">Supporto decisionale per il clinico</span>
+    <p>Il medico invia un caso o la cartella in web-chat; LLMind propone diagnosi differenziali e criteri, basandosi su <strong>Gemma 2</strong> (Google) + <strong>RAG</strong> sulla classificazione <strong>ICD-11</strong> (OMS, 2022).</p>
+  </div>
+  <div class="bento-card bento-stat">
+    <span class="bento-figure">~76%</span>
+    <span class="bento-label">Accuratezza su DSM-5-TR</span>
+    <p>Su casi dei DSM-5-TR Clinical Cases, sopra i LLM generalisti.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">RAG, non retraining</span>
+    <p>I pesi restano invariati; la conoscenza ICD-11 è esterna, modulare e aggiornabile quando la classificazione evolve.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Esempio: Giovanna</span>
+    <p>Sul caso di Juanita Delgado — la nostra Giovanna — individua un disturbo borderline di personalità secondo ICD-11.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Stato dell'arte affine</span>
+    <p>SouLLMate, OnRL-RAG, Psy-LLM: più orientati a chatbot e supporto che a diagnosi formale.</p>
+  </div>
+</div>
+
+> **Cautela** ~76% su casi benchmark non è validazione clinica: restano tempi di risposta, supervisione umana, comorbidità e casi atipici.
+
+<!--
+Note relatore:
+Questa slide ancora la parte finale a qualcosa di concreto: LLMind non è solo uno scenario, è un prototipo che abbiamo costruito e misurato. Chiarire il posizionamento reale: è clinician-facing (il medico interroga il modello inviando il caso), basato su Gemma 2 con RAG su ICD-11. Il dato dei ~76% sui DSM-5-TR Clinical Cases va presentato con onestà: è un benchmark su casi sintetici, non una validazione clinica, ed è proprio coerente con la tesi del talk sulla differenza tra performance sperimentale e decisione reale. L'esempio di Juanita Delgado chiude il cerchio con la Giovanna iniziale. Le slide seguenti discutono i confini e l'estensione patient-facing supervisionata di un sistema del genere.
+-->
+
+---
+layout: default
 routeAlias: llmind-mindfuldiary
 class: llmind-slide
 ---
@@ -1673,10 +1790,6 @@ MindfulDiary è un esempio di come un LLM possa essere usato non come terapeuta,
 - Ha arricchito i report quotidiani e aiutato i clinici a comprendere pensieri e contesti.
 
 <small>Fonte: Kim et al., *MindfulDiary: Harnessing Large Language Model to Support Psychiatric Patients' Journaling*, 2023.</small>
-
-::right::
-
-<img src="images/figma/mindfuldiary.svg" style="width:100%; border-radius:22px; box-shadow:0 18px 45px rgba(0,0,0,.16);" />
 
 <!--
 Note relatore:
@@ -1959,8 +2072,8 @@ routeAlias: bibliografia-progetti-digitali
 # Bibliografia essenziale: progetti e casi digitali
 
 - Kim T. et al. *MindfulDiary: Harnessing Large Language Model to Support Psychiatric Patients' Journaling.* 2023.
-- Materiali progettuali DIPPS/MiCare/LLMPatient, presentazione Figma fornita dall'autore.
-- Amand-Eeckhout L. *Mental health in the EU.* European Parliamentary Research Service, 2023.
+- Materiali progettuali Whattadata (DIPPS/MiCare/LLMPatients/LLMind/Arianne), presentazione *ICT per la Salute Mentale: Stato dell'Arte e Prospettive*, M. Cremaschi.
+- Amand-Eeckhout L. *Mental health in the EU.* European Parliamentary Research Service, Briefing No. 751416, 2023.
 - OECD. *A new benchmark for mental health systems: Tackling the social and economic costs of mental ill-health.* 2021.
 
 <!--
@@ -2031,6 +2144,9 @@ routeAlias: bibliografia-salute-mentale
 - Guo Z. et al. *Large Language Model for Mental Health: A Systematic Review.* 2024.
 - Grabb D. et al. *Risks from Language Models for Automated Mental Healthcare.* 2024.
 - Holderried F. et al. *A GPT-Powered Chatbot as a Simulated Patient to Practice History Taking.* *JMIR Medical Education*, 2024. DOI: 10.2196/53961.
+- Wang R. et al. *PATIENT-Ψ: Using Large Language Models to Simulate Patients for Training Mental Health Professionals.* EMNLP 2024. DOI: 10.18653/v1/2024.emnlp-main.711.
+- Li Y. et al. *Leveraging Large Language Model as Simulated Patients for Clinical Education (CureFun).* 2024. arXiv:2404.13066.
+- Louie R. et al. *Can LLM-Simulated Practice and Feedback Upskill Human Counselors? A Randomized Study with 90+ Novice Counselors.* 2025. arXiv:2505.02428.
 - WHO. *Ethics and governance of artificial intelligence for health: guidance on large multi-modal models.* 2024.
 - FDA Digital Health Advisory Committee. *AI-enabled digital mental health devices.* 2025.
 - APA. *Applications of Artificial Intelligence in Mental Health Care.*
