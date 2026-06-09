@@ -63,7 +63,7 @@ html.dark {
   padding: 0 !important;
   overflow: hidden;
   color: var(--aipp-fg);
-  background: url("/images/aipp-cover-bg.png") center / cover no-repeat !important;
+  background: url("/AIPP/images/aipp-cover-bg.png") center / cover no-repeat !important;
 }
 
 .intro-cover {
@@ -504,7 +504,7 @@ html.dark {
   right: -5rem;
   width: 26rem;
   height: 26rem;
-  background: url("/images/aipp-marco-bg.png") center / contain no-repeat;
+  background: url("/AIPP/images/aipp-marco-bg.png") center / contain no-repeat;
   pointer-events: none;
   z-index: 0;
 }
@@ -660,7 +660,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/images/aipp-indice-bg-subtle.png") center / cover no-repeat;
+  background: url("/AIPP/images/aipp-indice-bg-subtle.png") center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -726,10 +726,14 @@ html.dark {
 
 .slidev-layout.statement p {
   max-width: 56ch;
-  margin: 1.5rem auto 0;
+  margin: 0 auto;
   color: var(--aipp-soft);
   font-size: 1.4rem;
   line-height: 1.42;
+}
+
+.slidev-layout.statement h1 + p {
+  margin-top: 2.35rem;
 }
 
 .slidev-layout.statement.socialita-digitale-slide {
@@ -743,7 +747,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/images/socialita-digitale-bg.png") right center / 60% auto no-repeat;
+  background: url("/AIPP/images/socialita-digitale-bg.png") right center / 60% auto no-repeat;
   pointer-events: none;
 }
 
@@ -941,7 +945,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/images/llmpatients-critique-conversation-bg.png") center / cover no-repeat;
+  background: url("/AIPP/images/llmpatients-critique-conversation-bg.png") center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -1044,15 +1048,15 @@ html.dark {
 }
 
 .slidev-layout.screenshot-slide.llmpatients-work-slide {
-  --llmpatients-edge-bg: url("/images/llmpatients-work-bg-coherent.png");
+  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-work-bg-coherent.png");
 }
 
 .slidev-layout.screenshot-slide.llmpatients-explore-slide {
-  --llmpatients-edge-bg: url("/images/llmpatients-explore-bg-coherent.png");
+  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-explore-bg-coherent.png");
 }
 
 .slidev-layout.screenshot-slide.llmpatients-journey-slide {
-  --llmpatients-edge-bg: url("/images/llmpatients-journey-bg-coherent.png");
+  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-journey-bg-coherent.png");
 }
 
 .slidev-layout.screenshot-slide.llmpatients-work-slide::before,
