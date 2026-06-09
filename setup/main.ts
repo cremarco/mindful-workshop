@@ -1,35 +1,32 @@
 import type { AppContext } from '@slidev/types'
+import { cssUrl, imageUrl } from '../utils/images'
 
-function withBase(path: string) {
-  const base = import.meta.env.BASE_URL || '/'
-  const normalizedBase = base.endsWith('/') ? base : `${base}/`
-  const normalizedPath = path.replace(/^\/+/, '')
-  return `${normalizedBase}${normalizedPath}`
-}
-
-function imageUrl(path: string) {
-  return withBase(`images/${path}`)
-}
-
-function cssUrl(path: string) {
-  return `url("${imageUrl(path)}")`
+/* Backgrounds and decorative shapes consumed by the stylesheets.
+   Injected at runtime (not hard-coded in CSS) so the URLs resolve
+   correctly under any deploy base path. */
+const imageCssVariables: Record<string, string> = {
+  '--aipp-cover-bg-image': 'aipp-cover-bg.png',
+  '--aipp-marco-bg-image': 'aipp-marco-bg.png',
+  '--aipp-whattadata-bg-image': 'whattadata-bg.png',
+  '--aipp-socialita-bg-image': 'socialita-digitale-bg.png',
+  '--aipp-parche-shape': 'parche-image-1-cropped.png',
+  '--aipp-agenda-shape-01': 'agenda-shapes/agenda-shape-01-amber.png',
+  '--aipp-agenda-shape-02': 'agenda-shapes/agenda-shape-02-emerald.png',
+  '--aipp-agenda-shape-03': 'agenda-shapes/agenda-shape-03-cyan.png',
+  '--aipp-agenda-shape-04': 'agenda-shapes/agenda-shape-04-blue.png',
+  '--aipp-agenda-shape-05': 'agenda-shapes/agenda-shape-05-violet.png',
+  '--aipp-agenda-shape-06': 'agenda-shapes/agenda-shape-06-rose.png',
 }
 
 function setImageCssVariables() {
   const root = document.documentElement.style
-
-  root.setProperty('--aipp-cover-bg-image', cssUrl('aipp-cover-bg.png'))
-  root.setProperty('--aipp-marco-bg-image', cssUrl('aipp-marco-bg.png'))
-  root.setProperty('--aipp-whattadata-bg-image', cssUrl('whattadata-bg.png'))
-  root.setProperty('--aipp-indice-bg-image', cssUrl('aipp-indice-bg-subtle.png'))
-  root.setProperty('--aipp-socialita-bg-image', cssUrl('socialita-digitale-bg.png'))
-  root.setProperty('--aipp-critique-bg-image', cssUrl('llmpatients-critique-conversation-bg.png'))
+  for (const [name, path] of Object.entries(imageCssVariables))
+    root.setProperty(name, cssUrl(path))
 }
 
-export default async function setupAippDeck({ app, router }: AppContext) {
-  app.config.globalProperties.$aippImage = imageUrl
-  setImageCssVariables()
-
+/* Links shared from GitHub Pages can carry the mount segment inside the
+   hash (e.g. #/AIPP/5); strip it so the router lands on the right slide. */
+async function normalizeHashRoute(router: AppContext['router']) {
   const mountSegment = location.pathname.split('/').filter(Boolean)[0]
   const hashPath = location.hash.startsWith('#/')
     ? location.hash.slice(2)
@@ -41,4 +38,10 @@ export default async function setupAippDeck({ app, router }: AppContext) {
   const normalizedPath = `/${hashPath.slice(mountSegment.length + 1) || '1'}`
   history.replaceState(null, '', `${location.pathname}${location.search}#${normalizedPath}`)
   await router.replace(normalizedPath)
+}
+
+export default async function setupAippDeck({ app, router }: AppContext) {
+  app.config.globalProperties.$aippImage = imageUrl
+  setImageCssVariables()
+  await normalizeHashRoute(router)
 }

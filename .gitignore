@@ -27,5 +27,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Scratch / intermediate assets (image generation sources, previews)
+tmp/
+
 # System files
 .DS_Store

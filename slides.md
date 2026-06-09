@@ -143,30 +143,24 @@ class: conversation-slide
 ---
 
 <div class="chat-thread">
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  <ChatBalloon role="therapist" speaker="Erika">
     Oggi proseguiamo con la SCID. È una parte strutturata della consultazione: serve a capire meglio le tue difficoltà e a pensare insieme ai prossimi passi.
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     Quindi è un test. Per avere un “quadro più chiaro” di tutti i modi in cui sono rotta, giusto?
-  </div>
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="therapist" speaker="Erika">
     Ti è difficile prendere decisioni quotidiane senza consigli o rassicurazioni?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     Sì. È questa la risposta giusta? Vorrei solo che questa parte finisse. Mi fa stare malissimo.
-  </div>
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="therapist" speaker="Erika">
     Puoi farmi qualche esempio delle decisioni per cui chiedi consiglio?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     Cose stupide. Cosa indossare se devo incontrare un suo amico. Cosa scrivere per non sembrare pazza o disperata. È tutto. Va bene così?
-  </div>
+  </ChatBalloon>
 </div>
 
 ---
@@ -176,30 +170,24 @@ class: conversation-slide
 ---
 
 <div class="chat-thread">
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  <ChatBalloon role="therapist" speaker="Erika">
     Ti capita di fare cose sgradevoli o irragionevoli pur di evitare che qualcuno si allontani?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     Chi è che si prende cura di me? Nessuno. È il contrario: sono io che faccio cose solo per non farli andare via.
-  </div>
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="therapist" speaker="Erika">
     Stare da sola ti mette a disagio?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     Il silenzio diventa fortissimo. O sono vuota, o sono piena di rumore. Entrambe le cose fanno paura.
-  </div>
-  <div class="chat-balloon therapist">
-    <strong class="chat-speaker">Erika</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="therapist" speaker="Erika">
     È perché hai bisogno che qualcuno si occupi di te?
-  </div>
-  <div class="chat-balloon patient">
-    <strong class="chat-speaker">Giovanna</strong><br>
+  </ChatBalloon>
+  <ChatBalloon role="patient" speaker="Giovanna">
     No. Pago le bollette, lavoro. Non è quello. Se nessuno c’è, sembra che non ci sia neanche io. Come se potessi sparire nel silenzio.
-  </div>
+  </ChatBalloon>
 </div>
 
 ---
@@ -221,7 +209,7 @@ routeAlias: cosa-ha-giovanna
 layout: image-right
 routeAlias: giovanna
 class: giovanna-slide
-image: images/patients/juanita_delgado/base-flat.png
+image: images/patients/juanita-delgado/base-flat.png
 ---
 
 # Giovanna
@@ -237,7 +225,7 @@ image: images/patients/juanita_delgado/base-flat.png
 layout: image-right
 routeAlias: giovanna-ia
 class: giovanna-slide
-image: images/patients/juanita_delgado/base.png
+image: images/patients/juanita-delgado/base.png
 ---
 
 # Giovanna è un'IA
@@ -258,14 +246,7 @@ routeAlias: llmpatients-schermata-lavoro
 class: screenshot-slide
 ---
 
-<div class="mockup-browser app-browser-mockup">
-  <div class="mockup-browser-toolbar">
-    <div class="input"></div>
-  </div>
-  <div class="app-browser-content">
-    <img class="app-screenshot" :src="$aippImage('screenshots/sessione_chat_juanita_delgado.png')" alt="Screenshot della sessione chat di Juanita Delgado" />
-  </div>
-</div>
+<AppScreenshot src="screenshots/sessione-chat-juanita-delgado.png" alt="Screenshot della sessione chat di Juanita Delgado" />
 
 ---
 layout: default
@@ -273,14 +254,7 @@ routeAlias: llmpatients-esplora-pazienti-griglia
 class: screenshot-slide
 ---
 
-<div class="mockup-browser app-browser-mockup">
-  <div class="mockup-browser-toolbar">
-    <div class="input"></div>
-  </div>
-  <div class="app-browser-content">
-    <img class="app-screenshot" :src="$aippImage('screenshots/esplora_pazienti_griglia.png')" alt="Screenshot della griglia di esplorazione dei pazienti" />
-  </div>
-</div>
+<AppScreenshot src="screenshots/esplora-pazienti-griglia.png" alt="Screenshot della griglia di esplorazione dei pazienti" />
 
 ---
 layout: default
@@ -288,14 +262,7 @@ routeAlias: llmpatients-dashboard-percorsi-terapeutici
 class: screenshot-slide
 ---
 
-<div class="mockup-browser app-browser-mockup">
-  <div class="mockup-browser-toolbar">
-    <div class="input"></div>
-  </div>
-  <div class="app-browser-content">
-    <img class="app-screenshot" :src="$aippImage('screenshots/dashboard_percorsi_terapeutici.png')" alt="Screenshot della dashboard dei percorsi terapeutici" />
-  </div>
-</div>
+<AppScreenshot src="screenshots/dashboard-percorsi-terapeutici.png" alt="Screenshot della dashboard dei percorsi terapeutici" />
 
 ---
 layout: default
@@ -306,21 +273,11 @@ class: patient-carousel-slide
 # LLMPatients: pazienti simulati
 
 <div class="patient-bento">
-  <figure class="patient-card hero" :style="{ '--patient-image': 'url(' + $aippImage('patients/juanita_delgado/base.png') + ')' }">
-    <figcaption>Juanita Delgado</figcaption>
-  </figure>
-  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/alex_carter/base.png') + ')' }">
-    <figcaption>Alex Carter</figcaption>
-  </figure>
-  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/crystal_smith/base.png') + ')' }">
-    <figcaption>Crystal Smith</figcaption>
-  </figure>
-  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/daniel_isherwood/base.png') + ')' }">
-    <figcaption>Daniel Isherwood</figcaption>
-  </figure>
-  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/jason_smith/base.png') + ')' }">
-    <figcaption>Jason Smith</figcaption>
-  </figure>
+  <PatientCard hero name="Juanita Delgado" image="patients/juanita-delgado/base.png" />
+  <PatientCard name="Alex Carter" image="patients/alex-carter/base.png" />
+  <PatientCard name="Crystal Smith" image="patients/crystal-smith/base.png" />
+  <PatientCard name="Daniel Isherwood" image="patients/daniel-isherwood/base.png" />
+  <PatientCard name="Jason Smith" image="patients/jason-smith/base.png" />
 </div>
 
 ---
@@ -331,35 +288,29 @@ class: conversation-slide critique-conversation-slide
 
 <div class="critique-conversation">
   <figure class="critique-patient-photo">
-    <img :src="$aippImage('patients/juanita_delgado/rage.png')" alt="Juanita Delgado arrabbiata">
+    <img :src="$aippImage('patients/juanita-delgado/rage.png')" alt="Juanita Delgado arrabbiata">
     <figcaption>Juanita</figcaption>
   </figure>
 
   <div class="chat-thread critique-chat">
-    <div class="chat-balloon therapist">
-      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
+    <ChatBalloon role="therapist" speaker='"Terapeuta" Marco'>
       Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
-    </div>
-    <div class="chat-balloon patient">
-      <strong class="chat-speaker">Giovanna</strong><br>
+    </ChatBalloon>
+    <ChatBalloon role="patient" speaker="Giovanna">
       Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
-    </div>
-    <div class="chat-balloon therapist">
-      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
+    </ChatBalloon>
+    <ChatBalloon role="therapist" speaker='"Terapeuta" Marco'>
       Si scusami. Mi sono espresso male. Proseguiamo. Continuamo a parlare di tuo padre.
-    </div>
-    <div class="chat-balloon patient">
-      <strong class="chat-speaker">Giovanna</strong><br>
+    </ChatBalloon>
+    <ChatBalloon role="patient" speaker="Giovanna">
       Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
-    </div>
-    <div class="chat-balloon therapist">
-      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
+    </ChatBalloon>
+    <ChatBalloon role="therapist" speaker='"Terapeuta" Marco'>
       Ok, ma ora proseguiamo.
-    </div>
-    <div class="chat-balloon patient">
-      <strong class="chat-speaker">Giovanna</strong><br>
+    </ChatBalloon>
+    <ChatBalloon role="patient" speaker="Giovanna">
       Non decidi tu quando andare avanti.
-    </div>
+    </ChatBalloon>
   </div>
 </div>
 
@@ -773,7 +724,7 @@ routeAlias: ml-predittivo
 
 <span class="section-label">Dal dato alla decisione</span>
 
-```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '16px' }}
+```mermaid {theme: 'base'}
 flowchart LR
   A["Dati"] --> B["Modello"]
   B --> C["Classe / probabilità"]
@@ -1347,7 +1298,7 @@ routeAlias: scenari-digital-phenotyping
   </div>
 </div>
 
-```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '15px' }}
+```mermaid {theme: 'base'}
 flowchart LR
   A["Paziente"] --> B["Smartphone / wearable"]
   B --> C["Pattern longitudinali"]
@@ -1594,7 +1545,7 @@ routeAlias: ia-multimodale
   </div>
 </div>
 
-```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '15px' }}
+```mermaid {theme: 'base'}
 flowchart LR
   A["Paziente"] --> B["Testo"]
   A --> C["Voce"]
@@ -1859,7 +1810,7 @@ routeAlias: llmind-architettura
 
 # LLMind: architettura minima sicura
 
-```mermaid {theme: 'base', themeVariables: { primaryColor: '#ffffff', primaryBorderColor: '#d9d7d2', primaryTextColor: '#1d1d1f', secondaryColor: '#f3f2ef', tertiaryColor: '#f6f5f2', lineColor: '#a8a6a3', fontFamily: 'SF Pro Display, -apple-system, Helvetica Neue, sans-serif', fontSize: '15px' }}
+```mermaid {theme: 'base'}
 flowchart LR
   A["Paziente"] --> B["Diario / domande / scale"]
   B --> C["LLM con RAG su materiali validati"]

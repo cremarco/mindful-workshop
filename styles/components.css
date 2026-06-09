@@ -1,0 +1,423 @@
+/* ============================================================
+   REUSABLE COMPONENTS — tables, bento tiles, tags, chat, mockups
+   ============================================================ */
+
+/* ---- Dense evidence table: one-slide comparative matrix ---- */
+.slidev-layout.compact-table-slide {
+  padding-top: 2.55rem;
+  padding-bottom: 2.55rem;
+}
+
+.slidev-layout.compact-table-slide h1 {
+  margin-bottom: 0.85rem;
+  font-size: 2.25rem;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table {
+  margin: 0;
+  font-size: 0.68rem;
+  table-layout: fixed;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th,
+.slidev-layout:not(.intro-slide) table.evidence-table td {
+  padding: 0.38rem 0.58rem;
+  line-height: 1.18;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:first-child,
+.slidev-layout:not(.intro-slide) table.evidence-table td:first-child {
+  padding-left: 0.72rem;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:last-child,
+.slidev-layout:not(.intro-slide) table.evidence-table td:last-child {
+  padding-right: 0.72rem;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th {
+  font-size: 0.52rem;
+  line-height: 1.12;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(1) {
+  width: 24%;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(2) {
+  width: 19%;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(3) {
+  width: 20%;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(4) {
+  width: 25%;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(5) {
+  width: 12%;
+}
+
+/* ---- Questionnaire name + expansion inside table cells ---- */
+.questionnaire-name {
+  display: grid;
+  gap: 0.16rem;
+}
+
+.questionnaire-name small {
+  display: block;
+  max-width: 24ch;
+  color: var(--aipp-soft);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   PATIENT BENTO — Apple-style photo tiles (one hero + supporting)
+   ============================================================ */
+.slidev-layout.patient-carousel-slide {
+  overflow: hidden;
+}
+
+.patient-bento {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  min-height: 0;
+  margin-top: 1.05rem;
+}
+
+.patient-card {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aipp-line);
+  border-radius: var(--aipp-radius-sm);
+  background: var(--patient-image) center top / cover no-repeat;
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+/* Hero tile leads the composition: spans 2×2 with a softer corner. */
+.patient-card.hero {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-radius: var(--aipp-radius);
+}
+
+/* Bottom scrim keeps the name legible over any photo. */
+.patient-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.14) 28%, rgba(0, 0, 0, 0) 52%);
+  pointer-events: none;
+}
+
+.patient-card figcaption {
+  position: absolute;
+  left: 1.05rem;
+  bottom: 0.95rem;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-size: 1.04rem;
+  font-weight: 680;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+}
+
+.patient-card.hero figcaption {
+  left: 1.5rem;
+  bottom: 1.35rem;
+  font-size: 1.95rem;
+  font-weight: 720;
+}
+
+/* ============================================================
+   BENTO GRID — Apple-style summary tiles for content slides
+   ============================================================ */
+.slidev-layout:not(.intro-slide) .bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+  width: 100%;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.bento-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid var(--aipp-line);
+  border-radius: var(--aipp-radius);
+  background: var(--aipp-surface);
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+.bento-card.span-2 {
+  grid-column: span 2;
+}
+
+.bento-card.span-3 {
+  grid-column: span 3;
+}
+
+.bento-card .bento-eyebrow {
+  color: var(--aipp-red);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.bento-card .bento-title {
+  color: var(--aipp-fg);
+  font-size: 1.2rem;
+  font-weight: 660;
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+}
+
+.slidev-layout:not(.intro-slide) .bento-card p {
+  margin: 0;
+  color: var(--aipp-soft);
+  font-size: 1.02rem;
+  line-height: 1.42;
+}
+
+/* Accent tile — marks the slide's focal point. */
+.bento-card.bento-accent {
+  background: var(--aipp-callout-surface);
+  border-color: color-mix(in srgb, var(--aipp-red) 22%, transparent);
+}
+
+/* ---- Feature bento: asymmetric tiles that fill the slide height ---- */
+.slidev-layout:not(.intro-slide) .bento-grid.bento-feature {
+  flex: 1 1 auto;
+  min-height: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+}
+
+/* ---- Stat tile: a single percentage takes the stage ---- */
+.bento-card.bento-stat {
+  gap: 0;
+  justify-content: center;
+  padding: 1.05rem 1.3rem;
+}
+
+.bento-card.bento-stat .bento-figure {
+  color: var(--aipp-fg);
+  font-size: 2.75rem;
+  font-weight: 720;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+
+.bento-card.bento-stat .bento-label {
+  margin-top: 0.5rem;
+  color: var(--aipp-red);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.slidev-layout:not(.intro-slide) .bento-card.bento-stat p {
+  margin-top: 0.3rem;
+  font-size: 0.94rem;
+  line-height: 1.3;
+}
+
+/* ---- Inline tag row — compact list of short labels ---- */
+.slidev-layout:not(.intro-slide) .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0.2rem;
+}
+
+.tag-row .tag {
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--aipp-line);
+  border-radius: 999px;
+  background: var(--aipp-surface);
+  color: var(--aipp-soft);
+  font-size: 0.98rem;
+  font-weight: 560;
+  line-height: 1.2;
+}
+
+/* ---- Section eyebrow — small label above a content block ---- */
+.slidev-layout:not(.intro-slide) .section-label {
+  display: block;
+  margin: 0 0 0.55rem;
+  color: var(--aipp-red);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ---- Two balanced columns inside a default slide ---- */
+.slidev-layout:not(.intro-slide) .split-2 {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.4rem;
+  align-items: start;
+  margin: 1.3rem 0 0.4rem;
+}
+
+.slidev-layout:not(.intro-slide) .split-2 > * {
+  min-width: 0;
+}
+
+.slidev-layout:not(.intro-slide) .split-2 p {
+  margin: 0;
+}
+
+.slidev-layout:not(.intro-slide) .split-2 .tag-row {
+  margin: 0;
+}
+
+/* ============================================================
+   CHAT — iMessage-style balloons (see components/ChatBalloon.vue)
+   ============================================================ */
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 980px;
+}
+
+.chat-balloon {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  padding: 0.66rem 0.92rem;
+}
+
+/* Therapist = iMessage blue. Stays blue in both modes. */
+.chat-balloon.therapist {
+  align-self: flex-end;
+  max-width: 72%;
+  color: #fff;
+  background: linear-gradient(180deg, #2c9bff 0%, #0a84ff 100%);
+  border-radius: 20px 20px 6px 20px;
+}
+
+/* Patient = neutral grey bubble derived from the foreground,
+   so it darkens correctly in dark mode without hard-coding. */
+.chat-balloon.patient {
+  align-self: flex-start;
+  max-width: 78%;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  border-radius: 20px 20px 20px 6px;
+}
+
+.chat-balloon .chat-speaker {
+  display: inline-block;
+  margin-bottom: 0.12rem;
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.chat-balloon.therapist .chat-speaker {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.chat-balloon.patient .chat-speaker {
+  color: var(--aipp-soft);
+}
+
+/* A conversation embedded inside a normal content slide */
+.slidev-layout:not(.conversation-slide) .chat-balloon {
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+/* ============================================================
+   BROWSER MOCKUP — app screenshots (see components/AppScreenshot.vue)
+   ============================================================ */
+.mockup-browser.app-browser-mockup {
+  overflow: hidden;
+  border: 1px solid var(--aipp-line);
+  border-radius: var(--aipp-radius-sm);
+  background: var(--aipp-surface);
+  box-shadow: var(--aipp-shadow);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+  height: 2.35rem;
+  padding: 0 0.9rem;
+  border-bottom: 1px solid var(--aipp-line);
+  background: var(--aipp-surface-2);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 50%;
+  background: var(--aipp-red);
+  box-shadow: 0.95rem 0 0 var(--aipp-orange), 1.9rem 0 0 var(--aipp-teal);
+}
+
+.mockup-browser.app-browser-mockup .mockup-browser-toolbar .input {
+  flex: 1 1 auto;
+  height: 1.26rem;
+  margin-left: 1.9rem;
+  border: 1px solid var(--aipp-line);
+  border-radius: 999px;
+  background: var(--aipp-surface);
+}
+
+.mockup-browser.app-browser-mockup .app-browser-content {
+  background: var(--aipp-surface);
+}
+
+.mockup-browser.app-browser-mockup img.app-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ============================================================
+   MERMAID DIAGRAMS
+   The SVG is rendered inside a Shadow DOM, so its internal colors
+   cannot be reached from here — they are themed via setup/mermaid.ts.
+   Only the host element is styled here (centering + sizing).
+   ============================================================ */
+.slidev-layout:not(.intro-slide) .mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.slidev-layout:not(.intro-slide) .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
