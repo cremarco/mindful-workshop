@@ -7,6 +7,7 @@ title: Intelligenza artificiale al servizio della psicopatologia
 author: Marco Cremaschi
 aspectRatio: 16/9
 canvasWidth: 1280
+colorSchema: dark
 background: images/aipp-cover-bg.png
 duration: 45min
 drawings:
