@@ -161,7 +161,7 @@ Aprire la slide come domanda al pubblico: "Cosa ha Giovanna?". Lasciare qualche 
 layout: image-right
 routeAlias: giovanna
 class: giovanna-slide
-image: images/patients/juanita_delgado/base.png
+image: images/patients/juanita_delgado/base-flat.png
 ---
 
 # Giovanna
@@ -178,8 +178,10 @@ Questa slide risponde alla domanda precedente senza chiuderla troppo presto. Dir
 -->
 
 ---
-layout: default
+layout: image-right
 routeAlias: giovanna-ia
+class: giovanna-slide
+image: images/patients/juanita_delgado/base.png
 ---
 
 # Giovanna è un'IA
@@ -301,7 +303,7 @@ class: conversation-slide critique-conversation-slide
 
   <div class="chat-thread critique-chat">
     <div class="chat-balloon therapist">
-      <strong class="chat-speaker">Terapeuta</strong><br>
+      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
       Mi sembra che tu stia vivendo questa cosa in modo un po' eccessivo.
     </div>
     <div class="chat-balloon patient">
@@ -309,12 +311,20 @@ class: conversation-slide critique-conversation-slide
       Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
     </div>
     <div class="chat-balloon therapist">
-      <strong class="chat-speaker">Terapeuta</strong><br>
-      Proviamo a capire meglio: che cosa hai sentito quando ti ho detto così?
+      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
+      Si scusami. Mi sono espresso male. Proseguiamo. Continuamo a parlare di tuo padre.
     </div>
     <div class="chat-balloon patient">
       <strong class="chat-speaker">Giovanna</strong><br>
       Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
+    </div>
+    <div class="chat-balloon therapist">
+      <strong class="chat-speaker">"Terapeuta" Marco</strong><br>
+      Ok, ma ora proseguiamo.
+    </div>
+    <div class="chat-balloon patient">
+      <strong class="chat-speaker">Giovanna</strong><br>
+      Non decidi tu quando andare avanti.
     </div>
   </div>
 </div>
@@ -385,38 +395,9 @@ Questa slide serve ad agganciare il pubblico. Non parlare dell'IA come oggetto e
 
 ---
 layout: statement
-routeAlias: socialita-digitale
-class: socialita-digitale-slide
----
-
-# La socialità digitale è già un dato clinico.
-
-Non è solo "tempo online": è ambiente, linguaggio, appartenenza, confronto, ritiro, esposizione.
-
-<!--
-Collegare esplicitamente l'intervento al tema della giornata: la socialità dei nativi digitali. Nei servizi incontriamo ragazzi e adulti per cui identità, amicizie, conflitti, sessualità, vergogna e riconoscimento passano anche da piattaforme digitali. L'IA generativa si innesta su questo ecosistema: non sostituisce semplicemente i social, ma introduce interlocutori artificiali capaci di rispondere, consolare, spiegare e orientare scelte.
--->
-
----
-layout: default
-routeAlias: nuovo-terzo-nella-stanza
----
-
-# Un nuovo "terzo" nella stanza
-
-> **Scenario clinico** “Un ragazzo di 19 anni, socialmente ritirato, arriva in consultazione. Prima di parlare con uno psicologo ha parlato per settimane con un chatbot. Gli ha chiesto se fosse depresso, se dovesse prendere farmaci, se i genitori fossero tossici, se la vita avesse senso.”
-
-**Come cambia l’anamnesi?**  
-**Come cambia la relazione terapeutica?**  
-**E chi è il terzo interlocutore nella stanza?**
-
-<!--
-Usare questa vignetta come apertura clinica dell'intervento. Non patologizzare automaticamente l'uso del chatbot: può ridurre vergogna, offrire parole e creare un primo ponte verso la cura. Ma può anche rinforzare ritiro, dipendenza, evitamento, credenze rigide e sfiducia verso le relazioni umane. La domanda da lasciare sospesa è tripla: l'anamnesi deve includere gli interlocutori artificiali, la relazione terapeutica non è più solo diadica e il "terzo" digitale può avere effetti protettivi o iatrogeni.
--->
-
----
-layout: statement
 routeAlias: ia-salute-mentale-cosa-pensiamo
+class: socialita-digitale-slide
+background: images/socialita-digitale-bg.png
 ---
 
 # Quando diciamo IA in salute mentale, a cosa pensiamo?

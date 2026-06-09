@@ -746,9 +746,10 @@ html.dark {
 }
 
 .slidev-layout.statement.socialita-digitale-slide {
-  position: relative;
   isolation: isolate;
   overflow: hidden;
+  color: #f5f5f7;
+  background: var(--aipp-socialita-bg-image) center / cover no-repeat !important;
 }
 
 .slidev-layout.statement.socialita-digitale-slide::before {
@@ -756,13 +757,17 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: var(--aipp-socialita-bg-image) right center / 60% auto no-repeat;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.32) 48%, rgba(0, 0, 0, 0.08) 100%);
   pointer-events: none;
 }
 
 .slidev-layout.statement.socialita-digitale-slide > * {
   position: relative;
   z-index: 1;
+}
+
+.slidev-layout.statement.socialita-digitale-slide p {
+  color: rgba(245, 245, 247, 0.72);
 }
 
 .slidev-layout.fact {
