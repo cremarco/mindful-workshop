@@ -2,6 +2,40 @@
    REUSABLE COMPONENTS — tables, bento tiles, tags, chat, mockups
    ============================================================ */
 
+/* ============================================================
+   SHARED CARD CHROME
+   Every boxed surface in the deck draws the same hairline border
+   and surface fill; most also share the soft elevation. Individual
+   rules below only add what differs (radius, padding, overrides).
+   ============================================================ */
+.slidev-layout:not(.intro-slide) table,
+.bento-card,
+.patient-card,
+.tag-row .tag,
+.app-browser-mockup,
+.app-browser-mockup .mockup-browser-toolbar .input {
+  border: 1px solid var(--aipp-line);
+  background: var(--aipp-surface);
+}
+
+.slidev-layout:not(.intro-slide) table,
+.bento-card,
+.patient-card,
+.chat-balloon {
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+/* ---- Eyebrow labels: small red uppercase markers ---- */
+.slidev-layout:not(.intro-slide) .section-label,
+.bento-card .bento-eyebrow,
+.bento-card.bento-stat .bento-label {
+  color: var(--aipp-red);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 /* ---- Dense evidence table: one-slide comparative matrix ---- */
 .slidev-layout.compact-table-slide {
   padding-top: 2.55rem;
@@ -79,10 +113,6 @@
 /* ============================================================
    PATIENT BENTO — Apple-style photo tiles (one hero + supporting)
    ============================================================ */
-.slidev-layout.patient-carousel-slide {
-  overflow: hidden;
-}
-
 .patient-bento {
   flex: 1 1 auto;
   display: grid;
@@ -100,10 +130,8 @@
   min-height: 0;
   margin: 0;
   overflow: hidden;
-  border: 1px solid var(--aipp-line);
   border-radius: var(--aipp-radius-sm);
   background: var(--patient-image) center top / cover no-repeat;
-  box-shadow: var(--aipp-shadow-soft);
 }
 
 /* Hero tile leads the composition: spans 2×2 with a softer corner. */
@@ -159,10 +187,7 @@
   flex-direction: column;
   gap: 0.42rem;
   padding: 1.2rem 1.35rem;
-  border: 1px solid var(--aipp-line);
   border-radius: var(--aipp-radius);
-  background: var(--aipp-surface);
-  box-shadow: var(--aipp-shadow-soft);
 }
 
 .bento-card.span-2 {
@@ -171,14 +196,6 @@
 
 .bento-card.span-3 {
   grid-column: span 3;
-}
-
-.bento-card .bento-eyebrow {
-  color: var(--aipp-red);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
 }
 
 .bento-card .bento-title {
@@ -230,11 +247,6 @@
 
 .bento-card.bento-stat .bento-label {
   margin-top: 0.5rem;
-  color: var(--aipp-red);
-  font-size: 0.73rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .slidev-layout:not(.intro-slide) .bento-card.bento-stat p {
@@ -253,9 +265,7 @@
 
 .tag-row .tag {
   padding: 0.42rem 0.9rem;
-  border: 1px solid var(--aipp-line);
-  border-radius: 999px;
-  background: var(--aipp-surface);
+  border-radius: var(--aipp-radius-pill);
   color: var(--aipp-soft);
   font-size: 0.98rem;
   font-weight: 560;
@@ -266,11 +276,6 @@
 .slidev-layout:not(.intro-slide) .section-label {
   display: block;
   margin: 0 0 0.55rem;
-  color: var(--aipp-red);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
 }
 
 /* ---- Two balanced columns inside a default slide ---- */
@@ -344,23 +349,16 @@
   color: var(--aipp-soft);
 }
 
-/* A conversation embedded inside a normal content slide */
-.slidev-layout:not(.conversation-slide) .chat-balloon {
-  box-shadow: var(--aipp-shadow-soft);
-}
-
 /* ============================================================
    BROWSER MOCKUP — app screenshots (see components/AppScreenshot.vue)
    ============================================================ */
-.mockup-browser.app-browser-mockup {
+.app-browser-mockup {
   overflow: hidden;
-  border: 1px solid var(--aipp-line);
   border-radius: var(--aipp-radius-sm);
-  background: var(--aipp-surface);
   box-shadow: var(--aipp-shadow);
 }
 
-.mockup-browser.app-browser-mockup .mockup-browser-toolbar {
+.app-browser-mockup .mockup-browser-toolbar {
   display: flex;
   align-items: center;
   gap: 0.78rem;
@@ -370,7 +368,7 @@
   background: var(--aipp-surface-2);
 }
 
-.mockup-browser.app-browser-mockup .mockup-browser-toolbar::before {
+.app-browser-mockup .mockup-browser-toolbar::before {
   content: "";
   flex: 0 0 auto;
   width: 0.58rem;
@@ -380,28 +378,21 @@
   box-shadow: 0.95rem 0 0 var(--aipp-orange), 1.9rem 0 0 var(--aipp-teal);
 }
 
-.mockup-browser.app-browser-mockup .mockup-browser-toolbar .input {
+.app-browser-mockup .mockup-browser-toolbar .input {
   flex: 1 1 auto;
   height: 1.26rem;
   margin-left: 1.9rem;
-  border: 1px solid var(--aipp-line);
-  border-radius: 999px;
+  border-radius: var(--aipp-radius-pill);
+}
+
+.app-browser-mockup .app-browser-content {
   background: var(--aipp-surface);
 }
 
-.mockup-browser.app-browser-mockup .app-browser-content {
-  background: var(--aipp-surface);
-}
-
-.mockup-browser.app-browser-mockup img.app-screenshot {
+.app-browser-mockup img.app-screenshot {
   display: block;
   width: 100%;
   height: auto;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
 }
 
 /* ============================================================

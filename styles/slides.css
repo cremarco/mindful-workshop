@@ -3,6 +3,47 @@
    ============================================================ */
 
 /* ============================================================
+   SHARED PLUMBING for slides with a decorative backdrop:
+   the slide clips and isolates its stacking context, the
+   ::before carries the artwork, the content sits above it.
+   Individual rules below only add geometry and imagery.
+   ============================================================ */
+.slidev-layout.two-columns:has(.bio-slide),
+.slidev-layout.statement.whattadata-slide,
+.slidev-layout.statement.socialita-digitale-slide,
+.slidev-layout.default.dipps-intro-slide,
+.slidev-layout.default.parche-slide,
+.slidev-layout.default.agenda-index-slide,
+.slidev-layout.default.critique-conversation-slide,
+.slidev-layout.patient-carousel-slide {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.slidev-layout.two-columns:has(.bio-slide)::before,
+.slidev-layout.statement.whattadata-slide::before,
+.slidev-layout.statement.socialita-digitale-slide::before,
+.slidev-layout.default.parche-slide::before,
+.agenda-card::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.slidev-layout.two-columns:has(.bio-slide) > .col-left,
+.slidev-layout.two-columns:has(.bio-slide) > .col-right,
+.slidev-layout.statement.whattadata-slide > *,
+.slidev-layout.statement.socialita-digitale-slide > *,
+.slidev-layout.default.parche-slide > :not(blockquote),
+.slidev-layout.default.agenda-index-slide > h1,
+.slidev-layout.default.agenda-index-slide > .agenda-grid,
+.agenda-card > *,
+.critique-conversation {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
    COVER — slide 1 (intro). DO NOT CHANGE.
    ============================================================ */
 .slidev-layout.cover.intro-slide,
@@ -117,34 +158,19 @@
 /* ============================================================
    SPEAKER BIO — two-cols slide with portrait backdrop
    ============================================================ */
-.slidev-layout.two-columns:has(.bio-slide) {
-  position: relative;
-  overflow: hidden;
-}
-
 .slidev-layout.two-columns:has(.bio-slide)::before {
-  content: "";
-  position: absolute;
   top: -8rem;
   right: -5rem;
   width: 26rem;
   height: 26rem;
   background: var(--aipp-marco-bg-image) center / contain no-repeat;
-  pointer-events: none;
   z-index: 0;
-}
-
-.slidev-layout.two-columns:has(.bio-slide) > .col-left,
-.slidev-layout.two-columns:has(.bio-slide) > .col-right {
-  z-index: 1;
 }
 
 /* ============================================================
    WHATTADATA — institutional statement slide
    ============================================================ */
 .slidev-layout.statement.whattadata-slide {
-  isolation: isolate;
-  overflow: hidden;
   padding: 0;
   color: var(--aipp-fg);
   background: transparent !important;
@@ -157,17 +183,9 @@ html.dark .slidev-layout.statement.whattadata-slide {
 }
 
 .slidev-layout.statement.whattadata-slide::before {
-  content: "";
-  position: absolute;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
   background: var(--aipp-whattadata-bg-image) right bottom / 55% auto no-repeat;
-}
-
-.slidev-layout.statement.whattadata-slide > * {
-  position: relative;
-  z-index: 2;
 }
 
 .whattadata-hero {
@@ -226,7 +244,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
    ============================================================ */
 .slidev-layout.default.dipps-intro-slide {
   display: block;
-  overflow: hidden;
   padding: 0 !important;
   color: #f8fafc;
   background: #4e5a6d !important;
@@ -273,7 +290,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   font-size: 1.34rem;
   font-weight: 480;
   line-height: 1.36;
-  letter-spacing: 0;
 }
 
 .dipps-meta {
@@ -284,7 +300,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   font-size: 0.86rem;
   font-weight: 650;
   line-height: 1.25;
-  letter-spacing: 0;
 }
 
 .dipps-partners {
@@ -299,7 +314,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   font-size: 2.5rem;
   font-weight: 760;
   line-height: 1;
-  letter-spacing: 0;
 }
 
 .dipps-partner-list {
@@ -314,7 +328,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   align-items: center;
   min-height: 4.25rem;
   color: rgba(248, 250, 252, 0.92);
-  letter-spacing: 0;
 }
 
 .dipps-partner img {
@@ -331,7 +344,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   font-size: 1.02rem;
   font-weight: 720;
   line-height: 1.18;
-  letter-spacing: 0;
 }
 
 .dipps-partner em {
@@ -341,31 +353,20 @@ html.dark .slidev-layout.statement.whattadata-slide {
   font-size: 0.84rem;
   font-style: italic;
   line-height: 1.22;
-  letter-spacing: 0;
 }
 
 /* ============================================================
    SOCIALITÀ DIGITALE — dark statement with photographic backdrop
    ============================================================ */
 .slidev-layout.statement.socialita-digitale-slide {
-  isolation: isolate;
-  overflow: hidden;
   color: #f5f5f7;
   background: #0f0f10 !important;
 }
 
 .slidev-layout.statement.socialita-digitale-slide::before {
-  content: "";
-  position: absolute;
   inset: 0;
   z-index: 0;
   background: var(--aipp-socialita-bg-image) right center / 60% auto no-repeat;
-  pointer-events: none;
-}
-
-.slidev-layout.statement.socialita-digitale-slide > * {
-  position: relative;
-  z-index: 1;
 }
 
 .slidev-layout.statement.socialita-digitale-slide p {
@@ -375,27 +376,13 @@ html.dark .slidev-layout.statement.whattadata-slide {
 /* ============================================================
    PARCHE — decorative side shape on "IA nella stanza"
    ============================================================ */
-.slidev-layout.default.parche-slide {
-  isolation: isolate;
-  overflow: hidden;
-}
-
 .slidev-layout.default.parche-slide::before {
-  content: "";
-  position: absolute;
   top: 2rem;
   right: 0;
   z-index: 2;
   width: 8.75rem;
   aspect-ratio: 455 / 1029;
   background: var(--aipp-parche-shape) right center / contain no-repeat;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.slidev-layout.default.parche-slide > :not(blockquote) {
-  position: relative;
-  z-index: 1;
 }
 
 /* ============================================================
@@ -415,18 +402,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
 /* ============================================================
    AGENDA / INDEX — numbered chapter tiles
    ============================================================ */
-.slidev-layout.default.agenda-index-slide {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.slidev-layout.default.agenda-index-slide > h1,
-.slidev-layout.default.agenda-index-slide > .agenda-grid {
-  position: relative;
-  z-index: 1;
-}
-
 .agenda-card {
   --agenda-color: var(--aipp-section-future);
   --agenda-shape: var(--aipp-agenda-shape-01);
@@ -464,8 +439,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
 }
 
 .agenda-card::before {
-  content: "";
-  position: absolute;
   top: -2.6rem;
   right: -2.35rem;
   z-index: 0;
@@ -473,12 +446,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   aspect-ratio: 1;
   background: var(--agenda-shape) center / contain no-repeat;
   opacity: 0.66;
-  pointer-events: none;
-}
-
-.agenda-card > * {
-  position: relative;
-  z-index: 1;
 }
 
 .agenda-num {
@@ -515,7 +482,6 @@ html.dark .slidev-layout.statement.whattadata-slide {
   padding: 0.82rem 1.05rem;
   font-size: 0.96rem;
   line-height: 1.32;
-  box-shadow: var(--aipp-shadow-soft);
   opacity: 0;
   transform: translateY(18px) scale(0.985);
   animation: chat-balloon-enter 520ms cubic-bezier(0.2, 0.72, 0.18, 1) forwards;
@@ -553,16 +519,7 @@ html.dark .slidev-layout.statement.whattadata-slide {
   animation-delay: 820ms;
 }
 
-.slidev-layout.default.critique-conversation-slide {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 3.25rem 4.7rem !important;
-}
-
 .critique-conversation {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: 156px minmax(0, 1fr);
   align-items: center;
@@ -608,7 +565,7 @@ html.dark .slidev-layout.statement.whattadata-slide {
   height: 148px;
   object-fit: cover;
   object-position: 50% 22%;
-  border-radius: 16px;
+  border-radius: var(--aipp-radius-sm);
   box-shadow: var(--aipp-shadow-soft);
 }
 
@@ -645,7 +602,7 @@ html.dark .slidev-layout.statement.whattadata-slide {
   padding: 0.65rem 1.35rem;
 }
 
-.slidev-layout.screenshot-slide > .mockup-browser.app-browser-mockup {
+.slidev-layout.screenshot-slide > .app-browser-mockup {
   position: relative;
   z-index: 1;
   width: min(100%, 780px);

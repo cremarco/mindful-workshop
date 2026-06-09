@@ -32,15 +32,6 @@
   letter-spacing: -0.02em;
 }
 
-.slidev-layout:not(.intro-slide) h3 {
-  color: var(--aipp-red);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 1;
-}
-
 /* ---- Body copy ---- */
 .slidev-layout:not(.intro-slide) p {
   margin: 0 0 0.85rem;
@@ -123,17 +114,16 @@
   letter-spacing: 0;
 }
 
-/* ---- Tables as Apple-style cards ---- */
+/* ---- Tables as Apple-style cards ----
+   Hairline, fill and elevation come from the shared card chrome
+   in components.css. */
 .slidev-layout:not(.intro-slide) table {
   width: 100%;
   margin: 0.5rem 0 0.6rem;
   border-collapse: separate;
   border-spacing: 0;
-  background: var(--aipp-surface);
-  border: 1px solid var(--aipp-line);
   border-radius: var(--aipp-radius);
   overflow: hidden;
-  box-shadow: var(--aipp-shadow-soft);
   font-size: 1.01rem;
 }
 

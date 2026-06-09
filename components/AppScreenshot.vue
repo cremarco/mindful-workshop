@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="mockup-browser app-browser-mockup">
+  <div class="app-browser-mockup">
     <div class="mockup-browser-toolbar">
       <div class="input" />
     </div>
