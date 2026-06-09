@@ -38,6 +38,15 @@
   --aipp-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 18px 50px rgba(0, 0, 0, 0.08);
   --aipp-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.06);
   --aipp-font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Roboto, sans-serif;
+
+  --aipp-cover-bg-image: url("/images/aipp-cover-bg.png");
+  --aipp-marco-bg-image: url("/images/aipp-marco-bg.png");
+  --aipp-indice-bg-image: url("/images/aipp-indice-bg-subtle.png");
+  --aipp-socialita-bg-image: url("/images/socialita-digitale-bg.png");
+  --aipp-critique-bg-image: url("/images/llmpatients-critique-conversation-bg.png");
+  --aipp-llmpatients-work-bg-image: url("/images/llmpatients-work-bg-coherent.png");
+  --aipp-llmpatients-explore-bg-image: url("/images/llmpatients-explore-bg-coherent.png");
+  --aipp-llmpatients-journey-bg-image: url("/images/llmpatients-journey-bg-coherent.png");
 }
 
 html.dark {
@@ -63,7 +72,7 @@ html.dark {
   padding: 0 !important;
   overflow: hidden;
   color: var(--aipp-fg);
-  background: url("/AIPP/images/aipp-cover-bg.png") center / cover no-repeat !important;
+  background: var(--aipp-cover-bg-image) center / cover no-repeat !important;
 }
 
 .intro-cover {
@@ -504,7 +513,7 @@ html.dark {
   right: -5rem;
   width: 26rem;
   height: 26rem;
-  background: url("/AIPP/images/aipp-marco-bg.png") center / contain no-repeat;
+  background: var(--aipp-marco-bg-image) center / contain no-repeat;
   pointer-events: none;
   z-index: 0;
 }
@@ -660,7 +669,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/AIPP/images/aipp-indice-bg-subtle.png") center / cover no-repeat;
+  background: var(--aipp-indice-bg-image) center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -747,7 +756,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/AIPP/images/socialita-digitale-bg.png") right center / 60% auto no-repeat;
+  background: var(--aipp-socialita-bg-image) right center / 60% auto no-repeat;
   pointer-events: none;
 }
 
@@ -945,7 +954,7 @@ html.dark {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/AIPP/images/llmpatients-critique-conversation-bg.png") center / cover no-repeat;
+  background: var(--aipp-critique-bg-image) center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -1048,15 +1057,15 @@ html.dark {
 }
 
 .slidev-layout.screenshot-slide.llmpatients-work-slide {
-  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-work-bg-coherent.png");
+  --llmpatients-edge-bg: var(--aipp-llmpatients-work-bg-image);
 }
 
 .slidev-layout.screenshot-slide.llmpatients-explore-slide {
-  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-explore-bg-coherent.png");
+  --llmpatients-edge-bg: var(--aipp-llmpatients-explore-bg-image);
 }
 
 .slidev-layout.screenshot-slide.llmpatients-journey-slide {
-  --llmpatients-edge-bg: url("/AIPP/images/llmpatients-journey-bg-coherent.png");
+  --llmpatients-edge-bg: var(--aipp-llmpatients-journey-bg-image);
 }
 
 .slidev-layout.screenshot-slide.llmpatients-work-slide::before,

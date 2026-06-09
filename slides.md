@@ -211,7 +211,7 @@ class: screenshot-slide llmpatients-work-slide
     <div class="input"></div>
   </div>
   <div class="app-browser-content">
-    <img class="app-screenshot" :src="'/AIPP/images/screenshots/sessione_chat_juanita_delgado.png'" alt="Screenshot della sessione chat di Juanita Delgado" />
+    <img class="app-screenshot" :src="$aippImage('screenshots/sessione_chat_juanita_delgado.png')" alt="Screenshot della sessione chat di Juanita Delgado" />
   </div>
 </div>
 
@@ -230,7 +230,7 @@ class: screenshot-slide llmpatients-explore-slide
     <div class="input"></div>
   </div>
   <div class="app-browser-content">
-    <img class="app-screenshot" :src="'/AIPP/images/screenshots/esplora_pazienti_griglia.png'" alt="Screenshot della griglia di esplorazione dei pazienti" />
+    <img class="app-screenshot" :src="$aippImage('screenshots/esplora_pazienti_griglia.png')" alt="Screenshot della griglia di esplorazione dei pazienti" />
   </div>
 </div>
 
@@ -249,7 +249,7 @@ class: screenshot-slide llmpatients-journey-slide
     <div class="input"></div>
   </div>
   <div class="app-browser-content">
-    <img class="app-screenshot" :src="'/AIPP/images/screenshots/dashboard_percorsi_terapeutici.png'" alt="Screenshot della dashboard dei percorsi terapeutici" />
+    <img class="app-screenshot" :src="$aippImage('screenshots/dashboard_percorsi_terapeutici.png')" alt="Screenshot della dashboard dei percorsi terapeutici" />
   </div>
 </div>
 
@@ -266,19 +266,19 @@ class: patient-carousel-slide
 # LLMPatients: pazienti simulati
 
 <div class="patient-bento">
-  <figure class="patient-card hero" style="--patient-image: url('/AIPP/images/patients/juanita_delgado/base.png');">
+  <figure class="patient-card hero" :style="{ '--patient-image': 'url(' + $aippImage('patients/juanita_delgado/base.png') + ')' }">
     <figcaption>Juanita Delgado</figcaption>
   </figure>
-  <figure class="patient-card" style="--patient-image: url('/AIPP/images/patients/alex_carter/base.png');">
+  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/alex_carter/base.png') + ')' }">
     <figcaption>Alex Carter</figcaption>
   </figure>
-  <figure class="patient-card" style="--patient-image: url('/AIPP/images/patients/crystal_smith/base.png');">
+  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/crystal_smith/base.png') + ')' }">
     <figcaption>Crystal Smith</figcaption>
   </figure>
-  <figure class="patient-card" style="--patient-image: url('/AIPP/images/patients/daniel_isherwood/base.png');">
+  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/daniel_isherwood/base.png') + ')' }">
     <figcaption>Daniel Isherwood</figcaption>
   </figure>
-  <figure class="patient-card" style="--patient-image: url('/AIPP/images/patients/jason_smith/base.png');">
+  <figure class="patient-card" :style="{ '--patient-image': 'url(' + $aippImage('patients/jason_smith/base.png') + ')' }">
     <figcaption>Jason Smith</figcaption>
   </figure>
 </div>
@@ -295,7 +295,7 @@ class: conversation-slide critique-conversation-slide
 
 <div class="critique-conversation">
   <figure class="critique-patient-photo">
-    <img :src="'/AIPP/images/patients/juanita_delgado/rage.png'" alt="Juanita Delgado arrabbiata">
+    <img :src="$aippImage('patients/juanita_delgado/rage.png')" alt="Juanita Delgado arrabbiata">
     <figcaption>Juanita</figcaption>
   </figure>
 
