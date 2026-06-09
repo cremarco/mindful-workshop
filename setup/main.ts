@@ -20,12 +20,10 @@ function setImageCssVariables() {
 
   root.setProperty('--aipp-cover-bg-image', cssUrl('aipp-cover-bg.png'))
   root.setProperty('--aipp-marco-bg-image', cssUrl('aipp-marco-bg.png'))
+  root.setProperty('--aipp-whattadata-bg-image', cssUrl('whattadata-bg.png'))
   root.setProperty('--aipp-indice-bg-image', cssUrl('aipp-indice-bg-subtle.png'))
   root.setProperty('--aipp-socialita-bg-image', cssUrl('socialita-digitale-bg.png'))
   root.setProperty('--aipp-critique-bg-image', cssUrl('llmpatients-critique-conversation-bg.png'))
-  root.setProperty('--aipp-llmpatients-work-bg-image', cssUrl('llmpatients-work-bg-coherent.png'))
-  root.setProperty('--aipp-llmpatients-explore-bg-image', cssUrl('llmpatients-explore-bg-coherent.png'))
-  root.setProperty('--aipp-llmpatients-journey-bg-image', cssUrl('llmpatients-journey-bg-coherent.png'))
 }
 
 export default async function setupAippDeck({ app, router }: AppContext) {

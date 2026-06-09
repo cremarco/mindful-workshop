@@ -62,6 +62,26 @@ Questa slide serve a dichiarare il punto di vista: non quello del clinico che so
 -->
 
 ---
+layout: statement
+routeAlias: whattadata
+class: whattadata-slide
+---
+
+<section class="whattadata-hero">
+  <img class="whattadata-mark" :src="$aippImage('whattadata-logo.svg')" alt="Whattadata" />
+  <div class="whattadata-copy">
+    <div class="whattadata-kicker">Spin-off Università degli Studi di Milano-Bicocca</div>
+    <h1>Whattadata</h1>
+    <p>Dati, modelli e piattaforme digitali per la salute mentale: dal progetto alla validazione sul campo.</p>
+  </div>
+</section>
+
+<!--
+Note relatore:
+Usare questa slide come transizione istituzionale: Whattadata è il contesto progettuale da cui arrivano DIPPS, MiCare, LLMPatients e LLMind. Non presentarla come sponsor, ma come laboratorio applicativo: dati clinici, piattaforme e modelli intelligenti costruiti insieme ai servizi. Da qui passare a DIPPS come caso concreto.
+-->
+
+---
 layout: default
 routeAlias: dipps
 class: dipps-intro-slide
@@ -69,18 +89,52 @@ class: dipps-intro-slide
 
 # DIPPS
 
-**Digital Intervention in Psychiatric and Psychological Services**
+<section class="dipps-hero">
+  <div class="dipps-main">
+    <img class="dipps-lockup" :src="$aippImage('dipps/dipps-lockup.png')" alt="DIPPS - Digital Intervention in Psychiatric and Psychological Services" />
+    <p>
+      Un ecosistema digitale per la salute mentale: paziente, clinico, monitoraggio
+      continuo e supporto decisionale dentro un unico workflow.
+    </p>
+    <div class="dipps-meta">
+      <span>Bando MIMIT - Accordi per l'Innovazione</span>
+      <span>marzo 2023 - febbraio 2026</span>
+      <span>investimento ~€5,6 M · CUP B49J23001840005</span>
+    </div>
+  </div>
 
-Un esempio concreto di ecosistema digitale per la salute mentale: non una singola app, ma una piattaforma che prova a collegare paziente, clinico, monitoraggio e supporto decisionale.
-
-- Evoluzione di **MiCare**.
-- Connessione terapeuta-paziente e continuità tra le sedute.
-- PsiTools per il clinico, PENguIN per il paziente, CDSS per il supporto decisionale.
-- Bando MIMIT – Accordi per l'Innovazione (primo sportello 2023): marzo 2023 – febbraio 2026, investimento ~€5,6 M.
+  <aside class="dipps-partners" aria-label="Partenariato DIPPS">
+    <h2>Partenariato</h2>
+    <div class="dipps-partner-list">
+      <div class="dipps-partner">
+        <img :src="$aippImage('dipps/partner-aton.png')" alt="Aton Informatica" />
+        <strong>Aton Informatica Srl</strong>
+      </div>
+      <div class="dipps-partner">
+        <img :src="$aippImage('dipps/partner-cefriel.png')" alt="Cefriel" />
+        <strong>Cefriel S.Cons.R.L</strong>
+      </div>
+      <div class="dipps-partner">
+        <img :src="$aippImage('dipps/partner-bicocca.png')" alt="Università degli Studi di Milano-Bicocca" />
+        <span>
+          <strong>Università degli Studi di Milano-Bicocca</strong>
+          <em>Dipartimento di Informatica, Sistemistica e Comunicazione</em>
+        </span>
+      </div>
+      <div class="dipps-partner">
+        <img :src="$aippImage('dipps/partner-padova-seal.png')" alt="Università degli Studi di Padova" />
+        <span>
+          <strong>Università degli Studi di Padova</strong>
+          <em>Dipartimento di Psicologia Generale</em>
+        </span>
+      </div>
+    </div>
+  </aside>
+</section>
 
 <!--
 Note relatore:
-Questa slide va subito dopo la presentazione dello speaker. Serve a dichiarare da quale esperienza concreta parlo: non solo letteratura e scenari futuri, ma progettazione di piattaforme reali. Sottolineare che DIPPS è utile come caso di studio: mostra il passaggio dalla singola app alla logica di ecosistema digitale. Non entrare ancora nei dettagli tecnici; basta fissare tre parole: continuità, monitoraggio, supporto decisionale. Dettagli a voce se richiesti: Bando MIMIT – Accordi per l'Innovazione (Ministero delle Imprese e del Made in Italy, ex MISE), CUP B49J23001840005, investimento totale ~€5,629 M.
+Questa slide arriva dopo il contesto Whattadata. Serve a dichiarare da quale esperienza concreta parlo: non solo letteratura e scenari futuri, ma progettazione di piattaforme reali. Sottolineare che DIPPS è utile come caso di studio: mostra il passaggio dalla singola app alla logica di ecosistema digitale. Citare il partenariato: Aton Informatica, Cefriel, Università degli Studi di Milano-Bicocca/DISCo e Università degli Studi di Padova/Dipartimento di Psicologia Generale. Non entrare ancora nei dettagli tecnici; basta fissare tre parole: continuità, monitoraggio, supporto decisionale. Dettagli a voce se richiesti: Bando MIMIT – Accordi per l'Innovazione (Ministero delle Imprese e del Made in Italy, ex MISE), CUP B49J23001840005, investimento totale ~€5,629 M.
 -->
 ---
 layout: default
@@ -201,7 +255,7 @@ image: images/patients/juanita_delgado/base.png
 ---
 layout: default
 routeAlias: llmpatients-schermata-lavoro
-class: screenshot-slide llmpatients-work-slide
+class: screenshot-slide
 ---
 
 <div class="mockup-browser app-browser-mockup">
@@ -216,7 +270,7 @@ class: screenshot-slide llmpatients-work-slide
 ---
 layout: default
 routeAlias: llmpatients-esplora-pazienti-griglia
-class: screenshot-slide llmpatients-explore-slide
+class: screenshot-slide
 ---
 
 <div class="mockup-browser app-browser-mockup">
@@ -231,7 +285,7 @@ class: screenshot-slide llmpatients-explore-slide
 ---
 layout: default
 routeAlias: llmpatients-dashboard-percorsi-terapeutici
-class: screenshot-slide llmpatients-journey-slide
+class: screenshot-slide
 ---
 
 <div class="mockup-browser app-browser-mockup">
@@ -311,45 +365,6 @@ class: conversation-slide critique-conversation-slide
 
 ---
 layout: default
-routeAlias: giovanna-comportamento-adattivo
----
-
-# Perché Giovanna si è chiusa
-
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2">
-    <span class="bento-title">Comportamento adattivo</span>
-    <p>Il modello valuta ogni intervento e aggiorna la risposta del paziente: interventi empatici riducono la resistenza e migliorano l'umore; giudizio, svalutazione o fretta producono difese e ritiro. La chiusura di Giovanna non è un bug: è il comportamento atteso.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Memoria duale</span>
-    <p>Breve termine nella sessione, lungo termine vettoriale: continuità e coerenza tra le sedute.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Errori del terapeuta</span>
-    <p>Non ascolta, svaluta, giudica, sfrutta, reagisce in modo inappropriato, appare incompetente.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Profilo strutturato</span>
-    <p>Storia, diagnosi, funzionamento e tratti guidano le risposte in character.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Emozione dominante</span>
-    <p>Ogni risposta porta un'emozione di base (rabbia, paura, tristezza, gioia, fiducia…).</p>
-  </div>
-</div>
-
-> **In formazione l'errore è sicuro** Si può sbagliare e riprovare senza danno: serve proprio a riconoscere l'errore prima del paziente reale.
-
-<small>Fonti: Wang et al., *PATIENT-Ψ*, EMNLP 2024; Li et al., *CureFun*, 2024; Louie et al., *Can LLM-Simulated Practice and Feedback Upskill Human Counselors?*, 2025.</small>
-
-<!--
-Note relatore:
-Questa slide chiude la sequenza-demo iniziale spiegandone il meccanismo. Riprendere il dialogo precedente: quando "il terapeuta" minimizza o spinge troppo, Giovanna si difende e si ritira. Non è un capriccio del modello: è il modulo di comportamento adattivo, che valuta l'intervento e ne modula la risposta. Sottolineare il valore formativo (errore sicuro, ripetibile, con memoria tra le sessioni) e citare velocemente PATIENT-Ψ e CureFun come stato dell'arte. Questo prepara l'idea, ripresa nel finale, che il laboratorio (pazienti sintetici) è diverso dal servizio (pazienti reali).
--->
-
----
-layout: default
 routeAlias: indice
 class: agenda-index-slide
 ---
@@ -379,8 +394,13 @@ class: agenda-index-slide
   </div>
   <div class="bento-card agenda-card">
     <span class="agenda-num">05</span>
-    <span class="bento-title">Tesi finale, LLMind e fonti</span>
-    <p>Dalla governance a un prototipo di IA realmente supervisionata.</p>
+    <span class="bento-title">Tesi finale</span>
+    <p>Una posizione conclusiva su setting, responsabilità e uso clinico dell'IA.</p>
+  </div>
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">06</span>
+    <span class="bento-title">Esempi di tool</span>
+    <p>LLMind e prototipi supervisionati: cosa possono fare e dove si fermano.</p>
   </div>
 </div>
 
@@ -431,6 +451,7 @@ Slide di contesto: serve a fissare la posta in gioco prima della parte scientifi
 ---
 layout: default
 routeAlias: parche
+class: parche-slide
 ---
 
 # IA nella stanza
@@ -438,7 +459,6 @@ routeAlias: parche
 - I pazienti usano già chatbot, app e sistemi generativi per orientarsi nella sofferenza.
 - L'IA entra nella clinica come **strumento**, **interlocutore** e **ambiente relazionale**.
 - Clinician-facing e patient-facing hanno rischi, responsabilità e maturità diverse.
-- Gli LLM-patients mostrano come una conversazione sintetica possa diventare materiale formativo.
 
 > **Punto chiave** Non partiamo dalla tecnologia, ma dal fatto che l'IA è già nella stanza: nei racconti dei pazienti, negli strumenti del clinico e nella relazione di cura.
 

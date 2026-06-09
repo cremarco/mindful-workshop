@@ -21,11 +21,12 @@
   --aipp-accent-gradient: linear-gradient(90deg, var(--aipp-red) 0%, var(--aipp-orange) 35%, var(--aipp-teal) 70%, var(--aipp-red) 100%);
 
   /* Talk section colors from the Tailwind palette. */
-  --aipp-section-room: #e11d48; /* rose-600 */
-  --aipp-section-ml: #2563eb; /* blue-600 */
-  --aipp-section-future: #d97706; /* amber-600 */
-  --aipp-section-normative: #7c3aed; /* violet-600 */
-  --aipp-section-final: #059669; /* emerald-600 */
+  --aipp-section-room: oklch(58.6% 0.253 17.585); /* rose-600 */
+  --aipp-section-ml: oklch(54.6% 0.245 262.881); /* blue-600 */
+  --aipp-section-future: oklch(66.6% 0.179 58.318); /* amber-600 */
+  --aipp-section-normative: oklch(54.1% 0.281 293.009); /* violet-600 */
+  --aipp-section-final: oklch(59.6% 0.145 163.225); /* emerald-600 */
+  --aipp-section-tools: oklch(60.9% 0.126 221.723); /* cyan-600 */
 
   /* Emphasis colour (the one value that flips per mode). */
   --aipp-fg: #1d1d1f;
@@ -48,12 +49,17 @@
 
   --aipp-cover-bg-image: url("/images/aipp-cover-bg.png");
   --aipp-marco-bg-image: url("/images/aipp-marco-bg.png");
+  --aipp-whattadata-bg-image: url("/images/whattadata-bg.png");
   --aipp-indice-bg-image: url("/images/aipp-indice-bg-subtle.png");
   --aipp-socialita-bg-image: url("/images/socialita-digitale-bg.png");
   --aipp-critique-bg-image: url("/images/llmpatients-critique-conversation-bg.png");
-  --aipp-llmpatients-work-bg-image: url("/images/llmpatients-work-bg-coherent.png");
-  --aipp-llmpatients-explore-bg-image: url("/images/llmpatients-explore-bg-coherent.png");
-  --aipp-llmpatients-journey-bg-image: url("/images/llmpatients-journey-bg-coherent.png");
+  --aipp-agenda-shape-01: url("/images/agenda-shapes/agenda-shape-01-amber.png");
+  --aipp-agenda-shape-02: url("/images/agenda-shapes/agenda-shape-02-emerald.png");
+  --aipp-agenda-shape-03: url("/images/agenda-shapes/agenda-shape-03-cyan.png");
+  --aipp-agenda-shape-04: url("/images/agenda-shapes/agenda-shape-04-blue.png");
+  --aipp-agenda-shape-05: url("/images/agenda-shapes/agenda-shape-05-violet.png");
+  --aipp-agenda-shape-06: url("/images/agenda-shapes/agenda-shape-06-rose.png");
+  --aipp-parche-shape: url("/images/parche-image-1-cropped.png");
 
   /* Picture glyph used (via mask) inside image-placeholder tiles. */
   --aipp-image-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2.5'/%3E%3Ccircle cx='8.6' cy='10' r='1.7'/%3E%3Cpath d='M21 16.5 15.5 11 7 19'/%3E%3C/svg%3E");
@@ -537,6 +543,29 @@ html.dark {
   width: 100%;
 }
 
+.slidev-layout.default.parche-slide {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.slidev-layout.default.parche-slide::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  z-index: 2;
+  width: 8.75rem;
+  aspect-ratio: 455 / 1029;
+  background: var(--aipp-parche-shape) right center / contain no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.slidev-layout.default.parche-slide > :not(blockquote) {
+  position: relative;
+  z-index: 1;
+}
+
 /* Image side of image-right gets rounded corners + soft shadow */
 .slidev-layout.image-right + div,
 .slidev-layout.image-left + div {
@@ -884,15 +913,6 @@ html.dark {
   overflow: hidden;
 }
 
-.slidev-layout.default.agenda-index-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--aipp-indice-bg-image) center / cover no-repeat;
-  pointer-events: none;
-}
-
 .slidev-layout.default.agenda-index-slide > h1,
 .slidev-layout.default.agenda-index-slide > .agenda-grid {
   position: relative;
@@ -900,31 +920,62 @@ html.dark {
 }
 
 .agenda-card {
-  --agenda-color: var(--aipp-section-room);
+  --agenda-color: var(--aipp-section-future);
+  --agenda-shape: var(--aipp-agenda-shape-01);
 
+  position: relative;
   gap: 0.45rem;
   min-height: 7.8rem;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 .agenda-card:nth-child(1) {
-  --agenda-color: var(--aipp-section-room);
+  --agenda-color: var(--aipp-section-future);
+  --agenda-shape: var(--aipp-agenda-shape-01);
 }
 
 .agenda-card:nth-child(2) {
-  --agenda-color: var(--aipp-section-ml);
+  --agenda-color: var(--aipp-section-final);
+  --agenda-shape: var(--aipp-agenda-shape-02);
 }
 
 .agenda-card:nth-child(3) {
-  --agenda-color: var(--aipp-section-future);
+  --agenda-color: var(--aipp-section-tools);
+  --agenda-shape: var(--aipp-agenda-shape-03);
 }
 
 .agenda-card:nth-child(4) {
-  --agenda-color: var(--aipp-section-normative);
+  --agenda-color: var(--aipp-section-ml);
+  --agenda-shape: var(--aipp-agenda-shape-04);
 }
 
 .agenda-card:nth-child(5) {
-  --agenda-color: var(--aipp-section-final);
+  --agenda-color: var(--aipp-section-normative);
+  --agenda-shape: var(--aipp-agenda-shape-05);
+}
+
+.agenda-card:nth-child(6) {
+  --agenda-color: var(--aipp-section-room);
+  --agenda-shape: var(--aipp-agenda-shape-06);
+}
+
+.agenda-card::before {
+  content: "";
+  position: absolute;
+  top: -2.6rem;
+  right: -2.35rem;
+  z-index: 0;
+  width: 7.7rem;
+  aspect-ratio: 1;
+  background: var(--agenda-shape) center / contain no-repeat;
+  opacity: 0.66;
+  pointer-events: none;
+}
+
+.agenda-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .agenda-num {
@@ -984,6 +1035,210 @@ html.dark {
 
 .slidev-layout.statement h1 + p {
   margin-top: 2.35rem;
+}
+
+.slidev-layout.statement.whattadata-slide {
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0;
+  color: var(--aipp-fg);
+  background: transparent !important;
+  text-align: left;
+  --whattadata-accent: #4f46e5;
+}
+
+html.dark .slidev-layout.statement.whattadata-slide {
+  --whattadata-accent: #a3e635;
+}
+
+.slidev-layout.statement.whattadata-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--aipp-whattadata-bg-image) right bottom / 55% auto no-repeat;
+}
+
+.slidev-layout.statement.whattadata-slide > * {
+  position: relative;
+  z-index: 2;
+}
+
+.whattadata-hero {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  padding: 4.2rem 6rem;
+}
+
+.whattadata-mark {
+  width: 9.6rem;
+  height: auto;
+  flex: 0 0 auto;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+.whattadata-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 680px;
+}
+
+.whattadata-kicker {
+  width: fit-content;
+  color: var(--whattadata-accent);
+  font-size: 0.88rem;
+  font-weight: 760;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slidev-layout.statement.whattadata-slide h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--aipp-fg);
+  font-size: 5.15rem;
+  font-weight: 760;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.slidev-layout.statement.whattadata-slide p {
+  max-width: 34ch;
+  margin: 0;
+  color: var(--aipp-soft);
+  font-size: 1.46rem;
+  font-weight: 450;
+  line-height: 1.35;
+}
+
+.slidev-layout.default.dipps-intro-slide {
+  display: block;
+  overflow: hidden;
+  padding: 0 !important;
+  color: #f8fafc;
+  background: #4e5a6d !important;
+  letter-spacing: 0;
+}
+
+.slidev-layout.default.dipps-intro-slide > h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.dipps-hero {
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+  gap: 3.2rem;
+  align-items: center;
+  padding: 4.2rem 5rem 3.8rem;
+}
+
+.dipps-main {
+  display: grid;
+  gap: 1.55rem;
+  align-content: center;
+  min-width: 0;
+}
+
+.dipps-lockup {
+  display: block;
+  width: min(100%, 650px);
+  height: auto;
+}
+
+.dipps-main p {
+  max-width: 37ch;
+  margin: 0;
+  color: rgba(248, 250, 252, 0.88);
+  font-size: 1.34rem;
+  font-weight: 480;
+  line-height: 1.36;
+  letter-spacing: 0;
+}
+
+.dipps-meta {
+  display: grid;
+  gap: 0.28rem;
+  max-width: 620px;
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.dipps-meta span + span {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.dipps-partners {
+  min-width: 0;
+  padding-left: 3rem;
+  border-left: 1px solid rgba(248, 250, 252, 0.22);
+}
+
+.dipps-partners h2 {
+  margin: 0 0 1.75rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.dipps-partner-list {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.dipps-partner {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  min-height: 4.25rem;
+  color: rgba(248, 250, 252, 0.92);
+  letter-spacing: 0;
+}
+
+.dipps-partner img {
+  display: block;
+  width: 4.2rem;
+  max-height: 4.2rem;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.dipps-partner strong {
+  display: block;
+  color: #fff !important;
+  font-size: 1.02rem;
+  font-weight: 720;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.dipps-partner em {
+  display: block;
+  margin-top: 0.14rem;
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 0.84rem;
+  font-style: italic;
+  line-height: 1.22;
+  letter-spacing: 0;
 }
 
 .slidev-layout.statement.socialita-digitale-slide {
@@ -1195,15 +1450,6 @@ html.dark {
   padding: 3.25rem 4.7rem !important;
 }
 
-.slidev-layout.default.critique-conversation-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--aipp-critique-bg-image) center / cover no-repeat;
-  pointer-events: none;
-}
-
 .critique-conversation {
   position: relative;
   z-index: 1;
@@ -1291,44 +1537,13 @@ html.dark {
 .slidev-layout.screenshot-slide {
   display: grid;
   place-items: center;
-  padding: 1rem 2.7rem;
-}
-
-.slidev-layout.screenshot-slide.llmpatients-work-slide,
-.slidev-layout.screenshot-slide.llmpatients-explore-slide,
-.slidev-layout.screenshot-slide.llmpatients-journey-slide {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.slidev-layout.screenshot-slide.llmpatients-work-slide {
-  --llmpatients-edge-bg: var(--aipp-llmpatients-work-bg-image);
-}
-
-.slidev-layout.screenshot-slide.llmpatients-explore-slide {
-  --llmpatients-edge-bg: var(--aipp-llmpatients-explore-bg-image);
-}
-
-.slidev-layout.screenshot-slide.llmpatients-journey-slide {
-  --llmpatients-edge-bg: var(--aipp-llmpatients-journey-bg-image);
-}
-
-.slidev-layout.screenshot-slide.llmpatients-work-slide::before,
-.slidev-layout.screenshot-slide.llmpatients-explore-slide::before,
-.slidev-layout.screenshot-slide.llmpatients-journey-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--llmpatients-edge-bg) center / cover no-repeat;
-  pointer-events: none;
+  padding: 0.65rem 1.35rem;
 }
 
 .slidev-layout.screenshot-slide > .mockup-browser.app-browser-mockup {
   position: relative;
   z-index: 1;
-  width: min(100%, 740px);
+  width: min(100%, 780px);
   margin: 0 auto;
 }
 
