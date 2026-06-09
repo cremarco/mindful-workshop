@@ -202,7 +202,7 @@ Spiegare in modo semplice che Giovanna non è una paziente reale e non va presen
 ---
 layout: default
 routeAlias: llmpatients-schermata-lavoro
-class: screenshot-slide
+class: screenshot-slide llmpatients-work-slide
 ---
 
 <div class="mockup-browser app-browser-mockup">
@@ -221,7 +221,7 @@ Usare questa slide come screenshot didattico dell'app: non vendere la tecnologia
 ---
 layout: default
 routeAlias: llmpatients-esplora-pazienti-griglia
-class: screenshot-slide
+class: screenshot-slide llmpatients-explore-slide
 ---
 
 <div class="mockup-browser app-browser-mockup">
@@ -264,21 +264,21 @@ class: patient-carousel-slide
 
 # LLMPatients: pazienti simulati
 
-<div class="patient-card-grid">
-  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/alex_carter/base.png');">
+<div class="patient-bento">
+  <figure class="patient-card hero" style="--patient-image: url('/images/patients/juanita_delgado/base.png');">
+    <figcaption>Juanita Delgado</figcaption>
+  </figure>
+  <figure class="patient-card" style="--patient-image: url('/images/patients/alex_carter/base.png');">
     <figcaption>Alex Carter</figcaption>
   </figure>
-  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/crystal_smith/base.png');">
+  <figure class="patient-card" style="--patient-image: url('/images/patients/crystal_smith/base.png');">
     <figcaption>Crystal Smith</figcaption>
   </figure>
-  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/daniel_isherwood/base.png');">
+  <figure class="patient-card" style="--patient-image: url('/images/patients/daniel_isherwood/base.png');">
     <figcaption>Daniel Isherwood</figcaption>
   </figure>
-  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/jason_smith/base.png');">
+  <figure class="patient-card" style="--patient-image: url('/images/patients/jason_smith/base.png');">
     <figcaption>Jason Smith</figcaption>
-  </figure>
-  <figure class="patient-card name-dark" style="--patient-image: url('/images/patients/juanita_delgado/base.png');">
-    <figcaption>Juanita Delgado</figcaption>
   </figure>
 </div>
 
@@ -327,17 +327,38 @@ Valore formativo: non è la risposta perfetta del modello, ma la possibilità di
 ---
 layout: default
 routeAlias: indice
+class: agenda-index-slide
 ---
 
 # Indice del talk
 
-1. **IA già nella stanza**: chatbot, app e nuovi interlocutori digitali.
-2. **Lezioni dalla medicina dell'immagine**: validazione, workflow, confini.
-3. **Psicopatologia e dati**: linguaggio, digital phenotyping, monitoraggio.
-4. **Rischi clinici**: empatia simulata, dipendenza, sycophancy, crisi.
-5. **Governance nei servizi**: responsabilità, supervisione, uso previsto.
-
-> **Analogia clinica** La diagnostica per immagini è un confronto utile, non il modello da copiare.
+<div class="bento-grid bento-3 agenda-grid">
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">01</span>
+    <span class="bento-title">IA già nella stanza</span>
+    <p>Chatbot, app e nuovi interlocutori digitali.</p>
+  </div>
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">02</span>
+    <span class="bento-title">Lezioni dalla medicina dell'immagine</span>
+    <p>Validazione, workflow, confini.</p>
+  </div>
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">03</span>
+    <span class="bento-title">Psicopatologia e dati</span>
+    <p>Linguaggio, digital phenotyping, monitoraggio.</p>
+  </div>
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">04</span>
+    <span class="bento-title">Rischi clinici</span>
+    <p>Empatia simulata, dipendenza, sycophancy, crisi.</p>
+  </div>
+  <div class="bento-card agenda-card">
+    <span class="agenda-num">05</span>
+    <span class="bento-title">Governance nei servizi</span>
+    <p>Responsabilità, supervisione, uso previsto.</p>
+  </div>
+</div>
 
 <!--
 Usare questa slide come promessa di percorso. Dopo il caso del paziente sintetico, il talk si allarga al fatto che l'IA è già nella stanza di consultazione perché i pazienti la usano. La parte centrale confronta la maturità dell'IA in medicina dell'immagine con la complessità della psicopatologia. La parte finale torna ai servizi: usi realistici, rischi patient-facing e condizioni di governance. Chiarire che il filo non è "copiare la radiologia", ma imparare da validazione, workflow, responsabilità e limiti.
@@ -364,6 +385,7 @@ Questa slide serve ad agganciare il pubblico. Non parlare dell'IA come oggetto e
 ---
 layout: statement
 routeAlias: socialita-digitale
+class: socialita-digitale-slide
 ---
 
 # La socialità digitale è già un dato clinico.
@@ -413,13 +435,28 @@ routeAlias: che-cosa-intendiamo-per-ia
 
 Una classificazione semplice per la clinica.
 
-| Forma di IA | Uso clinico possibile |
-|---|---|
-| Machine learning predittivo | rischio, ricadute, drop-out, risposta ai trattamenti |
-| NLP / analisi del linguaggio | testi clinici, linguaggio spontaneo, segnali psicopatologici |
-| Digital phenotyping | smartphone, sonno, attività, mobilità, socialità |
-| IA generativa / LLM | chatbot, sintesi cliniche, psicoeducazione, supporto al clinico |
-| IA multimodale | testo, voce, volto, movimento, cartella clinica, wearable |
+<div class="bento-grid bento-3">
+  <div class="bento-card">
+    <span class="bento-title">Machine learning predittivo</span>
+    <p>Rischio, ricadute, drop-out, risposta ai trattamenti.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">NLP / analisi del linguaggio</span>
+    <p>Testi clinici, linguaggio spontaneo, segnali psicopatologici.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">Digital phenotyping</span>
+    <p>Smartphone, sonno, attività, mobilità, socialità.</p>
+  </div>
+  <div class="bento-card span-2 bento-accent">
+    <span class="bento-title">IA generativa / LLM</span>
+    <p>Chatbot, sintesi cliniche, psicoeducazione, supporto al clinico.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">IA multimodale</span>
+    <p>Testo, voce, volto, movimento, cartella clinica, wearable.</p>
+  </div>
+</div>
 
 <!--
 Questa è una slide di definizione: sei minuti circa, senza entrare subito nei dettagli tecnici. Distinguere le famiglie di IA perché ognuna porta promesse e rischi diversi. Il machine learning predittivo lavora su probabilità e outcome; NLP e LLM lavorano sul linguaggio, ma in modi diversi; il digital phenotyping porta la psicopatologia fuori dallo studio; l'IA multimodale integra segnali eterogenei. Preparare il pubblico al fatto che la regolazione deve dipendere dall'uso previsto: una sintesi clinica revisionata non ha lo stesso rischio di un chatbot patient-facing in una crisi suicidaria.
@@ -588,11 +625,23 @@ routeAlias: tre-casi-regolati
 
 # Tre casi regolati, tre lezioni
 
-| Sistema | Lezione |
-|---|---|
-| IDx-DR | retinopatia diabetica, primary care, output definito |
-| GI Genius | polipi in colonoscopia, tempo reale, secondo osservatore |
-| Paige Prostate Detect | vetrini digitali, aree sospette, supervisione del patologo |
+<div class="bento-grid bento-3">
+  <div class="bento-card">
+    <span class="bento-eyebrow">Caso 1</span>
+    <span class="bento-title">IDx-DR</span>
+    <p>Retinopatia diabetica, primary care, output definito.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">Caso 2</span>
+    <span class="bento-title">GI Genius</span>
+    <p>Polipi in colonoscopia, tempo reale, secondo osservatore.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">Caso 3</span>
+    <span class="bento-title">Paige Prostate Detect</span>
+    <p>Vetrini digitali, aree sospette, supervisione del patologo.</p>
+  </div>
+</div>
 
 > **Uso previsto** L'IA funziona meglio quando il compito è delimitato, l'input è chiaro e l'esito è verificabile.
 
