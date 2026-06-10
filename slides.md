@@ -1138,19 +1138,6 @@ Qui sviluppiamo gli scenari di ML diagnostico puro. Usare la parola diagnostici,
 -->
 
 ---
-layout: statement
-routeAlias: nlp-analisi-linguaggio
-class: section-02
----
-
-# NLP/analisi del linguaggio
-
-<!--
-Note relatore:
-Passaggio alla terza famiglia. Il linguaggio è il ponte naturale tra intelligenza artificiale e psicopatologia, perché molta clinica è linguaggio: anamnesi, colloquio, referti, diari, messaggi, social media, trascrizioni. Ma proprio per questo è pericoloso ridurlo a feature. Il linguaggio è dato clinico e atto relazionale.
--->
-
----
 layout: default
 routeAlias: scenari-nlp
 class: section-02
