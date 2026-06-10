@@ -255,6 +255,169 @@
   line-height: 1.3;
 }
 
+/* ============================================================
+   TOOL CARDS — Apple bento style with app screenshots
+   ============================================================ */
+
+/* 3-col × 2-row grid, fills slide height */
+.slidev-layout:not(.intro-slide) .bento-grid.bento-apple {
+  flex: 1 1 auto;
+  min-height: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+}
+
+/* Span two grid rows */
+.bento-card.span-rows-2 {
+  grid-row: span 2;
+}
+
+/* Base Apple tool card: dark surface, clips overflow for floating images */
+.bento-card.tool-apple {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Large stat (6M+, 70%…) */
+.tool-stat {
+  margin-top: auto;
+  font-size: 3.4rem;
+  font-weight: 760;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.tool-stat-label {
+  margin-top: 0.16rem;
+  font-size: 0.7rem;
+  font-weight: 560;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* App screenshot floating in card */
+.tool-shot {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Portrait phone mockup — right edge of wide card */
+.tool-shot.shot-right {
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 115%;
+  width: auto;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%);
+}
+
+/* Landscape dashboard — bottom of wide card, fades upward */
+.tool-shot.shot-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* Full-bleed background image — photo cards */
+.tool-shot.shot-bg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+}
+
+/* Dark scrim for photo-background cards */
+.bento-card.tool-apple.has-photo-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.55) 48%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bento-card.tool-apple.has-photo-bg > :not(.tool-shot) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pill badges */
+.tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16rem 0.5rem;
+  border-radius: var(--aipp-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.62rem;
+  font-weight: 660;
+  color: rgba(255, 255, 255, 0.76);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tool-badge.regulated {
+  background: rgba(52, 199, 89, 0.18);
+  border-color: rgba(52, 199, 89, 0.4);
+  color: #52e06b;
+}
+
+.tool-badge.fda {
+  background: rgba(48, 130, 240, 0.18);
+  border-color: rgba(48, 130, 240, 0.4);
+  color: #82b8ff;
+}
+
+.tool-badge.commercial {
+  background: rgba(255, 180, 0, 0.16);
+  border-color: rgba(255, 180, 0, 0.34);
+  color: #ffd060;
+}
+
+.tool-badge.patient-badge {
+  background: rgba(175, 82, 222, 0.16);
+  border-color: rgba(175, 82, 222, 0.36);
+  color: #d07eff;
+}
+
+.tool-badge.clinician-badge {
+  background: rgba(0, 184, 219, 0.16);
+  border-color: rgba(0, 184, 219, 0.36);
+  color: #5de8ff;
+}
+
 /* ---- Inline tag row — compact list of short labels ---- */
 .slidev-layout:not(.intro-slide) .tag-row {
   display: flex;
@@ -393,6 +556,106 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ============================================================
+   LLMIND — clinician-facing tool feature slide
+   Browser mockup on the left, copy + validation metrics on the right.
+   ============================================================ */
+.llmind-slide .llmind-layout {
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 0.9rem 0 0;
+}
+
+/* Left — mockup fills the column height; screenshot cropped from the top */
+.llmind-slide .llmind-shot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  margin: 0;
+}
+
+.llmind-slide .llmind-shot .app-browser-mockup {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.llmind-slide .llmind-shot .app-browser-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.llmind-slide .llmind-shot img.app-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.llmind-slide .llmind-shot figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+}
+
+.llmind-slide .llmind-url {
+  font-weight: 640;
+  color: color-mix(in srgb, var(--aipp-accent) 72%, var(--aipp-fg));
+}
+
+.llmind-slide .llmind-oss {
+  color: var(--aipp-soft);
+  font-weight: 560;
+}
+
+/* Right — copy + validation tiles */
+.llmind-slide .llmind-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 0;
+}
+
+.llmind-slide .llmind-lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.42;
+}
+
+.llmind-slide .llmind-badges {
+  margin-top: 0.1rem;
+  padding-top: 0;
+}
+
+.llmind-slide .llmind-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.llmind-slide .llmind-metrics .bento-card.bento-stat {
+  padding: 0.95rem 0.9rem;
+  gap: 0.35rem;
+}
+
+.llmind-slide .llmind-metrics .bento-card.bento-stat .bento-figure {
+  font-size: 1.9rem;
+}
+
+.llmind-slide .llmind-metrics .bento-card.bento-stat p {
+  font-size: 0.78rem;
+  line-height: 1.26;
 }
 
 /* ============================================================

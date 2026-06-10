@@ -139,7 +139,7 @@ Questa slide arriva dopo il contesto Whattadata. Serve a dichiarare da quale esp
 -->
 ---
 layout: default
-routeAlias: chat-1
+routeAlias: colloquio-scid-1
 class: conversation-slide
 ---
 
@@ -166,7 +166,7 @@ class: conversation-slide
 
 ---
 layout: default
-routeAlias: chat-2
+routeAlias: colloquio-scid-2
 class: conversation-slide
 ---
 
@@ -283,7 +283,7 @@ class: patient-carousel-slide
 
 ---
 layout: default
-routeAlias: chat-3
+routeAlias: colloquio-critica
 class: conversation-slide critique-conversation-slide
 ---
 
@@ -413,7 +413,7 @@ Slide di contesto: serve a fissare la posta in gioco prima della parte scientifi
 
 ---
 layout: default
-routeAlias: perche
+routeAlias: ia-nella-stanza-intro
 class: parche-slide section-01
 ---
 
@@ -533,7 +533,7 @@ Questa slide fonde il materiale su ecosistema digitale e ICT frammentato. Il pun
 
 ---
 layout: statement
-routeAlias: ia-salute-mentale-cosa-pensiamo
+routeAlias: ia-cosa-pensiamo
 class: socialita-digitale-slide ia-cosa-pensiamo-slide section-01
 background: images/socialita-digitale-bg.png
 ---
@@ -628,7 +628,7 @@ Introdurre un criterio di prudenza: non basta chiedere se il sistema è accurato
 
 ---
 layout: default
-routeAlias: dss-psicologia-come-si-usa
+routeAlias: dss-come-si-usa
 class: compact-table-slide section-01
 ---
 
@@ -651,7 +651,7 @@ Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto ripr
 -->
 ---
 layout: statement
-routeAlias: ml-psicologia-psichiatria
+routeAlias: ml-psicologia-index
 class: section-opener-slide ml-psicologia-psichiatria-slide section-02
 ---
 
@@ -730,7 +730,7 @@ Usare questa slide come mappa di navigazione. Non soffermarsi troppo su ogni box
 
 ---
 layout: default
-routeAlias: ml-predittivo
+routeAlias: classificare-vs-comprendere
 class: section-02
 ---
 
@@ -972,7 +972,7 @@ Qui rispondere alla domanda: esistono modelli simili in campo psicologico? Sì, 
 
 ---
 layout: default
-routeAlias: ml-psicologia-qualita
+routeAlias: qualita-evidenza-ml
 class: section-02
 ---
 
@@ -1015,7 +1015,7 @@ Questa è una slide cruciale per non cadere nell'entusiasmo ingenuo. Molti paper
 
 ---
 layout: two-cols-header
-routeAlias: pixel-significato
+routeAlias: reperto-vs-significato
 class: pixel-significato-slide section-02
 ---
 
@@ -1050,7 +1050,7 @@ Questa slide usa una formulazione più chiara del contrasto tra reperto e signif
 
 ---
 layout: default
-routeAlias: condizioni-favorevoli-limite
+routeAlias: condizioni-limite
 class: section-02
 ---
 
@@ -1197,7 +1197,7 @@ Portare esempi clinici semplici. Una frase come "non ce la faccio più" può ess
 
 ---
 layout: default
-routeAlias: nlp-diagnosi-psicopatologia
+routeAlias: nlp-diagnosi
 class: compact-table-slide section-02
 ---
 
@@ -1254,7 +1254,7 @@ Questa slide deve essere discussiva. I modelli NLP sembrano vicini alla clinica 
 
 ---
 layout: statement
-routeAlias: digital-phenotyping
+routeAlias: fenotipo-digitale-index
 class: section-02
 ---
 
@@ -1267,7 +1267,7 @@ Passaggio al fenotipo digitale. Definirlo in modo semplice: raccolta passiva o a
 
 ---
 layout: default
-routeAlias: scenari-digital-phenotyping
+routeAlias: scenari-fenotipo-digitale
 class: section-02
 ---
 
@@ -1315,7 +1315,7 @@ Evidenziare la differenza tra diagnosi e monitoraggio. Il fenotipo digitale non 
 
 ---
 layout: default
-routeAlias: scenari-ia-generativa-llm
+routeAlias: scenari-llm
 class: scenari-llm-slide section-02
 ---
 
@@ -1472,7 +1472,7 @@ L'IA multimodale promette una valutazione più ricca: non solo cosa dice il pazi
 
 ---
 layout: statement
-routeAlias: aspetti-normativi
+routeAlias: aspetti-normativi-index
 class: section-opener-slide aspetti-normativi-slide section-04
 ---
 
@@ -1520,7 +1520,7 @@ class: section-04
 
 ---
 layout: statement
-routeAlias: tool
+routeAlias: strumenti-index
 class: section-opener-slide ia-nella-stanza-index-slide section-01
 ---
 
@@ -1528,18 +1528,206 @@ class: section-opener-slide ia-nella-stanza-index-slide section-01
 
 ---
 layout: default
-routeAlias: tool-2
+routeAlias: strumenti
 class: section-04
 ---
 
-# Quali sono i tool?
+# Il mercato è a tre velocità
 
-> todo
+<div class="bento-grid" style="flex:1 1 auto;min-height:0;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto 1fr;gap:0.95rem;margin:1rem 0 0;">
+  <div class="bento-card bento-accent span-3">
+    <span class="bento-eyebrow">Mercato IA · salute mentale</span>
+    <span class="bento-title">Il mercato esiste già, ma è molto più avanti della validazione clinica e della regolazione</span>
+    <p>La FDA ha autorizzato oltre 1.200 AI device medici — ma nessuno risulta approvato per la salute mentale (DHAC, 2025). Il caso <strong>Kintsugi</strong>: AI vocale per depressione/ansia, chiusa per mancato FDA clearance.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">Livello 1 · Regolato</span>
+    <span class="bento-title">Quasi medical device</span>
+    <p>Compiti delimitati, supervisione clinica esplicita. Rari ma solidi.<br><br><strong>Cognoa Canvas Dx</strong> — FDA De Novo Class II<br><strong>Limbic Access</strong> — Class IIa UK</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">Livello 2 · Commerciale</span>
+    <span class="bento-title">Evidenze parziali</span>
+    <p>Supporto, monitoraggio, engagement. Utile come adjunct, non sostitutivo della cura.<br><br><strong>Wysa · Woebot · Aiberry · NeuroFlow</strong></p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">Livello 3 · Clinician-facing</span>
+    <span class="bento-title">Workflow e produttività</span>
+    <p>Documentazione, supervisione, qualità: l'adozione più realistica nel breve termine.<br><br><strong>Eleos Health · Lyssn · Wysa Copilot</strong></p>
+  </div>
+</div>
 
+<!--
+Note relatore:
+La domanda clinica non è "se usarla", ma quale funzione le attribuiamo: diagnosi, triage, supporto, documentazione, relazione o sorveglianza. Il caso Kintsugi: aveva un modello promettente ma avere un modello non equivale ad avere un dispositivo clinicamente e regolatoriamente sostenibile.
+-->
+
+---
+layout: default
+routeAlias: strumenti-patient
+class: section-04
+---
+
+# Tool patient-facing
+
+<div class="bento-grid bento-apple">
+
+  <!-- Wysa — tall card, col 1, righe 1-2 -->
+  <div class="bento-card tool-apple span-rows-2" style="background:linear-gradient(160deg,#052b2b 0%,#0d1e38 100%);grid-column:1;grid-row:1/span 2;">
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Chatbot CBT · Patient-facing</span>
+    <span class="bento-title" style="color:#fff;font-size:1.55rem">Wysa</span>
+    <p style="color:rgba(255,255,255,.66);font-size:.86rem;line-height:1.44;margin:0">Self-help, monitoraggio tra sedute, supporto per ansia e depressione. Human oversight esplicito. Non progettato per crisi acute.</p>
+    <div class="tool-stat" style="color:#5de8ff">6M+</div>
+    <span class="tool-stat-label" style="color:rgba(255,255,255,.46)">Utenti nel mondo</span>
+    <div class="tool-badges">
+      <span class="tool-badge fda">FDA Breakthrough</span>
+      <span class="tool-badge">CBT-based</span>
+      <span class="tool-badge patient-badge">Patient-facing</span>
+    </div>
+  </div>
+
+  <!-- Limbic Care — wide card col 2-3, riga 1 — screenshot ufficiale dal sito -->
+  <div class="bento-card tool-apple span-2" style="background:#0c1626;grid-column:2/span 2;grid-row:1;">
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Chat generativa CBT · Nature Med 2026</span>
+    <span class="bento-title" style="color:#fff;font-size:1.38rem">Limbic Care</span>
+    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:55%">Architettura cognitive layer per LLM psicoterapeutici. RCT double-blind su 227 partecipanti; 19.674 trascritti analizzati su deployment reale.</p>
+    <div class="tool-badges">
+      <span class="tool-badge regulated">Evidenza RCT</span>
+      <span class="tool-badge">Nature Med 2026</span>
+      <span class="tool-badge patient-badge">Patient-facing</span>
+    </div>
+    <img class="tool-shot shot-right" :src="$aippImage('tools/limbic-mobile.webp')" alt="Limbic Care app" />
+  </div>
+
+  <!-- Woebot — wide card col 2-3, riga 2 -->
+  <div class="bento-card tool-apple span-2" style="background:#12101c;grid-column:2/span 2;grid-row:2;">
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Behavioral health copilot</span>
+    <span class="bento-title" style="color:#fff;font-size:1.38rem">Woebot</span>
+    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:68%">Chatbot CBT con riconoscimento di linguaggio preoccupante, HIPAA-compliant. Versione provider-oriented come copilot comportamentale per il care team.</p>
+    <div class="tool-badges">
+      <span class="tool-badge commercial">Commerciale</span>
+      <span class="tool-badge patient-badge">Patient-facing</span>
+      <span class="tool-badge clinician-badge">Clinician copilot</span>
+    </div>
+    <img class="tool-shot" :src="$aippImage('tools/woebot-science.png')" alt="" style="position:absolute;right:-1rem;bottom:-1rem;width:38%;opacity:.1;pointer-events:none;" />
+  </div>
+
+</div>
+
+<!--
+Note relatore:
+Wysa ha FDA Breakthrough Device Designation per un conversational agent in dolore cronico con depressione/ansia associate — non una clearance completa. Limbic Care è l'esempio scientificamente più forte: l'architettura cognitive layer è stata valutata sia in un RCT double-blind che su dati reali di deployment. Non siamo più nell'app generica: è un tentativo di costruire un'architettura clinica intorno agli LLM.
+-->
+
+---
+layout: default
+routeAlias: strumenti-clinician
+class: section-04
+---
+
+# Tool clinician-facing
+
+<div class="bento-grid bento-apple">
+
+  <!-- Lyssn — wide card col 1-2, riga 1 — screenshot reale dal sito ufficiale -->
+  <div class="bento-card tool-apple span-2" style="background:#0d1422;grid-column:1/span 2;grid-row:1;overflow:hidden;">
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Supervisione clinica · 4,5M sessioni</span>
+    <span class="bento-title" style="color:#fff;font-size:1.38rem">Lyssn</span>
+    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:55%">Analisi di sedute, trascrizione, valutazione di fedeltà a pratiche evidence-based e formazione. 65+ pubblicazioni peer-reviewed.</p>
+    <div class="tool-badges">
+      <span class="tool-badge regulated">65+ pubblicazioni</span>
+      <span class="tool-badge clinician-badge">Clinician-facing</span>
+      <span class="tool-badge">NLP + AI</span>
+    </div>
+    <img class="tool-shot shot-bottom" :src="$aippImage('tools/lyssn-dashboard.webp')" alt="Lyssn MI Fidelity dashboard" />
+  </div>
+
+  <!-- Cognoa — tall card col 3, righe 1-2 — immagine ufficiale Cognoa -->
+  <div class="bento-card tool-apple has-photo-bg span-rows-2" style="grid-column:3;grid-row:1/span 2;">
+    <img class="tool-shot shot-bg" :src="$aippImage('tools/cognoa-ai.jpg')" alt="" />
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.52)">Diagnostic aid · ASD 18–72 mesi</span>
+    <span class="bento-title" style="color:#fff;font-size:1.3rem">Cognoa Canvas Dx</span>
+    <p style="color:rgba(255,255,255,.68);font-size:.82rem;line-height:1.44;margin:0">ML su input di caregiver, video e clinico. Non stand-alone: prescrivibile con valutazione clinica. PPV 81%, NPV 98%.</p>
+    <div class="tool-badges">
+      <span class="tool-badge regulated">FDA De Novo Class II</span>
+      <span class="tool-badge fda">Unico device regolato</span>
+    </div>
+  </div>
+
+  <!-- Eleos Health — wide card col 1-2, riga 2 -->
+  <div class="bento-card tool-apple span-2" style="background:#080f20;grid-column:1/span 2;grid-row:2;overflow:hidden;">
+    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Documentazione e workflow · Community care</span>
+    <span class="bento-title" style="color:#fff;font-size:1.38rem">Eleos Health</span>
+    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:58%">Note automatiche, suggerimenti in tempo reale, compliance e clinical insights. AI per la community-based behavioral care.</p>
+    <div class="tool-stat" style="color:#ffd060;font-size:2.8rem;margin-top:auto">70%</div>
+    <span class="tool-stat-label" style="color:rgba(255,255,255,.42)">riduzione tempo di documentazione</span>
+    <div class="tool-badges" style="padding-top:.4rem">
+      <span class="tool-badge commercial">Commerciale</span>
+      <span class="tool-badge clinician-badge">Clinician-facing</span>
+    </div>
+    <img class="tool-shot" :src="$aippImage('tools/eleos-documentation.svg')" alt="" style="position:absolute;right:-2rem;top:50%;transform:translateY(-50%);height:130%;opacity:.08;pointer-events:none;" />
+  </div>
+
+</div>
+
+<!--
+Note relatore:
+Lyssn è particolarmente rilevante per psicoterapeuti: 65+ pubblicazioni peer-reviewed, analisi di fedeltà evidence-based. È supervisione e formazione, non terapia. Cognoa è l'eccezione che conferma la regola: l'unico dispositivo medico AI-enabled per un uso vicino alla psicologia/neuropsichiatria. Ma anche qui: il modello si attiva solo nel 32% dei casi e ha un PPV dell'81% — serve sempre il clinico.
+-->
+
+---
+layout: default
+routeAlias: strumenti-llmind
+class: section-04 llmind-slide
+---
+
+# LLMind
+
+<div class="llmind-layout">
+  <figure class="llmind-shot">
+    <AppScreenshot src="tools/llmind-app.png" alt="LLMind Chat: caso clinico inserito dal clinico e diagnosi suggerita dal modello con possibilità di validazione" />
+    <figcaption>
+      <span class="llmind-url">llmind.datai.disco.unimib.it</span>
+      <span class="llmind-oss">Open source · AGPL</span>
+    </figcaption>
+  </figure>
+  <div class="llmind-copy">
+    <span class="bento-eyebrow">Decision-support · Clinician-facing · Whattadata × Milano-Bicocca</span>
+    <p class="llmind-lead">RAG su <strong>Gemma 2 (27B)</strong> ancorato all'<strong>ICD-11</strong>: a partire dal quadro inserito dal clinico propone ipotesi diagnostiche e diagnosi differenziali. Una <em>second opinion</em>, non un sostituto.</p>
+    <div class="tool-badges llmind-badges">
+      <span class="tool-badge fda">RAG · Gemma 2 27B</span>
+      <span class="tool-badge clinician-badge">Clinician-facing</span>
+      <span class="tool-badge">ICD-11 + CDDR</span>
+      <span class="tool-badge regulated">Open source</span>
+    </div>
+    <span class="section-label">Validazione · DSM-5-TR Clinical Cases (104 casi · 4 clinici)</span>
+    <div class="llmind-metrics">
+      <div class="bento-card bento-stat">
+        <span class="bento-figure">76,1%</span>
+        <span class="bento-label">Accuratezza · esperti</span>
+      </div>
+      <div class="bento-card bento-stat">
+        <span class="bento-figure">0,70</span>
+        <span class="bento-label">CCC · inter-rater</span>
+      </div>
+      <div class="bento-card bento-stat">
+        <span class="bento-figure">F1 0,52</span>
+        <span class="bento-label">Auto · best vs SOTA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+> **Resta supervisionato** ~1 caso su 4 ancora errato: supporta il ragionamento diagnostico, non sostituisce la responsabilità clinica.
+
+<!--
+Note relatore:
+LLMind è il nostro tool (Whattadata, spin-off Milano-Bicocca): chiude la sezione perché è l'esempio in cui ho visione diretta su scelte e limiti. È clinician-facing per costruzione: il clinico raccoglie e inserisce il quadro, il modello propone — questo è la prima garanzia contro input inaffidabili. Tecnicamente è una RAG su Gemma 2 27B con knowledge base ICD-11 + CDDR; open source (AGPL), live all'URL mostrato. Sulla validazione distinguere due piani: (1) valutazione automatica con string matching sulla sola diagnosi primaria — F1 0,52, penalizzata perché il modello dà spesso più co-diagnosi e segue lo stile narrativo del DSM-5-TR Clinical Cases; comunque davanti a MentaLLaMA, MedLlama2 e BioMistral. (2) Validazione manuale di 4 clinici su 104 casi: accuratezza media 0,761 e CCC medio 0,70 (concordanza moderata). Chiudere sul limite onesto: ~1 caso su 4 ancora errato, quindi second opinion supervisionata, non diagnosi autonoma; DSM vs ICD introduce anche disallineamenti che abbassano l'accordo.
+-->
 
 ---
 layout: statement
-routeAlias: tesi-finale
+routeAlias: tesi-finale-index
 class: section-opener-slide ia-nella-stanza-index-slide section-01
 ---
 
@@ -1548,7 +1736,7 @@ class: section-opener-slide ia-nella-stanza-index-slide section-01
 
 ---
 layout: default
-routeAlias: tesi-finale-fonti
+routeAlias: tesi-finale
 class: section-05
 ---
 
