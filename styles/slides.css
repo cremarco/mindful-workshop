@@ -22,6 +22,39 @@
 .slidev-layout.two-cols-header:has(.section-06) { --aipp-accent: var(--aipp-section-06); }
 
 /* ============================================================
+   COSA E IL ML — emerald corner asset
+   ============================================================ */
+.slidev-layout.default.cosa-e-il-ml-slide {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.slidev-layout.default.cosa-e-il-ml-slide h1,
+.slidev-layout.default.cosa-e-il-ml-slide p,
+.slidev-layout.default.cosa-e-il-ml-slide ul {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout.default.cosa-e-il-ml-slide blockquote {
+  z-index: 1;
+}
+
+.slidev-layout.default.cosa-e-il-ml-slide > img.cosa-e-il-ml-corner {
+  position: absolute;
+  top: -1.6rem;
+  right: -1.8rem;
+  z-index: 0;
+  width: 20%;
+  max-width: 260px;
+  min-width: 0;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 24px rgb(0 0 0 / 0.24));
+}
+
+/* ============================================================
    SHARED PLUMBING for slides with a decorative backdrop:
    the slide clips and isolates its stacking context, the
    ::before carries the artwork, the content sits above it.

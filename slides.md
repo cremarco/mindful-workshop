@@ -654,6 +654,30 @@ Da qui inizia la seconda parte dell'indice. Specificare che useremo il machine l
 
 ---
 layout: default
+routeAlias: cosa-e-il-ml
+class: cosa-e-il-ml-slide section-02
+---
+
+# Che cos'è il machine learning
+
+<img class="cosa-e-il-ml-corner" :src="$aippImage('cosa-e-il-ml-corner-v2.png')" alt="" aria-hidden="true" />
+
+La famiglia di IA più usata in clinica per riconoscere pattern e stimare probabilità.
+
+- **Impara dagli esempi**: trova regolarità in molti casi, invece di seguire regole scritte a mano.
+- **Classifica o stima**: può dire "probabile lesione", "probabile diagnosi", "alto rischio".
+- **Dipende dai dati**: dati parziali, sbilanciati o distorti producono stime distorte.
+- **Non conosce il significato**: ottimizza un obiettivo, non comprende la storia del paziente.
+
+> **Punto chiave** Il ML *correla, classifica e predice*: spiegazione, responsabilità e cura restano del clinico.
+
+<!--
+Note relatore:
+Spiegazione accessibile. Evitare tecnicismi come loss function o embedding, a meno che il pubblico non lo chieda. Il messaggio è: il ML non è una mente clinica. È un sistema di riconoscimento di pattern. Questo è potentissimo quando il pattern è visibile, standardizzato e verificabile, come in molte immagini mediche. È più fragile quando il pattern coincide con una traiettoria biografica, relazionale e culturale.
+-->
+
+---
+layout: default
 routeAlias: classi-ai
 class: section-02
 ---
@@ -690,27 +714,7 @@ Note relatore:
 Usare questa slide come mappa di navigazione. Non soffermarsi troppo su ogni box: dire che ciascuna famiglia avrà uno zoom. Correggere mentalmente l'idea che il ML sia solo predittivo: in medicina è spesso diagnostico o di detection, mentre in psichiatria il modello diagnostico resta molto più problematico. La mappa aiuta anche a distinguere il ML classico dagli LLM generativi.
 -->
 
----
-layout: default
-routeAlias: cosa-e-il-ml
-class: section-02
----
 
-# Che cos'è il machine learning
-
-La famiglia di IA più usata in clinica per riconoscere pattern e stimare probabilità.
-
-- **Impara dagli esempi**: trova regolarità in molti casi, invece di seguire regole scritte a mano.
-- **Classifica o stima**: può dire "probabile lesione", "probabile diagnosi", "alto rischio".
-- **Dipende dai dati**: dati parziali, sbilanciati o distorti producono stime distorte.
-- **Non conosce il significato**: ottimizza un obiettivo, non comprende la storia del paziente.
-
-> **Punto chiave** Il ML *correla, classifica e predice*: spiegazione, responsabilità e cura restano del clinico.
-
-<!--
-Note relatore:
-Spiegazione accessibile. Evitare tecnicismi come loss function o embedding, a meno che il pubblico non lo chieda. Il messaggio è: il ML non è una mente clinica. È un sistema di riconoscimento di pattern. Questo è potentissimo quando il pattern è visibile, standardizzato e verificabile, come in molte immagini mediche. È più fragile quando il pattern coincide con una traiettoria biografica, relazionale e culturale.
--->
 
 ---
 layout: default
