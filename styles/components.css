@@ -397,15 +397,36 @@
 
 /* ============================================================
    MERMAID DIAGRAMS
-   The SVG is rendered inside a Shadow DOM, so its internal colors
-   cannot be reached from here — they are themed via setup/mermaid.ts.
-   Only the host element is styled here (centering + sizing).
+   Mermaid internals are themed via setup/mermaid.ts. The host element
+   provides CSS variables so each diagram follows the current section
+   accent without duplicating palette values inside slides.md.
    ============================================================ */
 .slidev-layout:not(.intro-slide) .mermaid {
+  --aipp-mermaid-node-fill: color-mix(in srgb, var(--aipp-accent) 9%, transparent);
+  --aipp-mermaid-node-stroke: color-mix(in srgb, var(--aipp-accent) 68%, currentColor 16%);
+  --aipp-mermaid-line: color-mix(in srgb, var(--aipp-accent) 76%, currentColor 24%);
+  --aipp-mermaid-text: var(--aipp-fg);
+  --aipp-mermaid-label-fill: color-mix(in srgb, var(--aipp-accent) 12%, #fff);
+  --aipp-mermaid-label-text: color-mix(in srgb, var(--aipp-accent) 70%, var(--aipp-fg));
+  --aipp-mermaid-focus-fill: color-mix(in srgb, var(--aipp-accent) 18%, transparent);
+  --aipp-mermaid-focus-stroke: var(--aipp-accent);
+  --aipp-mermaid-focus-text: color-mix(in srgb, var(--aipp-accent) 72%, var(--aipp-fg));
+
+  color: var(--aipp-fg);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.8rem 0 0.4rem;
+}
+
+html.dark .slidev-layout:not(.intro-slide) .mermaid {
+  --aipp-mermaid-node-fill: color-mix(in srgb, var(--aipp-accent) 18%, transparent);
+  --aipp-mermaid-node-stroke: color-mix(in srgb, var(--aipp-accent) 78%, currentColor 22%);
+  --aipp-mermaid-line: color-mix(in srgb, var(--aipp-accent) 82%, currentColor 18%);
+  --aipp-mermaid-label-fill: color-mix(in srgb, var(--aipp-accent) 20%, #121212);
+  --aipp-mermaid-label-text: color-mix(in srgb, var(--aipp-accent) 58%, var(--aipp-fg));
+  --aipp-mermaid-focus-fill: color-mix(in srgb, var(--aipp-accent) 28%, transparent);
+  --aipp-mermaid-focus-text: color-mix(in srgb, var(--aipp-accent) 48%, var(--aipp-fg));
 }
 
 .slidev-layout:not(.intro-slide) .mermaid svg {

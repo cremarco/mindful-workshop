@@ -749,7 +749,7 @@ flowchart LR
   B --> C["Classe / probabilità"]
   C --> D["Alert o suggerimento"]
   D --> E["Decisione clinica"]
-  style E fill:#eef3fd,stroke:#2563eb,color:#2563eb
+  class E mermaid-focus
 ```
 
 <!--
@@ -760,43 +760,60 @@ Questa slide prepara il confronto con la medicina. Un algoritmo può dire: quest
 ---
 layout: default
 routeAlias: ml-in-medicina
-class: section-02
+class: ml-medicina-slide section-02
 ---
 
 # ML in medicina
 
 Funziona meglio dove il mondo clinico offre **compiti stretti**, **dati standardizzati** e una **verità verificabile**.
 
-<div class="bento-grid bento-feature">
-  <div class="bento-card bento-accent span-2">
+<div class="bento-grid bento-feature ml-medicina-bento">
+  <div class="bento-card bento-accent ml-rule-card">
     <span class="bento-eyebrow">Regola pratica</span>
     <span class="bento-title">Compito stretto, ground truth forte</span>
     <p>Il modello non "capisce la medicina": sfrutta un problema delimitato e ben etichettato.</p>
+    <div class="ml-rule-pills" aria-label="Condizioni che rendono il ML più affidabile in medicina">
+      <span>Immagine</span>
+      <span>Etichetta</span>
+      <span>Endpoint</span>
+      <span>Workflow</span>
+    </div>
   </div>
-  <div class="bento-card bento-stat">
-    <span class="bento-figure">87%</span>
-    <span class="bento-label">IDx-DR · retinopatia</span>
-    <p>Sensibilità FDA pivotal; specificità circa 91%, NPV circa 96%.</p>
+
+  <div class="bento-card ml-image-card ml-retina-card">
+    <img :src="$aippImage('ml-medicina-retina.png')" alt="Retinografia con overlay di rilevazione AI" />
+    <div class="ml-image-copy">
+      <span class="bento-eyebrow">Oftalmologia</span>
+      <span class="bento-figure">87%</span>
+      <span class="bento-label">IDx-DR · retinopatia</span>
+    </div>
   </div>
-  <div class="bento-card bento-stat">
-    <span class="bento-figure">−44%</span>
-    <span class="bento-label">MASAI · workload</span>
-    <p>Screening mammografico con AI: meno carico di lettura e più tumori rilevati.</p>
+
+  <div class="bento-card ml-image-card ml-mammografia-card">
+    <img :src="$aippImage('ml-medicina-mammografia.png')" alt="Radiologa che osserva una mammografia assistita da AI" />
+    <div class="ml-image-copy">
+      <span class="bento-eyebrow">Radiologia</span>
+      <span class="bento-figure">−44%</span>
+      <span class="bento-label">MASAI · workload</span>
+    </div>
   </div>
-  <div class="bento-card bento-stat">
+
+  <div class="bento-card bento-stat ml-gi-card">
     <span class="bento-figure">55,1%</span>
     <span class="bento-label">GI Genius · ADR</span>
     <p>ADR 55,1% vs 42,0% in colonoscopia assistita.</p>
   </div>
-  <div class="bento-card bento-stat">
+
+  <div class="bento-card bento-stat ml-paige-card">
     <span class="bento-figure">+7,3%</span>
     <span class="bento-label">Paige · prostata</span>
     <p>Miglioramento di sensibilità per-biopsia nel carcinoma prostatico.</p>
   </div>
-  <div class="bento-card bento-stat span-2">
+
+  <div class="bento-card bento-stat ml-fda-card">
     <span class="bento-figure">1.000+</span>
     <span class="bento-label">Dispositivi AI/ML autorizzati FDA</span>
-    <p>Molti sono in radiologia, cardiologia, oftalmologia, gastroenterologia e patologia digitale.</p>
+    <p>Concentrazione forte in imaging, cardiologia, oftalmologia, gastroenterologia e patologia digitale.</p>
   </div>
 </div>
 
@@ -1021,29 +1038,6 @@ Questa slide usa una formulazione più chiara del contrasto tra reperto e signif
 
 ---
 layout: default
-routeAlias: oggetto-clinico-non-immagine
-class: section-02
----
-
-# Quando l'oggetto clinico non è un'immagine
-
-In psicopatologia il "dato" cambia mentre viene osservato:
-
-- dipende dalla relazione;
-- dipende dal contesto;
-- si trasforma nel tempo;
-- può modificare l'identità del paziente;
-- richiede formulazione, non solo classificazione.
-
-> **Esempio** Dire a una persona "il modello rileva tratti borderline" non è neutro: produce effetti sul modo in cui quella persona si pensa e si racconta.
-
-<!--
-Note relatore:
-Insistere sul carattere performativo della diagnosi psicologica e psichiatrica. Una diagnosi può essere liberatoria, stigmatizzante, organizzante o iatrogena. Questo rende molto delicata la diagnosi automatica. Un alert radiologico sbagliato è grave; un'etichetta psicopatologica sbagliata può diventare parte dell'identità del paziente o della rappresentazione che il servizio ha di lui.
--->
-
----
-layout: default
 routeAlias: condizioni-favorevoli-limite
 class: section-02
 ---
@@ -1069,12 +1063,17 @@ Questa è la risposta al possibile confronto accusatorio con la radiologia. Non 
 ---
 layout: quote
 routeAlias: tumore-non-si-offende
-class: section-02
+class: tumore-non-si-offende-slide section-02
 ---
 
-# "Un tumore non si offende. Un paziente sì."
+<div class="tumore-quote-copy">
+  <h1>"Un tumore non si offende. Un paziente sì."</h1>
+  <p>Errore diagnostico, identità e relazione nella psicopatologia</p>
+</div>
 
-Errore diagnostico, identità e relazione nella psicopatologia
+<figure class="tumore-quote-photo">
+  <img :src="$aippImage('patients/juanita-delgado/panic-grief.png')" alt="Juanita Delgado in una scena di panico e lutto">
+</figure>
 
 <!--
 Note relatore:
@@ -1084,64 +1083,58 @@ Slide volutamente provocatoria. Non significa banalizzare l'errore oncologico o 
 ---
 layout: default
 routeAlias: scenari-ml
-class: section-02
+class: scenari-ml-slide section-02
 ---
 
 # Scenari ML diagnostici in salute mentale
 
-<div class="bento-grid bento-3">
-  <div class="bento-card">
-    <span class="bento-title">Neuroimaging</span>
-    <p>Classificazione di schizofrenia, depressione, bipolare o ASD da MRI/fMRI.</p>
+<div class="bento-grid bento-feature scenari-ml-bento">
+  <div class="bento-card scenario-image-card scenario-neuro-card">
+    <img :src="$aippImage('scenari-ml-neuroimaging.png')" alt="Monitor con MRI e fMRI analizzate da un modello ML" />
+    <div class="scenario-image-copy">
+      <span class="bento-eyebrow">Neuroimaging</span>
+      <span class="bento-title">MRI / fMRI</span>
+      <p>Classificazione di schizofrenia, depressione, bipolare o ASD.</p>
+    </div>
   </div>
-  <div class="bento-card">
+
+  <div class="bento-card scenario-image-card scenario-voice-card">
+    <img :src="$aippImage('scenari-ml-voce.png')" alt="Dashboard di analisi ML di voce e prosodia" />
+    <div class="scenario-image-copy">
+      <span class="bento-eyebrow">Linguaggio e voce</span>
+      <span class="bento-title">Coerenza, prosodia, ritmo</span>
+    </div>
+  </div>
+
+  <div class="bento-card scenario-compact-card scenario-eeg-card">
     <span class="bento-title">EEG / segnali</span>
     <p>Pattern neurofisiologici per depressione, schizofrenia, ADHD, sonno.</p>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">Linguaggio e voce</span>
-    <p>Coerenza, prosodia, povertà linguistica, ritmo, contenuti di rischio.</p>
-  </div>
-  <div class="bento-card">
+
+  <div class="bento-card scenario-compact-card scenario-ehr-card">
     <span class="bento-title">EHR e scale</span>
     <p>Diagnosi probabile da cartelle, prescrizioni, visite, comorbilità, questionari.</p>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">Comportamento digitale</span>
-    <p>Pattern di sonno, mobilità, socialità, uso dello smartphone.</p>
+
+  <div class="bento-card scenario-image-card scenario-digital-card">
+    <img :src="$aippImage('scenari-ml-comportamento-digitale.png')" alt="Smartphone e smartwatch con pattern comportamentali digitali" />
+    <div class="scenario-image-copy">
+      <span class="bento-eyebrow">Comportamento digitale</span>
+      <span class="bento-title">Sonno, mobilità, socialità</span>
+      <p>Pattern da smartphone e wearable, da leggere con contesto e consenso.</p>
+    </div>
   </div>
-  <div class="bento-card bento-accent">
-    <span class="bento-title">Uso più prudente</span>
-    <p>Non "fare diagnosi", ma generare ipotesi da verificare clinicamente.</p>
+
+  <div class="bento-card bento-accent scenario-prudence-card">
+    <span class="bento-eyebrow">Uso più prudente</span>
+    <span class="bento-title">Ipotesi da verificare, non diagnosi automatica</span>
+    <p>Segnalare pattern, suggerire approfondimenti e supportare diagnosi differenziale dentro il colloquio clinico.</p>
   </div>
 </div>
 
 <!--
 Note relatore:
 Qui sviluppiamo gli scenari di ML diagnostico puro. Usare la parola diagnostici, ma subito circoscriverla: molti modelli classificano categorie diagnostiche in dataset di ricerca. Questo non equivale a diagnosi clinica nel servizio. Lo scenario più sensato oggi è generare ipotesi, suggerire approfondimenti, segnalare incongruenze, supportare diagnosi differenziale, non sostituire SCID, colloquio e formulazione.
--->
-
----
-layout: default
-routeAlias: screening-triage
-class: section-02
----
-
-# Screening e triage: aiutare l'accesso
-
-| Possibile utilità | Rischio |
-|---|---|
-| priorità | filtro opaco |
-| liste d'attesa | gatekeeper automatico |
-| scale | bias non visibili |
-| segnalazione precoce | esclusione di casi complessi |
-| orientamento diagnostico | etichettamento prematuro |
-
-> **Triage responsabile** Un triage algoritmico deve spiegare chi entra, chi resta fuori e chi controlla gli errori.
-
-<!--
-Note relatore:
-Anche se il focus della sezione è diagnosi, il triage è il punto in cui diagnosi e organizzazione si incontrano. Nei servizi con liste d'attesa, un modello potrebbe aiutare a ordinare priorità. Ma se diventa un gatekeeper opaco, può amplificare disuguaglianze: chi scrive meglio, chi ha dati più completi, chi corrisponde ai pattern del training set viene favorito. Chiedere: siamo disposti a far decidere a un algoritmo l'urgenza di una presa in carico?
 -->
 
 ---
@@ -1337,7 +1330,7 @@ flowchart LR
   C --> D["Alert contestualizzato"]
   D --> E["Clinico + paziente"]
   E --> F["Decisione condivisa"]
-  style F fill:#eef3fd,stroke:#2563eb,color:#2563eb
+  class F mermaid-focus
 ```
 
 <!--
@@ -1600,6 +1593,7 @@ flowchart LR
   F --> G
   G --> H["Ipotesi / alert"]
   H --> I["Clinico"]
+  class I mermaid-focus
 ```
 
 <!--
@@ -1873,6 +1867,7 @@ flowchart LR
   H --> F
   I["Audit e log"] --> D
   I --> E
+  class D,H mermaid-focus
 ```
 
 <div class="tag-row">
