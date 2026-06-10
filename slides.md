@@ -524,7 +524,7 @@ Questa slide fonde il materiale su ecosistema digitale e ICT frammentato. Il pun
 ---
 layout: statement
 routeAlias: ia-salute-mentale-cosa-pensiamo
-class: socialita-digitale-slide section-01
+class: socialita-digitale-slide ia-cosa-pensiamo-slide section-01
 background: images/socialita-digitale-bg.png
 ---
 
@@ -642,7 +642,7 @@ Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto ripr
 ---
 layout: statement
 routeAlias: ml-psicologia-psichiatria
-class: section-01
+class: ml-psicologia-psichiatria-slide section-01
 ---
 
 # ML nella psicologia/psichiatria

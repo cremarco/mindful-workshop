@@ -30,6 +30,7 @@
 .slidev-layout.two-columns:has(.bio-slide),
 .slidev-layout.statement.whattadata-slide,
 .slidev-layout.statement.socialita-digitale-slide,
+.slidev-layout.statement.ml-psicologia-psichiatria-slide,
 .slidev-layout.default.dipps-intro-slide,
 .slidev-layout.default.parche-slide,
 .slidev-layout.default.agenda-index-slide,
@@ -42,6 +43,7 @@
 .slidev-layout.two-columns:has(.bio-slide)::before,
 .slidev-layout.statement.whattadata-slide::before,
 .slidev-layout.statement.socialita-digitale-slide::before,
+.slidev-layout.statement.ml-psicologia-psichiatria-slide::before,
 .slidev-layout.default.parche-slide::before,
 .agenda-card::before {
   content: "";
@@ -53,6 +55,7 @@
 .slidev-layout.two-columns:has(.bio-slide) > .col-right,
 .slidev-layout.statement.whattadata-slide > *,
 .slidev-layout.statement.socialita-digitale-slide > *,
+.slidev-layout.statement.ml-psicologia-psichiatria-slide > *,
 .slidev-layout.default.parche-slide > :not(blockquote),
 .slidev-layout.default.agenda-index-slide > h1,
 .slidev-layout.default.agenda-index-slide > .agenda-grid,
@@ -390,6 +393,71 @@ html.dark .slidev-layout.statement.whattadata-slide {
 
 .slidev-layout.statement.socialita-digitale-slide p {
   color: rgba(245, 245, 247, 0.72);
+}
+
+/* ============================================================
+   IA COSA PENSIAMO — section-style abstract shape on the right
+   ============================================================ */
+.slidev-layout.statement.ia-cosa-pensiamo-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3.4rem 21rem 3.4rem 5.2rem;
+  text-align: left;
+}
+
+.slidev-layout.statement.ia-cosa-pensiamo-slide::before {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  z-index: 0;
+  width: 15rem;
+  height: 28.5rem;
+  transform: translateY(-50%);
+  background: var(--aipp-ia-cosa-pensiamo-shape) right center / contain no-repeat;
+}
+
+.slidev-layout.statement.ia-cosa-pensiamo-slide h1,
+.slidev-layout.statement.ia-cosa-pensiamo-slide p {
+  max-width: 35rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* ============================================================
+   ML PSICOLOGIA/PSICHIATRIA — emerald section opener
+   ============================================================ */
+.slidev-layout.statement.ml-psicologia-psichiatria-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3.4rem 29rem 3.4rem 5.2rem;
+  color: #f5f5f7;
+  background:
+    radial-gradient(circle at 80% 50%, rgba(5, 150, 105, 0.18), transparent 34%),
+    #0f0f10 !important;
+  text-align: left;
+}
+
+.slidev-layout.statement.ml-psicologia-psichiatria-slide::before {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  z-index: 0;
+  width: 18.5rem;
+  height: 33.25rem;
+  transform: translateY(-50%);
+  background: var(--aipp-ml-psicologia-shape) right center / contain no-repeat;
+}
+
+.slidev-layout.statement.ml-psicologia-psichiatria-slide h1 {
+  max-width: 11ch;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 /* ============================================================
