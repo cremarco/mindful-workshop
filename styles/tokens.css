@@ -24,13 +24,18 @@
   --aipp-teal: #00b8db;
   --aipp-accent-gradient: linear-gradient(90deg, var(--aipp-red) 0%, var(--aipp-orange) 35%, var(--aipp-teal) 70%, var(--aipp-red) 100%);
 
+  /* Themeable accent — brand red by default; each talk section
+     (.section-* below the /index slide) overrides it with its own
+     hue so eyebrows, callouts and accents follow the chapter color. */
+  --aipp-accent: var(--aipp-red);
+
   /* Talk section colors from the Tailwind palette. */
-  --aipp-section-room: oklch(58.6% 0.253 17.585); /* rose-600 */
-  --aipp-section-ml: oklch(54.6% 0.245 262.881); /* blue-600 */
-  --aipp-section-future: oklch(66.6% 0.179 58.318); /* amber-600 */
-  --aipp-section-normative: oklch(54.1% 0.281 293.009); /* violet-600 */
-  --aipp-section-final: oklch(59.6% 0.145 163.225); /* emerald-600 */
-  --aipp-section-tools: oklch(60.9% 0.126 221.723); /* cyan-600 */
+  --aipp-section-01: oklch(66.6% 0.179 58.318); /* amber-600, slides 16-26 */
+  --aipp-section-02: oklch(59.6% 0.145 163.225); /* emerald-600, slides 27-54 */
+  --aipp-section-03: oklch(60.9% 0.126 221.723); /* cyan-600, slides 55-57 */
+  --aipp-section-04: oklch(54.6% 0.245 262.881); /* blue-600, slides 58-60 */
+  --aipp-section-05: oklch(54.1% 0.281 293.009); /* violet-600, slides 61-70 */
+  --aipp-section-06: oklch(58.6% 0.253 17.585); /* rose-600, slides 71-77 */
 
   /* Emphasis colour (the one value that flips per mode). */
   --aipp-fg: #1d1d1f;
@@ -43,7 +48,10 @@
   --aipp-surface: color-mix(in srgb, currentColor 4%, transparent);
   --aipp-surface-2: color-mix(in srgb, currentColor 6.5%, transparent);
   --aipp-line: color-mix(in srgb, currentColor 11%, transparent);
-  --aipp-callout-surface: color-mix(in srgb, var(--aipp-red) 7%, transparent);
+  /* Strength only — the hue is mixed in per-element from --aipp-accent
+     so callouts follow their section (a nested var() baked into a :root
+     token would freeze to the root accent and ignore section overrides). */
+  --aipp-callout-strength: 7%;
 
   --aipp-radius: 20px;
   --aipp-radius-sm: 14px;
@@ -59,7 +67,7 @@ html.dark {
   --aipp-surface: color-mix(in srgb, currentColor 6%, transparent);
   --aipp-surface-2: color-mix(in srgb, currentColor 9%, transparent);
   --aipp-line: color-mix(in srgb, currentColor 14%, transparent);
-  --aipp-callout-surface: color-mix(in srgb, var(--aipp-red) 16%, transparent);
+  --aipp-callout-strength: 16%;
   --aipp-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 50px rgba(0, 0, 0, 0.55);
   --aipp-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 30px rgba(0, 0, 0, 0.45);
 }

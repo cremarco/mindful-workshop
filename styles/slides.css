@@ -3,6 +3,25 @@
    ============================================================ */
 
 /* ============================================================
+   SECTION ACCENTS — each talk chapter below /index re-points
+   --aipp-accent at its own hue (mirrors the /index agenda tiles).
+   Eyebrows, callout tiles and accents then follow the chapter
+   color; brand red stays on the pre-index opening slides.
+   ============================================================ */
+.section-01,
+.slidev-layout.two-cols-header:has(.section-01) { --aipp-accent: var(--aipp-section-01); }
+.section-02,
+.slidev-layout.two-cols-header:has(.section-02) { --aipp-accent: var(--aipp-section-02); }
+.section-03,
+.slidev-layout.two-cols-header:has(.section-03) { --aipp-accent: var(--aipp-section-03); }
+.section-04,
+.slidev-layout.two-cols-header:has(.section-04) { --aipp-accent: var(--aipp-section-04); }
+.section-05,
+.slidev-layout.two-cols-header:has(.section-05) { --aipp-accent: var(--aipp-section-05); }
+.section-06,
+.slidev-layout.two-cols-header:has(.section-06) { --aipp-accent: var(--aipp-section-06); }
+
+/* ============================================================
    SHARED PLUMBING for slides with a decorative backdrop:
    the slide clips and isolates its stacking context, the
    ::before carries the artwork, the content sits above it.
@@ -403,7 +422,7 @@ html.dark .slidev-layout.statement.whattadata-slide {
    AGENDA / INDEX — numbered chapter tiles
    ============================================================ */
 .agenda-card {
-  --agenda-color: var(--aipp-section-future);
+  --agenda-color: var(--aipp-section-01);
   --agenda-shape: var(--aipp-agenda-shape-01);
 
   position: relative;
@@ -414,27 +433,27 @@ html.dark .slidev-layout.statement.whattadata-slide {
 }
 
 .agenda-card:nth-child(2) {
-  --agenda-color: var(--aipp-section-final);
+  --agenda-color: var(--aipp-section-02);
   --agenda-shape: var(--aipp-agenda-shape-02);
 }
 
 .agenda-card:nth-child(3) {
-  --agenda-color: var(--aipp-section-tools);
+  --agenda-color: var(--aipp-section-03);
   --agenda-shape: var(--aipp-agenda-shape-03);
 }
 
 .agenda-card:nth-child(4) {
-  --agenda-color: var(--aipp-section-ml);
+  --agenda-color: var(--aipp-section-04);
   --agenda-shape: var(--aipp-agenda-shape-04);
 }
 
 .agenda-card:nth-child(5) {
-  --agenda-color: var(--aipp-section-normative);
+  --agenda-color: var(--aipp-section-05);
   --agenda-shape: var(--aipp-agenda-shape-05);
 }
 
 .agenda-card:nth-child(6) {
-  --agenda-color: var(--aipp-section-room);
+  --agenda-color: var(--aipp-section-06);
   --agenda-shape: var(--aipp-agenda-shape-06);
 }
 
@@ -607,4 +626,262 @@ html.dark .slidev-layout.statement.whattadata-slide {
   z-index: 1;
   width: min(100%, 780px);
   margin: 0 auto;
+}
+
+/* ============================================================
+   AGI TIMELINE — "where we are" continuum: ANI → AGI → ASI
+   A single continuous rail threads three stages. It runs red at
+   the present node and fades into a faint, uncertain future. On
+   enter the rail draws in, dots pop along it, the current node
+   keeps a soft pulse and the cards rise in with a stagger.
+   ============================================================ */
+/* Centered, width-constrained timeline — Apple-keynote balance,
+   no bottom callout so the whole block sits in the optical centre. */
+.agi-timeline-slide .agi-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1.6rem;
+  width: min(100%, 1080px);
+  margin: 2.4rem auto 0;
+}
+
+/* One continuous rail from the first to the last node centre.
+   With 4 equal columns + a `column-gap`, each outer node sits
+   half a column in from its edge → inset = (100% - 3·gap)/8.
+   The line runs solid through the past, peaks red at "now" and
+   fades to a faint, uncertain future. */
+.agi-timeline-slide .agi-track::before {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  left: calc((100% - 4.8rem) / 8);
+  right: calc((100% - 4.8rem) / 8);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, currentColor 30%, transparent) 0%,
+    color-mix(in srgb, var(--aipp-accent) 62%, transparent) 33%,
+    var(--aipp-line) 52%,
+    var(--aipp-line) 100%
+  );
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  animation: agi-rail-draw 860ms cubic-bezier(0.22, 0.61, 0.36, 1) 100ms both;
+}
+
+.agi-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Reserved label row keeps every node on the same baseline. */
+.agi-flag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 1.75rem;
+}
+
+.agi-now {
+  color: var(--aipp-accent);
+  font-size: 0.98rem;
+  font-weight: 720;
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  animation: agi-flag-enter 520ms ease 900ms both;
+}
+
+.agi-now::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0.2rem auto 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--aipp-accent);
+}
+
+/* Node row holds one dot, centred over its column and the rail. */
+.agi-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+}
+
+.agi-dot {
+  width: 0.92rem;
+  height: 0.92rem;
+  border-radius: 50%;
+  background: var(--aipp-surface-2);
+  border: 2px solid var(--aipp-faint);
+  transform: scale(0);
+  animation: agi-dot-pop 540ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* The rail reaches each node in turn → dots pop left to right. */
+.agi-stage:nth-child(1) .agi-dot { animation-delay: 300ms; }
+.agi-stage:nth-child(3) .agi-dot { animation-delay: 720ms; }
+.agi-stage:nth-child(4) .agi-dot { animation-delay: 920ms; }
+
+/* Past node: a solid, settled dot (established, behind us). */
+.agi-stage.is-past .agi-dot {
+  background: color-mix(in srgb, currentColor 36%, transparent);
+  border-color: color-mix(in srgb, currentColor 36%, transparent);
+}
+
+.agi-stage.is-current .agi-dot {
+  background: var(--aipp-accent);
+  border-color: var(--aipp-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--aipp-accent) 20%, transparent);
+  animation:
+    agi-dot-pop 540ms cubic-bezier(0.34, 1.56, 0.64, 1) 520ms both,
+    agi-now-pulse 2.4s ease-out 1.6s infinite;
+}
+
+/* Compact stage card; the status line pins to the bottom. */
+.agi-card {
+  flex: 1 1 auto;
+  gap: 0.34rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--aipp-radius-sm);
+  animation: agi-card-enter 600ms cubic-bezier(0.2, 0.72, 0.18, 1) both;
+}
+
+.agi-stage:nth-child(1) .agi-card { animation-delay: 460ms; }
+.agi-stage:nth-child(2) .agi-card { animation-delay: 600ms; }
+.agi-stage:nth-child(3) .agi-card { animation-delay: 740ms; }
+.agi-stage:nth-child(4) .agi-card { animation-delay: 880ms; }
+
+.agi-card .bento-eyebrow {
+  font-size: 0.64rem;
+}
+
+.agi-card .bento-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  font-size: 1.06rem;
+}
+
+.agi-card .bento-title small {
+  color: var(--aipp-faint);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.slidev-layout.agi-timeline-slide .agi-card p {
+  font-size: 0.86rem;
+  line-height: 1.32;
+}
+
+.agi-state {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--aipp-line);
+  color: var(--aipp-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.agi-card.is-current .agi-state {
+  color: var(--aipp-accent);
+  border-top-color: color-mix(in srgb, var(--aipp-accent) 26%, transparent);
+}
+
+/* ---- Timeline entrance + pulse keyframes ---- */
+@keyframes agi-rail-draw {
+  from {
+    transform: translateY(-50%) scaleX(0);
+  }
+
+  to {
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes agi-dot-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes agi-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes agi-flag-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Soft radar ping around the "Siamo qui" node. */
+@keyframes agi-now-pulse {
+  0% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--aipp-accent) 26%, transparent);
+  }
+
+  70%,
+  100% {
+    box-shadow: 0 0 0 12px color-mix(in srgb, var(--aipp-accent) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agi-timeline-slide .agi-track::before,
+  .agi-dot,
+  .agi-stage.is-current .agi-dot,
+  .agi-now,
+  .agi-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .agi-timeline-slide .agi-track::before {
+    transform: translateY(-50%) scaleX(1);
+  }
+
+  .agi-stage.is-current .agi-dot {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--aipp-accent) 20%, transparent);
+  }
 }

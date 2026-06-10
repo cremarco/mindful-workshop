@@ -346,19 +346,20 @@ class: agenda-index-slide
   </div>
   <div class="bento-card agenda-card">
     <span class="agenda-num">05</span>
-    <span class="bento-title">Tesi finale</span>
-    <p>Una posizione conclusiva su setting, responsabilità e uso clinico dell'IA.</p>
+    <span class="bento-title">Esempi di tool</span>
+    <p>LLMind e prototipi supervisionati: cosa possono fare e dove si fermano.</p>
   </div>
   <div class="bento-card agenda-card">
     <span class="agenda-num">06</span>
-    <span class="bento-title">Esempi di tool</span>
-    <p>LLMind e prototipi supervisionati: cosa possono fare e dove si fermano.</p>
+    <span class="bento-title">Tesi finale</span>
+    <p>Una posizione conclusiva su setting, responsabilità e uso clinico dell'IA.</p>
   </div>
 </div>
 
 ---
 layout: default
 routeAlias: perche-adesso
+class: section-01
 ---
 
 # Perché adesso
@@ -402,8 +403,8 @@ Slide di contesto: serve a fissare la posta in gioco prima della parte scientifi
 
 ---
 layout: default
-routeAlias: parche
-class: parche-slide
+routeAlias: perche
+class: parche-slide section-01
 ---
 
 # IA nella stanza
@@ -421,68 +422,94 @@ Questa è la slide di passaggio dalla demo iniziale alla parte scientifica. Ripr
 
 ---
 layout: default
-routeAlias: ecosistema-digitale
+routeAlias: agi-asi-timeline
+class: agi-timeline-slide section-01
 ---
 
-# Da strumenti isolati a ecosistema clinico
+# Dove siamo davvero con l'IA
 
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2">
-    <span class="bento-title">Il problema non è aggiungere “un'altra app”</span>
-    <p>Cartella clinica, telemedicina, triage, psicoeducazione, outcome e LLM devono parlare la stessa lingua clinica.</p>
+Una sola parola, «IA», per tappe molto diverse: ieri regole scritte a mano, oggi IA ristretta, domani — forse — AGI e ASI.
+
+<div class="agi-track">
+  <div class="agi-stage is-past">
+    <div class="agi-flag"></div>
+    <div class="agi-node"><span class="agi-dot"></span></div>
+    <div class="bento-card agi-card is-past">
+      <span class="bento-eyebrow">Prima</span>
+      <span class="bento-title">Sistemi a regole<small>IA simbolica · sistemi esperti</small></span>
+      <p>Algoritmi deterministici che eseguono regole scritte a mano. Non imparano dai dati.</p>
+      <span class="agi-state">Tecnologia consolidata</span>
+    </div>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">ICT maturo in medicina</span>
-    <p>workflow digitali, CDSS, immagini standardizzate, integrazione con processi clinici.</p>
+  <div class="agi-stage is-current">
+    <div class="agi-flag"><span class="agi-now">Siamo qui</span></div>
+    <div class="agi-node"><span class="agi-dot"></span></div>
+    <div class="bento-card bento-accent agi-card is-current">
+      <span class="bento-eyebrow">Oggi</span>
+      <span class="bento-title">IA ristretta<small>ANI · Narrow Intelligence</small></span>
+      <p>LLM, ML diagnostico, digital phenotyping. È tutta l'IA che usiamo oggi.</p>
+      <span class="agi-state">Realtà operativa</span>
+    </div>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">Salute mentale frammentata</span>
-    <p>screening, app e chatbot spesso isolati, poco integrati con tassonomie e percorsi.</p>
+  <div class="agi-stage">
+    <div class="agi-flag"></div>
+    <div class="agi-node"><span class="agi-dot"></span></div>
+    <div class="bento-card agi-card">
+      <span class="bento-eyebrow">Ipotetica</span>
+      <span class="bento-title">IA generale<small>AGI · General Intelligence</small></span>
+      <p>Capacità cognitive umane trasversali, generalizzabili a domini nuovi. Oggi non esiste.</p>
+      <span class="agi-state">Nessun consenso su se e quando</span>
+    </div>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">Occasione per LLM</span>
-    <p>ordinare informazioni, mantenere continuità, collegare paziente e servizio.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Rischio</span>
-    <p>creare un interlocutore brillante ma clinicamente non governato.</p>
+  <div class="agi-stage">
+    <div class="agi-flag"></div>
+    <div class="agi-node"><span class="agi-dot"></span></div>
+    <div class="bento-card agi-card">
+      <span class="bento-eyebrow">Speculativa</span>
+      <span class="bento-title">Superintelligenza<small>ASI · Superintelligence</small></span>
+      <p>Supererebbe l'intelligenza umana in ogni dominio. Scenario teorico.</p>
+      <span class="agi-state">Oltre l'orizzonte verificabile</span>
+    </div>
   </div>
 </div>
 
-> **Domanda progettuale** Come passare da strumenti digitali isolati a un ecosistema supervisionato di cura?
-
 <!--
 Note relatore:
-Questa slide integra il materiale preparatorio: lì emergeva chiaramente il tema ICT per la salute mentale, con un contrasto tra aree della medicina già più digitalizzate e una salute mentale ancora spesso frammentaria. Usarla per non ridurre il talk a "ML vs LLM". La vera domanda è architetturale: come collegare telemedicina, cartella, scale, monitoraggio, psicoeducazione e modelli linguistici in un sistema clinicamente governabile. Questo prepara anche le slide finali su LLMind.
+Slide di calibrazione, subito dopo "IA nella stanza". Serve a smontare l'equivoco più comune: la parola IA copre tappe molto diverse. Prima dell'IA che intendiamo oggi c'erano i sistemi a regole (IA simbolica, sistemi esperti): algoritmi deterministici che eseguivano regole scritte a mano, senza imparare dai dati — tecnologia consolidata, non "intelligente" nel senso attuale. Tutto ciò di cui parliamo oggi — chatbot, LLM, ML diagnostico, digital phenotyping, persino il paziente sintetico Giovanna — è IA ristretta (ANI): sistemi potenti ma su compiti delimitati. L'AGI (capacità cognitive umane trasversali, generalizzabili a domini nuovi) oggi non esiste e non c'è consenso scientifico su se e quando arriverà. L'ASI è uno scenario teorico ancora più lontano. Il punto per l'AIPP: gran parte dell'ansia pubblica e mediatica proietta sull'IA di oggi capacità da AGI/ASI; in clinica dobbiamo ragionare su ciò che esiste e si può validare, non sulle promesse. Non aprire qui il dibattito sulle tempistiche: basta fissare "siamo alla seconda tappa".
 -->
 
 ---
 layout: default
-routeAlias: ict-frammentato
+routeAlias: ecosistema-digitale
+class: section-01
 ---
 
 # Dall'ICT frammentato all'ecosistema clinico
 
 <div class="bento-grid bento-3">
   <div class="bento-card bento-accent span-2">
-    <span class="bento-title">In medicina il digitale è diventato infrastruttura</span>
-    <p>cartelle interoperabili, telemedicina, CDSS basati su ML, workflow integrati e LLM come strumenti di sintesi.</p>
+    <span class="bento-title">Il problema non è aggiungere "un'altra app"</span>
+    <p>Cartella clinica, telemedicina, triage, psicoeducazione, outcome e LLM devono diventare parti dello stesso workflow.</p>
   </div>
   <div class="bento-card">
-    <span class="bento-title">In psicologia</span>
-    <p>screening, app e monitoraggio esistono, ma spesso restano isolati.</p>
+    <span class="bento-title">In medicina</span>
+    <p>il digitale è già infrastruttura: cartelle interoperabili, CDSS, immagini e processi standardizzati.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-title">In salute mentale</span>
+    <p>screening, app, chatbot e monitoraggio esistono, ma spesso restano oggetti separati.</p>
   </div>
   <div class="bento-card">
     <span class="bento-title">Il nodo</span>
-    <p>integrazione ancora parziale con DSM-5, ICD-11, linee guida, triage e outcome.</p>
+    <p>integrazione con DSM-5, ICD-11, linee guida, triage, outcome e responsabilità del percorso.</p>
   </div>
   <div class="bento-card">
     <span class="bento-title">La posta in gioco</span>
-    <p>continuità terapeutica, sicurezza, appropriatezza e governo del percorso.</p>
+    <p>continuità terapeutica, sicurezza, appropriatezza e governo clinico nel tempo.</p>
   </div>
-  <div class="bento-card bento-accent">
-    <span class="bento-title">Da app a sistema</span>
-    <p>la domanda non è aggiungere un chatbot, ma costruire un ecosistema clinicamente governabile.</p>
+  <div class="bento-card bento-accent span-3">
+    <span class="bento-title">Occasione per LLM</span>
+    <p>ordinare informazioni e collegare paziente e servizio, senza diventare un interlocutore non governato.</p>
   </div>
 </div>
 
@@ -490,34 +517,14 @@ routeAlias: ict-frammentato
 
 <!--
 Note relatore:
-Questa slide nasce dal tema dello stato dell'arte ICT in salute mentale. Il punto da trasferire nel talk AIPP è che l'IA non basta se resta un oggetto isolato: una app che misura sintomi, un chatbot che risponde o un modello che riassume testi non producono automaticamente cura. In medicina il digitale ha valore quando si integra in un workflow. In salute mentale la sfida è più difficile perché il workflow non è solo tecnico: include relazione, setting, consenso, continuità e responsabilità. Usare questa slide per preparare la sezione LLMind finale: non un chatbot, ma una possibile infrastruttura supervisionata.
+Questa slide fonde il materiale su ecosistema digitale e ICT frammentato. Il punto da trasferire nel talk AIPP è che l'IA non basta se resta un oggetto isolato: una app che misura sintomi, un chatbot che risponde o un modello che riassume testi non producono automaticamente cura. In medicina il digitale ha valore quando si integra in un workflow. In salute mentale la sfida è più difficile perché il workflow non è solo tecnico: include relazione, setting, consenso, continuità e responsabilità. Usarla per non ridurre il talk a "ML vs LLM": la vera domanda è architetturale, cioè come collegare telemedicina, cartella, scale, monitoraggio, psicoeducazione e modelli linguistici in un sistema clinicamente governabile. Questo prepara anche le slide finali su LLMind: non un chatbot, ma una possibile infrastruttura supervisionata.
 -->
 
 
----
-layout: default
-routeAlias: dipps-ecosistema
-class: dipps-ecosistema-slide
----
-
-# DIPPS come ecosistema
-
-Tre componenti con funzioni diverse:
-
-- **PsiTools**: piattaforma web per il clinico, cartella, assegnazioni, monitoraggio, note e referti.
-- **PENguIN**: app/web per il paziente, informazioni, agenda, compiti, comunicazione e continuità.
-- **CDSS**: supporto decisionale su dati psicodiagnostici digitalizzati e segnali del percorso.
-
-> **Lezione per il talk** L'IA è più credibile quando è dentro un workflow, non quando resta una risposta isolata di un chatbot.
-
-<!--
-Note relatore:
-Usare questa slide per mostrare la differenza tra “app” e “sistema”. La salute mentale digitale matura non è il paziente lasciato solo con un chatbot; è un ecosistema con interfacce diverse, responsabilità distribuite e passaggi chiari. PsiTools è clinician-facing; PENguIN è patient-facing; il CDSS sta nel mezzo e richiede governance.
--->
 ---
 layout: statement
 routeAlias: ia-salute-mentale-cosa-pensiamo
-class: socialita-digitale-slide
+class: socialita-digitale-slide section-01
 background: images/socialita-digitale-bg.png
 ---
 
@@ -533,6 +540,7 @@ Usare questa slide come domanda al pubblico. L'errore frequente è usare la paro
 ---
 layout: two-cols-header
 routeAlias: due-incontri-psicopatologia
+class: section-01
 ---
 
 # Due incontri con la psicopatologia
@@ -567,6 +575,7 @@ Presentare la tesi centrale: l'IA incontra la psicopatologia due volte. Primo: c
 ---
 layout: default
 routeAlias: clinician-facing-patient-facing
+class: section-01
 ---
 
 # Clinician-facing e patient-facing
@@ -589,6 +598,7 @@ Questa distinzione è una chiave pratica. Un modello che produce una bozza di re
 ---
 layout: default
 routeAlias: matrice-rischio-ia
+class: section-01
 ---
 
 # Una matrice semplice del rischio
@@ -609,7 +619,7 @@ Introdurre un criterio di prudenza: non basta chiedere se il sistema è accurato
 ---
 layout: default
 routeAlias: dss-psicologia-come-si-usa
-class: compact-table-slide
+class: compact-table-slide section-01
 ---
 
 # DSS in psicologia/psichiatria: come si usa davvero
@@ -632,6 +642,7 @@ Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto ripr
 ---
 layout: statement
 routeAlias: ml-psicologia-psichiatria
+class: section-01
 ---
 
 # ML nella psicologia/psichiatria
@@ -644,6 +655,7 @@ Da qui inizia la seconda parte dell'indice. Specificare che useremo il machine l
 ---
 layout: default
 routeAlias: classi-ai
+class: section-02
 ---
 
 # Che cosa intendiamo per IA
@@ -681,6 +693,7 @@ Usare questa slide come mappa di navigazione. Non soffermarsi troppo su ogni box
 ---
 layout: default
 routeAlias: cosa-e-il-ml
+class: section-02
 ---
 
 # Che cos'è il machine learning
@@ -702,6 +715,7 @@ Spiegazione accessibile. Evitare tecnicismi come loss function o embedding, a me
 ---
 layout: default
 routeAlias: ml-predittivo
+class: section-02
 ---
 
 # Classificare non significa comprendere
@@ -731,7 +745,7 @@ flowchart LR
   B --> C["Classe / probabilità"]
   C --> D["Alert o suggerimento"]
   D --> E["Decisione clinica"]
-  style E fill:#f8ecf0,stroke:#a50036,color:#a50036
+  style E fill:#eef3fd,stroke:#2563eb,color:#2563eb
 ```
 
 <!--
@@ -742,6 +756,7 @@ Questa slide prepara il confronto con la medicina. Un algoritmo può dire: quest
 ---
 layout: default
 routeAlias: ml-in-medicina
+class: section-02
 ---
 
 # ML in medicina
@@ -790,7 +805,7 @@ Fonti da citare a voce o nella slide successiva: FDA AI-enabled medical devices;
 ---
 layout: default
 routeAlias: ml-in-medicina-tabella
-class: compact-table-slide
+class: compact-table-slide section-02
 ---
 
 # Evidenze comparate in medicina
@@ -861,7 +876,7 @@ Questa tabella serve a dare sostanza empirica. Usare pochi numeri e spiegare che
 ---
 layout: default
 routeAlias: ml-in-psicologia
-class: compact-table-slide
+class: compact-table-slide section-02
 ---
 
 # E in psicologia/psichiatria? Diagnosi con ML
@@ -925,6 +940,7 @@ Qui rispondere alla domanda: esistono modelli simili in campo psicologico? Sì, 
 ---
 layout: default
 routeAlias: ml-psicologia-qualita
+class: section-02
 ---
 
 # La qualità dell'evidenza: il vero problema
@@ -967,7 +983,7 @@ Questa è una slide cruciale per non cadere nell'entusiasmo ingenuo. Molti paper
 ---
 layout: two-cols-header
 routeAlias: pixel-significato
-class: pixel-significato-slide
+class: pixel-significato-slide section-02
 ---
 
 # Dal reperto al significato
@@ -1002,6 +1018,7 @@ Questa slide usa una formulazione più chiara del contrasto tra reperto e signif
 ---
 layout: default
 routeAlias: oggetto-clinico-non-immagine
+class: section-02
 ---
 
 # Quando l'oggetto clinico non è un'immagine
@@ -1024,6 +1041,7 @@ Insistere sul carattere performativo della diagnosi psicologica e psichiatrica. 
 ---
 layout: default
 routeAlias: condizioni-favorevoli-limite
+class: section-02
 ---
 
 # Le condizioni favorevoli, e il limite
@@ -1047,6 +1065,7 @@ Questa è la risposta al possibile confronto accusatorio con la radiologia. Non 
 ---
 layout: quote
 routeAlias: tumore-non-si-offende
+class: section-02
 ---
 
 # "Un tumore non si offende. Un paziente sì."
@@ -1061,6 +1080,7 @@ Slide volutamente provocatoria. Non significa banalizzare l'errore oncologico o 
 ---
 layout: default
 routeAlias: scenari-ml
+class: section-02
 ---
 
 # Scenari ML diagnostici in salute mentale
@@ -1100,6 +1120,7 @@ Qui sviluppiamo gli scenari di ML diagnostico puro. Usare la parola diagnostici,
 ---
 layout: default
 routeAlias: screening-triage
+class: section-02
 ---
 
 # Screening e triage: aiutare l'accesso
@@ -1122,6 +1143,7 @@ Anche se il focus della sezione è diagnosi, il triage è il punto in cui diagno
 ---
 layout: statement
 routeAlias: nlp-analisi-linguaggio
+class: section-02
 ---
 
 # NLP/analisi del linguaggio
@@ -1134,6 +1156,7 @@ Passaggio alla terza famiglia. Il linguaggio è il ponte naturale tra intelligen
 ---
 layout: default
 routeAlias: scenari-nlp
+class: section-02
 ---
 
 # Scenari NLP
@@ -1156,6 +1179,7 @@ Distinguere due usi: NLP amministrativo-documentale e NLP diagnostico. Il primo 
 ---
 layout: default
 routeAlias: linguaggio-dato-clinico
+class: section-02
 ---
 
 # Il linguaggio è dato clinico, ma non solo dato
@@ -1178,7 +1202,7 @@ Portare esempi clinici semplici. Una frase come "non ce la faccio più" può ess
 ---
 layout: default
 routeAlias: nlp-diagnosi-psicopatologia
-class: compact-table-slide
+class: compact-table-slide section-02
 ---
 
 # NLP per identificare patologie: promessa e cautela
@@ -1235,6 +1259,7 @@ Questa slide deve essere discussiva. I modelli NLP sembrano vicini alla clinica 
 ---
 layout: default
 routeAlias: frase-non-ce-la-faccio
+class: section-02
 ---
 
 # Una frase, molti significati
@@ -1258,6 +1283,7 @@ Usare questa slide come piccolo esercizio con la sala. Chiedere: quali domande f
 ---
 layout: statement
 routeAlias: digital-phenotyping
+class: section-02
 ---
 
 # Digital phenotyping
@@ -1270,6 +1296,7 @@ Passaggio al fenotipo digitale. Definirlo in modo semplice: raccolta passiva o a
 ---
 layout: default
 routeAlias: scenari-digital-phenotyping
+class: section-02
 ---
 
 # Scenari Digital Phenotyping
@@ -1306,7 +1333,7 @@ flowchart LR
   C --> D["Alert contestualizzato"]
   D --> E["Clinico + paziente"]
   E --> F["Decisione condivisa"]
-  style F fill:#f8ecf0,stroke:#a50036,color:#a50036
+  style F fill:#eef3fd,stroke:#2563eb,color:#2563eb
 ```
 
 <!--
@@ -1317,6 +1344,7 @@ Evidenziare la differenza tra diagnosi e monitoraggio. Il fenotipo digitale non 
 ---
 layout: default
 routeAlias: digital-phenotyping-promessa-sorveglianza
+class: section-02
 ---
 
 # Prevenzione o sorveglianza?
@@ -1340,6 +1368,7 @@ Usare una domanda: se un paziente smette di uscire, dorme di giorno e non rispon
 ---
 layout: statement
 routeAlias: ia-generativa-llm
+class: section-02
 ---
 
 # IA generativa/LLM
@@ -1352,6 +1381,7 @@ Questa è probabilmente la parte più attesa dal pubblico, perché tutti hanno p
 ---
 layout: default
 routeAlias: scenari-ia-generativa-llm
+class: section-02
 ---
 
 # Scenari IA generativa/LLM
@@ -1391,6 +1421,7 @@ Sviluppare gli scenari LLM. Fare una distinzione: gli usi più maturi sono clini
 ---
 layout: default
 routeAlias: llm-classificazione-conversazione
+class: section-02
 ---
 
 # Dalla classificazione alla conversazione
@@ -1414,6 +1445,7 @@ Qui collegare alla vignetta iniziale e alla locandina. Un giovane ritirato può 
 ---
 layout: default
 routeAlias: empatia-simulata
+class: section-02
 ---
 
 # Sembrare empatici non significa curare
@@ -1437,6 +1469,7 @@ Questa slide deve essere molto chiara: non demonizzare gli LLM, ma smontare l'eq
 ---
 layout: default
 routeAlias: chatbot-oggetto-relazionale
+class: section-02
 ---
 
 # Il chatbot come nuovo oggetto relazionale
@@ -1461,6 +1494,7 @@ Questa è una delle slide più importanti per la giornata AIPP. Collegare ai nat
 ---
 layout: default
 routeAlias: anamnesi-digitale-ia
+class: section-02
 ---
 
 # Anamnesi digitale ampliata
@@ -1483,6 +1517,7 @@ Questa slide deve restare pratica. È una proposta concreta per il pubblico. In 
 ---
 layout: default
 routeAlias: sfide-future
+class: section-02
 ---
 
 # Sfide future
@@ -1522,6 +1557,7 @@ Sviluppare le sfide future con scenari realistici 2026-2030. Evitare fantascienz
 ---
 layout: default
 routeAlias: ia-multimodale
+class: section-03
 ---
 
 # IA multimodale: quando il modello vede e ascolta
@@ -1570,6 +1606,7 @@ L'IA multimodale promette una valutazione più ricca: non solo cosa dice il pazi
 ---
 layout: default
 routeAlias: roadmap-servizi
+class: section-03
 ---
 
 # Dai prototipi ai servizi
@@ -1591,6 +1628,7 @@ Questa slide traghetta agli aspetti normativi. È volutamente operativa. Un serv
 ---
 layout: statement
 routeAlias: aspetti-normativi
+class: section-03
 ---
 
 # Gli aspetti normativi
@@ -1605,6 +1643,7 @@ Questa slide rende esplicito il quarto punto dell'indice. Non serve fare una lez
 ---
 layout: default
 routeAlias: governance-minima
+class: section-04
 ---
 
 # Checklist minima di governance
@@ -1627,6 +1666,7 @@ Questa checklist può essere usata come slide di discussione. Sottolineare che l
 ---
 layout: default
 routeAlias: responsabilita-output
+class: section-04
 ---
 
 # Chi è responsabile dell'output?
@@ -1659,6 +1699,7 @@ Far notare che la responsabilità può diventare diffusa e quindi invisibile. Il
 ---
 layout: statement
 routeAlias: llmind-ponte
+class: section-04
 ---
 
 # LLMind
@@ -1673,6 +1714,7 @@ Usare questa slide come ponte finale. Dopo aver parlato di normativa e responsab
 ---
 layout: default
 routeAlias: llmind-perche
+class: section-05
 ---
 
 # Perché LLMind, e perché alla fine?
@@ -1709,6 +1751,7 @@ Questa slide rende esplicito il collegamento con le slide Figma: se l'adozione i
 ---
 layout: default
 routeAlias: llmind-prototipo
+class: section-05
 ---
 
 # LLMind: dal concetto al prototipo
@@ -1749,7 +1792,7 @@ Questa slide ancora la parte finale a qualcosa di concreto: LLMind non è solo u
 ---
 layout: default
 routeAlias: llmind-mindfuldiary
-class: llmind-slide
+class: llmind-slide section-05
 ---
 
 # Un precedente utile: MindfulDiary
@@ -1770,6 +1813,7 @@ Questa slide permette di introdurre LLMind senza sembrare fantascientifici. Mind
 ---
 layout: default
 routeAlias: llmind-cosa-e
+class: section-05
 ---
 
 # LLMind: non un terapeuta automatico
@@ -1807,6 +1851,7 @@ Qui chiarire il posizionamento: LLMind non dovrebbe essere venduto o raccontato 
 ---
 layout: default
 routeAlias: llmind-architettura
+class: section-05
 ---
 
 # LLMind: architettura minima sicura
@@ -1843,7 +1888,7 @@ La slide serve a rendere concreta la governance. RAG significa che il modello no
 ---
 layout: default
 routeAlias: llmind-validazione
-class: compact-table-slide
+class: compact-table-slide section-05
 ---
 
 # Prima di usare LLMind: che cosa validare?
@@ -1896,6 +1941,7 @@ Qui proporre una vera agenda di ricerca/implementazione. Nel mondo dell'imaging 
 ---
 layout: default
 routeAlias: llmind-domande-discussione
+class: section-05
 ---
 
 # LLMind: domande da portare nella discussione
@@ -1917,6 +1963,7 @@ Questa è una slide finale di discussione. È utile perché apre domande e non v
 ---
 layout: default
 routeAlias: llmind-confini
+class: section-05
 ---
 
 # LLMind: i confini da dichiarare al paziente
@@ -1954,6 +2001,7 @@ Questa slide è molto pratica. Una IA patient-facing deve dichiarare non solo pr
 ---
 layout: default
 routeAlias: llmind-dal-lab-al-servizio
+class: section-05
 ---
 
 # Da DIPPS/LLMPatients a LLMind
@@ -1976,6 +2024,7 @@ Chiudere il cerchio con la prima parte del talk. DIPPS e LLMPatients sono utili 
 ---
 layout: default
 routeAlias: tesi-finale-fonti
+class: section-05
 ---
 
 # Tesi finale
@@ -2007,6 +2056,7 @@ Usare questa slide per formulare la tesi finale. Questa è la sintesi del talk: 
 ---
 layout: statement
 routeAlias: ia-aumenta-cura
+class: section-06
 ---
 
 # L'IA è utile solo se aumenta la cura, non se la sostituisce
@@ -2019,6 +2069,7 @@ Chiudere lentamente. Frase possibile: "Il punto non è rendere artificiale la cu
 ---
 layout: default
 routeAlias: domande-discussione
+class: section-06
 ---
 
 # Domande per aprire la discussione
@@ -2039,6 +2090,7 @@ Usare questa slide se c'è tempo o come ponte alla discussione finale. Non cerca
 ---
 layout: default
 routeAlias: bibliografia-progetti-digitali
+class: section-06
 ---
 
 # Bibliografia essenziale: progetti e casi digitali
@@ -2055,6 +2107,7 @@ Questa slide bibliografica raccoglie le fonti e i materiali progettuali aggiunti
 ---
 layout: default
 routeAlias: bibliografia-istituzionale
+class: section-06
 ---
 
 # Bibliografia essenziale: fonti istituzionali
@@ -2079,6 +2132,7 @@ Questa bibliografia istituzionale è importante perché dà autorevolezza e ridu
 ---
 layout: default
 routeAlias: bibliografia-medicina
+class: section-06
 ---
 
 # Bibliografia essenziale: AI in medicina e diagnostica
@@ -2101,6 +2155,7 @@ Mantenere questa slide per chi chiede le fonti. I punti più utili nel talk sono
 ---
 layout: default
 routeAlias: bibliografia-salute-mentale
+class: section-06
 ---
 
 # Bibliografia essenziale: AI e salute mentale

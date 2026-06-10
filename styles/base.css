@@ -89,7 +89,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--aipp-red);
+  background: var(--aipp-accent);
 }
 
 .slidev-layout:not(.intro-slide) ol > li {
@@ -107,8 +107,8 @@
   display: grid;
   place-content: center;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--aipp-red) 14%, transparent);
-  color: var(--aipp-red);
+  background: color-mix(in srgb, var(--aipp-accent) 14%, transparent);
+  color: var(--aipp-accent);
   font-size: 0.86rem;
   font-weight: 680;
   letter-spacing: 0;
@@ -194,7 +194,7 @@
   padding: 1rem 1.35rem 1rem 1.2rem;
   border: 0;
   border-radius: var(--aipp-radius);
-  background: var(--aipp-callout-surface);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
   box-shadow: var(--aipp-shadow-soft);
   color: var(--aipp-soft);
   display: grid;
@@ -212,7 +212,7 @@
   width: 1.45rem;
   height: 1.45rem;
   align-self: center;
-  background: var(--aipp-red);
+  background: var(--aipp-accent);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
@@ -362,7 +362,7 @@
   position: absolute;
   top: 2.2rem;
   left: 5.4rem;
-  color: color-mix(in srgb, var(--aipp-red) 16%, transparent);
+  color: color-mix(in srgb, var(--aipp-accent) 16%, transparent);
   font-size: 9rem;
   font-weight: 700;
   line-height: 1;

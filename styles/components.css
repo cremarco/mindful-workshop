@@ -29,7 +29,7 @@
 .slidev-layout:not(.intro-slide) .section-label,
 .bento-card .bento-eyebrow,
 .bento-card.bento-stat .bento-label {
-  color: var(--aipp-red);
+  color: var(--aipp-accent);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.07em;
@@ -215,8 +215,8 @@
 
 /* Accent tile — marks the slide's focal point. */
 .bento-card.bento-accent {
-  background: var(--aipp-callout-surface);
-  border-color: color-mix(in srgb, var(--aipp-red) 22%, transparent);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
+  border-color: color-mix(in srgb, var(--aipp-accent) 22%, transparent);
 }
 
 /* ---- Feature bento: asymmetric tiles that fill the slide height ---- */
