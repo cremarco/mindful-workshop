@@ -517,8 +517,7 @@ Usare questa slide per mostrare la differenza tra “app” e “sistema”. La 
 ---
 layout: statement
 routeAlias: ia-salute-mentale-cosa-pensiamo
-class: socialita-digitale-slide
-background: images/socialita-digitale-bg.png
+class: socialita-digitale-slide ia-cosa-pensiamo-slide
 ---
 
 # Quando diciamo IA in salute mentale, a cosa pensiamo?
@@ -632,6 +631,7 @@ Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto ripr
 ---
 layout: statement
 routeAlias: ml-psicologia-psichiatria
+class: ml-psicologia-psichiatria-slide
 ---
 
 # ML nella psicologia/psichiatria

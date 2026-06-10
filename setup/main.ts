@@ -9,6 +9,8 @@ const imageCssVariables: Record<string, string> = {
   '--aipp-marco-bg-image': 'aipp-marco-bg.png',
   '--aipp-whattadata-bg-image': 'whattadata-bg.png',
   '--aipp-socialita-bg-image': 'socialita-digitale-bg.png',
+  '--aipp-ia-cosa-pensiamo-shape': 'ia-salute-mentale-cosa-pensiamo.png',
+  '--aipp-ml-psicologia-shape': 'ml-psicologia-psichiatria.png',
   '--aipp-parche-shape': 'parche-image-1-cropped.png',
   '--aipp-agenda-shape-01': 'agenda-shapes/agenda-shape-01-amber.png',
   '--aipp-agenda-shape-02': 'agenda-shapes/agenda-shape-02-emerald.png',
