@@ -575,6 +575,173 @@
   letter-spacing: 0;
 }
 
+/* ============================================================
+   FRAMEWORK PERSONA — modular socio-cognitive component bento
+   (working paper after LLMind). 14 component tiles, each colored
+   via an inline --c hue swept across the spectrum by strato.
+   ============================================================ */
+.slidev-layout.default.framework-slide {
+  overflow: hidden;
+}
+
+.slidev-layout.default.framework-slide h1 {
+  margin-bottom: 0.8rem;
+}
+
+.framework-bento {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ---- Hero: thesis + Bandura triad ---- */
+.framework-slide .fw-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.35rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--aipp-radius);
+  border: 1px solid color-mix(in srgb, var(--aipp-accent) 24%, transparent);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
+}
+
+.framework-slide .fw-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.slidev-layout.default.framework-slide .fw-thesis {
+  margin: 0;
+  color: var(--aipp-fg);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.framework-slide .fw-triad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.framework-slide .fw-triad-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--aipp-radius-sm);
+  border: 1px solid var(--aipp-line);
+  background: var(--aipp-surface-2);
+  color: var(--aipp-soft);
+  font-size: 0.7rem;
+  line-height: 1.18;
+}
+
+.framework-slide .fw-triad-chip b {
+  color: var(--aipp-fg);
+  font-size: 0.84rem;
+  font-weight: 660;
+}
+
+/* ---- Strato bands: label + colored component row ---- */
+.framework-slide .fw-band {
+  display: flex;
+  flex: 1.12 1 0;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.framework-slide .fw-band-mid {
+  flex: 0.82 1 0;
+}
+
+.framework-slide .fw-band-label {
+  color: var(--aipp-accent);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.framework-slide .fw-cards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.55rem;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.framework-slide .fw-cards-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---- Component card — tinted background + colored number badge ---- */
+.framework-slide .fw-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.34rem;
+  padding: 0.68rem 0.76rem;
+  border-radius: var(--aipp-radius-sm);
+  border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+  background: color-mix(in srgb, var(--c) 15%, transparent);
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+.framework-slide .fw-num {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.42rem;
+  height: 1.42rem;
+  border-radius: 999px;
+  background: var(--c);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+}
+
+.framework-slide .fw-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.14rem;
+}
+
+.framework-slide .fw-name {
+  color: var(--aipp-fg);
+  font-size: 0.9rem;
+  font-weight: 640;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.framework-slide .fw-desc {
+  color: var(--aipp-soft);
+  font-size: 0.72rem;
+  line-height: 1.18;
+}
+
+/* The 2-card continuity band lays its tiles out horizontally. */
+.framework-slide .fw-cards-2 .fw-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.78rem 1rem;
+}
+
+.framework-slide .fw-cards-2 .fw-name {
+  font-size: 1rem;
+}
+
+.framework-slide .fw-cards-2 .fw-desc {
+  font-size: 0.78rem;
+}
+
 .slidev-layout.default.scenari-llm-slide .llm-compact-card p {
   font-size: 0.84rem;
   line-height: 1.25;

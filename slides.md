@@ -1726,6 +1726,65 @@ LLMind è il nostro tool (Whattadata, spin-off Milano-Bicocca): chiude la sezion
 -->
 
 ---
+layout: default
+routeAlias: framework-personalita
+class: section-04 framework-slide
+---
+
+# Oltre i prompt persona
+
+<div class="framework-bento">
+  <div class="fw-hero">
+    <div class="fw-hero-copy">
+      <span class="bento-eyebrow">Working paper · framework socio-cognitivo modulare per simulare personalità con LLM</span>
+      <p class="fw-thesis">Simulare una personalità non è scrivere un prompt più ricco: è uno <strong>stato esplicito, ispezionabile e autoregolato</strong>. Sulla cornice di Bandura, l'LLM resta il <em>realizzatore linguistico</em> — non la sede della personalità.</p>
+    </div>
+    <div class="fw-triad">
+      <span class="fw-triad-chip"><b>Persona</b>stato + vincoli del modello</span>
+      <span class="fw-triad-chip"><b>Ambiente</b>input dell'utente</span>
+      <span class="fw-triad-chip"><b>Comportamento</b>risposta generata</span>
+    </div>
+  </div>
+
+  <div class="fw-band">
+    <span class="fw-band-label">Strato personologico · chi è la persona</span>
+    <div class="fw-cards">
+      <div class="fw-card" style="--c:#e5484d"><span class="fw-num">1</span><span class="fw-text"><span class="fw-name">Identity Registry</span><span class="fw-desc">anagrafica dichiarativa</span></span></div>
+      <div class="fw-card" style="--c:#f76b15"><span class="fw-num">2</span><span class="fw-text"><span class="fw-name">Invarianti autobiografiche</span><span class="fw-desc">background, identità narrativa</span></span></div>
+      <div class="fw-card" style="--c:#f5a623"><span class="fw-num">3</span><span class="fw-text"><span class="fw-name">PersonalityState</span><span class="fw-desc">tratti HEXACO, valori, standard</span></span></div>
+      <div class="fw-card" style="--c:#46a758"><span class="fw-num">4</span><span class="fw-text"><span class="fw-name">Dynamic State</span><span class="fw-desc">affetto, relazione, self-efficacy</span></span></div>
+      <div class="fw-card" style="--c:#12a594"><span class="fw-num">5</span><span class="fw-text"><span class="fw-name">Appraisal Engine</span><span class="fw-desc">interpreta l'input come evento</span></span></div>
+      <div class="fw-card" style="--c:#0ea5cf"><span class="fw-num">6</span><span class="fw-text"><span class="fw-name">Policy Engine</span><span class="fw-desc">strategie di risposta e regolazione</span></span></div>
+    </div>
+  </div>
+
+  <div class="fw-band fw-band-mid">
+    <span class="fw-band-label">Continuità & transizione · come cambia nel tempo</span>
+    <div class="fw-cards fw-cards-2">
+      <div class="fw-card" style="--c:#3e63dd"><span class="fw-num">7</span><span class="fw-text"><span class="fw-name">State Updater</span><span class="fw-desc">cosa si consolida, cosa resta transitorio dopo ogni turno</span></span></div>
+      <div class="fw-card" style="--c:#5753c6"><span class="fw-num">8</span><span class="fw-text"><span class="fw-name">MemoryStore</span><span class="fw-desc">memoria autobiografica multi-livello con retrieval e controlli</span></span></div>
+    </div>
+  </div>
+
+  <div class="fw-band">
+    <span class="fw-band-label">Strato infrastrutturale · come si governa</span>
+    <div class="fw-cards">
+      <div class="fw-card" style="--c:#7c6df2"><span class="fw-num">9</span><span class="fw-text"><span class="fw-name">Safety & Sanitization</span><span class="fw-desc">anti prompt-injection / role-swap</span></span></div>
+      <div class="fw-card" style="--c:#8e4ec6"><span class="fw-num">10</span><span class="fw-text"><span class="fw-name">Prompt Orchestrator</span><span class="fw-desc">compone stato, memoria, policy</span></span></div>
+      <div class="fw-card" style="--c:#a347ba"><span class="fw-num">11</span><span class="fw-text"><span class="fw-name">LLM Realizer</span><span class="fw-desc">rende in linguaggio</span></span></div>
+      <div class="fw-card" style="--c:#c44aa6"><span class="fw-num">12</span><span class="fw-text"><span class="fw-name">Logging & Replay</span><span class="fw-desc">tracce ispezionabili</span></span></div>
+      <div class="fw-card" style="--c:#d6409f"><span class="fw-num">13</span><span class="fw-text"><span class="fw-name">Evaluation Harness</span><span class="fw-desc">stabilità, validità, drift</span></span></div>
+      <div class="fw-card" style="--c:#e93d82"><span class="fw-num">14</span><span class="fw-text"><span class="fw-name">Benchmark & Reporting</span><span class="fw-desc">protocolli riproducibili</span></span></div>
+    </div>
+  </div>
+</div>
+
+<!--
+Note relatore:
+Questo è il lavoro che ho caricato: un working paper che propone un framework socio-cognitivo modulare per simulare la personalità con gli LLM. Il messaggio chiave è la cornice in alto: una personalità simulata non è un prompt persona più lungo, ma uno stato esplicito, ispezionabile e autoregolato. La triade è la rilettura del determinismo reciproco di Bandura applicata al setting conversazionale: Persona = stato e vincoli del modello, Ambiente = input dell'utente, Comportamento = risposta generata; l'LLM è solo il realizzatore linguistico. Le 14 componenti sono organizzate in tre strati: (1) personologico — chi è la persona (identità, invarianti, tratti HEXACO + valori, stato dinamico, appraisal, policy); (2) continuità e transizione — come cambia nel tempo (State Updater e MemoryStore chiudono il ciclo temporale e separano memoria da deriva); (3) infrastrutturale — come si governa (safety, orchestrazione, realizzazione, logging, valutazione, benchmark). Collegamento al talk: è la base metodologica dietro pazienti simulati credibili (LLMPatients) e, più in generale, un modo trasparente e auditabile di controllare il comportamento di un LLM invece di affidarlo a un prompt monolitico.
+-->
+
+---
 layout: statement
 routeAlias: tesi-finale-index
 class: section-opener-slide ia-nella-stanza-index-slide section-01
