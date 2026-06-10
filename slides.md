@@ -1785,6 +1785,27 @@ Questo è il lavoro che ho caricato: un working paper che propone un framework s
 -->
 
 ---
+layout: default
+routeAlias: arianne-ecosistema
+class: arianne-embed-slide
+---
+
+<iframe
+  class="arianne-frame"
+  src="https://cremarco.github.io/slide-arianne/1"
+  title="Arianne — l'ecosistema digitale per la salute mentale"
+  loading="lazy"
+  allow="fullscreen"
+></iframe>
+
+<a class="arianne-open" href="https://cremarco.github.io/slide-arianne/1" target="_blank" rel="noopener noreferrer">Apri Arianne in una scheda ↗</a>
+
+<!--
+Note relatore:
+Subito dopo il framework "richiamo" il deck Arianne — l'ecosistema digitale per la salute mentale — embeddato a tutta pagina. Per navigarlo dal vivo: cliccare dentro al riquadro per dargli il focus, poi usare le frecce; per tornare a questo deck premere Esc o cliccare fuori. Se l'iframe non carica (rete/proxy), usare il link "Apri in una scheda" in basso a destra.
+-->
+
+---
 layout: statement
 routeAlias: tesi-finale-index
 class: section-opener-slide ia-nella-stanza-index-slide section-01
@@ -1839,6 +1860,21 @@ Chiudere lentamente. Frase possibile: "Il punto non è rendere artificiale la cu
 -->
 
 ---
+layout: statement
+routeAlias: domande-discussione-index
+class: section-opener-slide domande-discussione-index-slide section-06
+---
+
+# Domande e discussione
+
+Apriamo il confronto: relazione, diagnosi, monitoraggio e responsabilità dell'errore.
+
+<!--
+Note relatore:
+Questa è la copertina della parte finale: chiude la tesi e apre lo spazio di confronto con il pubblico. Annunciare a voce che ora si passa alle domande, riprendendo i fili principali del talk — chatbot come confidente, digital phenotyping come sorveglianza, diagnosi ML, responsabilità dell'errore.
+-->
+
+---
 layout: default
 routeAlias: domande-discussione
 class: section-06
@@ -1862,10 +1898,12 @@ Usare questa slide se c'è tempo o come ponte alla discussione finale. Non cerca
 ---
 layout: default
 routeAlias: bibliografia-progetti-digitali
-class: section-06
+class: section-06 bib-slide
 ---
 
-# Bibliografia essenziale: progetti e casi digitali
+<span class="section-label">Bibliografia essenziale</span>
+
+# Progetti e casi digitali
 
 - Kim T. et al. *MindfulDiary: Harnessing Large Language Model to Support Psychiatric Patients' Journaling.* 2023.
 - Materiali progettuali Whattadata (DIPPS/MiCare/LLMPatients/LLMind/Arianne), presentazione *ICT per la Salute Mentale: Stato dell'Arte e Prospettive*, M. Cremaschi.
@@ -1879,12 +1917,12 @@ Questa slide bibliografica raccoglie le fonti e i materiali progettuali aggiunti
 ---
 layout: default
 routeAlias: bibliografia-istituzionale
-class: section-06
+class: section-06 bib-slide
 ---
 
-# Bibliografia essenziale: fonti istituzionali
+<span class="section-label">Bibliografia essenziale</span>
 
-**Fonti istituzionali**
+# Fonti istituzionali
 
 - FDA. *Artificial Intelligence-Enabled Medical Devices.*
 - FDA. *IDx-DR De Novo Summary* DEN180001.
@@ -1904,12 +1942,12 @@ Questa bibliografia istituzionale è importante perché dà autorevolezza e ridu
 ---
 layout: default
 routeAlias: bibliografia-medicina
-class: section-06
+class: section-06 bib-slide
 ---
 
-# Bibliografia essenziale: AI in medicina e diagnostica
+<span class="section-label">Bibliografia essenziale</span>
 
-**AI in medicina e diagnostica**
+# AI in medicina e diagnostica
 
 - Lång K. et al. *Artificial intelligence-supported screen reading versus standard double reading in the Mammography Screening with Artificial Intelligence trial (MASAI).* *Lancet Oncology*, 2023. DOI: 10.1016/S1470-2045(23)00298-X.
 - MASAI follow-up. *AI-supported mammography screening and interval cancers.* *The Lancet*, 2026.
@@ -1927,12 +1965,12 @@ Mantenere questa slide per chi chiede le fonti. I punti più utili nel talk sono
 ---
 layout: default
 routeAlias: bibliografia-salute-mentale
-class: section-06
+class: section-06 bib-slide bib-dense
 ---
 
-# Bibliografia essenziale: AI e salute mentale
+<span class="section-label">Bibliografia essenziale</span>
 
-**AI, diagnosi e salute mentale**
+# AI, diagnosi e salute mentale
 
 - FDA. *Cognoa ASD Diagnosis Aid De Novo Summary* DEN200069, 2021.
 - FDA. *EarliPoint System 510(k) Summary* K230337, 2023.
