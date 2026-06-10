@@ -435,6 +435,152 @@
 }
 
 /* ============================================================
+   SCENARI LLM — generative AI workflow bento
+   ============================================================ */
+.slidev-layout.default.scenari-llm-slide {
+  overflow: hidden;
+}
+
+.slidev-layout.default.scenari-llm-slide h1 {
+  margin-bottom: 1.05rem;
+}
+
+.slidev-layout:not(.intro-slide) .bento-grid.bento-feature.scenari-llm-bento {
+  grid-template-columns: 1.08fr 1.08fr 0.96fr 0.96fr;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "doc doc support support"
+    "doc doc psycho triage"
+    "training training risk risk";
+  gap: 0.74rem;
+  margin-top: 0;
+}
+
+.llm-image-card {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-end;
+  padding: 0;
+  border-color: color-mix(in srgb, #fff 14%, transparent);
+  background: #101417;
+  color: #fff;
+}
+
+.llm-image-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.04) 0%, rgb(0 0 0 / 0.22) 45%, rgb(0 0 0 / 0.8) 100%);
+  pointer-events: none;
+}
+
+.llm-image-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.llm-image-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 0.12rem;
+  width: 100%;
+  padding: 1rem 1.12rem 1.08rem;
+}
+
+.llm-image-copy .bento-eyebrow {
+  color: rgb(255 255 255 / 0.74);
+  letter-spacing: 0.05em;
+}
+
+.llm-image-copy .bento-title {
+  color: #fff;
+  font-size: 1.16rem;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.slidev-layout.default.scenari-llm-slide .llm-image-copy p {
+  margin-top: 0.1rem;
+  color: rgb(255 255 255 / 0.78);
+  font-size: 0.8rem;
+  line-height: 1.24;
+}
+
+.llm-doc-card {
+  grid-area: doc;
+}
+
+.llm-doc-card img {
+  object-position: center 48%;
+}
+
+.llm-support-card {
+  grid-area: support;
+}
+
+.llm-support-card img {
+  object-position: center 48%;
+}
+
+.llm-training-card {
+  grid-area: training;
+}
+
+.llm-training-card img {
+  object-position: center 48%;
+}
+
+.llm-psycho-card {
+  grid-area: psycho;
+}
+
+.llm-triage-card {
+  grid-area: triage;
+}
+
+.llm-risk-card {
+  grid-area: risk;
+  justify-content: center;
+  gap: 0.48rem;
+  padding: 1.05rem 1.22rem;
+}
+
+.llm-risk-card .bento-title {
+  max-width: 26ch;
+  font-size: 1.25rem;
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.slidev-layout.default.scenari-llm-slide .llm-risk-card p {
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.llm-compact-card {
+  justify-content: center;
+  padding: 1rem 1.05rem;
+}
+
+.llm-compact-card .bento-title {
+  font-size: 1.08rem;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.slidev-layout.default.scenari-llm-slide .llm-compact-card p {
+  font-size: 0.84rem;
+  line-height: 1.25;
+}
+
+/* ============================================================
    SHARED PLUMBING for slides with a decorative backdrop:
    the slide clips and isolates its stacking context, the
    ::before carries the artwork, the content sits above it.
@@ -443,7 +589,9 @@
 .slidev-layout.two-columns:has(.bio-slide),
 .slidev-layout.statement.whattadata-slide,
 .slidev-layout.statement.socialita-digitale-slide,
+.slidev-layout.statement.section-opener-slide,
 .slidev-layout.statement.ml-psicologia-psichiatria-slide,
+.slidev-layout.statement.sfide-future-index-slide,
 .slidev-layout.default.dipps-intro-slide,
 .slidev-layout.default.parche-slide,
 .slidev-layout.default.agenda-index-slide,
@@ -456,7 +604,9 @@
 .slidev-layout.two-columns:has(.bio-slide)::before,
 .slidev-layout.statement.whattadata-slide::before,
 .slidev-layout.statement.socialita-digitale-slide::before,
+.slidev-layout.statement.section-opener-slide::before,
 .slidev-layout.statement.ml-psicologia-psichiatria-slide::before,
+.slidev-layout.statement.sfide-future-index-slide::before,
 .slidev-layout.default.parche-slide::before,
 .agenda-card::before {
   content: "";
@@ -468,7 +618,9 @@
 .slidev-layout.two-columns:has(.bio-slide) > .col-right,
 .slidev-layout.statement.whattadata-slide > *,
 .slidev-layout.statement.socialita-digitale-slide > *,
+.slidev-layout.statement.section-opener-slide > *,
 .slidev-layout.statement.ml-psicologia-psichiatria-slide > *,
+.slidev-layout.statement.sfide-future-index-slide > *,
 .slidev-layout.default.parche-slide > :not(blockquote),
 .slidev-layout.default.agenda-index-slide > h1,
 .slidev-layout.default.agenda-index-slide > .agenda-grid,
@@ -840,22 +992,30 @@ html.dark .slidev-layout.statement.whattadata-slide {
 }
 
 /* ============================================================
-   ML PSICOLOGIA/PSICHIATRIA — emerald section opener
+   SECTION OPENERS — title/subtitle pages for agenda chapters
    ============================================================ */
-.slidev-layout.statement.ml-psicologia-psichiatria-slide {
+.slidev-layout.statement.section-opener-slide {
+  --section-opener-shape: none;
+  --section-opener-title-width: 11ch;
+
   display: flex !important;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 1.05rem;
   padding: 3.4rem 29rem 3.4rem 5.2rem;
   color: #f5f5f7;
   background:
-    radial-gradient(circle at 80% 50%, rgba(5, 150, 105, 0.18), transparent 34%),
+    radial-gradient(
+      circle at 80% 50%,
+      color-mix(in srgb, var(--aipp-accent) 24%, transparent),
+      transparent 34%
+    ),
     #0f0f10 !important;
   text-align: left;
 }
 
-.slidev-layout.statement.ml-psicologia-psichiatria-slide::before {
+.slidev-layout.statement.section-opener-slide::before {
   top: 50%;
   right: 0;
   bottom: auto;
@@ -864,13 +1024,45 @@ html.dark .slidev-layout.statement.whattadata-slide {
   width: 18.5rem;
   height: 33.25rem;
   transform: translateY(-50%);
-  background: var(--aipp-ml-psicologia-shape) right center / contain no-repeat;
+  background: var(--section-opener-shape) right center / contain no-repeat;
 }
 
-.slidev-layout.statement.ml-psicologia-psichiatria-slide h1 {
-  max-width: 11ch;
-  margin-right: 0;
-  margin-left: 0;
+.slidev-layout.statement.section-opener-slide h1 {
+  max-width: var(--section-opener-title-width);
+  margin: 0;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.slidev-layout.statement.section-opener-slide p {
+  max-width: 36rem;
+  margin: 0;
+  color: rgba(245, 245, 247, 0.74);
+  font-size: 1.34rem;
+  line-height: 1.34;
+  letter-spacing: 0;
+}
+
+.slidev-layout.statement.section-opener-slide h1 + p {
+  margin-top: 0;
+}
+
+.slidev-layout.statement.ia-nella-stanza-index-slide {
+  --section-opener-shape: var(--aipp-ia-cosa-pensiamo-shape);
+  --section-opener-title-width: 10ch;
+}
+
+.slidev-layout.statement.ml-psicologia-psichiatria-slide {
+  --section-opener-shape: var(--aipp-ml-psicologia-shape);
+}
+
+.slidev-layout.statement.sfide-future-index-slide {
+  --section-opener-shape: var(--aipp-sfide-future-shape);
+}
+
+.slidev-layout.statement.aspetti-normativi-slide {
+  --section-opener-shape: var(--aipp-agenda-shape-04);
+  --section-opener-title-width: 12ch;
 }
 
 /* ============================================================

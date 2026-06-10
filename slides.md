@@ -357,6 +357,16 @@ class: agenda-index-slide
 </div>
 
 ---
+layout: statement
+routeAlias: ia-nella-stanza-index
+class: section-opener-slide ia-nella-stanza-index-slide section-01
+---
+
+# IA nella stanza
+
+Strumenti, pazienti sintetici e nuovi ambienti relazionali dentro il percorso di cura.
+
+---
 layout: default
 routeAlias: perche-adesso
 class: section-01
@@ -642,10 +652,12 @@ Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto ripr
 ---
 layout: statement
 routeAlias: ml-psicologia-psichiatria
-class: ml-psicologia-psichiatria-slide section-01
+class: section-opener-slide ml-psicologia-psichiatria-slide section-02
 ---
 
 # ML nella psicologia/psichiatria
+
+Pattern, predizione e rischio clinico: cosa può stimare un modello e cosa resta fuori.
 
 <!--
 Note relatore:
@@ -1304,35 +1316,52 @@ Evidenziare la differenza tra diagnosi e monitoraggio. Il fenotipo digitale non 
 ---
 layout: default
 routeAlias: scenari-ia-generativa-llm
-class: section-02
+class: scenari-llm-slide section-02
 ---
 
 # Scenari IA generativa/LLM
 
-<div class="bento-grid bento-3">
-  <div class="bento-card">
-    <span class="bento-title">Documentazione</span>
-    <p>bozze di relazioni, sintesi, lettere, passaggi di consegne.</p>
+<div class="bento-grid bento-feature scenari-llm-bento">
+  <div class="bento-card llm-image-card llm-doc-card">
+    <img :src="$aippImage('scenari-llm-documentazione.png')" alt="Interfaccia astratta di documentazione clinica assistita da LLM" />
+    <div class="llm-image-copy">
+      <span class="bento-eyebrow">Documentazione</span>
+      <span class="bento-title">Sintesi, relazioni, consegne</span>
+      <p>Bozze revisionate dal clinico, dentro il workflow della cartella.</p>
+    </div>
   </div>
-  <div class="bento-card">
+
+  <div class="bento-card llm-image-card llm-support-card">
+    <img :src="$aippImage('scenari-llm-supporto.png')" alt="Smartphone con diario e supporto tra sedute rappresentati da UI astratta" />
+    <div class="llm-image-copy">
+      <span class="bento-eyebrow">Supporto tra sedute</span>
+      <span class="bento-title">Esercizi, reminder, diario</span>
+    </div>
+  </div>
+
+  <div class="bento-card llm-compact-card llm-psycho-card">
     <span class="bento-title">Psicoeducazione</span>
-    <p>materiali adattati per età, lingua, livello di alfabetizzazione.</p>
+    <p>Materiali adattati per età, lingua e livello di alfabetizzazione.</p>
   </div>
-  <div class="bento-card">
-    <span class="bento-title">Formazione</span>
-    <p>pazienti simulati, role-play, feedback su colloqui e anamnesi.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Supporto tra sedute</span>
-    <p>esercizi, reminder, diario, preparazione della visita.</p>
-  </div>
-  <div class="bento-card">
+
+  <div class="bento-card llm-compact-card llm-triage-card">
     <span class="bento-title">Triage conversazionale</span>
-    <p>raccolta strutturata di informazioni prima dell'accesso.</p>
+    <p>Raccolta strutturata di informazioni prima dell'accesso.</p>
   </div>
-  <div class="bento-card bento-accent">
-    <span class="bento-title">Rischio</span>
-    <p>il paziente può viverlo come terapeuta anche quando non lo è.</p>
+
+  <div class="bento-card llm-image-card llm-training-card">
+    <img :src="$aippImage('scenari-llm-formazione.png')" alt="Interfaccia astratta di role-play con paziente simulato per la formazione clinica" />
+    <div class="llm-image-copy">
+      <span class="bento-eyebrow">Formazione</span>
+      <span class="bento-title">Pazienti simulati e feedback</span>
+      <p>Role-play, colloqui difficili, anamnesi e supervisione didattica.</p>
+    </div>
+  </div>
+
+  <div class="bento-card bento-accent llm-risk-card">
+    <span class="bento-eyebrow">Rischio</span>
+    <span class="bento-title">Può essere vissuto come terapeuta anche quando non lo è</span>
+    <p>Gli usi patient-facing richiedono confini espliciti, escalation e responsabilità clinica.</p>
   </div>
 </div>
 
@@ -1342,9 +1371,19 @@ Sviluppare gli scenari LLM. Fare una distinzione: gli usi più maturi sono clini
 -->
 
 ---
+layout: statement
+routeAlias: sfide-future-index
+class: section-opener-slide sfide-future-index-slide section-03
+---
+
+# Sfide future
+
+Dagli LLM ai modelli multimodali: integrare senza delegare, monitorare senza sorvegliare.
+
+---
 layout: default
 routeAlias: sfide-future
-class: section-02
+class: section-03
 ---
 
 # Sfide future
@@ -1432,36 +1471,14 @@ L'IA multimodale promette una valutazione più ricca: non solo cosa dice il pazi
 -->
 
 ---
-layout: default
-routeAlias: roadmap-servizi
-class: section-03
----
-
-# Dai prototipi ai servizi
-
-| Domanda | Prima di adottare un'IA |
-|---|---|
-| Uso previsto | documentazione, triage, diagnosi, monitoraggio, terapia? |
-| Destinatario | clinico, paziente, famiglia, servizio? |
-| Validazione | su quali dati, in quale popolazione, con quale riferimento? |
-| Sicurezza | cosa accade in crisi suicidaria, psicosi, minori, abuso? |
-| Responsabilità | chi firma, chi corregge, chi risponde dell'errore? |
-| Outcome | riduce tempi, migliora esiti, aumenta equità o solo complessità? |
-
-<!--
-Note relatore:
-Questa slide traghetta agli aspetti normativi. È volutamente operativa. Un servizio non dovrebbe adottare IA perché è innovativa, ma perché risolve un problema definito e misurabile. Il primo documento da scrivere non è il contratto con il fornitore, ma l'uso previsto: che cosa fa, che cosa non fa, chi lo supervisiona, quando va spento.
--->
-
----
 layout: statement
 routeAlias: aspetti-normativi
-class: section-03
+class: section-opener-slide aspetti-normativi-slide section-04
 ---
 
 # Gli aspetti normativi
 
-Trasparenza, supervisione umana, privacy, sicurezza, responsabilità.
+Trasparenza, supervisione umana, privacy, sicurezza e responsabilità come condizioni di uso clinico.
 
 <!--
 Note relatore:
@@ -1493,362 +1510,41 @@ Questa checklist può essere usata come slide di discussione. Sottolineare che l
 
 ---
 layout: default
-routeAlias: responsabilita-output
+routeAlias: normative
 class: section-04
 ---
 
-# Chi è responsabile dell'output?
+# Quali sono le normative?
 
-<div class="bento-grid bento-3">
-  <div class="bento-card">
-    <span class="bento-title">Produttore</span>
-    <p>sicurezza, qualità, validazione, aggiornamenti, cybersecurity.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Organizzazione</span>
-    <p>scelta dello strumento, formazione, procedure, audit.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Clinico</span>
-    <p>uso appropriato, revisione, decisione, comunicazione al paziente.</p>
-  </div>
-  <div class="bento-card bento-accent span-3">
-    <span class="bento-title">Il paziente non deve essere il sistema di allarme</span>
-    <p>Non possiamo accorgerci che l'IA sbaglia solo quando il paziente peggiora.</p>
-  </div>
-</div>
+> todo
 
-<!--
-Note relatore:
-Far notare che la responsabilità può diventare diffusa e quindi invisibile. Il produttore dice: è supporto. L'organizzazione dice: il clinico deve supervisionare. Il clinico dice: era un alert automatico. Il paziente riceve l'effetto. Per questo bisogna definire prima chi controlla cosa e come vengono tracciati errori, incidenti, falsi positivi e falsi negativi.
--->
+---
+layout: statement
+routeAlias: tool
+class: section-opener-slide ia-nella-stanza-index-slide section-01
+---
+
+# Tool
+
+---
+layout: default
+routeAlias: tool-2
+class: section-04
+---
+
+# Quali sono i tool?
+
+> todo
 
 
 ---
 layout: statement
-routeAlias: llmind-ponte
-class: section-04
+routeAlias: tesi-finale
+class: section-opener-slide ia-nella-stanza-index-slide section-01
 ---
 
-# LLMind
+# Tesi finale
 
-Dalla domanda “che cosa può fare un LLM?” alla domanda clinica: **quale posizione deve occupare nel percorso di cura?**
-
-<!--
-Note relatore:
-Usare questa slide come ponte finale. Dopo aver parlato di normativa e responsabilità, presentare LLMind non come "l'ennesimo chatbot", ma come una possibile risposta progettuale: un sistema che deve nascere già con limiti, supervisione e uso previsto. La frase da enfatizzare è che il problema non è costruire un modello che parli bene, ma costruire un contesto in cui ciò che dice sia clinicamente governabile.
--->
-
----
-layout: default
-routeAlias: llmind-perche
-class: section-05
----
-
-# Perché LLMind, e perché alla fine?
-
-<div class="split-2">
-  <div>
-    <span class="section-label">Problema reale</span>
-    <ul>
-      <li>molti strumenti digitali non comunicano tra loro;</li>
-      <li>le scale restano separate dal colloquio;</li>
-      <li>il diario del paziente non entra nel ragionamento clinico;</li>
-      <li>il chatbot rischia di diventare un setting parallelo.</li>
-    </ul>
-  </div>
-  <div>
-    <span class="section-label">Ipotesi LLMind</span>
-    <ul>
-      <li>RAG su materiali validati;</li>
-      <li>integrazione con tassonomie e linee guida;</li>
-      <li>memoria clinica controllata e revisionabile;</li>
-      <li>escalation umana nei casi a rischio.</li>
-    </ul>
-  </div>
-</div>
-
-> **Idea guida** Spostare l'LLM dal ruolo di confidente opaco al ruolo di interfaccia supervisionata dentro un percorso di cura.
-
-<!--
-Note relatore:
-Questa slide rende esplicito il collegamento con le slide Figma: se l'adozione in psicologia è frammentaria, LLMind va presentato come ipotesi di integrazione. Non promettere efficacia clinica non dimostrata. Dire chiaramente: è una direzione progettuale, non una tecnologia già validata come dispositivo terapeutico. La domanda interessante per il pubblico è: quali elementi dovrebbe avere un sistema del genere per essere accettabile in un servizio?
--->
-
-
----
-layout: default
-routeAlias: llmind-prototipo
-class: section-05
----
-
-# LLMind: dal concetto al prototipo
-
-Non solo un'ipotesi: un primo prototipo **clinician-facing**, già testato su casi benchmark.
-
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2">
-    <span class="bento-title">Supporto decisionale per il clinico</span>
-    <p>Il medico invia un caso o la cartella in web-chat; LLMind propone diagnosi differenziali e criteri, basandosi su <strong>Gemma 2</strong> (Google) + <strong>RAG</strong> sulla classificazione <strong>ICD-11</strong> (OMS, 2022).</p>
-  </div>
-  <div class="bento-card bento-stat">
-    <span class="bento-figure">~76%</span>
-    <span class="bento-label">Accuratezza su DSM-5-TR</span>
-    <p>Su casi dei DSM-5-TR Clinical Cases, sopra i LLM generalisti.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">RAG, non retraining</span>
-    <p>I pesi restano invariati; la conoscenza ICD-11 è esterna, modulare e aggiornabile quando la classificazione evolve.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Esempio: Giovanna</span>
-    <p>Sul caso di Juanita Delgado — la nostra Giovanna — individua un disturbo borderline di personalità secondo ICD-11.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Stato dell'arte affine</span>
-    <p>SouLLMate, OnRL-RAG, Psy-LLM: più orientati a chatbot e supporto che a diagnosi formale.</p>
-  </div>
-</div>
-
-> **Cautela** ~76% su casi benchmark non è validazione clinica: restano tempi di risposta, supervisione umana, comorbidità e casi atipici.
-
-<!--
-Note relatore:
-Questa slide ancora la parte finale a qualcosa di concreto: LLMind non è solo uno scenario, è un prototipo che abbiamo costruito e misurato. Chiarire il posizionamento reale: è clinician-facing (il medico interroga il modello inviando il caso), basato su Gemma 2 con RAG su ICD-11. Il dato dei ~76% sui DSM-5-TR Clinical Cases va presentato con onestà: è un benchmark su casi sintetici, non una validazione clinica, ed è proprio coerente con la tesi del talk sulla differenza tra performance sperimentale e decisione reale. L'esempio di Juanita Delgado chiude il cerchio con la Giovanna iniziale. Le slide seguenti discutono i confini e l'estensione patient-facing supervisionata di un sistema del genere.
--->
-
----
-layout: default
-routeAlias: llmind-mindfuldiary
-class: llmind-slide section-05
----
-
-# Un precedente utile: MindfulDiary
-
-MindfulDiary è un esempio di come un LLM possa essere usato non come terapeuta, ma come **diario clinico conversazionale**.
-
-- Documenta esperienze quotidiane tramite chat.
-- Usa un approccio a **stati finiti** per restare entro linee guida definite.
-- Studio sul campo: 4 settimane, 28 pazienti con depressione maggiore e 5 psichiatri.
-- Ha arricchito i report quotidiani e aiutato i clinici a comprendere pensieri e contesti.
-
-<small>Fonte: Kim et al., *MindfulDiary: Harnessing Large Language Model to Support Psychiatric Patients' Journaling*, 2023.</small>
-
-<!--
-Note relatore:
-Questa slide permette di introdurre LLMind senza sembrare fantascientifici. MindfulDiary non viene presentato come psicoterapia autonoma, ma come strumento per raccogliere materiale tra le sedute. La parte importante è il vincolo: macchina a stati finiti, linee guida, coinvolgimento di professionisti. È una buona analogia per dire che un LLM in salute mentale dovrebbe nascere con confini, non aggiungerli dopo.
--->
----
-layout: default
-routeAlias: llmind-cosa-e
-class: section-05
----
-
-# LLMind: non un terapeuta automatico
-
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2">
-    <span class="bento-title">Un'interfaccia di supporto, non una delega della cura</span>
-    <p>LLMind va pensato come infrastruttura supervisionata per raccogliere, organizzare e restituire informazioni clinicamente utili.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Prima della visita</span>
-    <p>preparazione, diario, domande, scale, bisogni prioritari.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Durante il percorso</span>
-    <p>continuità, psicoeducazione, reminder, esercizi concordati.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Per il clinico</span>
-    <p>sintesi revisionabile, segnali longitudinali, punti da discutere.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Per il servizio</span>
-    <p>audit, appropriatezza, escalation, misure di sicurezza.</p>
-  </div>
-</div>
-
-> **Principio** Se il paziente lo vive come terapeuta, il sistema deve essere progettato come dispositivo clinicamente rischioso, anche quando nasce come supporto.
-
-<!--
-Note relatore:
-Qui chiarire il posizionamento: LLMind non dovrebbe essere venduto o raccontato come terapeuta. La sua utilità potenziale sta nel dare continuità e organizzazione, non nel sostituire colloquio, diagnosi o responsabilità. Collegare questa slide a Giovanna: un LLM può parlare in modo convincente; la vera domanda è se sappiamo delimitare setting, finalità, memoria, escalation e revisione.
--->
-
----
-layout: default
-routeAlias: llmind-architettura
-class: section-05
----
-
-# LLMind: architettura minima sicura
-
-```mermaid {theme: 'base'}
-flowchart LR
-  A["Paziente"] --> B["Diario / domande / scale"]
-  B --> C["LLM con RAG su materiali validati"]
-  C --> D["Guardrail clinici"]
-  D --> E["Sintesi e segnali"]
-  E --> F["Clinico"]
-  F --> G["Decisione / feedback / piano"]
-  G --> A
-  D --> H["Escalation umana"]
-  H --> F
-  I["Audit e log"] --> D
-  I --> E
-  class D,H mermaid-focus
-```
-
-<div class="tag-row">
-  <span class="tag">consenso</span>
-  <span class="tag">materiali validati</span>
-  <span class="tag">no diagnosi autonoma</span>
-  <span class="tag">no farmaci</span>
-  <span class="tag">crisi → umano</span>
-  <span class="tag">log revisionabili</span>
-</div>
-
-<!--
-Note relatore:
-La slide serve a rendere concreta la governance. RAG significa che il modello non deve rispondere solo dalla sua conoscenza generale, ma appoggiarsi a materiali approvati dal servizio: psicoeducazione, istruzioni, procedure, numeri di emergenza, indicazioni su cosa può e non può fare. I guardrail non sono cosmetici: devono definire crisi, suicidarietà, psicosi, minori, abuso, farmaci e segnali di peggioramento. La decisione resta al clinico.
--->
-
----
-layout: default
-routeAlias: llmind-validazione
-class: compact-table-slide section-05
----
-
-# Prima di usare LLMind: che cosa validare?
-
-<table class="evidence-table">
-  <thead>
-    <tr>
-      <th>Livello</th>
-      <th>Domanda di validazione</th>
-      <th>Metriche utili</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Sicurezza</strong></td>
-      <td>Riconosce crisi, suicidarietà, abuso, psicosi, minori?</td>
-      <td>tasso di escalation corretta; falsi negativi; eventi avversi</td>
-    </tr>
-    <tr>
-      <td><strong>Fedeltà clinica</strong></td>
-      <td>Resta entro materiali validati e uso previsto?</td>
-      <td>hallucination rate; risposte fuori-policy; accuratezza RAG</td>
-    </tr>
-    <tr>
-      <td><strong>Utilità</strong></td>
-      <td>Riduce carico inutile o aggiunge complessità?</td>
-      <td>tempo clinico risparmiato; qualità sintesi; soddisfazione operatori</td>
-    </tr>
-    <tr>
-      <td><strong>Effetto sul paziente</strong></td>
-      <td>Aumenta accesso e continuità senza dipendenza?</td>
-      <td>engagement; drop-out; alleanza; uso problematico; preferenza per IA</td>
-    </tr>
-    <tr>
-      <td><strong>Equità</strong></td>
-      <td>Funziona per età, lingua, cultura e fragilità diverse?</td>
-      <td>performance per sottogruppi; bias; accessibilità; literacy digitale</td>
-    </tr>
-  </tbody>
-</table>
-
-> **Soglia etica** Un sistema conversazionale in salute mentale va validato anche per gli effetti relazionali, non solo per l'accuratezza delle risposte.
-
-<!--
-Note relatore:
-Qui proporre una vera agenda di ricerca/implementazione. Nel mondo dell'imaging abbiamo sensibilità, specificità, workload e outcome chiari. Con LLMind bisogna misurare anche cose meno immediate: dipendenza, alleanza, confusione del setting, aumento dell'evitamento, aspettative irrealistiche, qualità della sintesi per il clinico. Sottolineare che una risposta "corretta" può essere comunque clinicamente mal collocata.
--->
-
-
----
-layout: default
-routeAlias: llmind-domande-discussione
-class: section-05
----
-
-# LLMind: domande da portare nella discussione
-
-| Promessa | Rischio | Domanda clinica |
-|---|---|---|
-| più materiale tra le sedute | co-ruminazione assistita | il paziente sta elaborando o ripetendo? |
-| accesso a bassa soglia | terapia parallela non dichiarata | chi sa cosa sta accadendo? |
-| sintesi per il clinico | perdita del contesto | cosa viene tagliato dalla sintesi? |
-| monitoraggio del rischio | falso senso di sicurezza | chi interviene se c'è escalation? |
-| alleanza aumentata | dipendenza dall'interfaccia | migliora o sostituisce la relazione? |
-
-> **Take-away** Un LLMind utile non deve “fare il terapeuta”: deve rendere più visibile, condivisibile e lavorabile ciò che accade tra una seduta e l'altra.
-
-<!--
-Note relatore:
-Questa è una slide finale di discussione. È utile perché apre domande e non vende una soluzione. Chiedere al pubblico: in quali pazienti lo prescrivereste? In quali lo evitereste? Come lo documentereste in cartella? Come chiedereste il consenso? Il punto è governare il dispositivo come parte della cura, non lasciare che diventi un oggetto opaco nella vita del paziente.
--->
----
-layout: default
-routeAlias: llmind-confini
-class: section-05
----
-
-# LLMind: i confini da dichiarare al paziente
-
-<div class="split-2">
-  <div>
-    <span class="section-label">Può fare</span>
-    <ul>
-      <li>aiutare a preparare la seduta;</li>
-      <li>organizzare sintomi, domande e obiettivi;</li>
-      <li>proporre psicoeducazione validata;</li>
-      <li>ricordare esercizi concordati;</li>
-      <li>segnalare quando serve contatto umano.</li>
-    </ul>
-  </div>
-  <div>
-    <span class="section-label">Non deve fare</span>
-    <ul>
-      <li>fare diagnosi autonoma;</li>
-      <li>modificare farmaci o indicazioni cliniche;</li>
-      <li>gestire da solo una crisi;</li>
-      <li>sostituire psicoterapia o psichiatria;</li>
-      <li>diventare l'unico interlocutore del paziente.</li>
-    </ul>
-  </div>
-</div>
-
-> **Trasparenza relazionale** Il consenso informato deve spiegare anche che tipo di relazione il sistema non può offrire.
-
-<!--
-Note relatore:
-Questa slide è molto pratica. Una IA patient-facing deve dichiarare non solo privacy e dati, ma anche confini relazionali: non sono il tuo terapeuta, non posso seguire una crisi da solo, posso aiutarti a organizzare informazioni e a contattare il servizio. Questo evita una parte della confusione che nasce quando un chatbot parla con tono caldo e continuo, ma non ha setting né responsabilità.
--->
-
----
-layout: default
-routeAlias: llmind-dal-lab-al-servizio
-class: section-05
----
-
-# Da DIPPS/LLMPatients a LLMind
-
-| Laboratorio | Servizio |
-|---|---|
-| pazienti sintetici | pazienti reali e vulnerabili |
-| scenari controllati | contesto aperto e imprevedibile |
-| errori formativi | errori con conseguenze cliniche |
-| log per valutare il colloquio | log per sicurezza, audit e miglioramento |
-| obiettivo: imparare | obiettivo: curare meglio |
-
-> **Passaggio critico** Quello che in formazione è simulazione, nel servizio diventa responsabilità.
-
-<!--
-Note relatore:
-Chiudere il cerchio con la prima parte del talk. DIPPS e LLMPatients sono utili per imparare e per testare errori in sicurezza. LLMind, se pensato per un servizio, richiede un salto di qualità: dati reali, consenso, responsabilità, procedure, validazione, incident reporting. È proprio qui che la psicopatologia richiede più cautela della medicina dell'immagine: non stiamo solo riconoscendo pattern, stiamo intervenendo nella domanda d'aiuto.
--->
 
 ---
 layout: default
