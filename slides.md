@@ -1775,15 +1775,32 @@ class: section-05 framework-slide
 # Oltre i prompt persona
 
 <div class="framework-bento">
-  <div class="fw-hero">
-    <div class="fw-hero-copy">
-      <span class="bento-eyebrow">Working paper · framework socio-cognitivo modulare per simulare personalità con LLM</span>
-      <p class="fw-thesis">Simulare una personalità non è scrivere un prompt più ricco: è uno <strong>stato esplicito, ispezionabile e autoregolato</strong>. Sulla cornice di Bandura, l'LLM resta il <em>realizzatore linguistico</em> — non la sede della personalità.</p>
+  <div class="fw-top">
+    <div class="fw-hero">
+      <div class="fw-hero-copy">
+        <span class="bento-eyebrow">Working paper · framework socio-cognitivo modulare per simulare personalità con LLM</span>
+        <p class="fw-thesis">Simulare una personalità non è scrivere un prompt più ricco: è uno <strong>stato esplicito, ispezionabile e autoregolato</strong>. Nella cornice del Determinismo Reciproco Triadico, l'LLM resta il <em>realizzatore linguistico</em> — non la sede della personalità.</p>
+      </div>
     </div>
-    <div class="fw-triad">
-      <span class="fw-triad-chip"><b>Persona</b>stato + vincoli del modello</span>
-      <span class="fw-triad-chip"><b>Ambiente</b>input dell'utente</span>
-      <span class="fw-triad-chip"><b>Comportamento</b>risposta generata</span>
+    <div class="fw-triad" role="img" aria-label="Determinismo Reciproco Triadico: Persona, Ambiente e Comportamento">
+      <svg class="fw-triad-arrows" viewBox="0 0 320 140" aria-hidden="true">
+        <defs>
+          <marker id="fw-triad-arrow-solid" class="fw-arrow-marker-solid" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 8 4 L 0 8 z" />
+          </marker>
+          <marker id="fw-triad-arrow-dashed" class="fw-arrow-marker-dashed" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 8 4 L 0 8 z" />
+          </marker>
+        </defs>
+        <path class="fw-arrow-solid" d="M 82 92 L 142 43" marker-end="url(#fw-triad-arrow-solid)" />
+        <path class="fw-arrow-solid" d="M 224 113 L 96 113" marker-end="url(#fw-triad-arrow-solid)" />
+        <path class="fw-arrow-solid" d="M 181 43 L 246 91" marker-end="url(#fw-triad-arrow-solid)" />
+        <path class="fw-arrow-dashed" d="M 267 84 L 203 38" marker-end="url(#fw-triad-arrow-dashed)" />
+        <path class="fw-arrow-dashed" d="M 139 44 C 118 62 135 78 157 66 C 173 57 170 47 158 45" marker-end="url(#fw-triad-arrow-dashed)" />
+      </svg>
+      <span class="fw-triad-chip fw-triad-persona"><b>Persona</b><small>stato + vincoli del modello</small></span>
+      <span class="fw-triad-chip fw-triad-ambiente"><b>Ambiente</b><small>input dell'utente</small></span>
+      <span class="fw-triad-chip fw-triad-comportamento"><b>Comportamento</b><small>risposta generata</small></span>
     </div>
   </div>
 

@@ -599,12 +599,17 @@
   gap: 0.6rem;
 }
 
-/* ---- Hero: thesis + Bandura triad ---- */
+/* ---- Hero thesis + top-right reciprocal triad ---- */
+.framework-slide .fw-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21rem;
+  align-items: stretch;
+  gap: 0.8rem;
+}
+
 .framework-slide .fw-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   align-items: center;
-  gap: 1.35rem;
   padding: 0.85rem 1.2rem;
   border-radius: var(--aipp-radius);
   border: 1px solid color-mix(in srgb, var(--aipp-accent) 24%, transparent);
@@ -625,28 +630,95 @@
 }
 
 .framework-slide .fw-triad {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
+  position: relative;
+  min-height: 7.15rem;
+  isolation: isolate;
+}
+
+.framework-slide .fw-triad-arrows {
+  position: absolute;
+  inset: 0.15rem 0.25rem 0;
+  z-index: 1;
+  width: calc(100% - 0.5rem);
+  height: calc(100% - 0.15rem);
+  overflow: visible;
+}
+
+.framework-slide .fw-triad-arrows path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.framework-slide .fw-arrow-marker-solid path {
+  fill: color-mix(in srgb, var(--aipp-fg) 78%, transparent);
+  stroke: none;
+}
+
+.framework-slide .fw-arrow-marker-dashed path {
+  fill: color-mix(in srgb, var(--aipp-accent) 86%, transparent);
+  stroke: none;
+}
+
+.framework-slide .fw-arrow-solid {
+  color: color-mix(in srgb, var(--aipp-fg) 78%, transparent);
+  stroke: currentColor;
+  stroke-width: 2.6;
+}
+
+.framework-slide .fw-arrow-dashed {
+  color: color-mix(in srgb, var(--aipp-accent) 86%, transparent);
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-dasharray: 7 5;
 }
 
 .framework-slide .fw-triad-chip {
+  position: absolute;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 0.1rem;
-  padding: 0.5rem 0.6rem;
+  width: 7.55rem;
+  min-height: 2.35rem;
+  padding: 0.38rem 0.55rem;
   border-radius: var(--aipp-radius-sm);
-  border: 1px solid var(--aipp-line);
-  background: var(--aipp-surface-2);
+  border: 1px solid color-mix(in srgb, var(--aipp-accent) 30%, var(--aipp-line));
+  background: color-mix(in srgb, var(--aipp-surface-2) 88%, var(--aipp-accent) 12%);
+  box-shadow: 0 10px 22px rgb(0 0 0 / 0.2);
   color: var(--aipp-soft);
-  font-size: 0.7rem;
-  line-height: 1.18;
+  text-align: center;
+  line-height: 1.08;
 }
 
 .framework-slide .fw-triad-chip b {
   color: var(--aipp-fg);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 660;
+}
+
+.framework-slide .fw-triad-chip small {
+  color: var(--aipp-soft);
+  font-size: 0.58rem;
+  line-height: 1.08;
+}
+
+.framework-slide .fw-triad-persona {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.framework-slide .fw-triad-ambiente {
+  bottom: 0;
+  left: 0;
+}
+
+.framework-slide .fw-triad-comportamento {
+  right: 0;
+  bottom: 0;
 }
 
 /* ---- Strato bands: label + colored component row ---- */
