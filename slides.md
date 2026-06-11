@@ -36,6 +36,10 @@ info: |
   </div>
 </section>
 
+<!--
+Buongiorno a tutte e a tutti, e grazie all'AIPP e ai coordinatori della sessione per l'invito. Il titolo del mio intervento è "Intelligenza artificiale al servizio della psicopatologia": parleremo di modelli generativi, di digital phenotyping e di come l'IA sta cambiando la relazione clinica. Ma non voglio partire dalla tecnologia. Voglio partire da un colloquio. Prima, trenta secondi su chi sono e da dove parlo.
+-->
+
 ---
 layout: two-cols
 routeAlias: speaker
@@ -58,8 +62,7 @@ Ricercatore all'Università degli Studi di Milano-Bicocca (Dipartimento di Infor
 - LLM applicati alla salute mentale: LLMind e LLMPatients.
 
 <!--
-Note relatore:
-Questa slide serve a dichiarare il punto di vista: non quello del clinico che sostituisce la relazione con la tecnologia, ma quello di chi progetta e valuta sistemi intelligenti a contatto con dati clinici e percorsi di salute mentale. Anticipare che l'intervento avrà due fili: cosa l'IA sa fare bene quando il compito è delimitato, e perché la psicopatologia è un oggetto molto più complesso.
+Sono ricercatore al Dipartimento di Informatica dell'Università di Milano-Bicocca e lavoro in Whattadata, lo spin-off dell'ateneo dedicato alla salute mentale digitale. Quindi il mio punto di vista non è quello del clinico: è quello di chi progetta e valuta sistemi intelligenti che entrano in contatto con dati clinici e percorsi di cura — modelli linguistici ancorati a tassonomie come l'ICD-11, monitoraggio digitale, applicazioni per aderenza e psicoeducazione. Nell'intervento terrò due fili paralleli: che cosa l'IA sa fare bene quando il compito è delimitato, e perché la psicopatologia è un oggetto molto più complesso di quei compiti.
 -->
 
 ---
@@ -78,8 +81,7 @@ class: whattadata-slide
 </section>
 
 <!--
-Note relatore:
-Usare questa slide come transizione istituzionale: Whattadata è il contesto progettuale da cui arrivano DIPPS, MiCare, LLMPatients e LLMind. Non presentarla come sponsor, ma come laboratorio applicativo: dati clinici, piattaforme e modelli intelligenti costruiti insieme ai servizi. Da qui passare a DIPPS come caso concreto.
+Whattadata è il contesto da cui arriva tutto ciò che vi mostrerò: DIPPS, LLMPatients, LLMind. Non lo cito come sponsor, ma come laboratorio applicativo: dati clinici, piattaforme e modelli intelligenti costruiti e validati insieme ai servizi, dal progetto al campo. Vi faccio vedere subito un caso concreto.
 -->
 
 ---
@@ -134,9 +136,9 @@ class: dipps-intro-slide
 </section>
 
 <!--
-Note relatore:
-Questa slide arriva dopo il contesto Whattadata. Serve a dichiarare da quale esperienza concreta parlo: non solo letteratura e scenari futuri, ma progettazione di piattaforme reali. Sottolineare che DIPPS è utile come caso di studio: mostra il passaggio dalla singola app alla logica di ecosistema digitale. Citare il partenariato: Aton Informatica, Cefriel, Università degli Studi di Milano-Bicocca/DISCo e Università degli Studi di Padova/Dipartimento di Psicologia Generale. Non entrare ancora nei dettagli tecnici; basta fissare tre parole: continuità, monitoraggio, supporto decisionale. Dettagli a voce se richiesti: Bando MIMIT – Accordi per l'Innovazione (Ministero delle Imprese e del Made in Italy, ex MISE), CUP B49J23001840005, investimento totale ~€5,629 M.
+DIPPS — Digital Intervention in Psychiatric and Psychological Services — è un progetto finanziato dal bando MIMIT "Accordi per l'Innovazione", da marzo 2023 a febbraio 2026, con un investimento di circa cinque milioni e seicentomila euro. Il partenariato: Aton Informatica, Cefriel, Milano-Bicocca con il DISCo e l'Università di Padova con il Dipartimento di Psicologia Generale. Non vi racconto i dettagli tecnici: lo cito perché mostra il passaggio dalla singola app alla logica di ecosistema digitale — paziente, clinico, monitoraggio continuo e supporto decisionale dentro lo stesso workflow. Tre parole da tenere a mente per tutto il talk: continuità, monitoraggio, supporto decisionale.
 -->
+
 ---
 layout: default
 routeAlias: colloquio-scid-1
@@ -163,6 +165,12 @@ class: conversation-slide
     Cose stupide. Cosa indossare se devo incontrare un suo amico. Cosa scrivere per non sembrare pazza o disperata. È tutto. Va bene così?
   </ChatBalloon>
 </div>
+
+<!--
+[Lasciare qualche secondo per leggere i fumetti.]
+
+Vi chiedo di entrare in un colloquio. Erika, la terapeuta, sta somministrando la SCID a Giovanna, una paziente in valutazione. Leggete il tono delle risposte: "tutti i modi in cui sono rotta", "è questa la risposta giusta?". Anche dentro un test strutturato emergono vergogna, dipendenza dal giudizio dell'altro, paura di sbagliare.
+-->
 
 ---
 layout: default
@@ -191,6 +199,10 @@ class: conversation-slide
   </ChatBalloon>
 </div>
 
+<!--
+La seconda parte tocca l'area dell'abbandono e del vuoto. "Se nessuno c'è, sembra che non ci sia neanche io. Come se potessi sparire nel silenzio." Un clinico qui sente subito la qualità borderline dell'esperienza: il silenzio che diventa rumore, il terrore di sparire, il fare di tutto pur di non essere lasciati. Tenete a mente questa conversazione: tra poco vi dirò una cosa su Giovanna.
+-->
+
 ---
 layout: default
 routeAlias: cosa-ha-giovanna
@@ -205,6 +217,10 @@ routeAlias: cosa-ha-giovanna
 | <span class="questionnaire-name"><strong>LPFS-BF 2.0</strong><small>Level of Personality Functioning Scale-Brief Form 2.0</small></span> | 47 / 48 | compromissione molto elevata; Sé 24 / Interpersonale 23 |
 | <span class="questionnaire-name"><strong>DSM-5-TR Level 1</strong><small>Self-Rated Level 1 Cross-Cutting Symptom Measure</small></span> | 12 domini sopra soglia | profilo multi-dominio: depressione, ansia, ideazione suicidaria, dissociazione, sostanze |
 | <span class="questionnaire-name"><strong>SNAP-2</strong><small>Schedule for Nonadaptive and Adaptive Personality - 2nd Edition</small></span> | elevazioni diffuse | borderline T=103, dependent T=111, paranoid T=88, depressive T=85; self-harm T=104 |
+
+<!--
+Questi sono i punteggi di Giovanna ai questionari. PHQ-9 a 27 su 27, il massimo: sintomatologia depressiva severa. Binge eating in fascia severa. Alla LPFS un funzionamento della personalità gravemente compromesso, sia sul versante del Sé sia su quello interpersonale. Dodici domini sopra soglia al cross-cutting del DSM-5-TR — depressione, ansia, ideazione suicidaria, dissociazione, sostanze. E allo SNAP-2 elevazioni marcate su borderline, dipendenza e autolesionismo. Un quadro complesso, multi-dominio. La domanda del titolo — "cosa ha Giovanna?" — sembra già avere molte risposte.
+-->
 
 ---
 layout: image-right
@@ -221,6 +237,10 @@ image: images/patients/juanita-delgado/base-flat.png
 - Ideazione suicidaria cronica e pregresse condotte autolesive.
 - Binge eating in risposta a vuoto e disregolazione affettiva.
 - Dissociazione da stress, sospettosità interpersonale e uso di sostanze.
+
+<!--
+Ricapitolando il caso: Giovanna ha 33 anni, vive in isolamento sociale, con vergogna intensa e un'autostima fragile. Episodi depressivi maggiori ricorrenti, disturbo borderline di personalità, ideazione suicidaria cronica con pregresse condotte autolesive, binge eating in risposta al vuoto, dissociazione da stress e uso di sostanze. Un caso che molti di voi riconoscono come quotidiano nei servizi.
+-->
 
 ---
 layout: image-right
@@ -241,21 +261,33 @@ image: images/patients/juanita-delgado/base.png
 
 > **Caso di riferimento** Adattato da DSM-5 Clinical Cases, caso 18.5 “Fragile and Angry” (Juanita Delgado): disturbo borderline di personalità, 301.83 / F60.3.
 
+<!--
+Ecco il punto: Giovanna non esiste. È un paziente sintetico, generato da un modello linguistico a partire da un profilo strutturato — storia clinica, diagnosi, farmaci, obiettivi, funzionamento, tratti emotivi. Il caso è adattato dal caso 18.5 dei DSM-5 Clinical Cases, "Fragile and Angry", Juanita Delgado: disturbo borderline di personalità. Ogni battuta che avete letto è stata generata in character, con un'emozione dominante, un topic e una memoria conversazionale, e ogni interazione viene salvata per revisione e formazione. Se la conversazione vi è sembrata clinicamente plausibile — ed è la reazione più comune — abbiamo un problema interessante: dobbiamo decidere quali usi di questa tecnologia sono sensati e quali sono pericolosi.
+-->
+
 ---
 layout: default
-routeAlias: llmpatients-schermata-lavoro
+routeAlias: llmpatients-sessione-chat
 class: screenshot-slide
 ---
 
 <AppScreenshot src="screenshots/sessione-chat-juanita-delgado.png" alt="Screenshot della sessione chat di Juanita Delgado" />
 
+<!--
+Questa è l'interfaccia reale di LLMPatients: la seduta con Giovanna — qui con il nome originale del caso, Juanita Delgado. Il terapeuta in formazione scrive a sinistra, il paziente sintetico risponde; il sistema traccia emozioni, temi e fasi della seduta.
+-->
+
 ---
 layout: default
-routeAlias: llmpatients-esplora-pazienti-griglia
+routeAlias: llmpatients-esplora-pazienti
 class: screenshot-slide
 ---
 
 <AppScreenshot src="screenshots/esplora-pazienti-griglia.png" alt="Screenshot della griglia di esplorazione dei pazienti" />
+
+<!--
+E i casi non sono uno solo: c'è una libreria di pazienti simulati, ciascuno con il proprio profilo clinico, la propria diagnosi e la propria personalità, pensati per esercitare colloquio, anamnesi e diagnosi differenziale.
+-->
 
 ---
 layout: default
@@ -264,6 +296,10 @@ class: screenshot-slide
 ---
 
 <AppScreenshot src="screenshots/dashboard-percorsi-terapeutici.png" alt="Screenshot della dashboard dei percorsi terapeutici" />
+
+<!--
+Ogni percorso formativo viene tracciato: sedute svolte, andamento nel tempo, errori ricorrenti. Il valore non è il realismo della chat in sé: è poter rivedere, valutare e discutere l'interazione a posteriori.
+-->
 
 ---
 layout: default
@@ -281,6 +317,10 @@ class: patient-carousel-slide
   <PatientCard name="Jason Smith" image="patients/jason-smith/base.png" />
 </div>
 
+<!--
+Questi sono alcuni dei pazienti disponibili. Ognuno nasce da un caso clinico documentato e da un profilo strutturato che ne governa il comportamento. Su come si costruisce e si controlla una personalità simulata tornerò verso la fine, quando vi mostrerò il framework che c'è dietro.
+-->
+
 ---
 layout: default
 routeAlias: colloquio-critica
@@ -289,8 +329,8 @@ class: conversation-slide critique-conversation-slide
 
 <div class="critique-conversation">
   <figure class="critique-patient-photo">
-    <img :src="$aippImage('patients/juanita-delgado/rage.png')" alt="Juanita Delgado arrabbiata">
-    <figcaption>Juanita</figcaption>
+    <img :src="$aippImage('patients/juanita-delgado/rage.png')" alt="Giovanna arrabbiata">
+    <figcaption>Giovanna</figcaption>
   </figure>
 
   <div class="chat-thread critique-chat">
@@ -301,7 +341,7 @@ class: conversation-slide critique-conversation-slide
       Ecco. Lo sapevo. Appena provo a dirlo, diventa troppo. Sono sempre troppo.
     </ChatBalloon>
     <ChatBalloon role="therapist" speaker='"Terapeuta" Marco'>
-      Si scusami. Mi sono espresso male. Proseguiamo. Continuamo a parlare di tuo padre.
+      Sì, scusami. Mi sono espresso male. Proseguiamo: continuiamo a parlare di tuo padre.
     </ChatBalloon>
     <ChatBalloon role="patient" speaker="Giovanna">
       Che cosa rispondo a fare? Se parlo, poi vengo criticata. Se sto zitta, almeno non do fastidio.
@@ -314,6 +354,10 @@ class: conversation-slide critique-conversation-slide
     </ChatBalloon>
   </div>
 </div>
+
+<!--
+Il paziente sintetico serve anche a questo: a sbagliare senza fare danni. Qui il terapeuta — sono io, e l'ho fatto apposta — commette una sequenza di errori da manuale: invalida l'esperienza ("in modo un po' eccessivo"), si scusa male, e poi forza il programma ("ok, ma ora proseguiamo"). E Giovanna reagisce come reagirebbe una paziente borderline: prima si chiude — "se sto zitta almeno non do fastidio" — poi rivendica il controllo: "non decidi tu quando andare avanti". In formazione questo è oro: l'errore comunicativo diventa osservabile, ripetibile e discutibile, senza che nessuno si faccia male.
+-->
 
 ---
 layout: default
@@ -356,6 +400,10 @@ class: agenda-index-slide
   </div>
 </div>
 
+<!--
+Da qui in poi il percorso è questo. Primo: l'IA nella stanza — strumenti, pazienti sintetici, relazione. Secondo: il machine learning in psicologia e psichiatria, con un confronto onesto con la medicina. Poi le sfide future, gli aspetti normativi, alcuni tool concreti — compresi i nostri — e una tesi finale su cui vorrei discutere con voi.
+-->
+
 ---
 layout: statement
 routeAlias: ia-nella-stanza-index
@@ -365,6 +413,10 @@ class: section-opener-slide ia-nella-stanza-index-slide section-01
 # IA nella stanza
 
 Strumenti, pazienti sintetici e nuovi ambienti relazionali dentro il percorso di cura.
+
+<!--
+Prima sezione: l'IA nella stanza. Come è già entrata nel percorso di cura — come strumento, come paziente simulato e come ambiente relazionale.
+-->
 
 ---
 layout: default
@@ -407,8 +459,7 @@ class: section-01
 <small>Fonti: Amand-Eeckhout L., *Mental health in the EU*, EPRS, 2023; OECD, *A new benchmark for mental health systems*, 2021.</small>
 
 <!--
-Note relatore:
-Slide di contesto: serve a fissare la posta in gioco prima della parte scientifica. Non leggere tutti i numeri: scegliere due dati. Il messaggio per la giornata AIPP è l'esordio precoce (50% entro i 14 anni, 75% in giovane età adulta) e i bisogni non soddisfatti nei giovani: è proprio la popolazione dei nativi digitali che già usa chatbot e app. Collega la pressione epidemiologica (tanta domanda, accesso limitato) alla tentazione di delegare alla tecnologia, che è il rischio che il talk vuole governare.
+Perché parlarne adesso? Vi do solo due numeri. Primo: metà dei disturbi mentali esordisce entro i 14 anni, tre quarti entro la giovane età adulta. È esattamente la popolazione di nativi digitali al centro di questa giornata. Secondo: nel 2022 un giovane europeo su due ha riferito bisogni di cura non soddisfatti. Tanta domanda, accesso limitato: è qui che nasce la tentazione di delegare alla tecnologia. E per chi, come l'AIPP, lavora su prevenzione e intervento precoce, il punto non è subire questa tentazione: è governarla.
 -->
 
 ---
@@ -426,8 +477,7 @@ class: parche-slide section-01
 > **Punto chiave** Non partiamo dalla tecnologia, ma dal fatto che l'IA è già nella stanza: nei racconti dei pazienti, negli strumenti del clinico e nella relazione di cura.
 
 <!--
-Note relatore:
-Questa è la slide di passaggio dalla demo iniziale alla parte scientifica. Riprendere Giovanna: prima sembrava una paziente, poi abbiamo scoperto che era un paziente sintetico. Questo crea una piccola perturbazione utile: se una conversazione generata può sembrarci clinicamente plausibile, dobbiamo chiederci quali usi siano sensati e quali siano pericolosi. Collegare alla giornata AIPP: nativi digitali, ritiro sociale, LLM come confidenti e nuove prospettive terapeutiche. Non entrare ancora nei dettagli tecnici: introdurre la cornice.
+L'IA è già nella stanza, in due sensi. Il primo: i pazienti la usano già — chatbot, app, sistemi generativi usati come confidenti, soprattutto da chi è isolato. Pensate a un giovane in ritiro sociale che arriva in consultazione dopo settimane di conversazioni quotidiane con un chatbot e vi dice: "mi capisce meglio di tutti". Il secondo senso: il clinico inizia a usarla come strumento. Sono due ingressi molto diversi — clinician-facing e patient-facing — con rischi, responsabilità e maturità diverse. E Giovanna ci ha appena mostrato quanto il confine sia sottile: se una conversazione generata ci sembra clinicamente plausibile, sta a noi decidere dove metterla al lavoro.
 -->
 
 ---
@@ -484,8 +534,7 @@ Una sola parola, «IA», per tappe molto diverse: ieri regole scritte a mano, og
 </div>
 
 <!--
-Note relatore:
-Slide di calibrazione, subito dopo "IA nella stanza". Serve a smontare l'equivoco più comune: la parola IA copre tappe molto diverse. Prima dell'IA che intendiamo oggi c'erano i sistemi a regole (IA simbolica, sistemi esperti): algoritmi deterministici che eseguivano regole scritte a mano, senza imparare dai dati — tecnologia consolidata, non "intelligente" nel senso attuale. Tutto ciò di cui parliamo oggi — chatbot, LLM, ML diagnostico, digital phenotyping, persino il paziente sintetico Giovanna — è IA ristretta (ANI): sistemi potenti ma su compiti delimitati. L'AGI (capacità cognitive umane trasversali, generalizzabili a domini nuovi) oggi non esiste e non c'è consenso scientifico su se e quando arriverà. L'ASI è uno scenario teorico ancora più lontano. Il punto per l'AIPP: gran parte dell'ansia pubblica e mediatica proietta sull'IA di oggi capacità da AGI/ASI; in clinica dobbiamo ragionare su ciò che esiste e si può validare, non sulle promesse. Non aprire qui il dibattito sulle tempistiche: basta fissare "siamo alla seconda tappa".
+Una calibrazione, prima di andare avanti: usiamo una sola parola — IA — per tappe molto diverse. Ieri c'erano i sistemi a regole, l'IA simbolica: algoritmi deterministici che eseguivano regole scritte a mano, senza imparare dai dati. Oggi siamo alla seconda tappa: l'IA ristretta — gli LLM, il machine learning diagnostico, il digital phenotyping. Tutto ciò di cui parliamo oggi, Giovanna compresa, sta qui: sistemi potenti, ma su compiti delimitati. L'AGI — un'intelligenza generale paragonabile a quella umana — oggi non esiste, e non c'è consenso scientifico su se e quando arriverà. La superintelligenza è uno scenario puramente teorico. Lo dico perché gran parte dell'ansia mediatica proietta sull'IA di oggi capacità da fantascienza: in clinica dobbiamo ragionare su ciò che esiste e si può validare, non sulle promesse.
 -->
 
 ---
@@ -526,10 +575,8 @@ class: section-01
 > **Lezione progettuale** L'innovazione utile non è un singolo strumento brillante: è l'orchestrazione di dati, setting, tassonomie, linee guida e responsabilità.
 
 <!--
-Note relatore:
-Questa slide fonde il materiale su ecosistema digitale e ICT frammentato. Il punto da trasferire nel talk AIPP è che l'IA non basta se resta un oggetto isolato: una app che misura sintomi, un chatbot che risponde o un modello che riassume testi non producono automaticamente cura. In medicina il digitale ha valore quando si integra in un workflow. In salute mentale la sfida è più difficile perché il workflow non è solo tecnico: include relazione, setting, consenso, continuità e responsabilità. Usarla per non ridurre il talk a "ML vs LLM": la vera domanda è architetturale, cioè come collegare telemedicina, cartella, scale, monitoraggio, psicoeducazione e modelli linguistici in un sistema clinicamente governabile. Questo prepara anche le slide finali su LLMind: non un chatbot, ma una possibile infrastruttura supervisionata.
+Seconda calibrazione: il problema non è aggiungere "un'altra app". Un'app che misura sintomi, un chatbot che risponde, un modello che riassume testi non producono automaticamente cura. In medicina il digitale funziona quando è infrastruttura: cartelle interoperabili, processi standardizzati. In salute mentale screening, app e monitoraggio esistono, ma restano spesso oggetti separati — e qui il workflow non è solo tecnico: include relazione, setting, consenso, continuità, responsabilità. Per gli LLM io vedo un'occasione precisa: ordinare le informazioni e collegare paziente e servizio, senza diventare un interlocutore non governato. La lezione progettuale è questa: l'innovazione utile non è il singolo strumento brillante, è l'orchestrazione.
 -->
-
 
 ---
 layout: statement
@@ -543,8 +590,9 @@ background: images/socialita-digitale-bg.png
 Chatbot? Algoritmi predittivi? App? Wearable? Cartella clinica? Linguaggio?
 
 <!--
-Note relatore:
-Usare questa slide come domanda al pubblico. L'errore frequente è usare la parola IA come se indicasse un oggetto unico. In realtà sotto la stessa etichetta mettiamo sistemi molto diversi: un algoritmo che segnala una lesione su una TC, un modello che riassume una cartella, un chatbot che risponde a un adolescente in crisi, un sistema che deduce il sonno da uno smartphone. La distinzione è decisiva perché cambia il rischio clinico.
+[Domanda al pubblico, lasciare una pausa.]
+
+Una domanda per voi: quando diciamo "IA in salute mentale", a che cosa pensiamo? Un algoritmo che segnala una lesione su una TC. Un modello che riassume una cartella. Un chatbot che risponde a un adolescente in crisi alle tre di notte. Un sistema che deduce il sonno dallo smartphone. Sotto la stessa etichetta ci sono oggetti con rischi clinici radicalmente diversi — e tenerli distinti è la prima operazione di sicurezza.
 -->
 
 ---
@@ -578,8 +626,7 @@ class: section-01
 > **Rischio clinico** La stessa parola "IA" copre rischi clinici molto diversi.
 
 <!--
-Note relatore:
-Presentare la tesi centrale: l'IA incontra la psicopatologia due volte. Primo: come strumento che aiuta il clinico a osservare, classificare e monitorare. Secondo: come parte dell'ambiente in cui il paziente vive, interpreta e racconta la sofferenza. Questa seconda dimensione è particolarmente importante nei nativi digitali: l'IA non è solo un dispositivo esterno, ma un interlocutore possibile.
+Ecco la tesi che organizza tutto il talk: l'IA incontra la psicopatologia due volte. La prima come strumento clinico: documenta, sintetizza, classifica, monitora, segnala pattern. La seconda come ambiente relazionale: risponde, valida, simula comprensione, orienta decisioni — e può diventare oggetto di attaccamento. Nei nativi digitali questa seconda dimensione non è ipotetica: l'IA è un interlocutore possibile, a volte preferito. La stessa parola "IA" copre quindi due rischi clinici molto diversi.
 -->
 
 ---
@@ -601,8 +648,7 @@ class: section-01
 > **Variabile di rischio** La distanza dal paziente vulnerabile è una variabile di rischio.
 
 <!--
-Note relatore:
-Questa distinzione è una chiave pratica. Un modello che produce una bozza di relazione per il clinico è diverso da un chatbot che parla con un paziente suicidario alle tre del mattino. Nel primo caso il clinico può correggere, contestualizzare, assumersi responsabilità. Nel secondo caso l'output entra direttamente nella mente del paziente, può essere letto come consiglio, diagnosi o promessa di cura. Più il sistema è vicino al paziente vulnerabile, più deve essere regolato, validato e supervisionato.
+La distinzione operativa è questa. Clinician-facing: il professionista rivede l'output, lo colloca nel caso, se ne assume la responsabilità — ed è più facile da auditare. Patient-facing: il sistema parla direttamente al paziente, e l'output entra nella sua mente — può essere letto come consiglio, come diagnosi, come promessa di cura. Un modello che produce una bozza di relazione per il clinico è una cosa; un chatbot che parla con un paziente suicidario alle tre del mattino è un'altra. La regola che vi propongo: più il sistema è vicino al paziente vulnerabile, più deve essere regolato, validato e supervisionato. La distanza dal paziente vulnerabile è una variabile di rischio.
 -->
 
 ---
@@ -621,8 +667,7 @@ class: section-01
 > **Domanda guida** Che cosa succede quando l'output è sbagliato, e chi se ne accorge?
 
 <!--
-Note relatore:
-Introdurre un criterio di prudenza: non basta chiedere se il sistema è accurato. Bisogna chiedere dove agisce, su chi agisce, con quale possibilità di controllo e con quali conseguenze. Nella discussione con il pubblico, questa slide può aprire domande su responsabilità professionale, consenso, privacy e supervisione.
+Incrociando le due dimensioni otteniamo una matrice semplice ma molto utile nei servizi. In basso a sinistra: sintesi di note, bozze di lettere — rischio basso, l'errore viene intercettato dal professionista. In alto a destra: chatbot in crisi suicidaria, psicosi, minori, indicazioni sui farmaci — rischio massimo. Il criterio di prudenza è questo: non basta chiedere se il sistema è accurato. Bisogna chiedere dove agisce, su chi agisce, con quale possibilità di controllo. La domanda guida la trovate in basso: che cosa succede quando l'output è sbagliato — e chi se ne accorge?
 -->
 
 
@@ -646,9 +691,9 @@ class: compact-table-slide section-01
 > **Regola pratica** Un DSS clinico non deve solo “funzionare”: deve essere tracciabile, correggibile e contestabile.
 
 <!--
-Note relatore:
-Questa è una slide ponte tra la parte tecnica e quella etica. Il contenuto riprende il modello input-output-governance: quali dati entrano, quali output escono, e come viene controllata la decisione. Insistere su override: il clinico deve poter correggere o superare l'output e questa azione deve essere esplicita.
+Se un servizio vuole usare un sistema di supporto alla decisione, le domande sono tre. Input: quale informazione entra nel modello — e con quali lacune e bias? Output: è un supporto al ragionamento o sta diventando, di fatto, la decisione? Governance: chi controlla, chi può correggere, chi risponde? Su un punto insisto: l'override. Il clinico deve poter correggere o superare l'output, e quell'azione deve essere esplicita e tracciata. Un DSS clinico non deve solo "funzionare": deve essere tracciabile, correggibile e contestabile.
 -->
+
 ---
 layout: statement
 routeAlias: ml-psicologia-index
@@ -660,8 +705,7 @@ class: section-opener-slide ml-psicologia-psichiatria-slide section-02
 Pattern, predizione e rischio clinico: cosa può stimare un modello e cosa resta fuori.
 
 <!--
-Note relatore:
-Da qui inizia la seconda parte dell'indice. Specificare che useremo il machine learning in senso stretto: modelli addestrati su esempi per classificare, stimare probabilità o riconoscere pattern. In questa sezione il focus è volutamente comparativo: prima guardiamo dove il ML performa bene in medicina, poi chiediamo se esistono analoghi in psicologia e psichiatria, soprattutto per l'identificazione diagnostica.
+Seconda sezione: il machine learning in senso stretto — modelli addestrati su esempi per classificare, stimare probabilità, riconoscere pattern. Il percorso è volutamente comparativo: prima vediamo dove il ML funziona davvero in medicina, poi ci chiediamo che cosa succede quando lo portiamo nella diagnosi psicologica e psichiatrica.
 -->
 
 ---
@@ -684,8 +728,7 @@ La famiglia di IA più usata in clinica per riconoscere pattern e stimare probab
 > **Punto chiave** Il ML *correla, classifica e predice*: spiegazione, responsabilità e cura restano del clinico.
 
 <!--
-Note relatore:
-Spiegazione accessibile. Evitare tecnicismi come loss function o embedding, a meno che il pubblico non lo chieda. Il messaggio è: il ML non è una mente clinica. È un sistema di riconoscimento di pattern. Questo è potentissimo quando il pattern è visibile, standardizzato e verificabile, come in molte immagini mediche. È più fragile quando il pattern coincide con una traiettoria biografica, relazionale e culturale.
+Che cos'è il machine learning, senza tecnicismi: un sistema che impara dagli esempi. Trova regolarità in molti casi e produce una classe o una probabilità — "probabile lesione", "probabile diagnosi", "alto rischio". Due limiti strutturali. Primo: dipende interamente dai dati — dati parziali o distorti producono stime distorte. Secondo: non conosce il significato di ciò che classifica — ottimizza un obiettivo, non comprende una storia. Quindi: il ML non è una mente clinica, è un riconoscitore di pattern. Potentissimo quando il pattern è visibile, standardizzato e verificabile, come in molte immagini mediche. Fragile quando il pattern coincide con una traiettoria biografica, relazionale e culturale.
 -->
 
 ---
@@ -722,11 +765,8 @@ Cinque famiglie, promesse e rischi diversi.
 </div>
 
 <!--
-Note relatore:
-Usare questa slide come mappa di navigazione. Non soffermarsi troppo su ogni box: dire che ciascuna famiglia avrà uno zoom. Correggere mentalmente l'idea che il ML sia solo predittivo: in medicina è spesso diagnostico o di detection, mentre in psichiatria il modello diagnostico resta molto più problematico. La mappa aiuta anche a distinguere il ML classico dagli LLM generativi.
+Questa è la mappa che useremo: cinque famiglie. Il machine learning diagnostico e predittivo. L'NLP, cioè l'analisi del linguaggio. Il digital phenotyping, il fenotipo digitale. L'IA generativa, gli LLM. E i modelli multimodali, che combinano tutto. Non sono compartimenti stagni — le piattaforme reali le combinano — ma ogni famiglia ha evidenze, rischi e responsabilità differenti. Le vediamo una per una; non vi anticipo nulla, tranne una correzione: il ML in medicina non è solo predittivo, è spesso diagnostico o di detection. In psichiatria, vedremo, il modello diagnostico è molto più problematico.
 -->
-
-
 
 ---
 layout: default
@@ -765,8 +805,7 @@ flowchart LR
 ```
 
 <!--
-Note relatore:
-Questa slide prepara il confronto con la medicina. Un algoritmo può dire: questa immagine è compatibile con retinopatia; questa biopsia contiene un'area sospetta; questa frase ha un pattern simile a testi di persone depresse. Ma la decisione clinica richiede contesto. In psicopatologia la formulazione include storia, funzione dei sintomi, relazione, contesto familiare, cultura, rischio e risorse.
+Un punto epistemologico che attraversa tutto il talk: classificare non significa comprendere. Un algoritmo può dire: questa immagine è compatibile con retinopatia; questa biopsia contiene un'area sospetta; questa frase somiglia a testi scritti da persone depresse. Ma tra la classe e la decisione clinica c'è un passaggio che il modello non fa: la formulazione. In psicopatologia la formulazione include storia, funzione dei sintomi, relazione, contesto familiare, cultura, rischio e risorse. Il diagramma dice esattamente questo: l'output del modello è un alert o un suggerimento — la decisione clinica è un'altra cosa.
 -->
 
 ---
@@ -823,16 +862,14 @@ Funziona meglio dove il mondo clinico offre **compiti stretti**, **dati standard
   </div>
 
   <div class="bento-card bento-stat ml-fda-card">
-    <span class="bento-figure">1.000+</span>
+    <span class="bento-figure">1.200+</span>
     <span class="bento-label">Dispositivi AI/ML autorizzati FDA</span>
     <p>Concentrazione forte in imaging, cardiologia, oftalmologia, gastroenterologia e patologia digitale.</p>
   </div>
 </div>
 
 <!--
-Note relatore:
-Qui fare il parallelismo forte. In questi ambiti il ML non è più solo promessa: esistono dispositivi autorizzati, studi pivotal, trial randomizzati, endpoint verificabili e integrazione nei workflow. Non dire che l'IA sostituisce radiologi, patologi o endoscopisti. Dire che diventa un secondo lettore, un triage o un supporto al workflow. Questo è il modello da cui imparare: uso previsto chiaro, validazione, human-in-the-loop, audit.
-Fonti da citare a voce o nella slide successiva: FDA AI-enabled medical devices; FDA De Novo IDx-DR, GI Genius, Paige Prostate; MASAI trial, Lancet Oncology 2023.
+Dove funziona il ML in medicina? Dove il compito è stretto e la verità è verificabile. Qualche esempio. IDx-DR: screening autonomo della retinopatia diabetica, autorizzato FDA, sensibilità 87%. Il trial MASAI in mammografia: stessa capacità di rilevare i tumori, con il 44% di carico di lettura in meno. GI Genius in colonoscopia: detection rate degli adenomi dal 42 al 55%. Paige in patologia digitale: più 7 punti di sensibilità per il patologo. E in totale oltre 1.200 dispositivi AI autorizzati dalla FDA, concentrati dove c'è un'immagine, un'etichetta, un endpoint e un workflow. Notate una cosa: in nessuno di questi casi l'IA sostituisce lo specialista. È un secondo lettore, un triage, un supporto — dentro un processo regolato. Questo è il modello da cui imparare: uso previsto chiaro, validazione, human-in-the-loop, audit.
 -->
 
 ---
@@ -902,8 +939,7 @@ class: compact-table-slide section-02
 > **Lettura** Quando l'uso previsto è stretto e il riferimento clinico è chiaro, l'IA può essere validata come dispositivo.
 
 <!--
-Note relatore:
-Questa tabella serve a dare sostanza empirica. Usare pochi numeri e spiegare che le metriche cambiano a seconda del compito: sensibilità e specificità per diagnosi, detection rate e workload per screening, ADR per colonoscopia, PPV/NPV per diagnostic aid. La riga sull'autismo è volutamente ponte: mostra che esistono strumenti regolati anche nell'area neuroevolutiva, ma sono molto circoscritti e non sostituiscono la valutazione clinica.
+Questa tabella è qui per onestà empirica: trial randomizzati, autorizzazioni De Novo, metriche pubbliche e verificabili. Non ve la leggo. Vi faccio notare solo due cose. La prima: le metriche cambiano con il compito — sensibilità e specificità per la diagnosi, detection rate e workload per lo screening, ADR per la colonoscopia. La seconda è l'ultima riga: Cognoa, un diagnostic aid per l'autismo pediatrico. È il ponte verso la salute mentale: dimostra che un dispositivo diagnostico si può regolare anche in area neuroevolutiva — ma con un uso strettissimo, un "no result" nel 68% dei casi, e senza mai sostituire la valutazione clinica.
 -->
 
 ---
@@ -966,8 +1002,7 @@ class: compact-table-slide section-02
 > **Sintesi** In salute mentale il ML diagnostico esiste, ma raramente raggiunge il livello di maturità regolatoria della medicina dell'immagine.
 
 <!--
-Note relatore:
-Qui rispondere alla domanda: esistono modelli simili in campo psicologico? Sì, ma il quadro è molto diverso. Le eccezioni più solide sono alcuni strumenti regolati per l'autismo pediatrico, perché il compito è delimitato, la popolazione è definita e il riferimento clinico è esplicito. Per depressione, schizofrenia, disturbo bipolare e altre diagnosi psichiatriche adulte, la letteratura è ricca ma spesso basata su piccoli campioni, dataset pubblici, cross-validation, scarsa validazione esterna e assenza di workflow regolato. La conclusione non è che non servano: è che devono ancora dimostrare utilità clinica reale.
+E in psicologia e psichiatria? Esistono modelli analoghi? La risposta onesta: i modelli esistono, la maturità no. Le eccezioni solide sono gli strumenti regolati per l'autismo pediatrico — Cognoa ed EarliPoint — e non a caso: lì il compito è delimitato, la popolazione è definita, il riferimento clinico è esplicito. Per depressione, schizofrenia, disturbo bipolare e le altre diagnosi adulte, la letteratura è ricchissima ma fragile: campioni piccoli, dataset pubblici, cross-validation senza validazione esterna, nessun workflow regolato. Attenzione alla conclusione: non è che questi modelli non serviranno. È che devono ancora dimostrare utilità clinica reale.
 -->
 
 ---
@@ -1006,11 +1041,10 @@ class: section-02
   </div>
 </div>
 
-> **Incertezza strutturale** Comorbidità, soggettività dei sintomi e traiettorie nel tempo introducono un'incertezza che nessun algoritmo elimina del tutto (Fried, 2020; McGrath, 2020; Yan et al., 2022).
+> **Incertezza strutturale** Comorbidità, soggettività dei sintomi e traiettorie nel tempo introducono un'incertezza che nessun algoritmo elimina del tutto (Fried, 2020; McGrath et al., 2020).
 
 <!--
-Note relatore:
-Questa è una slide cruciale per non cadere nell'entusiasmo ingenuo. Molti paper riportano accuratezze alte, ma spesso il confronto è tra pazienti già diagnosticati e controlli sani. Nei servizi, invece, il problema è differenziare condizioni sovrapposte, comorbilità, stati subclinici, effetti farmacologici, trauma, uso di sostanze, personalità, contesto sociale. Un modello può classificare bene un dataset e fallire nel mondo reale. La domanda da porre è: su chi è stato validato? con quale riferimento? con quale utilità clinica?
+Il vero problema non è l'assenza di performance nei paper: è la distanza tra performance sperimentale e decisione clinica reale. Molti studi riportano accuratezze alte, ma confrontano pazienti già diagnosticati con controlli sani. Nei servizi il problema è un altro: differenziare condizioni sovrapposte, comorbilità, stati subclinici, effetti dei farmaci, trauma, sostanze, contesto sociale. Un modello può classificare benissimo un dataset e fallire nel mondo reale. E c'è un'incertezza strutturale — comorbidità, soggettività dei sintomi, traiettorie nel tempo — che nessun algoritmo elimina del tutto. Le tre domande da fare sempre, davanti a qualunque claim: validato su chi? Contro quale riferimento? Con quale utilità clinica?
 -->
 
 ---
@@ -1044,8 +1078,7 @@ class: pixel-significato-slide section-02
 > **Frase chiave** Una mammografia è un'immagine. Un delirio è un'esperienza vissuta.
 
 <!--
-Note relatore:
-Questa slide usa una formulazione più chiara del contrasto tra reperto e significato. Usare il contrasto senza svalutare la medicina dell'immagine. Il punto è che la patologia dell'immagine ha spesso un ground truth più stabile: istologia, follow-up, referto condiviso. In psicopatologia il dato è già interpretazione: il modo in cui il paziente racconta un sintomo cambia nella relazione, nel tempo e in base alle conseguenze della diagnosi.
+La differenza di fondo sta qui — e non è una svalutazione della medicina dell'immagine. La medicina dell'immagine cerca un segno nel corpo e lo confronta con una verità anatomo-clinica relativamente stabile: istologia, follow-up, referto condiviso. La psicopatologia ascolta un'esperienza vissuta: il dato è già interpretazione, perché il modo in cui il paziente racconta un sintomo cambia nella relazione, nel tempo, e in base alle conseguenze della diagnosi stessa. La frase che uso per ricordarlo: una mammografia è un'immagine; un delirio è un'esperienza vissuta.
 -->
 
 ---
@@ -1068,8 +1101,7 @@ class: section-02
 > **Non è arretratezza** La salute mentale non è indietro: ha un oggetto clinico più difficile da formalizzare.
 
 <!--
-Note relatore:
-Questa è la risposta al possibile confronto accusatorio con la radiologia. Non dire: la psichiatria è meno avanzata. Dire: le condizioni di validazione sono più complesse. In una TC posso chiedere se c'è o non c'è un'emorragia. In psicopatologia devo chiedere che significato ha un sintomo, come evolve, quale funzione svolge, quali comorbilità lo modulano e come entra nella relazione.
+Da questo confronto qualcuno potrebbe concludere che la psichiatria è "indietro" rispetto alla radiologia. Io vi propongo la lettura opposta: la salute mentale non è indietro — ha un oggetto clinico più difficile da formalizzare. In una TC posso chiedere: c'è o non c'è un'emorragia? In psicopatologia devo chiedere: che significato ha questo sintomo, come evolve, quale funzione svolge, quali comorbilità lo modulano, come entra nella relazione? Le condizioni di validazione sono strutturalmente più complesse. Non è arretratezza: è complessità.
 -->
 
 ---
@@ -1084,12 +1116,11 @@ class: tumore-non-si-offende-slide section-02
 </div>
 
 <figure class="tumore-quote-photo">
-  <img :src="$aippImage('patients/juanita-delgado/panic-grief.png')" alt="Juanita Delgado in una scena di panico e lutto">
+  <img :src="$aippImage('patients/juanita-delgado/panic-grief.png')" alt="Giovanna in una scena di panico e dolore">
 </figure>
 
 <!--
-Note relatore:
-Slide volutamente provocatoria. Non significa banalizzare l'errore oncologico o radiologico, che può essere drammatico. Serve a rendere immediata la differenza: il tumore non riceve una diagnosi come identità; il paziente sì. In psicopatologia la diagnosi entra nel campo relazionale, nella vergogna, nello stigma, nell'autostima, nel rapporto con i familiari e con i curanti. Questa frase può aprire discussione.
+C'è un'asimmetria che riassumo con una frase volutamente provocatoria: un tumore non si offende. Un paziente sì. Non sto banalizzando l'errore oncologico o radiologico, che può essere drammatico. Ma il tumore non riceve la diagnosi come identità; il paziente sì. In psicopatologia la diagnosi entra nel campo relazionale: nella vergogna, nello stigma, nell'autostima, nel rapporto con i familiari e con i curanti. Quando un sistema automatico produce un'etichetta psichiatrica sbagliata, non produce solo un falso positivo: produce un effetto sulla persona.
 -->
 
 ---
@@ -1145,8 +1176,7 @@ class: scenari-ml-slide section-02
 </div>
 
 <!--
-Note relatore:
-Qui sviluppiamo gli scenari di ML diagnostico puro. Usare la parola diagnostici, ma subito circoscriverla: molti modelli classificano categorie diagnostiche in dataset di ricerca. Questo non equivale a diagnosi clinica nel servizio. Lo scenario più sensato oggi è generare ipotesi, suggerire approfondimenti, segnalare incongruenze, supportare diagnosi differenziale, non sostituire SCID, colloquio e formulazione.
+Questi sono gli scenari su cui la ricerca lavora: neuroimaging, linguaggio e voce, EEG, cartelle e scale, comportamento digitale. Uso la parola "diagnostici", ma va subito circoscritta: classificare categorie diagnostiche in un dataset di ricerca non equivale a fare diagnosi in un servizio. L'uso più prudente oggi è quello nella card in basso a destra: generare ipotesi da verificare, suggerire approfondimenti, segnalare incongruenze, supportare la diagnosi differenziale — dentro il colloquio clinico, non al posto di SCID, colloquio e formulazione.
 -->
 
 ---
@@ -1168,8 +1198,7 @@ L'IA può aiutare in:
 > **Revisione clinica** Il testo prodotto va sempre revisionato: la cartella clinica è un atto professionale, non un output automatico.
 
 <!--
-Note relatore:
-Distinguere due usi: NLP amministrativo-documentale e NLP diagnostico. Il primo è già molto realistico e probabilmente sarà adottato prima nei servizi: trascrivere, sintetizzare, estrarre informazioni. Il secondo è più delicato: classificare depressione, psicosi o rischio suicidario da linguaggio. In entrambi i casi serve revisione clinica.
+Passiamo al linguaggio. Qui distinguo due usi molto diversi. Il primo è amministrativo-documentale: trascrivere colloqui, sintetizzare, preparare lettere e consegne, estrarre follow-up e farmaci. È già realistico, e probabilmente sarà il primo ad arrivare davvero nei servizi. Il secondo è diagnostico: classificare depressione, psicosi o rischio suicidario a partire dal linguaggio — e questo è molto più delicato. In entrambi i casi la regola è la stessa: il testo prodotto va revisionato, perché la cartella clinica è un atto professionale, non un output automatico.
 -->
 
 ---
@@ -1191,8 +1220,7 @@ class: section-02
 > **Linguaggio e relazione** Il linguaggio non è solo un segnale: è anche una relazione.
 
 <!--
-Note relatore:
-Portare esempi clinici semplici. Una frase come "non ce la faccio più" può essere depressione, protesta, richiesta di aiuto, rischio suicidario, espressione idiomatica o comunicazione transferale. L'NLP può evidenziare pattern; il clinico deve capire funzione, contesto e destinatario.
+Il linguaggio è il materiale fondamentale della psicopatologia, e l'NLP sa misurarne molte proprietà: coerenza narrativa, sentiment, impoverimento lessicale, accelerazione ideativa, prosodia. Ma fate questa prova con me. "Non ce la faccio più." Può essere depressione. Protesta. Richiesta di aiuto. Rischio suicidario. Un'espressione idiomatica. Una comunicazione transferale rivolta proprio a voi. Il modello assegna probabilità a un pattern; il clinico deve capire funzione, contesto e destinatario di quella frase, per quella persona, in quel momento. Il linguaggio non è solo un segnale: è una relazione.
 -->
 
 ---
@@ -1248,8 +1276,7 @@ class: compact-table-slide section-02
 > **Uso prudente** NLP come lente di ingrandimento, non come giudice diagnostico.
 
 <!--
-Note relatore:
-Questa slide deve essere discussiva. I modelli NLP sembrano vicini alla clinica perché lavorano sul linguaggio, ma proprio per questo rischiano di essere seduttivi. Parlare di variabilità culturale, ironia, vergogna, desiderabilità sociale, stile dello psicoterapeuta, trascrizione imperfetta. La domanda da lasciare: quando un pattern linguistico diventa indicatore clinico e quando è solo stile comunicativo?
+L'NLP diagnostico è seducente proprio perché lavora sul materiale clinico per eccellenza. Ma guardate la colonna dei limiti: label deboli e bias di piattaforma per la depressione sui social media; campioni piccoli e contesto linguistico-culturale per la psicosi; il rischio di confondere esposizione al trauma e diagnosi nel PTSD. E aggiungo: ironia, vergogna, desiderabilità sociale, lo stile dello psicoterapeuta, le trascrizioni imperfette. La domanda che vi lascio: quando un pattern linguistico diventa un indicatore clinico, e quando è solo stile comunicativo? Da qui la regola d'uso: l'NLP come lente di ingrandimento, mai come giudice diagnostico.
 -->
 
 ---
@@ -1261,8 +1288,7 @@ class: section-02
 # Digital phenotyping
 
 <!--
-Note relatore:
-Passaggio al fenotipo digitale. Definirlo in modo semplice: raccolta passiva o attiva di tracce comportamentali tramite smartphone, wearable e sensori. È una delle aree più coerenti con l'intervento precoce: non aspettare la visita per sapere che il paziente sta cambiando traiettoria. Però è anche una delle più delicate sul piano etico.
+Terza famiglia: il digital phenotyping — la raccolta, passiva o attiva, di tracce comportamentali tramite smartphone, wearable e sensori. È l'area più coerente con l'intervento precoce: non aspettare la visita per accorgersi che il paziente sta cambiando traiettoria. Ed è anche una delle più delicate sul piano etico. Vediamo perché.
 -->
 
 ---
@@ -1309,8 +1335,7 @@ flowchart LR
 ```
 
 <!--
-Note relatore:
-Evidenziare la differenza tra diagnosi e monitoraggio. Il fenotipo digitale non serve tanto a dire "questa persona ha depressione", ma a cogliere che questa persona, rispetto alla propria baseline, dorme peggio, esce meno, interagisce meno, cambia ritmo. Questo è clinicamente potente soprattutto in disturbo bipolare, depressione, psicosi, dipendenze e adolescenti con ritiro sociale. Ma funziona solo se il dato è discusso con il paziente e inserito in un patto di cura.
+Il punto chiave è la differenza tra diagnosi e monitoraggio. Il fenotipo digitale non serve a dire "questa persona ha la depressione". Serve a cogliere che questa persona, rispetto alla propria baseline, dorme peggio, esce meno, interagisce meno, sta cambiando ritmo. È clinicamente potente soprattutto nel disturbo bipolare, nella depressione, nella psicosi, nelle dipendenze e negli adolescenti con ritiro sociale: intercettare il cambiamento prima della crisi. Ma attenzione al salto: stare in casa può essere depressione, oppure lavoro da remoto, lutto, malattia fisica, povertà. Il dato digitale diventa clinico solo a una condizione: se viene discusso con il paziente, dentro un patto di cura. Altrimenti il monitoraggio scivola nella sorveglianza.
 -->
 
 ---
@@ -1366,8 +1391,7 @@ class: scenari-llm-slide section-02
 </div>
 
 <!--
-Note relatore:
-Sviluppare gli scenari LLM. Fare una distinzione: gli usi più maturi sono clinician-facing e formativi; gli usi più delicati sono patient-facing e terapeutici. Una sintesi di cartella revisionata è molto diversa da un chatbot che gestisce solitudine, suicidarietà o paranoia. Evidenziare che le review recenti sugli LLM in salute mentale mostrano potenzialità ma valutazioni eterogenee, spesso non standardizzate e insufficienti per l'uso standalone.
+Quarta famiglia: l'IA generativa. Con gli LLM il problema cambia qualitativamente: l'IA non si limita più a classificare — risponde, riformula, rassicura. Gli usi più maturi sono quelli clinician-facing e formativi: documentazione revisionata dal clinico, pazienti simulati per il training. Gli usi più delicati sono quelli patient-facing: supporto tra sedute, triage, psicoeducazione — tutto ciò che parla direttamente al paziente. Una sintesi di cartella revisionata è una cosa; un chatbot che gestisce solitudine, suicidarietà o paranoia è un'altra. E il rischio è scritto nella card in basso: un LLM può essere vissuto come terapeuta anche quando non lo è. Le review recenti dicono esattamente questo: potenzialità reali, valutazioni eterogenee, evidenza insufficiente per l'uso autonomo.
 -->
 
 ---
@@ -1379,6 +1403,10 @@ class: section-opener-slide sfide-future-index-slide section-03
 # Sfide future
 
 Dagli LLM ai modelli multimodali: integrare senza delegare, monitorare senza sorvegliare.
+
+<!--
+Terza sezione: le sfide future. La formula che le riassume tutte è quella che leggete: integrare senza delegare, monitorare senza sorvegliare.
+-->
 
 ---
 layout: default
@@ -1416,8 +1444,7 @@ class: section-03
 </div>
 
 <!--
-Note relatore:
-Sviluppare le sfide future con scenari realistici 2026-2030. Evitare fantascienza. Il futuro più probabile non è il robot terapeuta, ma strumenti integrati nella cartella, nella formazione, nel monitoraggio e nella psicoeducazione. La questione decisiva sarà organizzativa: chi usa lo strumento, con quale indicazione, con quale procedura di escalation, con quali outcome misurabili.
+Questi sono gli scenari realistici da qui al 2030 — niente fantascienza. Il futuro più probabile non è il robot terapeuta: è il co-pilota clinico dentro la cartella; i modelli multimodali; i segnali longitudinali integrati nei percorsi di prevenzione; la formazione con pazienti simulati; i percorsi ibridi servizio-paziente-famiglia-IA dentro PDTA chiari. E la questione decisiva non sarà tecnologica ma organizzativa: chi usa lo strumento, con quale indicazione, con quale procedura di escalation, con quali outcome misurabili.
 -->
 
 ---
@@ -1466,8 +1493,7 @@ flowchart LR
 ```
 
 <!--
-Note relatore:
-L'IA multimodale promette una valutazione più ricca: non solo cosa dice il paziente, ma come lo dice, come dorme, come si muove, come cambia nel tempo. Questo è potente per l'intervento precoce, ma apre un livello di invasività molto più profondo. La domanda non è solo se la tecnologia funziona, ma se è proporzionata alla finalità clinica.
+Un fuoco sui modelli multimodali, perché sono il punto di convergenza di tutte le famiglie: non solo che cosa dice il paziente, ma come lo dice, come dorme, come si muove, come cambia nel tempo. Per l'intervento precoce è una promessa enorme. Ma più l'IA vede, più la domanda si sposta: chi guarda, per quale scopo, con quale responsabilità? Voce, volto, prosodia e pattern di interazione sono dati profondamente identitari. La domanda giusta non è solo "la tecnologia funziona?" — è "è proporzionata alla finalità clinica?".
 -->
 
 ---
@@ -1481,8 +1507,54 @@ class: section-opener-slide aspetti-normativi-slide section-04
 Trasparenza, supervisione umana, privacy, sicurezza e responsabilità come condizioni di uso clinico.
 
 <!--
-Note relatore:
-Questa slide rende esplicito il quarto punto dell'indice. Non serve fare una lezione di diritto, ma dare coordinate. In sanità e salute mentale non basta che un sistema sia utile: deve essere governabile. Citare WHO, AI Act europeo, FDA e APA come fonti da cui deriva una convergenza: human oversight, risk management, transparency, data governance, cybersecurity, intended use.
+Quarta sezione: le norme. Non vi farò una lezione di diritto — vi do le coordinate. Il principio di fondo è uno: in sanità, e in salute mentale ancora di più, non basta che un sistema sia utile. Deve essere governabile.
+-->
+
+---
+layout: default
+routeAlias: normative
+class: section-04
+---
+
+# Quali sono le normative?
+
+<div class="bento-grid bento-3">
+  <div class="bento-card">
+    <span class="bento-eyebrow">UE · AI Act</span>
+    <span class="bento-title">Logica risk-based</span>
+    <p>Finalità medica = alto rischio: risk management, data governance, trasparenza, robustezza, supervisione umana.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">UE · MDR</span>
+    <span class="bento-title">Software come dispositivo</span>
+    <p>Il software con finalità medica (SaMD) richiede uso previsto dichiarato, evidenza clinica e sorveglianza post-market.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">UE · GDPR</span>
+    <span class="bento-title">Dati sanitari e vulnerabilità</span>
+    <p>Base giuridica, consenso informato, minimizzazione; tutele rafforzate per minori e dati di salute.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">USA · FDA</span>
+    <span class="bento-title">AI-enabled medical devices</span>
+    <p>1.200+ dispositivi autorizzati; DHAC 2025 sui generativi in salute mentale: il grado di autonomia è la variabile centrale.</p>
+  </div>
+  <div class="bento-card">
+    <span class="bento-eyebrow">WHO · 2024</span>
+    <span class="bento-title">Guidance sui modelli multimodali</span>
+    <p>Etica e governance dei large multi-modal models in sanità: equità, trasparenza, accountability.</p>
+  </div>
+  <div class="bento-card bento-accent">
+    <span class="bento-eyebrow">Convergenza</span>
+    <span class="bento-title">Human oversight + uso previsto</span>
+    <p>Più il sistema è autonomo e vicino al paziente, più alta la classe di rischio e l'evidenza richiesta.</p>
+  </div>
+</div>
+
+> **Lettura comune** Le cornici divergono nei dettagli ma convergono sul principio: supervisione umana, uso previsto chiaro, responsabilità collocata.
+
+<!--
+Le coordinate, in cinque caselle. L'AI Act europeo ragiona per rischio: un sistema con finalità medica ricade nell'alto rischio, quindi risk management, data governance, trasparenza, robustezza e supervisione umana diventano obblighi, non opzioni. Il regolamento sui dispositivi medici: un software con finalità medica è un dispositivo, con uso previsto dichiarato e sorveglianza post-market. Il GDPR presidia i dati sanitari, il consenso e i minori. Negli Stati Uniti, la FDA ha dedicato il Digital Health Advisory Committee del 2025 proprio ai dispositivi generativi per la salute mentale, mettendo al centro il grado di autonomia: human-in-the-loop e sistemi autonomi non hanno lo stesso profilo di rischio. E l'OMS nel 2024 ha pubblicato la guidance sui modelli multimodali. Cornici diverse, principio comune: supervisione umana, uso previsto chiaro, responsabilità collocata.
 -->
 
 ---
@@ -1504,37 +1576,32 @@ class: section-04
 > **Principio** Nessuna IA clinica senza una procedura di escalation umana.
 
 <!--
-Note relatore:
-Questa checklist può essere usata come slide di discussione. Sottolineare che la governance non è burocrazia accessoria: è parte della sicurezza clinica. In psicopatologia il rischio non è solo privacy o accuratezza, ma anche dipendenza, suggestione, rinforzo di convinzioni patologiche, delega della responsabilità e confusione del setting.
+Tradotto in pratica, per un servizio, sono sette domande minime. Qual è l'uso previsto — e, altrettanto importante, quale uso è escluso? Il sistema tratta dati sanitari? Il paziente sa che c'è un'IA? Il clinico può correggere, bloccare e auditare l'output? Esiste una procedura per le crisi — suicidarietà, psicosi, minori? Sono documentati bias e limiti? E l'uso produce benefici misurabili sul percorso di cura? Una regola sopra tutte: nessuna IA clinica senza una procedura di escalation umana. E un'avvertenza: la governance non è burocrazia accessoria — è sicurezza clinica. In psicopatologia il rischio non è solo la privacy o l'accuratezza: è la dipendenza, la suggestione, il rinforzo di convinzioni patologiche, la confusione del setting.
+-->
+
+---
+layout: statement
+routeAlias: tool-index
+class: section-opener-slide strumenti-index-slide section-05
+---
+
+# Esempi di tool
+
+Dal mercato ai prototipi supervisionati: che cosa possono fare e dove si fermano.
+
+<!--
+Quinta sezione: i tool. Prima uno sguardo al mercato, poi due lavori nostri: LLMind e il framework che governa i pazienti simulati.
 -->
 
 ---
 layout: default
-routeAlias: normative
-class: section-04
----
-
-# Quali sono le normative?
-
-> todo
-
----
-layout: statement
-routeAlias: strumenti-index
-class: section-opener-slide ia-nella-stanza-index-slide section-01
----
-
-# Tool
-
----
-layout: default
-routeAlias: strumenti
-class: section-04
+routeAlias: mercato-tre-velocita
+class: section-05
 ---
 
 # Il mercato è a tre velocità
 
-<div class="bento-grid" style="flex:1 1 auto;min-height:0;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto 1fr;gap:0.95rem;margin:1rem 0 0;">
+<div class="bento-grid market-grid">
   <div class="bento-card bento-accent span-3">
     <span class="bento-eyebrow">Mercato IA · salute mentale</span>
     <span class="bento-title">Il mercato esiste già, ma è molto più avanti della validazione clinica e della regolazione</span>
@@ -1558,27 +1625,24 @@ class: section-04
 </div>
 
 <!--
-Note relatore:
-La domanda clinica non è "se usarla", ma quale funzione le attribuiamo: diagnosi, triage, supporto, documentazione, relazione o sorveglianza. Il caso Kintsugi: aveva un modello promettente ma avere un modello non equivale ad avere un dispositivo clinicamente e regolatoriamente sostenibile.
+Il mercato esiste già, ma corre più veloce della validazione. Un dato per fissarlo: la FDA ha autorizzato oltre milleduecento dispositivi medici AI — e nessuno per la salute mentale. E il caso Kintsugi è istruttivo: biomarcatori vocali per la depressione, un modello promettente, un'azienda chiusa per non aver ottenuto la clearance FDA in tempo. Avere un modello non equivale ad avere un dispositivo clinicamente e regolatoriamente sostenibile. Il mercato va a tre velocità: pochi quasi-dispositivi regolati; molto commerciale con evidenze parziali; e il livello clinician-facing — documentazione, supervisione, qualità — che è l'adozione più realistica nel breve termine. La domanda clinica non è "se usarla": è quale funzione le attribuiamo — diagnosi, triage, supporto, documentazione, relazione o sorveglianza.
 -->
 
 ---
 layout: default
-routeAlias: strumenti-patient
-class: section-04
+routeAlias: tool-patient-facing
+class: section-05
 ---
 
 # Tool patient-facing
 
 <div class="bento-grid bento-apple">
-
-  <!-- Wysa — tall card, col 1, righe 1-2 -->
-  <div class="bento-card tool-apple span-rows-2" style="background:linear-gradient(160deg,#052b2b 0%,#0d1e38 100%);grid-column:1;grid-row:1/span 2;">
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Chatbot CBT · Patient-facing</span>
-    <span class="bento-title" style="color:#fff;font-size:1.55rem">Wysa</span>
-    <p style="color:rgba(255,255,255,.66);font-size:.86rem;line-height:1.44;margin:0">Self-help, monitoraggio tra sedute, supporto per ansia e depressione. Human oversight esplicito. Non progettato per crisi acute.</p>
-    <div class="tool-stat" style="color:#5de8ff">6M+</div>
-    <span class="tool-stat-label" style="color:rgba(255,255,255,.46)">Utenti nel mondo</span>
+  <div class="bento-card tool-apple tool-card-wysa span-rows-2">
+    <span class="bento-eyebrow">Chatbot CBT · Patient-facing</span>
+    <span class="bento-title">Wysa</span>
+    <p>Self-help, monitoraggio tra sedute, supporto per ansia e depressione. Human oversight esplicito. Non progettato per crisi acute.</p>
+    <div class="tool-stat">6M+</div>
+    <span class="tool-stat-label">Utenti nel mondo</span>
     <div class="tool-badges">
       <span class="tool-badge fda">FDA Breakthrough</span>
       <span class="tool-badge">CBT-based</span>
@@ -1586,11 +1650,10 @@ class: section-04
     </div>
   </div>
 
-  <!-- Limbic Care — wide card col 2-3, riga 1 — screenshot ufficiale dal sito -->
-  <div class="bento-card tool-apple span-2" style="background:#0c1626;grid-column:2/span 2;grid-row:1;">
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Chat generativa CBT · Nature Med 2026</span>
-    <span class="bento-title" style="color:#fff;font-size:1.38rem">Limbic Care</span>
-    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:55%">Architettura cognitive layer per LLM psicoterapeutici. RCT double-blind su 227 partecipanti; 19.674 trascritti analizzati su deployment reale.</p>
+  <div class="bento-card tool-apple tool-card-limbic span-2">
+    <span class="bento-eyebrow">Chat generativa CBT · Nature Med 2026</span>
+    <span class="bento-title">Limbic Care</span>
+    <p>Architettura cognitive layer per LLM psicoterapeutici. RCT double-blind su 227 partecipanti; 19.674 trascritti analizzati su deployment reale.</p>
     <div class="tool-badges">
       <span class="tool-badge regulated">Evidenza RCT</span>
       <span class="tool-badge">Nature Med 2026</span>
@@ -1599,41 +1662,36 @@ class: section-04
     <img class="tool-shot shot-right" :src="$aippImage('tools/limbic-mobile.webp')" alt="Limbic Care app" />
   </div>
 
-  <!-- Woebot — wide card col 2-3, riga 2 -->
-  <div class="bento-card tool-apple span-2" style="background:#12101c;grid-column:2/span 2;grid-row:2;">
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Behavioral health copilot</span>
-    <span class="bento-title" style="color:#fff;font-size:1.38rem">Woebot</span>
-    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:68%">Chatbot CBT con riconoscimento di linguaggio preoccupante, HIPAA-compliant. Versione provider-oriented come copilot comportamentale per il care team.</p>
+  <div class="bento-card tool-apple tool-card-woebot span-2">
+    <span class="bento-eyebrow">Behavioral health copilot</span>
+    <span class="bento-title">Woebot</span>
+    <p>Chatbot CBT con riconoscimento di linguaggio preoccupante, HIPAA-compliant. Versione provider-oriented come copilot comportamentale per il care team.</p>
     <div class="tool-badges">
       <span class="tool-badge commercial">Commerciale</span>
       <span class="tool-badge patient-badge">Patient-facing</span>
       <span class="tool-badge clinician-badge">Clinician copilot</span>
     </div>
-    <img class="tool-shot" :src="$aippImage('tools/woebot-science.png')" alt="" style="position:absolute;right:-1rem;bottom:-1rem;width:38%;opacity:.1;pointer-events:none;" />
+    <img class="tool-shot shot-watermark" :src="$aippImage('tools/woebot-science.png')" alt="" />
   </div>
-
 </div>
 
 <!--
-Note relatore:
-Wysa ha FDA Breakthrough Device Designation per un conversational agent in dolore cronico con depressione/ansia associate — non una clearance completa. Limbic Care è l'esempio scientificamente più forte: l'architettura cognitive layer è stata valutata sia in un RCT double-blind che su dati reali di deployment. Non siamo più nell'app generica: è un tentativo di costruire un'architettura clinica intorno agli LLM.
+Tre esempi patient-facing. Wysa: chatbot CBT, oltre sei milioni di utenti, una Breakthrough Device Designation FDA — attenzione, per un agente conversazionale nel dolore cronico con depressione e ansia associate, e non è una clearance completa — e un disclaimer esplicito: non per le crisi acute. Limbic Care è l'esempio scientificamente più forte: un'architettura cognitiva costruita intorno all'LLM, valutata sia in un RCT in doppio cieco su 227 partecipanti sia su quasi ventimila trascritti di deployment reale. Non siamo più nell'app generica: è un tentativo di costruire un'architettura clinica intorno ai modelli generativi. E Woebot, il pioniere: chatbot a contenuti pre-scritti con riconoscimento del linguaggio preoccupante. Notate il pattern comune: i prodotti più seri delimitano da soli il proprio perimetro.
 -->
 
 ---
 layout: default
-routeAlias: strumenti-clinician
-class: section-04
+routeAlias: tool-clinician-facing
+class: section-05
 ---
 
 # Tool clinician-facing
 
 <div class="bento-grid bento-apple">
-
-  <!-- Lyssn — wide card col 1-2, riga 1 — screenshot reale dal sito ufficiale -->
-  <div class="bento-card tool-apple span-2" style="background:#0d1422;grid-column:1/span 2;grid-row:1;overflow:hidden;">
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Supervisione clinica · 4,5M sessioni</span>
-    <span class="bento-title" style="color:#fff;font-size:1.38rem">Lyssn</span>
-    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:55%">Analisi di sedute, trascrizione, valutazione di fedeltà a pratiche evidence-based e formazione. 65+ pubblicazioni peer-reviewed.</p>
+  <div class="bento-card tool-apple tool-card-lyssn span-2">
+    <span class="bento-eyebrow">Supervisione clinica · 4,5M sessioni</span>
+    <span class="bento-title">Lyssn</span>
+    <p>Analisi di sedute, trascrizione, valutazione di fedeltà a pratiche evidence-based e formazione. 65+ pubblicazioni peer-reviewed.</p>
     <div class="tool-badges">
       <span class="tool-badge regulated">65+ pubblicazioni</span>
       <span class="tool-badge clinician-badge">Clinician-facing</span>
@@ -1642,43 +1700,39 @@ class: section-04
     <img class="tool-shot shot-bottom" :src="$aippImage('tools/lyssn-dashboard.webp')" alt="Lyssn MI Fidelity dashboard" />
   </div>
 
-  <!-- Cognoa — tall card col 3, righe 1-2 — immagine ufficiale Cognoa -->
-  <div class="bento-card tool-apple has-photo-bg span-rows-2" style="grid-column:3;grid-row:1/span 2;">
+  <div class="bento-card tool-apple tool-card-cognoa has-photo-bg span-rows-2">
     <img class="tool-shot shot-bg" :src="$aippImage('tools/cognoa-ai.jpg')" alt="" />
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.52)">Diagnostic aid · ASD 18–72 mesi</span>
-    <span class="bento-title" style="color:#fff;font-size:1.3rem">Cognoa Canvas Dx</span>
-    <p style="color:rgba(255,255,255,.68);font-size:.82rem;line-height:1.44;margin:0">ML su input di caregiver, video e clinico. Non stand-alone: prescrivibile con valutazione clinica. PPV 81%, NPV 98%.</p>
+    <span class="bento-eyebrow">Diagnostic aid · ASD 18–72 mesi</span>
+    <span class="bento-title">Cognoa Canvas Dx</span>
+    <p>ML su input di caregiver, video e clinico. Non stand-alone: prescrivibile con valutazione clinica. PPV 81%, NPV 98%.</p>
     <div class="tool-badges">
       <span class="tool-badge regulated">FDA De Novo Class II</span>
       <span class="tool-badge fda">Unico device regolato</span>
     </div>
   </div>
 
-  <!-- Eleos Health — wide card col 1-2, riga 2 -->
-  <div class="bento-card tool-apple span-2" style="background:#080f20;grid-column:1/span 2;grid-row:2;overflow:hidden;">
-    <span class="bento-eyebrow" style="color:rgba(255,255,255,.48)">Documentazione e workflow · Community care</span>
-    <span class="bento-title" style="color:#fff;font-size:1.38rem">Eleos Health</span>
-    <p style="color:rgba(255,255,255,.66);font-size:.84rem;line-height:1.42;margin:0;max-width:58%">Note automatiche, suggerimenti in tempo reale, compliance e clinical insights. AI per la community-based behavioral care.</p>
-    <div class="tool-stat" style="color:#ffd060;font-size:2.8rem;margin-top:auto">70%</div>
-    <span class="tool-stat-label" style="color:rgba(255,255,255,.42)">riduzione tempo di documentazione</span>
-    <div class="tool-badges" style="padding-top:.4rem">
+  <div class="bento-card tool-apple tool-card-eleos span-2">
+    <span class="bento-eyebrow">Documentazione e workflow · Community care</span>
+    <span class="bento-title">Eleos Health</span>
+    <p>Note automatiche, suggerimenti in tempo reale, compliance e clinical insights. AI per la community-based behavioral care.</p>
+    <div class="tool-stat">70%</div>
+    <span class="tool-stat-label">riduzione tempo di documentazione</span>
+    <div class="tool-badges">
       <span class="tool-badge commercial">Commerciale</span>
       <span class="tool-badge clinician-badge">Clinician-facing</span>
     </div>
-    <img class="tool-shot" :src="$aippImage('tools/eleos-documentation.svg')" alt="" style="position:absolute;right:-2rem;top:50%;transform:translateY(-50%);height:130%;opacity:.08;pointer-events:none;" />
+    <img class="tool-shot shot-watermark" :src="$aippImage('tools/eleos-documentation.svg')" alt="" />
   </div>
-
 </div>
 
 <!--
-Note relatore:
-Lyssn è particolarmente rilevante per psicoterapeuti: 65+ pubblicazioni peer-reviewed, analisi di fedeltà evidence-based. È supervisione e formazione, non terapia. Cognoa è l'eccezione che conferma la regola: l'unico dispositivo medico AI-enabled per un uso vicino alla psicologia/neuropsichiatria. Ma anche qui: il modello si attiva solo nel 32% dei casi e ha un PPV dell'81% — serve sempre il clinico.
+E tre esempi clinician-facing. Lyssn, particolarmente rilevante per gli psicoterapeuti: analizza le sedute registrate e misura la fedeltà alle pratiche evidence-based, con più di sessantacinque pubblicazioni peer-reviewed — è supervisione e formazione, non terapia. Eleos Health: documentazione automatica e clinical insights, con una riduzione dichiarata del settanta per cento del tempo speso sulle note. E Cognoa Canvas Dx, l'eccezione che conferma la regola: l'unico dispositivo medico AI regolato in un'area vicina alla psicologia e alla neuropsichiatria infantile. Ma guardate anche qui i numeri: il modello produce un risultato solo nel 32% dei casi, con un valore predittivo positivo dell'81%. Serve sempre il clinico.
 -->
 
 ---
 layout: default
-routeAlias: strumenti-llmind
-class: section-04 llmind-slide
+routeAlias: llmind
+class: section-05 llmind-slide
 ---
 
 # LLMind
@@ -1721,14 +1775,13 @@ class: section-04 llmind-slide
 > **Resta supervisionato** ~1 caso su 4 ancora errato: supporta il ragionamento diagnostico, non sostituisce la responsabilità clinica.
 
 <!--
-Note relatore:
-LLMind è il nostro tool (Whattadata, spin-off Milano-Bicocca): chiude la sezione perché è l'esempio in cui ho visione diretta su scelte e limiti. È clinician-facing per costruzione: il clinico raccoglie e inserisce il quadro, il modello propone — questo è la prima garanzia contro input inaffidabili. Tecnicamente è una RAG su Gemma 2 27B con knowledge base ICD-11 + CDDR; open source (AGPL), live all'URL mostrato. Sulla validazione distinguere due piani: (1) valutazione automatica con string matching sulla sola diagnosi primaria — F1 0,52, penalizzata perché il modello dà spesso più co-diagnosi e segue lo stile narrativo del DSM-5-TR Clinical Cases; comunque davanti a MentaLLaMA, MedLlama2 e BioMistral. (2) Validazione manuale di 4 clinici su 104 casi: accuratezza media 0,761 e CCC medio 0,70 (concordanza moderata). Chiudere sul limite onesto: ~1 caso su 4 ancora errato, quindi second opinion supervisionata, non diagnosi autonoma; DSM vs ICD introduce anche disallineamenti che abbassano l'accordo.
+LLMind è il nostro tool — Whattadata e Milano-Bicocca — e lo metto qui perché è l'esempio su cui ho visione diretta di scelte e limiti. È clinician-facing per costruzione: il clinico raccoglie e inserisce il quadro, e il modello propone ipotesi diagnostiche e differenziali. Tecnicamente è una RAG su Gemma 2 da 27 miliardi di parametri, ancorata a ICD-11 e CDDR; è open source, con licenza AGPL, ed è live all'indirizzo che vedete. Sulla validazione distinguo due piani. La valutazione automatica, con string matching sulla sola diagnosi primaria, dà un F1 di 0,52 — penalizzato perché il modello propone spesso più co-diagnosi — comunque davanti a MentaLLaMA, MedLlama2 e BioMistral. La validazione manuale, quattro clinici su 104 casi dei DSM-5-TR Clinical Cases: accuratezza media 76,1% e concordanza inter-rater moderata, 0,70. E chiudo sul limite, detto onestamente: circa un caso su quattro è ancora sbagliato. Quindi: second opinion supervisionata, non diagnosi autonoma.
 -->
 
 ---
 layout: default
 routeAlias: framework-personalita
-class: section-04 framework-slide
+class: section-05 framework-slide
 ---
 
 # Oltre i prompt persona
@@ -1780,14 +1833,13 @@ class: section-04 framework-slide
 </div>
 
 <!--
-Note relatore:
-Questo è il lavoro che ho caricato: un working paper che propone un framework socio-cognitivo modulare per simulare la personalità con gli LLM. Il messaggio chiave è la cornice in alto: una personalità simulata non è un prompt persona più lungo, ma uno stato esplicito, ispezionabile e autoregolato. La triade è la rilettura del determinismo reciproco di Bandura applicata al setting conversazionale: Persona = stato e vincoli del modello, Ambiente = input dell'utente, Comportamento = risposta generata; l'LLM è solo il realizzatore linguistico. Le 14 componenti sono organizzate in tre strati: (1) personologico — chi è la persona (identità, invarianti, tratti HEXACO + valori, stato dinamico, appraisal, policy); (2) continuità e transizione — come cambia nel tempo (State Updater e MemoryStore chiudono il ciclo temporale e separano memoria da deriva); (3) infrastrutturale — come si governa (safety, orchestrazione, realizzazione, logging, valutazione, benchmark). Collegamento al talk: è la base metodologica dietro pazienti simulati credibili (LLMPatients) e, più in generale, un modo trasparente e auditabile di controllare il comportamento di un LLM invece di affidarlo a un prompt monolitico.
+Ultimo lavoro, un working paper: come si governa la personalità di un paziente sintetico? La tesi è nella cornice in alto: simulare una personalità non è scrivere un prompt più ricco — è mantenere uno stato esplicito, ispezionabile e autoregolato. La triade che vedete è il determinismo reciproco di Bandura riletto per il setting conversazionale: la Persona è lo stato e i vincoli del modello, l'Ambiente è l'input dell'utente, il Comportamento è la risposta generata. L'LLM è solo il realizzatore linguistico — non la sede della personalità. Le quattordici componenti sono organizzate in tre strati: chi è la persona — identità, invarianti autobiografiche, tratti e valori, appraisal, policy; come cambia nel tempo — lo State Updater e la memoria, che separano la continuità dalla deriva; e come si governa — safety, orchestrazione, logging, valutazione, benchmark. Questo è ciò che c'è dietro Giovanna: un controllo trasparente e auditabile del comportamento del modello, invece di un prompt monolitico.
 -->
 
 ---
 layout: default
 routeAlias: arianne-ecosistema
-class: arianne-embed-slide
+class: arianne-embed-slide section-05
 ---
 
 <iframe
@@ -1801,23 +1853,29 @@ class: arianne-embed-slide
 <a class="arianne-open" href="https://cremarco.github.io/slide-arianne/1" target="_blank" rel="noopener noreferrer">Apri Arianne in una scheda ↗</a>
 
 <!--
-Note relatore:
-Subito dopo il framework "richiamo" il deck Arianne — l'ecosistema digitale per la salute mentale — embeddato a tutta pagina. Per navigarlo dal vivo: cliccare dentro al riquadro per dargli il focus, poi usare le frecce; per tornare a questo deck premere Esc o cliccare fuori. Se l'iframe non carica (rete/proxy), usare il link "Apri in una scheda" in basso a destra.
+[Slide navigabile: cliccare dentro al riquadro per dare il focus, poi usare le frecce; Esc o clic fuori per tornare al deck. Se l'iframe non carica, usare il link "Apri in una scheda" in basso a destra.]
+
+Tutti i pezzi che avete visto — monitoraggio, supporto decisionale, pazienti simulati — confluiscono in Arianne, l'ecosistema digitale per la salute mentale a cui stiamo lavorando. Ve ne mostro rapidamente l'architettura.
 -->
 
 ---
 layout: statement
 routeAlias: tesi-finale-index
-class: section-opener-slide ia-nella-stanza-index-slide section-01
+class: section-opener-slide tesi-finale-index-slide section-06
 ---
 
 # Tesi finale
 
+Setting, responsabilità e uso clinico dell'IA: una posizione conclusiva.
+
+<!--
+Chiudo con la tesi.
+-->
 
 ---
 layout: default
 routeAlias: tesi-finale
-class: section-05
+class: section-06
 ---
 
 # Tesi finale
@@ -1842,8 +1900,7 @@ class: section-05
 </div>
 
 <!--
-Note relatore:
-Usare questa slide per formulare la tesi finale. Questa è la sintesi del talk: l'IA può essere utile se aumenta osservazione, continuità e riflessività clinica. È pericolosa se diventa scorciatoia diagnostica, sostituto relazionale o dispositivo opaco che parla al paziente vulnerabile senza responsabilità. Preparare la frase finale della slide successiva.
+La tesi è questa: l'IA è al servizio della psicopatologia solo se resta al servizio della complessità clinica. Tre verbi. Vedere prima: segnali precoci, traiettorie, pattern longitudinali. Seguire meglio: continuità tra le visite, monitoraggio, psicoeducazione. Decidere meglio: supporto al clinico — mai delega della responsabilità. E il negativo della stessa tesi: l'IA è pericolosa quando diventa scorciatoia diagnostica, sostituto relazionale, o dispositivo opaco che parla al paziente vulnerabile senza che nessuno ne risponda.
 -->
 
 ---
@@ -1855,8 +1912,9 @@ class: section-06
 # L'IA è utile solo se aumenta la cura, non se la sostituisce
 
 <!--
-Note relatore:
-Chiudere lentamente. Frase possibile: "Il punto non è rendere artificiale la cura, ma rendere più intelligente il modo in cui osserviamo, accompagniamo e proteggiamo la sofferenza mentale". Pausa. Poi aprire alle domande: chatbot come confidente, digital phenotyping come sorveglianza, diagnosi ML, responsabilità dell'errore.
+[Rallentare. Lasciare la slide in silenzio un paio di secondi prima di parlare.]
+
+Il punto non è rendere artificiale la cura. È rendere più intelligente il modo in cui osserviamo, accompagniamo e proteggiamo la sofferenza mentale. [Pausa.] L'IA è utile solo se aumenta la cura. Non se la sostituisce.
 -->
 
 ---
@@ -1870,8 +1928,7 @@ class: section-opener-slide domande-discussione-index-slide section-06
 Apriamo il confronto: relazione, diagnosi, monitoraggio e responsabilità dell'errore.
 
 <!--
-Note relatore:
-Questa è la copertina della parte finale: chiude la tesi e apre lo spazio di confronto con il pubblico. Annunciare a voce che ora si passa alle domande, riprendendo i fili principali del talk — chatbot come confidente, digital phenotyping come sorveglianza, diagnosi ML, responsabilità dell'errore.
+Io ho finito: grazie dell'attenzione. Apriamo il confronto — i fili su cui possiamo discutere sono quelli che abbiamo attraversato: il chatbot come confidente, il digital phenotyping tra prevenzione e sorveglianza, la diagnosi con il machine learning, e la responsabilità quando il modello sbaglia.
 -->
 
 ---
@@ -1890,8 +1947,9 @@ class: section-06
 - Chi risponde quando il modello sbaglia?
 
 <!--
-Note relatore:
-Usare questa slide se c'è tempo o come ponte alla discussione finale. Non cercare di rispondere a tutte: scegliere quelle che risuonano con il pubblico. La prima e la seconda aprono il tema relazionale; la terza la diagnosi; la quarta privacy e monitoraggio; la quinta e la sesta governance.
+[Mostrare solo se c'è tempo, come innesco della discussione.]
+
+Se serve uno spunto, lascio sei domande aperte. Se un chatbot riduce la solitudine, è già terapia? Se sembra più empatico del clinico, è anche più sicuro? Un algoritmo diagnostico in psicopatologia classifica un disturbo — o una persona? Il digital phenotyping è prevenzione o sorveglianza? Dobbiamo arrivare a prescrivere strumenti di IA validati, scoraggiando quelli generalisti? E chi risponde quando il modello sbaglia? Non provo a rispondere a tutte: scegliete quella che vi riguarda di più.
 -->
 
 
@@ -1909,11 +1967,13 @@ class: section-06 bib-slide
 - Materiali progettuali Whattadata (DIPPS/MiCare/LLMPatients/LLMind/Arianne), presentazione *ICT per la Salute Mentale: Stato dell'Arte e Prospettive*, M. Cremaschi.
 - Amand-Eeckhout L. *Mental health in the EU.* European Parliamentary Research Service, Briefing No. 751416, 2023.
 - OECD. *A new benchmark for mental health systems: Tackling the social and economic costs of mental ill-health.* 2021.
+- Dati di prodotto da pagine ufficiali dei fornitori (Wysa, Woebot, Limbic, Eleos Health, Lyssn, NeuroFlow): claim aziendali, non evidenza indipendente.
+- *Kintsugi shut down after failing to secure FDA clearance in time.* The Verge, 2026 (fonte giornalistica).
 
 <!--
-Note relatore:
-Questa slide bibliografica raccoglie le fonti e i materiali progettuali aggiunti a partire dalla presentazione Figma. Specificare a voce che DIPPS è usato come caso progettuale e non come evidenza di efficacia clinica già dimostrata.
+Le fonti sono qui per chi vuole approfondire, non le leggo. Due precisazioni doverose. Primo: DIPPS e i materiali Whattadata sono citati come casi progettuali, non come evidenza di efficacia clinica già dimostrata. Secondo: i numeri sulle card dei tool — utenti, sessioni, riduzioni di tempo — vengono dalle pagine ufficiali dei fornitori, quindi sono claim aziendali da tenere distinti dall'evidenza peer-reviewed; e il caso Kintsugi è una notizia giornalistica, non uno studio.
 -->
+
 ---
 layout: default
 routeAlias: bibliografia-istituzionale
@@ -1935,8 +1995,7 @@ class: section-06 bib-slide
 - APA. *Applications of Artificial Intelligence in Mental Health Care.*
 
 <!--
-Note relatore:
-Questa bibliografia istituzionale è importante perché dà autorevolezza e riduce il rischio di sembrare promozionali. Se il tempo è breve, non leggerla: dire che le fonti sono riportate per chi vuole approfondire. Sottolineare che FDA e UE ragionano per uso previsto e rischio, non per entusiasmo tecnologico.
+Queste sono le fonti istituzionali: FDA, OMS, Commissione Europea, APA. Vi faccio notare solo il criterio che le accomuna: regolatori e istituzioni ragionano per uso previsto e per rischio — non per entusiasmo tecnologico.
 -->
 
 ---
@@ -1958,8 +2017,7 @@ class: section-06 bib-slide
 - Topol E. *High-performance medicine: the convergence of human and artificial intelligence.* *Nature Medicine*, 2019.
 
 <!--
-Note relatore:
-Mantenere questa slide per chi chiede le fonti. I punti più utili nel talk sono MASAI, IDx-DR, GI Genius e Paige, perché mostrano quattro archetipi: screening, diagnosi autonoma circoscritta, detection in tempo reale, supporto al patologo. Tutti hanno un uso previsto preciso.
+Qui le fonti sull'IA in medicina. Se qualcuno vuole un riferimento per cominciare: MASAI, IDx-DR, GI Genius e Paige sono i quattro archetipi che ho citato — screening assistito, diagnosi autonoma circoscritta, detection in tempo reale, supporto al patologo. Tutti con un uso previsto preciso.
 -->
 
 ---
@@ -1977,7 +2035,10 @@ class: section-06 bib-slide bib-dense
 - Chan Y. H. et al. *Discovering robust biomarkers of psychiatric disorders from resting-state fMRI via graph neural networks: a systematic review.* 2024/2025.
 - Nassibi A. et al. *A Systematic Review of EEG-based Machine Intelligence Algorithms for Depression Diagnosis and Monitoring.* 2025.
 - Cao Y. et al. *Machine Learning Approaches for Mental Illness Detection on Social Media: Biases and Methodological Challenges.* 2024.
+- Fried E. I. *Lack of Theory Building and Testing Impedes Progress in The Factor and Network Literature.* *Psychological Inquiry*, 2020. DOI: 10.1080/1047840X.2020.1853461.
+- McGrath J. J. et al. *Comorbidity within mental disorders: a comprehensive analysis based on 145 990 survey respondents from 27 countries.* *Epidemiology and Psychiatric Sciences*, 2020. DOI: 10.1017/S2045796020000633.
 - Hua Y. et al. *Applying and Evaluating Large Language Models in Mental Health Care: A Scoping Review of Human-Assessed Generative Tasks.* *npj Digital Medicine*, 2025.
+- Limbic. *A cognitive layer architecture to support large-language model performance in psychotherapy interactions.* *Nature Medicine*, 2026.
 - Guo Z. et al. *Large Language Model for Mental Health: A Systematic Review.* 2024.
 - Grabb D. et al. *Risks from Language Models for Automated Mental Healthcare.* 2024.
 - Holderried F. et al. *A GPT-Powered Chatbot as a Simulated Patient to Practice History Taking.* *JMIR Medical Education*, 2024. DOI: 10.2196/53961.
@@ -1989,6 +2050,5 @@ class: section-06 bib-slide bib-dense
 - APA. *Applications of Artificial Intelligence in Mental Health Care.*
 
 <!--
-Note relatore:
-Questa bibliografia distingue fonti regolatorie, review e preprint. Segnalare chiaramente che alcune fonti recenti sono preprint e servono per discussione, non come evidenza definitiva. Per la diagnosi clinica con ML, le fonti più solide da citare nel talk sono i dispositivi ASD regolati; per il resto, usare le review per discutere limiti, bias e generalizzabilità.
+E infine le fonti su IA e salute mentale. Un'avvertenza metodologica: qui convivono fonti regolatorie, review peer-reviewed e preprint — i preprint servono per la discussione, non come evidenza definitiva. Per la diagnosi con ML le fonti più solide restano i dispositivi ASD regolati; le review servono soprattutto a discutere limiti, bias e generalizzabilità. Grazie.
 -->

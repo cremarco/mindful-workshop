@@ -29,13 +29,13 @@
      hue so eyebrows, callouts and accents follow the chapter color. */
   --aipp-accent: var(--aipp-red);
 
-  /* Talk section colors from the Tailwind palette. */
-  --aipp-section-01: oklch(66.6% 0.179 58.318); /* amber-600, slides 16-26 */
-  --aipp-section-02: oklch(59.6% 0.145 163.225); /* emerald-600, slides 27-54 */
-  --aipp-section-03: oklch(60.9% 0.126 221.723); /* cyan-600, slides 55-57 */
-  --aipp-section-04: oklch(54.6% 0.245 262.881); /* blue-600, slides 58-60 */
-  --aipp-section-05: oklch(54.1% 0.281 293.009); /* violet-600, slides 61-70 */
-  --aipp-section-06: oklch(58.6% 0.253 17.585); /* rose-600, slides 71-77 */
+  /* Talk section colors from the Tailwind palette (one per agenda chapter). */
+  --aipp-section-01: oklch(66.6% 0.179 58.318); /* amber-600 · IA nella stanza */
+  --aipp-section-02: oklch(59.6% 0.145 163.225); /* emerald-600 · ML in psicologia/psichiatria */
+  --aipp-section-03: oklch(60.9% 0.126 221.723); /* cyan-600 · Sfide future */
+  --aipp-section-04: oklch(54.6% 0.245 262.881); /* blue-600 · Aspetti normativi */
+  --aipp-section-05: oklch(54.1% 0.281 293.009); /* violet-600 · Esempi di tool */
+  --aipp-section-06: oklch(58.6% 0.253 17.585); /* rose-600 · Tesi finale e discussione */
 
   /* Emphasis colour (the one value that flips per mode). */
   --aipp-fg: #1d1d1f;

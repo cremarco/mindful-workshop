@@ -285,6 +285,24 @@
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+/* Shared copy treatment on the dark surface; per-tool accents
+   (background, stat colour, copy width) live in slides.css. */
+.bento-card.tool-apple .bento-eyebrow {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.bento-card.tool-apple .bento-title {
+  color: #fff;
+  font-size: 1.38rem;
+}
+
+.slidev-layout:not(.intro-slide) .bento-card.tool-apple p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.84rem;
+  line-height: 1.42;
+}
+
 /* Large stat (6M+, 70%…) */
 .tool-stat {
   margin-top: auto;
@@ -296,6 +314,7 @@
 
 .tool-stat-label {
   margin-top: 0.16rem;
+  color: rgba(255, 255, 255, 0.45);
   font-size: 0.7rem;
   font-weight: 560;
   letter-spacing: 0.05em;
