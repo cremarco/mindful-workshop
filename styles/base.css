@@ -128,8 +128,9 @@
 }
 
 .slidev-layout:not(.intro-slide) thead th {
-  background: var(--aipp-surface-2);
-  color: var(--aipp-soft);
+  --aipp-table-row-line: color-mix(in srgb, var(--aipp-accent) 22%, transparent);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
+  color: var(--aipp-accent);
   font-size: 0.74rem;
   font-weight: 640;
   text-transform: uppercase;
@@ -142,7 +143,7 @@
   text-align: left;
   vertical-align: top;
   border: 0;
-  border-bottom: 1px solid var(--aipp-line);
+  border-bottom: 1px solid var(--aipp-table-row-line, var(--aipp-line));
 }
 
 .slidev-layout:not(.intro-slide) th:first-child,

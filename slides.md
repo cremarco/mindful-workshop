@@ -1280,18 +1280,6 @@ L'NLP diagnostico è seducente proprio perché lavora sul materiale clinico per 
 -->
 
 ---
-layout: statement
-routeAlias: fenotipo-digitale-index
-class: section-02
----
-
-# Digital phenotyping
-
-<!--
-Terza famiglia: il digital phenotyping — la raccolta, passiva o attiva, di tracce comportamentali tramite smartphone, wearable e sensori. È l'area più coerente con l'intervento precoce: non aspettare la visita per accorgersi che il paziente sta cambiando traiettoria. Ed è anche una delle più delicate sul piano etico. Vediamo perché.
--->
-
----
 layout: default
 routeAlias: scenari-fenotipo-digitale
 class: section-02
@@ -1859,6 +1847,21 @@ Tutti i pezzi che avete visto — monitoraggio, supporto decisionale, pazienti s
 -->
 
 ---
+layout: center
+routeAlias: arianne-feedback
+class: arianne-feedback-slide section-05
+---
+
+<section class="arianne-feedback">
+  <img class="arianne-feedback-logo" :src="$aippImage('arianne-logo.svg')" alt="Arianne" />
+  <img class="arianne-feedback-qr" :src="$aippImage('arianne-feedback-qr.svg')" alt="QR code per il questionario Arianne" />
+</section>
+
+<!--
+Invito rapido alla compilazione del form. È una slide di passaggio: lasciare il QR visibile abbastanza a lungo perché chi vuole possa aprirlo con il telefono.
+-->
+
+---
 layout: statement
 routeAlias: tesi-finale-index
 class: section-opener-slide tesi-finale-index-slide section-06
@@ -1951,6 +1954,14 @@ class: section-06
 
 Se serve uno spunto, lascio sei domande aperte. Se un chatbot riduce la solitudine, è già terapia? Se sembra più empatico del clinico, è anche più sicuro? Un algoritmo diagnostico in psicopatologia classifica un disturbo — o una persona? Il digital phenotyping è prevenzione o sorveglianza? Dobbiamo arrivare a prescrivere strumenti di IA validati, scoraggiando quelli generalisti? E chi risponde quando il modello sbaglia? Non provo a rispondere a tutte: scegliete quella che vi riguarda di più.
 -->
+
+---
+layout: center
+routeAlias: grazie
+class: grazie-slide section-06
+---
+
+# grazie
 
 
 ---
