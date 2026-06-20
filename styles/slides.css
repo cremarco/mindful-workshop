@@ -902,6 +902,16 @@
   padding: 5.2rem 0 3.6rem 5.2rem;
 }
 
+.intro-logo {
+  position: absolute;
+  top: 4.1rem;
+  right: 4.6rem;
+  width: 7.6rem;
+  height: auto;
+  z-index: 1;
+  filter: drop-shadow(0 1.1rem 2rem rgba(0, 0, 0, 0.28));
+}
+
 .intro-meta {
   width: fit-content;
   color: var(--aipp-red);
@@ -930,6 +940,12 @@
 
 .intro-copy h1 span {
   display: block;
+}
+
+.intro-copy h1 .intro-title-secondary {
+  max-width: 570px;
+  font-size: 0.72em;
+  line-height: 1.04;
 }
 
 .intro-copy h1 .intro-gradient-text {
@@ -1292,35 +1308,64 @@ html.dark .slidev-layout.statement.whattadata-slide {
   margin-top: 0;
 }
 
-.slidev-layout.statement.ia-nella-stanza-index-slide {
+.slidev-layout.statement.section-opener-slide.section-01 {
   --section-opener-shape: var(--aipp-ia-cosa-pensiamo-shape);
   --section-opener-title-width: 10ch;
 }
 
-.slidev-layout.statement.ml-psicologia-psichiatria-slide {
+.slidev-layout.statement.section-opener-slide.section-02 {
   --section-opener-shape: var(--aipp-ml-psicologia-shape);
 }
 
-.slidev-layout.statement.sfide-future-index-slide {
+.slidev-layout.statement.section-opener-slide.section-03 {
   --section-opener-shape: var(--aipp-sfide-future-shape);
+  --section-opener-title-width: 13ch;
 }
 
-.slidev-layout.statement.aspetti-normativi-slide {
+.slidev-layout.statement.section-opener-slide.section-04 {
   --section-opener-shape: var(--aipp-aspetti-normativi-shape);
-  --section-opener-title-width: 12ch;
+  --section-opener-title-width: 10ch;
 }
 
-.slidev-layout.statement.strumenti-index-slide {
+.slidev-layout.statement.section-opener-slide.section-05 {
   --section-opener-shape: var(--aipp-tool-index-shape);
   --section-opener-title-width: 12ch;
 }
 
-.slidev-layout.statement.tesi-finale-index-slide {
+.slidev-layout.statement.section-opener-slide.section-06 {
   --section-opener-shape: var(--aipp-tesi-finale-shape);
   --section-opener-title-width: 10ch;
 }
 
-.slidev-layout.statement.domande-discussione-index-slide {
+.slidev-layout.statement.section-opener-slide.ia-nella-stanza-index-slide {
+  --section-opener-shape: var(--aipp-ia-cosa-pensiamo-shape);
+  --section-opener-title-width: 10ch;
+}
+
+.slidev-layout.statement.section-opener-slide.ml-psicologia-psichiatria-slide {
+  --section-opener-shape: var(--aipp-ml-psicologia-shape);
+}
+
+.slidev-layout.statement.section-opener-slide.sfide-future-index-slide {
+  --section-opener-shape: var(--aipp-sfide-future-shape);
+}
+
+.slidev-layout.statement.section-opener-slide.aspetti-normativi-slide {
+  --section-opener-shape: var(--aipp-aspetti-normativi-shape);
+  --section-opener-title-width: 12ch;
+}
+
+.slidev-layout.statement.section-opener-slide.strumenti-index-slide {
+  --section-opener-shape: var(--aipp-tool-index-shape);
+  --section-opener-title-width: 12ch;
+}
+
+.slidev-layout.statement.section-opener-slide.tesi-finale-index-slide {
+  --section-opener-shape: var(--aipp-tesi-finale-shape);
+  --section-opener-title-width: 10ch;
+}
+
+.slidev-layout.statement.section-opener-slide.domande-discussione-index-slide {
   --section-opener-shape: var(--aipp-domande-discussione-shape);
 }
 

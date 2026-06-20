@@ -1,5 +1,5 @@
 import type { AppContext } from '@slidev/types'
-import { cssUrl, imageUrl } from '../utils/images'
+import { cssUrl, imageUrl, withBase } from '../utils/images'
 
 /* Backgrounds and decorative shapes consumed by the stylesheets.
    Injected at runtime (not hard-coded in CSS) so the URLs resolve
@@ -52,6 +52,7 @@ async function normalizeHashRoute(router: AppContext['router']) {
 
 export default async function setupAippDeck({ app, router }: AppContext) {
   app.config.globalProperties.$aippImage = imageUrl
+  app.config.globalProperties.$aippAsset = withBase
   setImageCssVariables()
   await normalizeHashRoute(router)
 }

@@ -1,6 +1,6 @@
-# Intelligenza artificiale al servizio della psicopatologia
+# Personality Is Not a Prompt: Toward Psychologically Grounded LLM Simulations of Personality
 
-Slide del talk per la **IX Giornata Scientifica AIPP** (Piacenza, 12 giugno 2026, sessione *Psichiatria Digitale I*), realizzate con [Slidev](https://sli.dev/).
+Slide del talk per il **Milan Workshop on Computational Methods For Mental Health and Well-Being 2026** (University of Milano-Bicocca, 23 June 2026), realizzate con [Slidev](https://sli.dev/).
 
 ## Comandi
 
