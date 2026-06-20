@@ -400,7 +400,8 @@ class: section-01
     <span class="bento-title">Deliberate practice</span>
     <p>Skills can be rehearsed over time with feedback, supervision and escalating complexity.</p>
   </div>
-  <div class="bento-card bento-accent span-3">
+  <div class="bento-card bento-accent span-3 has-corner-icon education-goal-card">
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/education-goal-pointer.png')" alt="" aria-hidden="true" />
     <span class="bento-title">The educational goal</span>
     <p>Not to replace clinical placements, but to bridge the gap between declarative knowledge and in-session competence.</p>
   </div>
