@@ -192,9 +192,29 @@
 }
 
 .bento-card.has-corner-icon {
+  --corner-icon-size: 5.75rem;
+  --corner-icon-right: -0.7rem;
+  --corner-icon-rotation: -5deg;
+
   min-height: 7.2rem;
   overflow: hidden;
   isolation: isolate;
+  padding-right: min(7.35rem, 42%);
+}
+
+.bento-card.has-corner-icon.span-2,
+.bento-card.has-corner-icon.span-3 {
+  --corner-icon-size: 8.8rem;
+  --corner-icon-right: -1rem;
+
+  padding-right: min(10.35rem, 34%);
+}
+
+.bento-card.education-goal-card {
+  --corner-icon-size: 12.2rem;
+  --corner-icon-right: -1.55rem;
+  --corner-icon-rotation: -6deg;
+
   padding-right: 13.25rem;
 }
 
@@ -206,14 +226,14 @@
 .bento-corner-icon {
   position: absolute;
   top: 50%;
-  right: -1.55rem;
+  right: var(--corner-icon-right);
   z-index: 0;
-  width: 12.2rem;
-  height: 12.2rem;
+  width: var(--corner-icon-size);
+  height: var(--corner-icon-size);
   object-fit: contain;
   opacity: 0.98;
   pointer-events: none;
-  transform: translateY(-50%) rotate(-6deg);
+  transform: translateY(-50%) rotate(var(--corner-icon-rotation));
   filter: drop-shadow(0 18px 28px rgb(0 0 0 / 0.2)) saturate(1.08);
 }
 
