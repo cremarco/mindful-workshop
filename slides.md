@@ -123,6 +123,14 @@ Here the therapist asks **SCID-style questions**.
 Giovanna reacts with **shame** and **fear of being judged**.
 The point is not only the **answer** to the question.
 The point is the **relational reaction**.
+
+Traduzione dei balloon:
+Erika: Oggi continueremo con la SCID. È una parte strutturata del colloquio: ci aiuta a comprendere meglio le tue difficoltà e a pensare insieme ai prossimi passi.
+Giovanna: Quindi è un test. Per avere un "quadro più chiaro" di tutti i modi in cui sono rotta, giusto?
+Erika: Per te è difficile prendere decisioni quotidiane senza consigli o rassicurazioni?
+Giovanna: Sì. È la risposta giusta? Voglio solo che questa parte finisca. Mi fa sentire malissimo.
+Erika: Puoi farmi qualche esempio di decisioni per cui chiedi consiglio?
+Giovanna: Cose stupide. Cosa indossare se devo incontrare uno dei suoi amici. Cosa scrivere per non sembrare pazza o disperata. Tutto qui. È abbastanza?
 -->
 
 
@@ -157,6 +165,14 @@ class: conversation-slide
 Here the same **diagnostic area** becomes more complex.
 The patient rejects the idea that she simply needs someone to **take care of her**.
 She describes **emptiness** and **fear of disappearing**.
+
+Traduzione dei balloon:
+Erika: Ti capita mai di fare cose spiacevoli o irragionevoli solo per evitare che qualcuno se ne vada?
+Giovanna: Chi si prende cura di me? Nessuno. È il contrario: sono io quella che fa le cose solo per evitare che gli altri se ne vadano.
+Erika: Stare da sola ti mette a disagio?
+Giovanna: Il silenzio diventa fortissimo. O sono vuota, o sono piena di rumore. Entrambe le cose fanno paura.
+Erika: È perché hai bisogno che qualcuno si prenda cura di te?
+Giovanna: No. Pago le bollette, lavoro. Non è quello. Se non c'è nessuno, è come se non ci fossi nemmeno io. Come se potessi scomparire nel silenzio.
 -->
 
 ---
@@ -751,6 +767,7 @@ The **LLM** uses this structure to generate language, but the **profile remains 
 layout: default
 routeAlias: llmpatients-architecture
 class: section-03
+hide: true
 ---
 
 # Architecture
