@@ -27,4 +27,4 @@ pnpm export   # export PDF
 
 ## Deploy
 
-Il deploy avviene su **GitHub Pages** ad ogni push su `main` (`.github/workflows/github-pages.yml`), con base path `/AIPP-full/` e router in modalità hash.
+Il deploy avviene su **GitHub Pages** ad ogni push su `main` (`.github/workflows/github-pages.yml`), con base path `/mindful-workshop/` e router in modalità hash.

@@ -35,7 +35,7 @@ function setImageCssVariables() {
 }
 
 /* Links shared from GitHub Pages can carry the mount segment inside the
-   hash (e.g. #/AIPP-full/5); strip it so the router lands on the right slide. */
+   hash (e.g. #/mindful-workshop/5); strip it so the router lands on the right slide. */
 async function normalizeHashRoute(router: AppContext['router']) {
   const mountSegment = location.pathname.split('/').filter(Boolean)[0]
   const hashPath = location.hash.startsWith('#/')
