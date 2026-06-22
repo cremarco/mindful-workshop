@@ -15,5 +15,8 @@
     "@slidev/cli": "52.15.2",
     "@slidev/theme-apple-basic": "^0.25.1",
     "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.61.0"
   }
 }

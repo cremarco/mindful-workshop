@@ -130,7 +130,7 @@
 .slidev-layout:not(.intro-slide) thead th {
   --aipp-table-row-line: color-mix(in srgb, var(--aipp-accent) 22%, transparent);
   background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
-  color: var(--aipp-accent);
+  color: var(--aipp-text);
   font-size: 0.74rem;
   font-weight: 640;
   text-transform: uppercase;

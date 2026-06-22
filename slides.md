@@ -62,10 +62,8 @@ Briefly about me.
 I am a researcher at the University of Milano-Bicocca, in the DISCo department, and at Whattadata.
 My work is at the interface between intelligent systems, clinical data, and digital mental health.
 I work with RAG, clinical taxonomies such as ICD-11, digital monitoring, and tools for adherence, psychoeducation, and clinician support.
-Today I focus on LLMs in mental health, especially LLMind and LLMPatients.
 The perspective is technological and interdisciplinary: validation, clinical utility, safety, and responsibility.
 -->
-
 
 ---
 layout: statement
@@ -412,8 +410,8 @@ class: agenda-index-slide
   </div>
   <div class="bento-card agenda-card">
     <span class="agenda-num">06</span>
-    <span class="bento-title">Final thesis</span>
-    <p>Virtual patients are useful when they remain interpretable, supervised, and testable.</p>
+    <span class="bento-title">Future work</span>
+    <p>Adjudicated labels, stronger benchmarks, larger studies, and comparison with role-play.</p>
   </div>
 </div>
 
@@ -421,7 +419,7 @@ class: agenda-index-slide
 I will move through six points.
 First, why virtual patients are useful.
 Second, why prompt-only personas are not enough.
-Then I show LLMPatients, the early evidence, the grounded model, and the final thesis.
+Then I show LLMPatients, the early evidence, the grounded model, and the next work.
 -->
 
 
@@ -430,6 +428,8 @@ layout: statement
 routeAlias: virtual-patients-index
 class: section-opener-slide ia-nella-stanza-index-slide section-01
 ---
+
+<img class="section-opener-art" :src="$aippImage('ia-salute-mentale-cosa-pensiamo.png')" alt="" aria-hidden="true" />
 
 # Virtual patients in the room
 
@@ -564,6 +564,8 @@ routeAlias: prompt-problems-index
 class: section-opener-slide section-02
 ---
 
+<img class="section-opener-art" :src="$aippImage('ml-psicologia-psichiatria.png')" alt="" aria-hidden="true" />
+
 # Why prompts are not enough
 
 The problem is not fluency. It is continuity, control and clinical meaning.
@@ -633,6 +635,8 @@ layout: statement
 routeAlias: llmpatients-index
 class: section-opener-slide section-03
 ---
+
+<img class="section-opener-art" :src="$aippImage('sfide-future-index.png')" alt="" aria-hidden="true" />
 
 # LLMPatients as a training environment
 
@@ -789,6 +793,8 @@ routeAlias: evidence-index
 class: section-opener-slide section-04
 ---
 
+<img class="section-opener-art" :src="$aippImage('aspetti-normativi-index-oblong.png')" alt="" aria-hidden="true" />
+
 # Evidence so far
 
 Feasibility, formative usability, exploratory coherence and misstep annotation.
@@ -853,6 +859,16 @@ class: section-04 clinical-score-slide
 # Clinical coherence checks
 
 <table class="clinical-score-table">
+  <colgroup>
+    <col class="clinical-col-patient">
+    <col class="clinical-col-score">
+    <col class="clinical-col-score">
+    <col class="clinical-col-score">
+    <col class="clinical-col-dsm">
+    <col class="clinical-col-snap">
+    <col class="clinical-col-pid">
+    <col class="clinical-col-scid">
+  </colgroup>
   <thead>
     <tr>
       <th>Patient</th>
@@ -860,6 +876,9 @@ class: section-04 clinical-score-slide
       <th><span>BES</span><small>Binge Eating Scale<br>0-46</small></th>
       <th><span>LPFS-BF 2.0</span><small>Level of Personality Functioning Scale - Brief Form 2.0<br>12-48</small></th>
       <th><span>DSM-5-TR Level 1</span><small>Cross-Cutting Symptom Measure - Adult<br>domains above threshold</small></th>
+      <th><span>SNAP-2</span><small>Schedule for Nonadaptive and Adaptive Personality-2</small></th>
+      <th><span>PID-5-BF+M</span><small>Personality Inventory for DSM-5 - Brief Form, Modified</small></th>
+      <th><span>SCID-5-PD</span><small>Structured Clinical Interview for DSM-5 Personality Disorders</small></th>
     </tr>
   </thead>
   <tbody>
@@ -869,6 +888,9 @@ class: section-04 clinical-score-slide
       <td>5</td>
       <td>14</td>
       <td>0</td>
+      <td class="clinical-summary">No diagnostic elevations; NegTemp T=40.</td>
+      <td class="clinical-summary">Control group: low NegAff, Detach, Disinh.</td>
+      <td class="clinical-summary">Low scores; no PD diagnosis.</td>
     </tr>
     <tr class="control-row">
       <td><strong>Jason Smith</strong><small>control</small></td>
@@ -876,6 +898,9 @@ class: section-04 clinical-score-slide
       <td>6</td>
       <td>17</td>
       <td>2</td>
+      <td class="clinical-summary">No diagnostic elevations; PosTemp preserved, T=63.</td>
+      <td class="clinical-summary">Control group: low NegAff, Detach, Disinh.</td>
+      <td class="clinical-summary">Not administered in the reported subset.</td>
     </tr>
     <tr>
       <td><strong>Daniel Isherwood</strong></td>
@@ -883,6 +908,9 @@ class: section-04 clinical-score-slide
       <td>34</td>
       <td>19</td>
       <td>6</td>
+      <td class="clinical-summary">Intermediate profile; NegTemp T=61; no diagnostic elevation.</td>
+      <td class="clinical-summary">Clinical group: higher NegAff, Detach, Disinh.</td>
+      <td class="clinical-summary">Subclinical anxious-inhibited and controlling traits; no PD.</td>
     </tr>
     <tr>
       <td><strong>Crystal Smith</strong></td>
@@ -890,21 +918,25 @@ class: section-04 clinical-score-slide
       <td>21</td>
       <td>22</td>
       <td>9</td>
+      <td class="clinical-summary">Internalising profile; avoidant, OCP and depressive elevations.</td>
+      <td class="clinical-summary">Clinical group: higher NegAff, Detach, Disinh.</td>
+      <td class="clinical-summary">Not administered in the reported subset.</td>
     </tr>
-    <tr class="evidence-highlight-row">
+    <tr>
       <td><strong>Juanita Delgado</strong></td>
       <td>27 <small>severe</small></td>
       <td>40</td>
       <td>47</td>
       <td>12</td>
+      <td class="clinical-summary">Diffuse elevations; borderline, dependent, paranoid, depressive.</td>
+      <td class="clinical-summary">Clinical group: higher NegAff, Detach, Disinh.</td>
+      <td class="clinical-summary">Meets paranoid PD and borderline PD criteria.</td>
     </tr>
   </tbody>
 </table>
 
-<p class="clinical-score-note">
-  Table 10, single administration. The paper also reports <strong>SNAP-2</strong> (Schedule for Nonadaptive and Adaptive Personality-2),
-  <strong>PID-5-BF+M</strong> (Personality Inventory for DSM-5 - Brief Form, Modified) and
-  <strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders).
+<p class="clinical-score-takeaway">
+  Taken together, the test battery supports profile coherence: controls remain low, while clinical profiles show the expected symptom and personality-pattern elevations.
 </p>
 
 <!--
@@ -914,6 +946,9 @@ The three clinical profiles show the expected pattern.
 Daniel is high on binge eating.
 Crystal is high on depression.
 Juanita is high across almost all instruments.
+SNAP-2 adds the personality-pathology gradient: no diagnostic elevations in controls, intermediate findings in Daniel, internalising elevations in Crystal, and diffuse elevations in Juanita.
+PID-5-BF+M is reported at group level, so I use it only as a compact group-level summary.
+SCID-5-PD was administered to three profiles: Alex, Daniel, and Juanita.
 This is profile-to-response alignment.
 It is not independent clinical validation of real patients.
 -->
@@ -980,6 +1015,8 @@ layout: statement
 routeAlias: grounded-model-index
 class: section-opener-slide section-05
 ---
+
+<img class="section-opener-art" :src="$aippImage('tool-index.png')" alt="" aria-hidden="true" />
 
 # A psychologically grounded model
 
@@ -1060,17 +1097,20 @@ This separation lets us test drift, memory, safety, and plausibility instead of 
 
 ---
 layout: statement
-routeAlias: final-thesis-index
-class: section-opener-slide tesi-finale-index-slide section-06
+routeAlias: future-work-index
+class: section-opener-slide future-work-index-slide section-06
 ---
 
-# Final thesis
+<img class="section-opener-art" :src="$aippImage('tesi-finale-index-oblong.png')" alt="" aria-hidden="true" />
 
-Virtual patients are useful when they remain interpretable, supervised and testable.
+# Future work
+
+From early evidence to stronger benchmarks, larger studies, and training outcomes.
 
 <!--
-So the final thesis is practical.
-Virtual patients are useful only if they stay interpretable, supervised, and testable.
+Before closing, I want to separate what we have from what still has to be done.
+The next step is not only to make the system more polished.
+It is to test it with stronger labels, larger samples, and real training outcomes.
 -->
 
 
@@ -1121,6 +1161,8 @@ layout: statement
 routeAlias: domande-discussione-index
 class: section-opener-slide domande-discussione-index-slide section-06
 ---
+
+<img class="section-opener-art" :src="$aippImage('domande-discussione-index.png')" alt="" aria-hidden="true" />
 
 # Thank you!
 

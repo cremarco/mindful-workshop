@@ -921,50 +921,78 @@
    ============================================================ */
 .slidev-layout.default.clinical-score-slide {
   overflow: hidden;
-  padding: 2.2rem 2.65rem;
+  padding: 1.55rem 1.2rem;
 }
 
 .slidev-layout.default.clinical-score-slide h1 {
-  margin-bottom: 0.72rem;
-  font-size: 2.16rem;
+  margin-bottom: 0.64rem;
+  font-size: 1.92rem;
 }
 
 .slidev-layout.default.clinical-score-slide table.clinical-score-table {
   margin: 0;
+  width: 100%;
   table-layout: fixed;
-  font-size: 0.74rem;
+  font-size: 0.64rem;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-patient {
+  width: 13%;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-score {
+  width: 6.6%;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-dsm {
+  width: 7.4%;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-snap {
+  width: 22.4%;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-pid {
+  width: 15.6%;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-col-scid {
+  width: 21.8%;
 }
 
 .slidev-layout.default.clinical-score-slide .clinical-score-table th,
 .slidev-layout.default.clinical-score-slide .clinical-score-table td {
-  padding: 0.44rem 0.58rem;
+  padding: 0.4rem 0.42rem;
   text-align: center;
   vertical-align: middle;
-  line-height: 1.13;
+  line-height: 1.12;
 }
 
 .slidev-layout.default.clinical-score-slide .clinical-score-table th:first-child,
 .slidev-layout.default.clinical-score-slide .clinical-score-table td:first-child {
-  width: 23%;
-  padding-left: 0.8rem;
+  padding-left: 0.62rem;
   text-align: left;
 }
 
-.slidev-layout.default.clinical-score-slide .clinical-score-table th:not(:first-child) {
-  width: 19.25%;
-}
-
 .slidev-layout.default.clinical-score-slide .clinical-score-table th {
-  color: var(--aipp-accent);
-  font-size: 0.54rem;
-  letter-spacing: 0.035em;
+  color: var(--aipp-text);
+  font-size: 0.46rem;
+  letter-spacing: 0.025em;
 }
 
-.slidev-layout.default.clinical-score-slide .clinical-score-table th span,
+.slidev-layout.default.clinical-score-slide .clinical-score-table th span {
+  display: block;
+  color: var(--aipp-text) !important;
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .slidev-layout.default.clinical-score-slide .clinical-score-table td strong {
   display: block;
   color: var(--aipp-text) !important;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 760;
   letter-spacing: 0;
   text-transform: none;
@@ -975,17 +1003,29 @@
   display: block;
   margin-top: 0.12rem;
   color: color-mix(in srgb, var(--aipp-soft) 82%, var(--aipp-text)) !important;
-  font-size: 0.51rem;
+  font-size: 0.43rem;
   font-weight: 540;
-  line-height: 1.12;
+  line-height: 1.08;
   letter-spacing: 0;
   text-transform: none;
 }
 
+.slidev-layout.default.clinical-score-slide .clinical-score-table th small {
+  color: var(--aipp-text) !important;
+}
+
 .slidev-layout.default.clinical-score-slide .clinical-score-table td:not(:first-child) {
   color: var(--aipp-text);
-  font-size: 0.86rem;
+  font-size: 0.78rem;
   font-weight: 720;
+}
+
+.slidev-layout.default.clinical-score-slide .clinical-score-table td.clinical-summary {
+  color: color-mix(in srgb, var(--aipp-text) 86%, var(--aipp-soft)) !important;
+  font-size: 0.54rem;
+  font-weight: 560;
+  line-height: 1.15;
+  text-align: left;
 }
 
 .slidev-layout.default.clinical-score-slide .clinical-score-table .control-row td {
@@ -1001,16 +1041,19 @@
   border-bottom: 1px solid color-mix(in srgb, var(--aipp-accent) 34%, transparent);
 }
 
-.clinical-score-note {
-  margin: 0.58rem 0 0;
-  color: var(--aipp-soft);
-  font-size: 0.55rem;
+.clinical-score-takeaway {
+  margin: 0.72rem 0 0;
+  color: color-mix(in srgb, var(--aipp-text) 88%, var(--aipp-soft));
+  font-size: 0.74rem;
+  font-weight: 620;
   line-height: 1.18;
+  letter-spacing: 0;
 }
 
-.clinical-score-note strong {
-  color: var(--aipp-text);
-  font-weight: 720;
+.clinical-score-takeaway::before {
+  color: var(--aipp-accent);
+  content: "Takeaway: ";
+  font-weight: 760;
 }
 
 /* ============================================================
@@ -1330,6 +1373,7 @@ html.dark .slidev-layout.statement.whattadata-slide {
   --section-opener-shape: none;
   --section-opener-title-width: 11ch;
 
+  position: relative;
   display: flex !important;
   flex-direction: column;
   align-items: flex-start;
@@ -1356,7 +1400,30 @@ html.dark .slidev-layout.statement.whattadata-slide {
   width: 18.5rem;
   height: 33.25rem;
   transform: translateY(-50%);
-  background: var(--section-opener-shape) right center / contain no-repeat;
+  background: none;
+}
+
+.slidev-layout.statement.section-opener-slide > .my-auto {
+  position: static;
+  z-index: auto;
+}
+
+.slidev-layout.statement.section-opener-slide .section-opener-art {
+  position: absolute !important;
+  top: 50%;
+  right: -9.25rem;
+  z-index: 0;
+  width: 18.5rem;
+  height: 33.25rem;
+  transform: translateY(-50%);
+  object-fit: contain;
+  object-position: right center;
+  pointer-events: none;
+}
+
+.slidev-layout.statement.section-opener-slide > .my-auto > :not(.section-opener-art) {
+  position: relative;
+  z-index: 1;
 }
 
 .slidev-layout.statement.section-opener-slide h1 {
