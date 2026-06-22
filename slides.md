@@ -275,62 +275,6 @@ The conversation is **logged**, so a lecturer can later inspect **difficult turn
 
 ---
 layout: default
-routeAlias: llmpatients-esplora-pazienti
-class: screenshot-slide
-hide: true
----
-
-<AppScreenshot src="screenshots/esplora-pazienti-griglia.png" alt="Screenshot of the patient exploration grid" />
-
-<!--
-**Hidden backup slide**.
-Use this only if someone asks how students choose **cases**.
-The grid shows **patients**, **objectives**, **difficulty**, and **expected duration**.
--->
-
-
----
-layout: default
-routeAlias: llmpatients-dashboard-percorsi-terapeutici
-class: screenshot-slide
-hide: true
----
-
-<AppScreenshot src="screenshots/dashboard-percorsi-terapeutici.png" alt="Screenshot of the therapeutic pathways dashboard" />
-
-<!--
-**Hidden backup slide**.
-Use this only if someone asks about **therapeutic pathways**.
-It shows **case status** and **progress** across the **eleven sessions**.
--->
-
-
----
-layout: default
-routeAlias: llmpatients-pazienti-simulati
-class: patient-carousel-slide
-hide: true
----
-
-# LLMPatients: simulated patients
-
-<div class="patient-bento">
-  <PatientCard hero name="Juanita Delgado" image="patients/juanita-delgado/base.png" />
-  <PatientCard name="Alex Carter" image="patients/alex-carter/base.png" />
-  <PatientCard name="Crystal Smith" image="patients/crystal-smith/base.png" />
-  <PatientCard name="Daniel Isherwood" image="patients/daniel-isherwood/base.png" />
-  <PatientCard name="Jason Smith" image="patients/jason-smith/base.png" />
-</div>
-
-<!--
-**Hidden backup slide**.
-These are the **five virtual patients** used in the platform and in the **coherence checks**.
-The point is **clinical variety**, not diagnosis by image.
--->
-
-
----
-layout: default
 routeAlias: colloquio-critica
 class: conversation-slide critique-conversation-slide
 ---
@@ -1169,29 +1113,6 @@ class: section-opener-slide domande-discussione-index-slide section-06
 <!--
 **Thank you**.
 I am happy to take **questions**.
--->
-
-
----
-layout: default
-routeAlias: domande-discussione
-class: section-06
-hide: true
----
-
-# Domande per aprire la discussione
-
-- Se un chatbot riduce la solitudine, è già terapia?
-- Se sembra più empatico del clinico, è più sicuro?
-- Un algoritmo diagnostico in psicopatologia classifica un disturbo o una persona?
-- Il digital phenotyping è prevenzione o sorveglianza?
-- Dobbiamo prescrivere strumenti di IA validati?
-- Chi risponde quando il modello sbaglia?
-
-<!--
-**Hidden backup slide**.
-If the discussion is slow, use **one or two questions** from this list.
-Do not present **all** of them.
 -->
 
 

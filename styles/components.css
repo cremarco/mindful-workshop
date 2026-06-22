@@ -25,6 +25,98 @@
   box-shadow: var(--aipp-shadow-soft);
 }
 
+@media print {
+  .slidev-layout:not(.intro-slide) table,
+  .bento-card,
+  .patient-card,
+  .chat-balloon {
+    box-shadow: none;
+  }
+}
+
+.print-slide-container .slidev-layout:not(.intro-slide) table,
+.print-slide-container .bento-card,
+.print-slide-container .patient-card,
+.print-slide-container .chat-balloon {
+  box-shadow: none;
+}
+
+@media print {
+  .slidev-layout:not(.intro-slide) blockquote,
+  .slidev-layout.image-right + div,
+  .slidev-layout.image-left + div,
+  .tumore-quote-photo,
+  .app-browser-mockup,
+  .app-slideshow-frame figcaption,
+  .app-slideshow-controls,
+  .framework-slide .fw-card,
+  .arianne-qr-card,
+  .arianne-platform,
+  .whattadata-mark,
+  .critique-patient-photo img,
+  .agi-stage.is-current .agi-dot {
+    box-shadow: none !important;
+  }
+
+  .bento-corner-icon,
+  .slidev-layout.default.cosa-e-il-ml-slide > img.cosa-e-il-ml-corner,
+  .framework-slide .fw-triad,
+  .intro-logo {
+    filter: none !important;
+  }
+
+  .arianne-embed-slide .arianne-open {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+.print-slide-container .slidev-layout:not(.intro-slide) blockquote,
+.print-slide-container .slidev-layout.image-right + div,
+.print-slide-container .slidev-layout.image-left + div,
+.print-slide-container .tumore-quote-photo,
+.print-slide-container .app-browser-mockup,
+.print-slide-container .app-slideshow-frame figcaption,
+.print-slide-container .app-slideshow-controls,
+.print-slide-container .framework-slide .fw-card,
+.print-slide-container .arianne-qr-card,
+.print-slide-container .arianne-platform,
+.print-slide-container .whattadata-mark,
+.print-slide-container .critique-patient-photo img,
+.print-slide-container .agi-stage.is-current .agi-dot,
+html.print .slidev-layout:not(.intro-slide) blockquote,
+html.print .slidev-layout.image-right + div,
+html.print .slidev-layout.image-left + div,
+html.print .tumore-quote-photo,
+html.print .app-browser-mockup,
+html.print .app-slideshow-frame figcaption,
+html.print .app-slideshow-controls,
+html.print .framework-slide .fw-card,
+html.print .arianne-qr-card,
+html.print .arianne-platform,
+html.print .whattadata-mark,
+html.print .critique-patient-photo img,
+html.print .agi-stage.is-current .agi-dot {
+  box-shadow: none !important;
+}
+
+.print-slide-container .bento-corner-icon,
+.print-slide-container .slidev-layout.default.cosa-e-il-ml-slide > img.cosa-e-il-ml-corner,
+.print-slide-container .framework-slide .fw-triad,
+.print-slide-container .intro-logo,
+html.print .bento-corner-icon,
+html.print .slidev-layout.default.cosa-e-il-ml-slide > img.cosa-e-il-ml-corner,
+html.print .framework-slide .fw-triad,
+html.print .intro-logo {
+  filter: none !important;
+}
+
+.print-slide-container .arianne-embed-slide .arianne-open,
+html.print .arianne-embed-slide .arianne-open {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
 /* ---- Eyebrow labels: small red uppercase markers ---- */
 .slidev-layout:not(.intro-slide) .section-label,
 .bento-card .bento-eyebrow,

@@ -1209,6 +1209,13 @@
   }
 }
 
+.print-slide-container .intro-copy h1 .intro-gradient-text,
+html.print .intro-copy h1 .intro-gradient-text {
+  color: var(--aipp-red);
+  background: none;
+  animation: none;
+}
+
 .intro-subtitle {
   max-width: 560px;
   margin: 0;
@@ -1533,6 +1540,11 @@ html.dark .slidev-layout.statement.whattadata-slide {
   background-size: contain !important;
 }
 
+.print-slide-container .slidev-layout.giovanna-slide.image-right + div,
+html.print .slidev-layout.giovanna-slide.image-right + div {
+  background-color: transparent !important;
+}
+
 /* ============================================================
    AGENDA / INDEX — numbered chapter tiles
    ============================================================ */
@@ -1725,6 +1737,15 @@ html.dark .slidev-layout.statement.whattadata-slide {
     transform: none;
     animation: none;
   }
+}
+
+.print-slide-container .slidev-layout.default.conversation-slide .chat-balloon,
+.print-slide-container .critique-patient-photo,
+html.print .slidev-layout.default.conversation-slide .chat-balloon,
+html.print .critique-patient-photo {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 /* ============================================================
