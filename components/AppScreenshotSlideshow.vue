@@ -12,13 +12,25 @@ const props = withDefaults(defineProps<{
   slides: ScreenshotSlide[]
   title?: string
   intervalMs?: number
+  activeIndex?: number
+  showControls?: boolean
 }>(), {
   title: 'LLMPatients',
   intervalMs: 4600,
+  showControls: true,
 })
 
 const activeIndex = ref(0)
 const safeSlides = computed(() => props.slides ?? [])
+const renderedIndex = computed(() => {
+  if (!safeSlides.value.length)
+    return 0
+
+  if (props.activeIndex === undefined)
+    return activeIndex.value
+
+  return Math.min(Math.max(0, Math.trunc(props.activeIndex)), safeSlides.value.length - 1)
+})
 let timer: number | undefined
 
 function showSlide(index: number) {
@@ -33,7 +45,7 @@ function showNextSlide() {
 }
 
 onMounted(() => {
-  if (safeSlides.value.length > 1 && props.intervalMs > 0)
+  if (props.activeIndex === undefined && safeSlides.value.length > 1 && props.intervalMs > 0)
     timer = window.setInterval(showNextSlide, props.intervalMs)
 })
 
@@ -55,7 +67,7 @@ onBeforeUnmount(() => {
         v-for="(slide, index) in safeSlides"
         :key="slide.src"
         class="app-slideshow-frame"
-        :class="{ active: index === activeIndex }"
+        :class="{ active: index === renderedIndex }"
       >
         <img class="app-screenshot" :src="imageUrl(slide.src)" :alt="slide.alt">
         <figcaption v-if="slide.label">
@@ -63,14 +75,14 @@ onBeforeUnmount(() => {
         </figcaption>
       </figure>
 
-      <div v-if="safeSlides.length > 1" class="app-slideshow-controls" aria-label="Screenshot slideshow controls">
+      <div v-if="showControls && safeSlides.length > 1" class="app-slideshow-controls" aria-label="Screenshot slideshow controls">
         <button
           v-for="(slide, index) in safeSlides"
           :key="`${slide.src}-control`"
           type="button"
-          :class="{ active: index === activeIndex }"
+          :class="{ active: index === renderedIndex }"
           :aria-label="`Show ${slide.label ?? `screenshot ${index + 1}`}`"
-          :aria-pressed="index === activeIndex"
+          :aria-pressed="index === renderedIndex"
           @click="showSlide(index)"
         />
       </div>

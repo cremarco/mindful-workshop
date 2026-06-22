@@ -789,6 +789,10 @@ html.print .arianne-embed-slide .arianne-open {
   overflow: hidden;
 }
 
+.app-screenshot-slideshow.click-advance {
+  cursor: pointer;
+}
+
 .app-slideshow-frame {
   position: absolute;
   inset: 0;

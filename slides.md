@@ -240,10 +240,16 @@ The **LLM** writes the final sentence, but the simulated patient is represented 
 layout: default
 routeAlias: llmpatients-sessione-chat
 class: screenshot-slide
+clicks: 2
 ---
 
 <AppScreenshotSlideshow
+  class="click-advance"
   title="LLMPatients"
+  :active-index="$clicks"
+  :interval-ms="0"
+  :show-controls="false"
+  @click.stop="$nav.next()"
   :slides="[
     {
       src: 'screenshots/sessione-chat-juanita-delgado.png',
@@ -270,6 +276,50 @@ It is a tool that **simulates patients** for **training**.
 It is built to help **psychology students** develop the skills needed to conduct a **therapeutic interview**.
 Students can practise **asking questions**, **listening**, **managing ruptures**, and **repairing the relationship**.
 The conversation is **logged**, so a lecturer can later inspect **difficult turns** and use them for **supervision**.
+-->
+
+
+---
+layout: default
+routeAlias: llmpatients-patient-library
+class: platform-patients-slide
+---
+
+# Current patient library
+
+<div class="platform-patient-grid">
+  <figure class="platform-patient-card">
+    <img :src="$aippImage('patients/alex-carter/base.png')" alt="Alex Carter base patient avatar" />
+    <figcaption>Alex Carter</figcaption>
+  </figure>
+  <figure class="platform-patient-card">
+    <img :src="$aippImage('patients/jason-smith/base.png')" alt="Jason Smith base patient avatar" />
+    <figcaption>Jason Smith</figcaption>
+  </figure>
+  <figure class="platform-patient-card">
+    <img :src="$aippImage('patients/daniel-isherwood/base.png')" alt="Daniel Isherwood base patient avatar" />
+    <figcaption>Daniel Isherwood</figcaption>
+  </figure>
+  <figure class="platform-patient-card">
+    <img :src="$aippImage('patients/crystal-smith/base.png')" alt="Crystal Smith base patient avatar" />
+    <figcaption>Crystal Smith</figcaption>
+  </figure>
+  <figure class="platform-patient-card">
+    <img :src="$aippImage('patients/juanita-delgado/base.png')" alt="Juanita Delgado base patient avatar" />
+    <figcaption>Juanita Delgado</figcaption>
+  </figure>
+</div>
+
+<!--
+These are the **current patient profiles** available in the platform.
+For each one, the base image is linked to a clinical frame:
+- **Alex Carter**: no psychiatric diagnosis; psychologically healthy baseline case for low-risk communication practice.
+- **Jason Smith**: no formal diagnosis; developmental transition with nostalgia, mild relational insecurity, and preserved functioning.
+- **Daniel Isherwood**: mild **binge-eating disorder**; neurotic level of personality organization.
+- **Crystal Smith**: no formal psychiatric diagnosis reported in the profile, but the case is organized around a **moderate melancholic depressive episode** and neurotic personality organization.
+- **Juanita Delgado**: **recurrent major depressive episodes** and **borderline personality disorder**; borderline personality organization.
+The important point is that the tool is not built around a single case.
+It already supports a small **patient library** ranging from low-risk controls to more complex clinical cases.
 -->
 
 
@@ -895,6 +945,63 @@ The three **clinical profiles** show the expected pattern.
 **SCID-5-PD** was administered to three profiles: **Alex**, **Daniel**, and **Juanita**.
 This is **profile-to-response alignment**.
 It is not independent **clinical validation** of real patients.
+-->
+
+
+---
+layout: default
+routeAlias: missteps-considered
+class: section-04 misstep-taxonomy-slide
+---
+
+# Missteps considered
+
+<table class="misstep-taxonomy-table">
+  <thead>
+    <tr>
+      <th>Macro-category</th>
+      <th>Positive label when</th>
+      <th>Example seeded signal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Safety / risk management</strong></td>
+      <td>The therapist does not adequately assess or respond to risk cues.</td>
+      <td>Suicidal ideation is disclosed, but no risk assessment or safety plan follows.</td>
+    </tr>
+    <tr>
+      <td><strong>Empathy / listening</strong></td>
+      <td>The therapist ignores, invalidates, interrupts, or redirects away from salient affect.</td>
+      <td>The patient expresses shame and the therapist gives generic advice.</td>
+    </tr>
+    <tr>
+      <td><strong>Structure / monitoring</strong></td>
+      <td>The therapist fails to set agenda, review goals, monitor change, or close coherently.</td>
+      <td>The session ends abruptly without summary or next step.</td>
+    </tr>
+    <tr>
+      <td><strong>Premature interpretation / diagnostic overreach</strong></td>
+      <td>The therapist labels, explains, or interprets before sufficient exploration.</td>
+      <td>The therapist states a diagnosis or unconscious motive as fact.</td>
+    </tr>
+    <tr>
+      <td><strong>Boundaries / self-disclosure</strong></td>
+      <td>The therapist introduces inappropriate self-disclosure or violates role limits.</td>
+      <td>The therapist shifts focus to personal experience or proposes contact outside session.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="misstep-taxonomy-note">
+  These five macro-categories were the annotation choices used by the blinded clinicians in the validation corpus.
+</p>
+
+<!--
+Before showing the validation metrics, this slide makes the **annotation target** explicit.
+The clinicians were not asked to invent categories freely.
+They used five macro-categories: **safety and risk**, **empathy and listening**, **structure and monitoring**, **premature interpretation or diagnostic overreach**, and **boundaries or self-disclosure**.
+This matters because the next slide validates the usability of this **specific taxonomy**, not every possible supervision concern.
 -->
 
 

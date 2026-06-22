@@ -1057,6 +1057,68 @@
 }
 
 /* ============================================================
+   MISSTEP TAXONOMY — macro-categories used in expert annotation
+   ============================================================ */
+.slidev-layout.default.misstep-taxonomy-slide {
+  overflow: hidden;
+  padding: 2.05rem 2.25rem;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide h1 {
+  margin-bottom: 0.9rem;
+  font-size: 2.06rem;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide table.misstep-taxonomy-table {
+  margin: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.76rem;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table th,
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table td {
+  padding: 0.48rem 0.68rem;
+  vertical-align: top;
+  line-height: 1.19;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table th:nth-child(1) {
+  width: 24%;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table th:nth-child(2) {
+  width: 37%;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table th:nth-child(3) {
+  width: 39%;
+}
+
+.slidev-layout.default.misstep-taxonomy-slide .misstep-taxonomy-table td strong {
+  display: block;
+  color: var(--aipp-text);
+  font-size: 0.84rem;
+  font-weight: 760;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.misstep-taxonomy-note {
+  margin: 0.78rem 0 0;
+  color: color-mix(in srgb, var(--aipp-text) 88%, var(--aipp-soft));
+  font-size: 0.82rem;
+  font-weight: 620;
+  line-height: 1.22;
+}
+
+.misstep-taxonomy-note::before {
+  color: var(--aipp-accent);
+  content: "Scope: ";
+  font-weight: 760;
+}
+
+/* ============================================================
    SHARED PLUMBING for slides with a decorative backdrop:
    the slide clips and isolates its stacking context, the
    ::before carries the artwork, the content sits above it.
@@ -1763,6 +1825,70 @@ html.print .critique-patient-photo {
   width: 860px;
   max-width: calc(100vw - 2.7rem);
   margin: 0 auto;
+}
+
+/* ============================================================
+   PLATFORM PATIENTS — current LLMPatients base avatars
+   ============================================================ */
+.slidev-layout.default.platform-patients-slide {
+  overflow: hidden;
+  padding: 2.05rem 2.1rem;
+}
+
+.slidev-layout.default.platform-patients-slide h1 {
+  margin-bottom: 1.05rem;
+  font-size: 2.15rem;
+}
+
+.platform-patient-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.78rem;
+  width: 100%;
+}
+
+.platform-patient-card {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, #fff 14%, transparent);
+  border-radius: var(--aipp-radius-sm);
+  background: #101417;
+  box-shadow: var(--aipp-shadow-soft);
+}
+
+.platform-patient-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0) 48%, rgb(0 0 0 / 0.7) 100%);
+  pointer-events: none;
+}
+
+.platform-patient-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.platform-patient-card figcaption {
+  position: absolute;
+  left: 0.82rem;
+  right: 0.82rem;
+  bottom: 0.74rem;
+  z-index: 2;
+  margin: 0;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 720;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-shadow: 0 1px 14px rgb(0 0 0 / 0.58);
 }
 
 /* ============================================================
