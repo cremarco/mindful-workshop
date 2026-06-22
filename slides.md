@@ -495,7 +495,7 @@ class: section-02
 
 <div class="bento-grid bento-3">
   <div class="bento-card bento-accent span-2 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/risk-warning.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/model-hex-token.png')" alt="" aria-hidden="true" />
     <span class="bento-title">A plausible answer is not a stable patient</span>
     <p>Prompt-only personas can sound clinically credible while drifting across sessions, flattening conflict, or hiding why the patient responded that way.</p>
   </div>
@@ -582,7 +582,7 @@ class: section-03
 
 <div class="bento-grid bento-3">
   <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/persona-layers.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/conversation-bubbles.png')" alt="" aria-hidden="true" />
     <span class="bento-title">P &gt; M &gt; S profile</span>
     <p>Personality, mental functioning and symptoms/state define the clinical constraints.</p>
   </div>
@@ -603,7 +603,7 @@ class: section-03
     <p>State graph, prompt builder and deterministic guardrails constrain the simulation.</p>
   </div>
   <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/feedback-loop.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/trajectory-nodes.png')" alt="" aria-hidden="true" />
     <span class="bento-title">Misstep feedback</span>
     <p>Therapeutic errors become reviewable training artefacts for supervision.</p>
   </div>
@@ -620,7 +620,7 @@ class: section-03
 
 <div class="bento-grid bento-3">
   <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/digital-access-button.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/clinical-chat-stack.png')" alt="" aria-hidden="true" />
     <span class="bento-eyebrow">Layer 01</span>
     <span class="bento-title">Student / lecturer UI</span>
     <p>Students conduct sessions; lecturers inspect patients, transcripts and feedback artefacts.</p>
@@ -631,7 +631,7 @@ class: section-03
     <p>Coordinates turn flow, pathway stage, safety checks and role boundaries.</p>
   </div>
   <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/mind-profile.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/identity-badge.png')" alt="" aria-hidden="true" />
     <span class="bento-eyebrow">Layer 03</span>
     <span class="bento-title">Patient profile: P &gt; M &gt; S</span>
     <p>Personality, mental functioning and symptoms/state constrain the simulation.</p>
@@ -647,7 +647,7 @@ class: section-03
     <p>The model renders language from explicit constraints; it is not the patient itself.</p>
   </div>
   <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/evaluation-checklist.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/feedback-loop.png')" alt="" aria-hidden="true" />
     <span class="bento-eyebrow">Layer 06</span>
     <span class="bento-title">Logging + misstep analysis</span>
     <p>Transcripts, telemetry and error categories become reviewable supervision material.</p>
@@ -676,7 +676,7 @@ class: section-04
 
 <div class="bento-grid bento-3">
   <div class="bento-card bento-accent span-2 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/identity-badge.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/evaluation-checklist.png')" alt="" aria-hidden="true" />
     <span class="bento-eyebrow">Formative evaluation</span>
     <span class="bento-title">Think Aloud + System Usability Scale</span>
     <p>The evaluation focused on clarity, interaction breakdowns and workflow comprehensibility in an early implemented interface.</p>
@@ -731,7 +731,7 @@ class: section-04
     <p>Profiles without clinical impairment should remain distinguishable from clinical cases.</p>
   </div>
   <div class="bento-card bento-accent span-3 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/model-hex-token.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/evidence-chart-check.png')" alt="" aria-hidden="true" />
     <span class="bento-title">Boundary condition</span>
     <p>This is profile-to-response alignment, not independent clinical validation of a real patient.</p>
   </div>
@@ -779,7 +779,7 @@ class: section-04
     <p>Moderate binary agreement; category agreement 83.7% when both flagged a turn.</p>
   </div>
   <div class="bento-card bento-accent span-3 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/clinical-compass.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/risk-warning.png')" alt="" aria-hidden="true" />
     <span class="bento-title">Interpretation</span>
     <p>The taxonomy is sensitive, but adjudication is needed before strong automated-feedback accuracy claims.</p>
   </div>
@@ -894,7 +894,7 @@ class: section-06
     <p>Claims require usability, coherence, expert review and learning-outcome evidence.</p>
   </div>
   <div class="bento-card bento-accent span-3 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/conversation-bubbles.png')" alt="" aria-hidden="true" />
+    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/mind-profile.png')" alt="" aria-hidden="true" />
     <span class="bento-title">Personality is not a prompt</span>
     <p>A clinically useful virtual patient needs structured personality, memory, state and governance around the LLM.</p>
   </div>

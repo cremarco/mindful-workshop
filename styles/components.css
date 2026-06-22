@@ -192,30 +192,35 @@
 }
 
 .bento-card.has-corner-icon {
-  --corner-icon-size: 5.75rem;
-  --corner-icon-right: -0.7rem;
+  --corner-icon-size: 5.15rem;
+  --corner-icon-top: -0.75rem;
+  --corner-icon-right: -0.55rem;
+  --corner-icon-bottom: auto;
   --corner-icon-rotation: -5deg;
 
   min-height: 7.2rem;
   overflow: hidden;
   isolation: isolate;
-  padding-right: min(7.35rem, 42%);
+  padding-right: min(6.35rem, 36%);
 }
 
 .bento-card.has-corner-icon.span-2,
 .bento-card.has-corner-icon.span-3 {
-  --corner-icon-size: 8.8rem;
-  --corner-icon-right: -1rem;
+  --corner-icon-size: 7.2rem;
+  --corner-icon-top: -0.8rem;
+  --corner-icon-right: -0.85rem;
 
-  padding-right: min(10.35rem, 34%);
+  padding-right: min(8.6rem, 28%);
 }
 
 .bento-card.education-goal-card {
-  --corner-icon-size: 12.2rem;
-  --corner-icon-right: -1.55rem;
+  --corner-icon-size: 10.8rem;
+  --corner-icon-top: auto;
+  --corner-icon-right: -1.25rem;
+  --corner-icon-bottom: -1.55rem;
   --corner-icon-rotation: -6deg;
 
-  padding-right: 13.25rem;
+  padding-right: 11.6rem;
 }
 
 .bento-card.has-corner-icon > :not(.bento-corner-icon) {
@@ -225,15 +230,16 @@
 
 .bento-corner-icon {
   position: absolute;
-  top: 50%;
+  top: var(--corner-icon-top);
   right: var(--corner-icon-right);
+  bottom: var(--corner-icon-bottom);
   z-index: 0;
   width: var(--corner-icon-size);
   height: var(--corner-icon-size);
   object-fit: contain;
   opacity: 0.98;
   pointer-events: none;
-  transform: translateY(-50%) rotate(var(--corner-icon-rotation));
+  transform: rotate(var(--corner-icon-rotation));
   filter: drop-shadow(0 18px 28px rgb(0 0 0 / 0.2)) saturate(1.08);
 }
 
