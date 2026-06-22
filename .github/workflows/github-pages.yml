@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Slidev
-        run: pnpm exec slidev build --base /AIPP/ --router-mode hash
+        run: pnpm exec slidev build --base /AIPP-full/ --router-mode hash
 
       - name: Disable Jekyll
         run: touch dist/.nojekyll
