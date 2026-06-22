@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: IA_psicopatologia_articolo.aux
+The style file: unsrtnat.bst
+Database file #1: references.bib
+You've used 43 entries,
+            2481 wiz_defined-function locations,
+            780 strings with 12597 characters,
+and the built_in function-call counts, 14792 in all, are:
+= -- 1254
+> -- 743
+< -- 23
++ -- 306
+- -- 218
+* -- 1007
+:= -- 2411
+add.period$ -- 163
+call.type$ -- 43
+change.case$ -- 86
+chr.to.int$ -- 41
+cite$ -- 43
+duplicate$ -- 701
+empty$ -- 1412
+format.name$ -- 266
+if$ -- 3151
+int.to.chr$ -- 3
+int.to.str$ -- 44
+missing$ -- 20
+newline$ -- 257
+num.names$ -- 129
+pop$ -- 400
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 439
+stack$ -- 0
+substring$ -- 471
+swap$ -- 90
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 301
+warning$ -- 0
+while$ -- 115
+width$ -- 0
+write$ -- 611

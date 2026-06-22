@@ -1,0 +1,489 @@
+% =====================================================================
+% L'intelligenza artificiale al servizio della psicopatologia
+% Review narrativa e concettuale -- versione per sottomissione
+% Marco Cremaschi, giugno 2026
+% Compilare con: pdflatex (x2)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\captionsetup{font=small,labelfont=bf}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+\title{\textbf{L'intelligenza artificiale al servizio della psicopatologia}\\[0.4em]
+\large Modelli, evidenze, soluzioni commerciali e questioni clinico-regolatorie\\
+per una psichiatria digitale responsabile}
+
+\author{Marco Cremaschi\thanks{Autore corrispondente: \texttt{info@whattadata.it}. Affiliazione da completare prima della sottomissione.}}
+
+\date{Giugno 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent L'intelligenza artificiale (IA) sta entrando nella salute mentale attraverso modelli predittivi, strumenti di \emph{digital phenotyping}, analisi automatica del linguaggio, sistemi generativi e soluzioni commerciali orientate al paziente o al clinico. In diversi ambiti della medicina --- non solo nella diagnostica per immagini, ma anche in elettrocardiografia, monitoraggio ospedaliero, terapia intensiva, nefrologia, gastroenterologia e patologia digitale --- il machine learning (ML) ha raggiunto livelli di validazione e integrazione clinica più maturi quando opera su compiti delimitati, dati standardizzati, segnali fisiologici o flussi strutturati di cartella clinica elettronica, \emph{ground truth} verificabile e workflow digitali. In psicologia e psichiatria, invece, l'oggetto clinico è narrativo, relazionale, longitudinale e contestuale: la diagnosi non è un reperto isolato, ma una formulazione che incide su identità, alleanza terapeutica, stigma e traiettoria di cura. Questo lavoro propone una cornice critica per comprendere in che senso l'IA possa essere ``al servizio della psicopatologia'': non come sostituto del giudizio clinico, ma come strumento per ampliare osservazione, documentazione, monitoraggio e formazione, e come nuovo oggetto relazionale da interrogare nell'anamnesi digitale. Vengono confrontate le evidenze del ML in medicina con quelle dei modelli diagnostici in salute mentale, esaminate le promesse e i rischi dei large language model (LLM), descritte le principali soluzioni commerciali attive nel 2026 e discusse le implicazioni etiche e regolatorie. La tesi conclusiva è che l'IA in salute mentale richieda una validazione più rigorosa e una governance più attenta proprio perché, a differenza di molti usi medici basati su immagini, segnali o dati strutturati, il suo output non si limita a classificare: può parlare al paziente, orientarne il significato soggettivo e diventare parte della relazione di cura.
+
+\vspace{0.8em}
+\noindent\textbf{Parole chiave:} intelligenza artificiale; psicopatologia; psichiatria digitale; machine learning; large language model; digital phenotyping; salute mentale; governance; dispositivi medici; chatbot.
+\end{abstract}
+
+% =====================================================================
+\section{Introduzione: l'IA è già nella stanza di consultazione}
+\label{sec:intro}
+
+La domanda non è più \emph{se} l'intelligenza artificiale entrerà nella salute mentale. È già entrata: nelle ricerche online dei pazienti, nelle app di auto-aiuto, nei chatbot generalisti, nei sistemi di trascrizione e sintesi, nei flussi amministrativi dei servizi, negli strumenti di telemedicina e nelle piattaforme commerciali che promettono screening, triage, monitoraggio o supporto psicologico \cite{fda-dhac,who2024}. La questione clinica e scientifica diventa quindi come governare questa presenza: quale evidenza richiedere, quali usi distinguere e quali rischi riconoscere.
+
+Un caso clinico ipotetico rende il problema concreto. Un giovane adulto in ritiro sociale arriva in consultazione dopo settimane di conversazioni quotidiane con un chatbot. Ha chiesto al sistema se fosse depresso, se dovesse assumere farmaci, se la sua famiglia fosse tossica, se la vita avesse senso. Quando incontra il terapeuta riferisce: ``Mi capisce meglio di tutti''. In questa scena l'IA non è solo uno strumento esterno: è già un interlocutore pregresso, un mediatore della domanda d'aiuto e un possibile ``terzo'' nella relazione clinica.
+
+La tesi di questo lavoro è duplice. Da un lato, l'IA può servire la psicopatologia come \emph{tecnologia di osservazione}: documenta, sintetizza, monitora, segnala pattern, supporta il training e può rendere più continuo l'ascolto dei cambiamenti nel tempo. Dall'altro, l'IA diventa parte dell'\emph{ambiente relazionale e simbolico} in cui la sofferenza mentale si esprime, specialmente nei nativi digitali. Un chatbot può funzionare come confidente, specchio narcisistico, validatore continuo, oggetto transizionale digitale, rinforzo dell'evitamento sociale o amplificatore di ruminazione e credenze deliranti \cite{grabb2024,dohnany2025}.
+
+\begin{quote}\itshape
+L'IA non è solo uno strumento che misura la psicopatologia: sta diventando parte dell'ecologia in cui la psicopatologia si esprime. Sarà davvero al servizio della clinica solo se aumenterà la capacità di osservare, accompagnare e proteggere la sofferenza mentale, senza sostituire giudizio clinico, relazione terapeutica e responsabilità professionale.
+\end{quote}
+
+% =====================================================================
+\section{Metodo e status epistemico delle fonti}
+\label{sec:metodo}
+
+Questo lavoro è una review narrativa e concettuale, non una revisione sistematica. È costruito a partire da fonti regolatorie e istituzionali, letteratura peer-reviewed selezionata, preprint recenti --- sempre indicati come tali --- e da una mappatura delle soluzioni commerciali attive nel 2026. L'obiettivo è fornire una cornice argomentativa per distinguere usi, evidenze e rischi dell'IA in psicopatologia, non stimare in modo esaustivo l'efficacia dei singoli strumenti.
+
+La gerarchia delle fonti adottata è la seguente: (1) fonti istituzionali e regolatorie (FDA, WHO, APA, Unione Europea); (2) studi peer-reviewed e trial clinici o pragmatici; (3) review sistematiche e scoping review; (4) preprint recenti; (5) pagine commerciali e white paper aziendali, usati per mappare il mercato ma mai per inferire efficacia; (6) notizie giornalistiche, usate solo come segnalazione di controversie pubbliche. Tutte le metriche quantitative riportate sono state verificate sulle fonti primarie (pubblicazioni peer-reviewed o \emph{decision summaries} regolatorie); i claim aziendali sono esplicitamente segnalati come tali. I limiti di questo approccio sono discussi nella sezione~\ref{sec:limiti}.
+
+% =====================================================================
+\section{Una tassonomia operativa}
+\label{sec:tassonomia}
+
+\subsection{Clinician-facing e patient-facing}
+
+Molte discussioni sull'IA in salute mentale falliscono perché usano la parola ``IA'' come categoria unica. In realtà il rischio clinico cambia radicalmente a seconda che il sistema sia rivolto al professionista o parli direttamente con il paziente. Nei sistemi \emph{clinician-facing} il professionista usa l'IA per documentare, sintetizzare, cercare pattern, ricevere alert o migliorare il workflow: la responsabilità resta visibile, perché il clinico può revisionare, correggere, contestualizzare e assumere decisioni. Nei sistemi \emph{patient-facing} --- chatbot, app, companion, self-help, triage conversazionale, supporto tra sedute --- il rischio relazionale è più alto: l'output può influenzare scelte, significati, identità, alleanza e comportamenti in crisi.
+
+La distanza dal paziente vulnerabile è dunque una variabile di rischio. Una sintesi automatica di cartella, se revisionata dal clinico, è qualitativamente diversa da un chatbot che risponde a un adolescente suicidario alle tre di notte. Più il sistema si avvicina al paziente in modo autonomo, più servono validazione, supervisione umana, procedure di escalation, trasparenza e accountability \cite{fda-dhac,who2024}.
+
+\subsection{Cinque famiglie di IA in psicopatologia}
+
+La tabella~\ref{tab:famiglie} distingue cinque famiglie operative di IA in salute mentale. Le famiglie non sono mutuamente esclusive: le piattaforme più recenti combinano NLP, modelli generativi, dati di comportamento digitale, algoritmi predittivi e modelli multimodali. La classificazione è utile perché rende visibile che ``IA'' non è una tecnologia unica, ma un insieme di funzioni con evidenze, rischi e responsabilità differenti.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Famiglie operative di IA in salute mentale.}
+\label{tab:famiglie}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{3.1cm} Y Y}
+\toprule
+\textbf{Famiglia} & \textbf{Dati e usi tipici} & \textbf{Punto critico} \\
+\midrule
+Machine learning predittivo & Rischio, ricadute, drop-out, risposta ai trattamenti, triage. & Stima probabilità; utile per organizzazione e monitoraggio, ma non produce formulazione psicopatologica. \\
+\addlinespace
+NLP / analisi del linguaggio & Testi clinici, linguaggio spontaneo, social media, trascrizioni. & Individua segnali di sentiment, coerenza, impoverimento, disorganizzazione; rischio di decontestualizzazione. \\
+\addlinespace
+Digital phenotyping & Smartphone, wearable, sonno, attività, mobilità, ritmo circadiano, socialità. & Può rendere l'osservazione più ecologica e longitudinale; rischio di sorveglianza e falsi proxy. \\
+\addlinespace
+IA generativa / LLM & Chatbot, sintesi cliniche, psicoeducazione, simulazione, supporto tra sedute. & Produce linguaggio e può essere percepita come empatica; rischio di falsa cura e delega impropria. \\
+\addlinespace
+IA multimodale & Testo, voce, volto, movimento, cartella clinica, sensori e wearable. & Promette integrazione di segnali complessi; aumenta invasività, opacità e problemi di consenso. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% =====================================================================
+\section{Perché il ML è più maturo in medicina: immagini, segnali e dati strutturati}
+\label{sec:medicina}
+
+Per introdurre l'IA in psicopatologia è utile partire dai contesti in cui il machine learning ha mostrato maggiore maturità clinica in medicina. Non si tratta soltanto della diagnostica per immagini: radiologia, oftalmologia, endoscopia e patologia digitale restano esempi paradigmatici, ma una parte rilevante dell'evidenza proviene anche da segnali fisiologici standardizzati come l'ECG \cite{ribeiro2020,yao2021}, da flussi longitudinali di cartella clinica elettronica \cite{tomasev2019}, da sistemi di allerta per sepsi o deterioramento clinico \cite{adams2022} e da strumenti di supporto decisionale integrati nel workflow ospedaliero \cite{topol2019}. In questi ambiti il compito è spesso più circoscritto, il dato è più ripetibile, il target clinico è definito da criteri relativamente verificabili e l'impatto può essere misurato con outcome di processo o di salute. La tabella~\ref{tab:medicina} riassume esempi rappresentativi.
+
+\begin{longtable}{>{\RaggedRight}p{2.1cm} >{\RaggedRight}p{2.4cm} >{\RaggedRight}p{4.0cm} >{\RaggedRight}p{5.3cm}}
+\caption{Esempi di ML in medicina con compiti delimitati e workflow misurabili.}
+\label{tab:medicina}\\
+\toprule
+\textbf{Scenario} & \textbf{Sistema} & \textbf{Uso clinico} & \textbf{Performance e qualità dell'evidenza} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\footnotesize\itshape Tabella \ref{tab:medicina} (continua)}\\
+\toprule
+\textbf{Scenario} & \textbf{Sistema} & \textbf{Uso clinico} & \textbf{Performance e qualità dell'evidenza} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\small Retinopatia diabetica & \small IDx-DR (Digital Diagnostics) & \small Screening autonomo su immagini retiniche in adulti diabetici senza retinopatia nota. & \small Trial pivotale prospettico (900 arruolati, 819 con output diagnostico): sensibilità 87,2\%, specificità 90,7\%, imageability 96,1\%; primo sistema diagnostico autonomo autorizzato FDA De Novo, con uso previsto ristretto e referral in caso di \emph{no result} \cite{abramoff2018,fda-idx}. \\
+\addlinespace
+\small Mammografia & \small MASAI (lettura assistita da IA) & \small Supporto alla lettura nello screening mammografico di popolazione. & \small RCT pragmatico, analisi intermedia su 80\,033 donne: detection rate 6,1 vs 5,1 per 1\,000 (circa +20\%) e riduzione del carico di lettura del 44,3\% \cite{lang2023}. Lo studio real-world tedesco PRAIM (463\,094 donne) riporta +17,6\% di detection senza aumento dei richiami \cite{eisemann2025}. \\
+\addlinespace
+\small Colonscopia & \small GI Genius (Medtronic) & \small Rilevazione in tempo reale di lesioni e polipi durante colonscopia. & \small RCT multicentrico: ADR 54,8\% vs 40,4\%; adenomi per colonscopia 1,07 vs 0,71 \cite{repici2020}; stime aggiustate nella decision summary FDA: 55,1\% vs 42,0\% \cite{fda-gigenius}. \\
+\addlinespace
+\small Patologia digitale & \small Paige Prostate Detect & \small Supporto al patologo nell'identificare aree sospette di carcinoma prostatico in biopsie digitalizzate. & \small FDA De Novo: miglioramento stimato della sensibilità per-biopsia di circa 7,3 punti percentuali; specificità assistita 89,5\% vs 88,5\% \cite{fda-paige}. \\
+\addlinespace
+\small ECG / scompenso occulto & \small AI-ECG, trial EAGLE & \small Identificazione di pazienti con bassa frazione di eiezione a partire da ECG di routine. & \small Trial pragmatico cluster-randomizzato: 22\,641 adulti, 120 team, 45 sedi; diagnosi di bassa frazione di eiezione 2,1\% vs 1,6\%; tra i positivi all'AI-ECG, 19,5\% vs 14,5\% \cite{yao2021}. \\
+\addlinespace
+\small ECG a 12 derivazioni & \small Reti neurali profonde & \small Classificazione automatica di anomalie elettrocardiografiche e aritmie. & \small Grandi dataset retrospettivi e studi peer-reviewed su milioni di ECG; metriche elevate in compiti definiti, ma dipendenti da setting, label e popolazione \cite{ribeiro2020}. \\
+\addlinespace
+\small Danno renale acuto & \small Deep learning su EHR longitudinali & \small Predizione continua di AKI durante il ricovero, con anticipo fino a 48 ore. & \small Coorte di 703\,782 adulti: predetti il 55,8\% degli episodi inpatient e il 90,2\% degli AKI che richiedevano dialisi; circa 2 falsi alert per ogni alert corretto \cite{tomasev2019}. \\
+\addlinespace
+\small Sepsi & \small TREWS & \small Early warning system su cartella clinica elettronica per identificare la sepsi e accelerare il trattamento. & \small Studio prospettico multisito: 590\,736 pazienti monitorati; nei casi confermati dal clinico entro 3 ore, riduzione associata della mortalità intraospedaliera del 3,3\% assoluto (18,7\% relativo) \cite{adams2022}. \\
+\addlinespace
+\small Sepsi (contro-esempio) & \small Epic Sepsis Model & \small Modello proprietario EHR-based ampiamente implementato. & \small Validazione esterna: 27\,697 pazienti, 38\,455 ricoveri; AUC 0,63; non identificato il 67\% dei casi di sepsi, con elevato burden di alert \cite{wong2021}. \\
+\end{longtable}
+
+Questi esempi non vanno usati per sostenere che l'IA sostituisca radiologi, patologi, cardiologi, internisti o intensivisti. La lezione più utile è opposta: il ML diventa clinicamente credibile quando ha un uso previsto ristretto, un protocollo di validazione, dati di sviluppo e test separati, validazione esterna, misura dell'impatto sul workflow, supervisione umana e responsabilità chiaramente collocata. La maturità è inoltre disomogenea anche nella medicina generale: i modelli su cartella elettronica e i sistemi di early warning possono essere potenti, ma sono più vulnerabili a shift di popolazione, deriva della calibrazione, alert fatigue e scarsa trasparenza rispetto a molti compiti di imaging. Il caso dell'Epic Sepsis Model \cite{wong2021} mostra che ``usato in ospedale'' non significa automaticamente ``clinicamente valido''.
+
+% =====================================================================
+\section{Perché la psicopatologia è un caso diverso}
+\label{sec:diverso}
+
+Una mammografia è un'immagine; un ECG è un segnale; una sepsi è una traiettoria fisiologica; un delirio è un'esperienza vissuta. Il confronto con la medicina dell'immagine e dei segnali serve a chiarire perché l'IA in psicopatologia richiede standard di validazione e governance \emph{diversi}, non minori.
+
+In psicopatologia il ``dato'' non è mai semplicemente dato. È una narrazione situata, influenzata dal contesto, dalla relazione, dal linguaggio, dalla cultura, dalla vergogna, dalla memoria, dalla domanda d'aiuto e dalle aspettative del paziente. La diagnosi è spesso longitudinale e probabilistica; le categorie sono eterogenee; la comorbidità è la norma; l'outcome non è un singolo reperto, ma una costellazione di sintomi, funzionamento, qualità della vita, rischi, relazioni e significati.
+
+Questo non rende impossibile l'uso del machine learning. Rende però pericoloso trasferire in modo ingenuo il paradigma ``classifica-lesione'' alla salute mentale. Un errore diagnostico in psicopatologia non produce solo un falso positivo o un falso negativo: può modificare il modo in cui il paziente si comprende, rinforzare una credenza delirante, amplificare lo stigma, indebolire l'alleanza terapeutica, promuovere l'evitamento o generare dipendenza dal dispositivo. La tabella~\ref{tab:pixel} sintetizza le differenze strutturali.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Dal pixel al significato: differenze strutturali tra domini.}
+\label{tab:pixel}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{2.6cm} Y Y}
+\toprule
+\textbf{Dimensione} & \textbf{Medicina di immagini, segnali e dati strutturati} & \textbf{Psicopatologia} \\
+\midrule
+Dato & Immagine o segnale standardizzato. & Linguaggio, relazione, contesto, storia, funzionamento. \\
+\addlinespace
+Ground truth & Reperto anatomo-clinico o consenso specialistico relativamente stabile. & Diagnosi clinica spesso costrutto, longitudinale, influenzata da setting e comorbidità. \\
+\addlinespace
+Output & Rilevare, misurare, classificare un segno. & Formulare, comprendere, negoziare significato e piano di cura. \\
+\addlinespace
+Rischio dell'output & Mancata diagnosi o sovradiagnosi biologica. & Effetto su identità, stigma, comportamento, relazione terapeutica. \\
+\addlinespace
+Workflow & Spesso già digitale e protocollato. & Spesso frammentato, narrativo, multi-professionale, non completamente strutturato. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Da qui deriva una regola metodologica: in salute mentale non basta chiedere ``quanto è accurato il modello?''. Bisogna chiedere: accurato \emph{per chi}, in quale popolazione, contro quale riferimento, in quale contesto, con quale responsabilità, con quali conseguenze e con quale gestione degli errori.
+
+% =====================================================================
+\section{Machine learning diagnostico in psicologia e psichiatria}
+\label{sec:mldiag}
+
+I modelli diagnostici in psicologia e psichiatria cercano di identificare una condizione clinica o una categoria diagnostica a partire da dati neurobiologici, linguistici, comportamentali o digitali. I compiti tipici includono classificare depressione maggiore vs controlli, disturbo bipolare vs depressione unipolare, schizofrenia vs controlli, psicosi vs non psicosi, disturbo dello spettro autistico (ASD), ADHD, PTSD, oppure severità sintomatologica sopra o sotto soglia.
+
+\subsection{Tipi di modelli e dati}
+
+I modelli più usati includono support vector machine, random forest, gradient boosting, regressione logistica regolarizzata, reti neurali profonde, CNN per immagini o spettri, modelli sequenziali e transformer, e architetture multimodali. I dati possono derivare da fMRI o rs-fMRI, EEG, voce, testo, cartelle cliniche elettroniche, questionari, video, espressioni facciali, smartphone, wearable e social media \cite{koutsouleris2021,guo2024}. Nei lavori più recenti compaiono anche transformer e LLM per classificazione, estrazione di segnali clinici e generazione di giudizi assistiti \cite{hua2025}.
+
+\subsection{Stato dell'evidenza}
+
+La letteratura contiene molte performance apparentemente elevate, talvolta superiori al 90\% di accuratezza o AUC in classificazioni caso-controllo. Tuttavia, la maturità clinica è molto più bassa rispetto al ML medico descritto nella sezione~\ref{sec:medicina}. Le ragioni principali sono campioni piccoli, dataset monocentrici, controllo insufficiente dei confondenti, validazioni esterne rare, prevalenze artificiali, diagnosi di riferimento generate dal medesimo sistema clinico che il modello dovrebbe supportare, rischio di \emph{data leakage} e scarsa trasferibilità a popolazioni comorbide e real-world. Le percentuali elevate vanno quindi lette chiedendo: campione clinico reale o caso-controllo? Prevalenza clinica o artificiale? Validazione esterna? Studio prospettico? Outcome clinico o label diagnostica? Presenza di comorbidità? Bias demografici? Impatto sulla decisione?
+
+La tabella~\ref{tab:diagnosi} mappa le principali linee di ricerca diagnostica con un giudizio di maturità. Non tutti gli esempi hanno lo stesso statuto: solo Canvas~Dx ha una traiettoria regolatoria forte; molte altre linee sono ancora dimostrative o di validazione tecnica.
+
+\begin{longtable}{>{\RaggedRight}p{2.5cm} >{\RaggedRight}p{3.6cm} >{\RaggedRight}p{4.0cm} >{\RaggedRight}p{3.5cm}}
+\caption{Diagnosi psicologica e psichiatrica con ML: esempi e qualità dell'evidenza.}
+\label{tab:diagnosi}\\
+\toprule
+\textbf{Patologia / compito} & \textbf{Dati e modelli} & \textbf{Validazione e metriche} & \textbf{Giudizio di maturità} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\footnotesize\itshape Tabella \ref{tab:diagnosi} (continua)}\\
+\toprule
+\textbf{Patologia / compito} & \textbf{Dati e modelli} & \textbf{Validazione e metriche} & \textbf{Giudizio di maturità} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\small ASD pediatrico & \small Canvas Dx (Cognoa); ML su questionari caregiver, video e input clinico. & \small FDA De Novo; studio prospettico a 14 siti, 425 completer; output positivo/negativo nel 32\% dei casi; PPV 80,8\%, NPV 98,3\%, sensibilità 98,4\%, specificità 78,9\% \cite{fda-cognoa}. & \small Alta per l'uso previsto ristretto (18--72 mesi, \emph{diagnostic aid}); non è diagnosi autonoma né generalizzabile alla psichiatria adulta. \\
+\addlinespace
+\small Depressione maggiore & \small rs-fMRI, connettività funzionale, EEG; SVM, random forest, gradient boosting, CNN. & \small Molti studi caso-controllo con accuratezze e AUC elevate; validazioni esterne rare, dataset spesso piccoli o monocentrici. & \small Bassa--moderata; utile per la ricerca, non per la diagnosi clinica routinaria. \\
+\addlinespace
+\small Schizofrenia / psicosi & \small EEG, neuroimaging, linguaggio; SVM, CNN, modelli sequenziali, transformer. & \small Classificazione pazienti vs controlli spesso buona in benchmark; confondenti farmacologici, durata di malattia e setting limitano l'uso diagnostico \cite{koutsouleris2021}. & \small Bassa--moderata; più promettente per fenotipizzazione e supporto che per diagnosi autonoma. \\
+\addlinespace
+\small Bipolare vs depressione unipolare & \small Feature cliniche ed EHR, linguaggio, neuroimaging; gradient boosting, random forest, modelli multimodali. & \small Compito clinicamente rilevante ma difficile; studi spesso retrospettivi e dipendenti da label storiche. & \small Moderata come decision support se validata localmente; non sostituisce il follow-up longitudinale. \\
+\addlinespace
+\small Depressione e ansia da voce & \small Feature acustiche, voice biomarkers, transformer audio. & \small Soluzioni commerciali e studi pilota promettenti; status regolatorio spesso assente o investigazionale. & \small Emergente; utile per screening e triage, fragile come diagnosi. \\
+\addlinespace
+\small Depressione e suicidarietà da social media & \small NLP, transformer, classificatori supervisionati. & \small Benchmark con buone metriche; campionamento non probabilistico, auto-etichettatura, prevalenza dell'inglese, sarcasmo, negazione, privacy. & \small Bassa per la diagnosi clinica; utile per ricerca di popolazione e sorveglianza eticamente controllata. \\
+\addlinespace
+\small PTSD / ADHD & \small Questionari, voce, EHR, neuroimaging ed EEG; SVM, random forest, deep learning. & \small Letteratura eterogenea; spesso classificazione caso-controllo con sola validazione interna. & \small Bassa--moderata; servono studi prospettici, multicentrici e confronti con decisioni cliniche real-world. \\
+\end{longtable}
+
+Il caso più interessante dal punto di vista regolatorio è Cognoa/Canvas~Dx, un ausilio diagnostico per ASD in età pediatrica. Nello studio FDA De Novo, su 425 bambini che completarono l'assessment, il dispositivo produsse un output positivo o negativo solo nel 32\% dei casi e un ``No Result'' nel 68\% \cite{fda-cognoa}. Questo esempio mostra sia la possibilità di un dispositivo diagnostico regolato in ambito neuroevolutivo, sia l'importanza di limitarne l'uso: non è un modello generalista di diagnosi psichiatrica, non sostituisce il clinico e richiede interpretazione nel contesto di storia, osservazione e valutazione specialistica.
+
+% =====================================================================
+\section{NLP: il linguaggio è dato clinico, ma non solo dato}
+\label{sec:nlp}
+
+Il linguaggio è uno dei materiali fondamentali della psicopatologia. L'NLP può analizzare contenuti, coerenza narrativa, sentiment, povertà lessicale, accelerazione ideativa, ripetitività, ruminazione, marcatori di disorganizzazione e contenuti di rischio. Può supportare la trascrizione, la sintesi dei colloqui, l'estrazione di informazioni dalle cartelle cliniche e la generazione di promemoria o follow-up \cite{guo2024,hua2025}.
+
+Il rischio è la decontestualizzazione. Una frase come ``non ce la faccio più'' può indicare crisi suicidaria, depressione, richiesta di aiuto, protesta relazionale, espressione idiomatica, stanchezza temporanea o difesa. Il modello può assegnare probabilità a pattern linguistici; il clinico deve comprendere il senso della frase per quella persona, in quel momento e in quella relazione. Il linguaggio non è solo un segnale: è anche una relazione.
+
+La letteratura su social media e salute mentale mostra potenzialità ma anche limiti importanti: campionamento non probabilistico, prevalenza di dati in lingua inglese, scarsa gestione di negazione, ironia e contesto, bias di piattaforma, etichette auto-dichiarate o inferite e problemi etici di consenso. L'NLP può quindi essere potente per screening e ricerca, ma non va presentato come diagnosi clinica autonoma.
+
+% =====================================================================
+\section{Digital phenotyping: la psicopatologia fuori dallo studio}
+\label{sec:phenotyping}
+
+Il digital phenotyping consiste nella raccolta e analisi di dati comportamentali e fisiologici attraverso smartphone, wearable e sensori digitali \cite{onnela2016,torous2017}. Sonno, mobilità, attività fisica, ritmo circadiano, geolocalizzazione, frequenza d'uso dello smartphone, pattern di comunicazione e interazioni sociali possono diventare segnali longitudinali. L'idea clinica è passare da fotografie episodiche del funzionamento a traiettorie ecologiche nel tempo.
+
+Il potenziale è evidente per il monitoraggio di depressione, disturbo bipolare, psicosi, ansia, dipendenze e rischio di drop-out. Il digital phenotyping può intercettare cambiamenti prima che diventino crisi: inversione sonno-veglia, riduzione della mobilità, isolamento, frammentazione dei ritmi, calo dell'attività o aumento di comportamenti ripetitivi. Tuttavia, il salto da correlato comportamentale a significato clinico è delicato: stare in casa può indicare depressione, ma anche una scelta lavorativa, una malattia fisica, un lutto, povertà, ricerca di sicurezza o un tratto culturale.
+
+L'ambivalenza dello strumento va dunque resa esplicita. La promessa è intercettare segnali precoci, ridurre ritardi, aumentare la continuità tra le visite e personalizzare il follow-up. Il rischio è la sorveglianza: violazioni della privacy, falsi allarmi, ansia da monitoraggio, etichettamento, dati rumorosi e bias tecnologico. La condizione etica minima comprende consenso informato, minimizzazione dei dati, trasparenza, diritto alla disconnessione, procedure di escalation e supervisione umana. In sintesi: \emph{il dato digitale diventa clinico solo dentro un patto di cura}.
+
+% =====================================================================
+\section{IA generativa e LLM: dalla classificazione alla conversazione}
+\label{sec:llm}
+
+Con i large language model il problema cambia qualitativamente. L'IA non si limita più a classificare o predire: \emph{risponde}. Produce linguaggio, simula comprensione, riformula, rassicura, consiglia e talvolta assume una posizione conversazionale che il paziente può percepire come clinica. Il salto non è solo la capacità di generare testo plausibile; è il fatto che il modello entra nella forma del dialogo.
+
+Le review recenti sugli LLM in salute mentale mostrano un interesse crescente per psicoeducazione, supporto tra sedute, simulazione, triage, risposta empatica, formazione e gestione documentale \cite{hua2025,guo2024}. Il primo RCT su un chatbot generativo fine-tuned per il trattamento (Therabot) ha riportato riduzioni sintomatologiche significative in 210 adulti con depressione, ansia o rischio di disturbi alimentari, con alleanza percepita paragonabile a quella con terapeuti umani \cite{heinz2025}; si tratta però di un singolo studio a quattro settimane con controllo in lista d'attesa, condotto dagli sviluppatori dello strumento. Più in generale, l'evidenza clinica resta eterogenea e spesso basata su studi osservazionali, benchmark, valutazioni di esperti, preprint o coorti naturali \cite{li2023}. La capacità di produrre risposte percepite come empatiche \cite{lee2024,welivita2024} non equivale a competenza psicoterapeutica.
+
+L'empatia terapeutica non è solo tono caldo o validazione. Richiede setting, responsabilità, confini, gestione del rischio, lavoro sull'ambivalenza, capacità di frustrazione, interpretazione del contesto e continuità. A volte ciò che il paziente vive come massimamente empatico può diventare clinicamente rischioso: una validazione senza limite può rinforzare ruminazione, dipendenza, evitamento o delirio \cite{grabb2024,dohnany2025}. La tabella~\ref{tab:llm} distingue tre livelli d'uso con profili di rischio crescenti.
+
+\begin{table}[htbp]
+\centering\small
+\caption{LLM in salute mentale: tre livelli d'uso.}
+\label{tab:llm}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{3.2cm} Y Y}
+\toprule
+\textbf{Uso} & \textbf{Esempi} & \textbf{Rischio e qualità} \\
+\midrule
+Clinician-facing & Sintesi di colloqui, note, lettere, piani di cura, ricerca in cartella, training, supervisione simulata. & Più maturo se revisionato e integrato nel workflow; rischio di errori documentali, omissioni e privacy. \\
+\addlinespace
+Patient-facing supervisionato & Psicoeducazione, esercizi CBT/DBT, reminder, supporto tra sedute, triage con escalation. & Possibile utilità come \emph{adjunct}; richiede limiti chiari, contenuti validati e gestione delle crisi. \\
+\addlinespace
+Patient-facing autonomo & Chatbot ``terapeuta'', companion, terapia self-service, supporto in crisi. & Rischio alto: allucinazioni, falsa empatia, dipendenza, consigli impropri, mancato riconoscimento di suicidarietà o psicosi. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Il chatbot come oggetto relazionale}
+\label{sec:oggetto}
+
+Per i nativi digitali l'IA conversazionale può diventare un nuovo oggetto relazionale. Non è solo una fonte di informazioni: può diventare confidente, specchio narcisistico, validatore continuo, oggetto transizionale digitale, testimone immaginario, rinforzo dell'evitamento sociale o interlocutore che il paziente interpreta come ``più comprensivo'' degli altri. Il suo stile disponibile, non giudicante e sempre accessibile è parte della sua attrattiva e anche del suo rischio \cite{dohnany2025}.
+
+La clinica dovrebbe quindi aggiornare l'\emph{anamnesi digitale}. Oltre a chiedere quali social, videogiochi o comunità online frequenta il paziente, diventa utile chiedere con quali sistemi di IA parla, in quali momenti, con quale frequenza, per quali contenuti e con quali effetti sul comportamento. Sei domande minime possono orientare il colloquio:
+
+\begin{enumerate}[itemsep=2pt]
+\item Usi chatbot o strumenti di IA quando stai male?
+\item Hai chiesto consigli su diagnosi, farmaci o terapia?
+\item Ti sei sentito aiutato, confuso o più dipendente?
+\item Hai cambiato comportamento o terapia dopo una risposta dell'IA?
+\item Ti capita di preferire l'IA alle persone reali?
+\item Che ruolo ha per te quell'IA: confidente, consulente, diario, terapeuta, amico, autorità?
+\end{enumerate}
+
+L'ipotesi clinica è che il chatbot vada considerato come un potenziale ``terzo'' nella stanza: può facilitare la domanda d'aiuto, ma può anche strutturare aspettative, autodiagnosi, dipendenza relazionale e interpretazioni del disagio prima dell'incontro con il clinico.
+
+\subsection{Pazienti sintetici, formazione e simulazione}
+\label{sec:sintetici}
+
+Un uso potenzialmente più controllabile degli LLM riguarda la formazione e la simulazione clinica \cite{holderried2024}. Pazienti sintetici basati su profili strutturati possono essere usati per esercitare anamnesi, colloquio, diagnosi differenziale, gestione di errori comunicativi, riparazioni relazionali e riconoscimento del rischio. In questo quadro, framework come DIPPS/LLMPatients --- sviluppati dall'autore --- sono esempi di ambiente sperimentale: non curano pazienti reali, ma rendono osservabile la qualità dell'interazione tra clinico in formazione e paziente simulato.
+
+A titolo illustrativo, una paziente sintetica (``Giovanna''), adattata da un caso clinico didattico dei \emph{DSM-5 Clinical Cases}, include storia, diagnosi, funzionamento, tratti emotivi, obiettivi, farmaci e memoria conversazionale. La simulazione consente di mostrare che un modello linguistico può produrre risposte plausibili, ma anche errori clinicamente significativi: invalidazione, rigidità, mancata riparazione, passaggi troppo rapidi, risposte eccessivamente direttive o mancato riconoscimento del rischio.
+
+Il punto epistemico è cruciale: un paziente sintetico è controllabile, ripetibile e analizzabile; un paziente reale è incarnato, imprevedibile, vulnerabile e portatore di responsabilità etica. La simulazione può servire la formazione proprio perché rende visibile il confine tra capacità conversazionale e responsabilità della cura. Gli usi appropriati comprendono la formazione (colloqui, anamnesi, diagnosi differenziale, rischio suicidario, riparazioni relazionali), la valutazione (log, checklist, errori, deviazioni dal setting) e la ricerca (confronto tra stili comunicativi, prompt, modelli, criteri di sicurezza). Il limite va dichiarato con altrettanta chiarezza: non è terapia, non è diagnosi automatica, non sostituisce il paziente reale né la supervisione clinica.
+
+% =====================================================================
+\section{Soluzioni commerciali di IA in salute mentale nel 2026}
+\label{sec:commerciale}
+
+Il mercato dell'IA in salute mentale esiste già, ma è molto più eterogeneo e meno stabilizzato rispetto al mercato dei dispositivi AI-enabled in altri settori della medicina. Include dispositivi regolati, sistemi di intake e triage, chatbot di auto-aiuto, strumenti di documentazione clinica, piattaforme di quality improvement, care manager vocali, biomarcatori digitali e companion consumer. La distinzione più importante non è commerciale, ma clinica: a chi parla il sistema, quale decisione influenza, quale rischio produce se sbaglia e quanto è verificabile l'output.
+
+La FDA ha esplicitato questa asimmetria nei materiali del Digital Health Advisory Committee del novembre 2025: il panorama dei dispositivi medici AI-enabled autorizzati è ampio --- oltre 1\,200 dispositivi --- ma nessuno era autorizzato per usi di salute mentale; chatbot, virtual companion, automazione sanitaria, modelli predittivi e strumenti generativi sollevano interrogativi specifici su sicurezza, diagnosi, contenuto terapeutico e possibile sostituzione del provider \cite{fda-dhac}.
+
+\subsection{Un mercato a più velocità}
+
+La tabella~\ref{tab:velocita} distingue quattro fasce di maturità, dalle soluzioni regolate ai companion consumer. Le fasce non descrivono qualità intrinseca, ma il rapporto tra funzione dichiarata, evidenza disponibile e collocazione regolatoria.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Fasce di maturità del mercato dell'IA in salute mentale (2026).}
+\label{tab:velocita}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{3.0cm} >{\RaggedRight}p{3.6cm} Y}
+\toprule
+\textbf{Fascia} & \textbf{Esempi} & \textbf{Lettura} \\
+\midrule
+Regolato o quasi medical device & Cognoa / Canvas Dx; Limbic Access. & Pochi esempi, indicazioni d'uso delimitate, forte dipendenza da supervisione clinica e contesto regolatorio. \\
+\addlinespace
+Commerciale con evidenze parziali & Wysa, Woebot, Limbic Care, Aiberry, NeuroFlow. & La funzione può essere utile, ma l'evidenza è spesso eterogenea, non sempre indipendente e raramente equivalente a quella dei dispositivi AI in imaging o segnali medici. \\
+\addlinespace
+Workflow e produttività clinica & Eleos Health, Lyssn, Wysa Copilot. & Probabilmente l'adozione più realistica nel breve termine: clinician-facing, revisionabile, integrabile nel lavoro umano. \\
+\addlinespace
+Consumer companion e IA generalista & Earkick, Youper, companion in stile Replika, chatbot generalisti usati informalmente. & Fenomeno clinicamente rilevante anche quando non è medical device: entra nell'anamnesi digitale e nella relazione con il paziente. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Mappa critica delle soluzioni}
+
+La tabella~\ref{tab:mappa} non è una raccomandazione d'acquisto né una valutazione di conformità. Serve a mostrare come la categoria ``AI in salute mentale'' contenga prodotti con statuti molto diversi: alcuni hanno autorizzazioni regolatorie o studi clinici, altri sono piattaforme di servizio, altri ancora sono strumenti wellness o consumer. I claim aziendali --- tratti dalle pagine ufficiali consultate a giugno 2026 --- sono sempre indicati come tali e vanno tenuti distinti da studi peer-reviewed, decision summary regolatorie e dati indipendenti.
+
+\begin{longtable}{>{\RaggedRight}p{2.2cm} >{\RaggedRight}p{3.4cm} >{\RaggedRight}p{4.0cm} >{\RaggedRight}p{4.0cm}}
+\caption{Soluzioni commerciali di IA in salute mentale: mappa critica (2026).}
+\label{tab:mappa}\\
+\toprule
+\textbf{Soluzione} & \textbf{Target e tipo di IA} & \textbf{Evidenza, regolatorio, claim} & \textbf{Lettura critica} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\footnotesize\itshape Tabella \ref{tab:mappa} (continua)}\\
+\toprule
+\textbf{Soluzione} & \textbf{Target e tipo di IA} & \textbf{Evidenza, regolatorio, claim} & \textbf{Lettura critica} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\small Cognoa / Canvas Dx & \small Clinician-facing. SaMD di supporto alla diagnosi di ASD pediatrico; ML su input di caregiver, video analyst e professionista. & \small FDA De Novo Class II, prescription device, non stand-alone. Studio prospettico double-blind a 14 siti: 425 completer; output nel 32\% dei casi; PPV 80,8\%, NPV 98,3\%, sensibilità 98,4\%, specificità 78,9\% \cite{fda-cognoa}. & \small Probabilmente l'esempio più solido di ML diagnostico regolato vicino alla salute mentale. L'uso è però ristretto: ambito neuroevolutivo, 18--72 mesi, adjunct diagnostico, molte esclusioni e forte supervisione clinica. \\
+\addlinespace
+\small Limbic Access & \small Misto patient/clinician-facing. Intake conversazionale, self-referral, assessment e supporto decisionale per servizi di salute mentale. & \small Dichiarato dispositivo medico Class IIa nel Regno Unito; claim aziendale di 92\% di accuratezza diagnostica su depressione, GAD, PTSD, OCD, panico e disturbi alimentari; report clinico per provider e alert di crisi \cite{limbic}. & \small Interessante per accesso, triage e riduzione del carico di assessment. I claim di accuratezza vanno trattati come dati di prodotto finché non verificati su pubblicazioni indipendenti e indicazioni d'uso specifiche. \\
+\addlinespace
+\small Wysa & \small Patient-facing e ibrido. Chatbot CBT/DBT-like, AI self-help, percorsi con supervisione umana. & \small Claim aziendali: oltre 6 milioni di utenti in 105 Paesi e più di 45 pubblicazioni; disclaimer esplicito: non per crisi, abuso, condizioni severe o emergenze \cite{wysa}; studio real-world mixed-methods \cite{inkster2018}. & \small Buon esempio di adjunct scalabile e di modello ibrido. Non va presentato come terapia autonoma né come strumento diagnostico; la sicurezza dipende da contesto, escalation e integrazione con i servizi. \\
+\addlinespace
+\small Woebot Health & \small Chatbot CBT-oriented e copilot per provider; NLP per selezionare tecniche pre-scritte e riconoscere linguaggio preoccupante. & \small RCT storico su 70 giovani adulti con follow-up a due settimane \cite{fitzpatrick2017}; dichiarazioni aziendali su compliance HIPAA, revisione IRB degli studi e natura non emergenziale del servizio \cite{woebot}. & \small Esempio storico chiave: il chatbot CBT pre-LLM ha evidenze iniziali, ma anche limiti di durata, campione e comparatore. Utile per non confondere chatbot scripted e LLM generativi. \\
+\addlinespace
+\small Eleos Health & \small Clinician-facing. Documentazione ambient, note automatiche, compliance e clinical insights per servizi territoriali. & \small Claim aziendali: riduzione del 70\% del tempo di documentazione, certificazioni HIPAA, HITRUST, SOC~2, ISO~27001/27799/42001 \cite{eleos}. & \small Uso più difendibile a breve termine: l'output è revisionabile dal clinico e non sostituisce il colloquio. Rischio: spostare il focus dalla qualità clinica alla compliance e alla produttività. \\
+\addlinespace
+\small Lyssn & \small Clinician-facing. NLP per trascrizione, valutazione delle sedute, fedeltà a pratiche evidence-based, training e quality improvement. & \small Claim aziendali: oltre 4,5 milioni di sessioni analizzate e più di 65 pubblicazioni; fondata da ricercatori clinici \cite{lyssn}. & \small IA che non parla direttamente al paziente ma misura, forma e supporta la qualità del lavoro umano. Restano da valutare privacy, sorveglianza del terapeuta e uso manageriale dei punteggi. \\
+\addlinespace
+\small NeuroFlow & \small Piattaforma di population health e analytics comportamentale; measurement-informed care, stratificazione del rischio, assessment e referral. & \small Claim aziendali: 6,61 milioni di assessment, 55\,000 casi di ideazione suicidaria o rischio emergente identificati \cite{neuroflow}. & \small Non è diagnosi automatica né terapia AI: è infrastruttura di popolazione. Utile per servizi e integrated care; rischio di trasformare il rischio comportamentale in ranking amministrativo. \\
+\addlinespace
+\small Aiberry & \small Multimodale patient/clinician-facing. Testo, audio e video in breve conversazione; risk score in tempo reale. & \small Claim aziendali di ``AI-powered quantified assessments'' e di uno studio di validazione, da verificare su fonte primaria \cite{aiberry}. & \small Esempio di IA multimodale applicata allo screening. Da non presentare come diagnosi validata finché non sono chiari status regolatorio, popolazioni, metriche e comparatori. \\
+\addlinespace
+\small Ellipsis Health (Sage) & \small AI care manager vocale: chiamate autonome per engagement, assessment e care coordination. & \small Claim aziendali: supervisione clinica, compliance HIPAA e SOC~2, riduzione del 60\% dei task amministrativi \cite{ellipsis}. & \small Più vicino alla care coordination che a psicoterapia o diagnosi. Temi rilevanti: autonomia operativa, consenso, trasparenza e confine tra supporto amministrativo e decisione clinica. \\
+\addlinespace
+\small Kintsugi & \small Voice biomarkers per depressione e ansia: analisi di \emph{come} una persona parla più che di \emph{cosa} dice. & \small Caso non più commerciale: secondo la stampa di settore, la startup ha chiuso nel 2026 dopo non aver ottenuto la clearance FDA in tempo utile, rendendo open source parte della tecnologia \cite{verge2026}. & \small Aneddoto critico istruttivo: un modello promettente non equivale a un dispositivo regolatoriamente sostenibile. Mostra il divario tra biomarcatore digitale, evidenza, percorso FDA e sostenibilità finanziaria. \\
+\addlinespace
+\small Earkick, Youper e companion consumer & \small Patient-facing consumer. Mood tracking, journaling, chatbot o companion multimodale; spesso in ambito wellness. & \small Evidenza e status regolatorio molto variabili; in molti casi non sono medical device e non dichiarano finalità diagnostiche o terapeutiche \cite{ap2024}. & \small Clinicamente importanti perché i pazienti li usano. Vanno inclusi nell'anamnesi digitale, ma non trattati come strumenti sanitari validati. \\
+\end{longtable}
+
+\subsection{Implicazioni}
+
+Dalla mappa emergono cinque punti. Primo: la presenza sul mercato non equivale a maturità clinica. In salute mentale è frequente trovare prodotti con forte narrativa commerciale, metriche di engagement e promesse di accesso, ma senza endpoint clinici robusti, comparatori attivi o follow-up longitudinali \cite{li2023,ap2024}.
+
+Secondo: l'adozione più prudente nel breve periodo riguarda gli strumenti clinician-facing --- documentazione, trascrizione, sintesi, quality improvement, monitoraggio e supporto alla decisione revisionabile. Qui l'errore può essere intercettato dal professionista e il sistema non assume direttamente la posizione di interlocutore terapeutico.
+
+Terzo: gli strumenti patient-facing richiedono una soglia di evidenza più alta, non più bassa. Un chatbot che parla direttamente con un adolescente, una persona isolata, un paziente psicotico o una persona in crisi non produce soltanto un output informativo: può diventare oggetto relazionale, confermare credenze, alimentare dipendenza o modificare comportamenti.
+
+Quarto: i sistemi multimodali e vocali sono scientificamente interessanti perché avvicinano la salute mentale al paradigma dei segnali fisiologici. Tuttavia voce, volto, prosodia, testo e pattern di interazione sono dati profondamente identitari: la promessa di ``oggettivare'' il disagio porta con sé il rischio di sorveglianza, inferenza opaca e classificazione impropria.
+
+Quinto: i casi Cognoa e Kintsugi mostrano i due poli del problema. Cognoa dimostra che un dispositivo ML diagnostico può essere regolato, ma solo con uso previsto delimitato, studio prospettico e ruolo non stand-alone \cite{fda-cognoa}. Kintsugi mostra che un biomarcatore promettente può fallire nel passaggio da modello a dispositivo clinico sostenibile \cite{verge2026}.
+
+La domanda critica, quindi, non è se esistano strumenti commerciali di IA in psicologia e psichiatria: la risposta è sì. La domanda scientificamente rilevante è quale funzione clinica svolgano, quale livello di evidenza la sostenga, chi supervisioni l'output, quale popolazione sia esclusa, come venga gestita la crisi e se il sistema aumenti davvero la cura oppure sposti responsabilità e rischio su pazienti vulnerabili.
+
+% =====================================================================
+\section{Governance, regolazione e responsabilità}
+\label{sec:governance}
+
+Le fonti istituzionali convergono su un punto: l'IA in sanità deve essere governata attraverso trasparenza, supervisione umana, qualità dei dati, gestione del rischio, cybersecurity, monitoraggio post-market e chiarezza dell'uso previsto \cite{who2024,euai,apa}. In salute mentale queste condizioni sono ancora più importanti perché gli output possono avere effetti relazionali e comportamentali immediati.
+
+La FDA, nei materiali del Digital Health Advisory Committee dedicati ai dispositivi digitali generativi per la salute mentale, segnala un divario rilevante: il panorama dei dispositivi AI-enabled in medicina è molto ampio, ma i dispositivi per la salute mentale sono assenti dall'elenco delle autorizzazioni, e i chatbot generativi pongono rischi specifici quali confabulazione, contenuti inappropriati o distorti, fallimento nel trasferire informazioni mediche, deriva dei dati, interpretazioni errate del paziente e potenziale peggioramento sintomatologico \cite{fda-dhac,fda-aiml}. Il grado di autonomia del dispositivo è centrale: sistemi human-in-the-loop e sistemi autonomi non hanno lo stesso profilo di rischio.
+
+Il quadro europeo dell'AI Act adotta una logica risk-based: i sistemi con finalità medica o di supporto a decisioni ad alto impatto tendono a ricadere in categorie che richiedono gestione del rischio, data governance, documentazione tecnica, trasparenza, accuratezza, robustezza, cybersecurity e supervisione umana \cite{euai}. In psicologia e psichiatria occorre inoltre considerare GDPR, dati sanitari, consenso informato, minori, vulnerabilità e responsabilità professionale. La tabella~\ref{tab:checklist} propone una checklist minima per i servizi.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Checklist minima per l'adozione di IA in un servizio di salute mentale.}
+\label{tab:checklist}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{3.0cm} Y}
+\toprule
+\textbf{Area} & \textbf{Domanda minima} \\
+\midrule
+Uso previsto & È amministrativo, documentale, diagnostico, predittivo, terapeutico, formativo o di monitoraggio? \\
+Target & È clinician-facing o patient-facing? Parla direttamente con minori, pazienti in crisi o persone psicotiche? \\
+Dati & Usa dati sanitari, voce, video, geolocalizzazione, wearable, cartelle cliniche o social media? \\
+Validazione & È stato validato su popolazioni simili, con studio prospettico o esterno, e con metriche clinicamente significative? \\
+Gestione delle crisi & Che cosa succede in caso di suicidarietà, abuso, psicosi, autolesionismo, minori o emergenze? \\
+Responsabilità & Chi risponde dell'errore: clinico, servizio, produttore, ente, paziente? \\
+Trasparenza & Il paziente sa che viene usata IA? Capisce che cosa il sistema può e non può fare? \\
+Supervisione & Il clinico può correggere, bloccare, auditare e documentare l'output? \\
+Bias & Sono documentati bias, performance per sottogruppi e limiti culturali e linguistici? \\
+Outcome & Il sistema migliora davvero accesso, sicurezza, qualità o esiti, oppure aggiunge complessità? \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Una matrice di rischio clinico}
+
+Una matrice semplice può aiutare i servizi a evitare discussioni astratte (tabella~\ref{tab:matrice}). L'asse orizzontale distingue clinician-facing e patient-facing; l'asse verticale distingue basso e alto rischio. La stessa tecnologia può cambiare quadrante se cambia l'uso previsto.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Matrice operativa di rischio clinico.}
+\label{tab:matrice}
+\begin{tabularx}{\textwidth}{>{\RaggedRight}p{3.4cm} Y Y}
+\toprule
+\textbf{Quadrante} & \textbf{Esempi} & \textbf{Rischio principale} \\
+\midrule
+Basso rischio, clinician-facing & Sintesi documentale revisionata, bozze di lettere, ricerca in cartella, reminder amministrativi. & Errori documentali, privacy, eccessivo affidamento. \\
+\addlinespace
+Alto rischio, clinician-facing & Predizione suicidaria, rischio di ricaduta, triage prioritario, decision support diagnostico. & Bias, falsi negativi, trasformare una probabilità in destino clinico. \\
+\addlinespace
+Basso--medio rischio, patient-facing & Psicoeducazione validata, esercizi strutturati, reminder, materiali prescritti e supervisionati. & Interpretazione impropria, mancata aderenza, confusione tra supporto e terapia. \\
+\addlinespace
+Alto rischio, patient-facing & Chatbot in crisi suicidaria, psicosi, minori, terapia autonoma, consigli su farmaci o diagnosi. & Allucinazioni, falsa empatia, rinforzo di delirio o evitamento, mancata escalation. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La regola pratica che ne deriva: più l'IA parla direttamente al paziente vulnerabile, più deve essere regolata, validata, supervisionata e dotata di procedure di escalation; più resta strumento revisionato dal clinico, più può essere introdotta come supporto al workflow, pur con controlli di privacy e qualità.
+
+% =====================================================================
+\section{Discussione}
+\label{sec:discussione}
+
+\subsection{Che cosa la psicopatologia può imparare dal ML clinico in medicina}
+
+La salute mentale non deve imitare meccanicamente la radiologia, né assumere che il modello dell'immagine sia l'unico riferimento. Deve invece imparare la lezione metodologica del ML clinico maturo: definire un uso previsto, delimitare il compito, usare dati adeguati e rappresentativi, validare su dati esterni, misurare outcome reali, inserire l'IA nel workflow, mantenere lo human-in-the-loop, auditare gli errori e aggiornare il modello dentro un ciclo di vita controllato \cite{topol2019}. Il punto non è avere un algoritmo brillante; è avere un uso clinicamente situato.
+
+L'oggetto della psicopatologia richiede però una cornice aggiuntiva: l'output non è solo informativo, ma \emph{performativo}. Dire a una persona ``potresti avere un disturbo borderline'', ``sei depresso'', ``la tua famiglia è tossica'', ``dovresti lasciare il partner'' o ``non è grave'' può modificare comportamento, identità e relazione. Quando l'IA conversa, non misura soltanto: interviene.
+
+L'agenda 2026--2030 dovrebbe quindi privilegiare usi aumentativi e non sostitutivi: co-piloti clinici integrati nella cartella; monitoraggio ecologico supervisionato; modelli multimodali con consenso forte e minimizzazione dei dati; pazienti simulati per il training; triage e accesso con trasparenza; strumenti di psicoeducazione prescritti e monitorati; percorsi ibridi servizio--paziente--IA dentro PDTA espliciti.
+
+\subsection{Domande aperte per la ricerca}
+
+Alcune domande restano aperte e meritano studi dedicati. Se un chatbot riduce la solitudine, è già terapia o solo supporto relazionale? Se un sistema sembra più empatico del clinico \cite{welivita2024,lee2024}, è anche più sicuro? Il digital phenotyping è prevenzione o sorveglianza? Qual è il ground truth di una diagnosi psicopatologica quando l'oggetto è longitudinale e relazionale? Si devono prescrivere strumenti di IA validati e scoraggiare quelli generalisti? Come proteggere adolescenti, pazienti psicotici e persone in crisi dall'uso improprio dei chatbot? E quali outcome dovrebbero contare: sintomi, accesso, funzionamento, alleanza, sicurezza, drop-out, qualità di vita?
+
+\subsection{Limiti}
+\label{sec:limiti}
+
+Questo lavoro ha i limiti propri delle review narrative: la selezione delle fonti non segue un protocollo sistematico ed è possibile un bias di selezione verso gli esempi più documentati. La mappatura delle soluzioni commerciali fotografa un mercato in rapida evoluzione (giugno 2026) e si basa in parte su materiali aziendali, utilizzati solo a fini descrittivi; i claim di prodotto non sono stati verificati in modo indipendente. Le metriche regolatorie citate derivano dalle decision summary FDA disponibili e possono non riflettere aggiornamenti successivi. Infine, parte della letteratura sugli LLM in salute mentale è costituita da preprint non ancora sottoposti a peer review, segnalati come tali nei riferimenti.
+
+% =====================================================================
+\section{Conclusioni}
+\label{sec:conclusioni}
+
+L'IA è già presente nella salute mentale, ma la sua maturità clinica è disomogenea. In medicina il ML risulta più maturo quando il compito è delimitato, il dato è visuale, fisiologico o strutturato, il target è verificabile e l'impatto può essere misurato nel workflow: retinopatia diabetica, mammografia, colonscopia, patologia digitale, ECG, allerta sepsi e predizione del danno renale acuto ne sono esempi diversi. In psicopatologia, invece, l'oggetto è esperienza vissuta, linguaggio, relazione e traiettoria temporale. La qualità dell'IA non può quindi essere misurata solo con accuratezza, AUC o F1, ma deve includere sicurezza, utilità clinica, validità esterna, impatto relazionale e responsabilità.
+
+L'IA può diventare uno strumento prezioso per la psicopatologia se aiuta a osservare prima, seguire meglio, documentare con meno carico, formare i clinici, intercettare segnali di rischio e ampliare l'accesso. Diventa pericolosa se viene presentata come terapeuta autonomo, diagnosta generalista o confidente senza limiti per pazienti vulnerabili.
+
+La formula conclusiva è semplice: l'intelligenza artificiale sarà davvero al servizio della psicopatologia solo se resterà al servizio della complessità clinica. Non per sostituire l'incontro, ma per aumentare la capacità dei servizi e dei professionisti di comprendere, accompagnare e proteggere la sofferenza mentale.
+
+% =====================================================================
+\section*{Dichiarazioni}
+
+\paragraph{Conflitti di interesse.} L'autore è sviluppatore dei framework di simulazione DIPPS/LLMPatients citati nella sezione~\ref{sec:sintetici}. Non sono presenti altri conflitti di interesse.
+
+\paragraph{Finanziamenti.} Questo lavoro non ha ricevuto finanziamenti specifici da enti pubblici, commerciali o non profit.
+
+\paragraph{Considerazioni etiche.} Il lavoro non coinvolge pazienti reali né dati personali; il caso clinico in apertura è ipotetico e la paziente simulata citata è un costrutto sintetico derivato da materiale didattico pubblicato.
+
+\paragraph{Uso di IA nella preparazione del manoscritto.} Strumenti di IA generativa sono stati utilizzati come supporto editoriale alla revisione del testo; l'autore ha verificato e si assume la responsabilità di tutti i contenuti.
+
+% =====================================================================
+{\small
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+}
+
+\end{document}

@@ -5,21 +5,27 @@ import { cssUrl, imageUrl, withBase } from '../utils/images'
    Injected at runtime (not hard-coded in CSS) so the URLs resolve
    correctly under any deploy base path. */
 const imageCssVariables: Record<string, string> = {
-  '--aipp-cover-bg-image': 'backgrounds/aipp-cover.png',
-  '--aipp-marco-bg-image': 'backgrounds/marco.png',
-  '--aipp-whattadata-bg-image': 'backgrounds/whattadata.png',
-  '--aipp-socialita-bg-image': 'backgrounds/socialita-digitale.png',
-  '--aipp-ia-cosa-pensiamo-shape': 'decorations/sections/ia-salute-mentale-cosa-pensiamo.png',
-  '--aipp-ia-cosa-pensiamo-compact-shape': 'decorations/sections/ia-cosa-pensiamo-compact.png',
-  '--aipp-ml-psicologia-shape': 'decorations/sections/ml-psicologia-psichiatria.png',
-  '--aipp-sfide-future-shape': 'decorations/sections/sfide-future.png',
-  '--aipp-aspetti-normativi-shape': 'decorations/sections/aspetti-normativi-oblong.png',
-  '--aipp-tool-index-shape': 'decorations/sections/tool-index.png',
-  '--aipp-domande-discussione-shape': 'decorations/sections/domande-discussione.png',
-  '--aipp-tesi-finale-shape': 'decorations/sections/tesi-finale-oblong.png',
-  '--aipp-grazie-frame': 'decorations/thanks/grazie-corner.png',
-  '--aipp-arianne-feedback-thread': 'decorations/feedback/arianne-yarn.png',
-  '--aipp-parche-shape': 'decorations/sections/parche-cropped.png',
+  '--aipp-cover-bg-image': 'aipp-cover-bg.png',
+  '--aipp-marco-bg-image': 'aipp-marco-bg.png',
+  '--aipp-whattadata-bg-image': 'whattadata-bg.png',
+  '--aipp-socialita-bg-image': 'socialita-digitale-bg.png',
+  '--aipp-ia-cosa-pensiamo-shape': 'ia-salute-mentale-cosa-pensiamo.png',
+  '--aipp-ia-cosa-pensiamo-compact-shape': 'ia-cosa-pensiamo-compact.png',
+  '--aipp-ml-psicologia-shape': 'ml-psicologia-psichiatria.png',
+  '--aipp-sfide-future-shape': 'sfide-future-index.png',
+  '--aipp-aspetti-normativi-shape': 'aspetti-normativi-index-oblong.png',
+  '--aipp-tool-index-shape': 'tool-index.png',
+  '--aipp-domande-discussione-shape': 'domande-discussione-index.png',
+  '--aipp-tesi-finale-shape': 'tesi-finale-index-oblong.png',
+  '--aipp-grazie-frame': 'grazie-corner.png',
+  '--aipp-arianne-feedback-thread': 'arianne-feedback-yarn.png',
+  '--aipp-parche-shape': 'parche-image-1-cropped.png',
+  '--aipp-agenda-shape-01': 'agenda-shapes/agenda-shape-01-amber.png',
+  '--aipp-agenda-shape-02': 'agenda-shapes/agenda-shape-02-emerald.png',
+  '--aipp-agenda-shape-03': 'agenda-shapes/agenda-shape-03-cyan.png',
+  '--aipp-agenda-shape-04': 'agenda-shapes/agenda-shape-04-blue.png',
+  '--aipp-agenda-shape-05': 'agenda-shapes/agenda-shape-05-violet.png',
+  '--aipp-agenda-shape-06': 'agenda-shapes/agenda-shape-06-rose.png',
 }
 
 function setImageCssVariables() {
@@ -46,7 +52,6 @@ async function normalizeHashRoute(router: AppContext['router']) {
 
 export default async function setupAippDeck({ app, router }: AppContext) {
   app.config.globalProperties.$aippImage = imageUrl
-  app.config.globalProperties.$aippCssImage = cssUrl
   app.config.globalProperties.$aippAsset = withBase
   setImageCssVariables()
   await normalizeHashRoute(router)
