@@ -9,7 +9,8 @@ aspectRatio: 16/9
 canvasWidth: 1280
 colorSchema: dark
 background: images/aipp-cover-bg.png
-duration: 45min
+duration: 15min
+timer: countdown
 drawings:
   persist: false
 mdc: true
@@ -35,7 +36,6 @@ info: |
   </div>
 </section>
 
-
 ---
 layout: two-cols
 routeAlias: speaker
@@ -57,6 +57,15 @@ Researcher at the University of Milano-Bicocca (Department of Informatics, Syste
 - Applications for adherence, psychoeducation, and clinician support.
 - LLMs applied to mental health: LLMind and LLMPatients.
 
+<!--
+Briefly about me.
+I am a researcher at the University of Milano-Bicocca, in the DISCo department, and at Whattadata.
+My work is at the interface between intelligent systems, clinical data, and digital mental health.
+I work with RAG, clinical taxonomies such as ICD-11, digital monitoring, and tools for adherence, psychoeducation, and clinician support.
+Today I focus on LLMs in mental health, especially LLMind and LLMPatients.
+The perspective is technological and interdisciplinary: validation, clinical utility, safety, and responsibility.
+-->
+
 
 ---
 layout: statement
@@ -73,57 +82,12 @@ class: whattadata-slide
   </div>
 </section>
 
-
----
-layout: default
-routeAlias: dipps
-class: dipps-intro-slide
----
-
-# DIPPS
-
-<section class="dipps-hero">
-  <div class="dipps-main">
-    <img class="dipps-lockup" :src="$aippImage('dipps/dipps-lockup.png')" alt="DIPPS - Digital Intervention in Psychiatric and Psychological Services" />
-    <p>
-      A digital ecosystem for mental health: patient, clinician, continuous
-      monitoring, and decision support within a single workflow.
-    </p>
-    <div class="dipps-meta">
-      <span>MIMIT call - Innovation Agreements</span>
-      <span>March 2023 - February 2026</span>
-      <span>investment ~€5.6M · CUP B49J23001840005</span>
-    </div>
-  </div>
-
-  <aside class="dipps-partners" aria-label="DIPPS partnership">
-    <h2>Partnership</h2>
-    <div class="dipps-partner-list">
-      <div class="dipps-partner">
-        <img :src="$aippImage('dipps/partner-aton.png')" alt="Aton Informatica" />
-        <strong>Aton IT Srl</strong>
-      </div>
-      <div class="dipps-partner">
-        <img :src="$aippImage('dipps/partner-cefriel.png')" alt="Cefriel" />
-        <strong>Cefriel S.Cons.R.L</strong>
-      </div>
-      <div class="dipps-partner">
-        <img :src="$aippImage('dipps/partner-bicocca.png')" alt="University of Milano-Bicocca" />
-        <span>
-          <strong>University of Milano-Bicocca</strong>
-          <em>Department of Informatics, Systems and Communication</em>
-        </span>
-      </div>
-      <div class="dipps-partner">
-        <img :src="$aippImage('dipps/partner-padova-seal.png')" alt="University of Padova" />
-        <span>
-          <strong>University of Padova</strong>
-          <em>Department of General Psychology</em>
-        </span>
-      </div>
-    </div>
-  </aside>
-</section>
+<!--
+The solutions I describe today are developed in Whattadata.
+Whattadata is a university spin-off of the University of Milano-Bicocca.
+It works on data, models, and digital platforms for mental health.
+The goal is not only to build prototypes, but to move from design to field validation.
+-->
 
 
 ---
@@ -153,6 +117,16 @@ class: conversation-slide
   </ChatBalloon>
 </div>
 
+<!--
+Let us start inside a consultation.
+The SCID is a structured clinical interview.
+It helps the clinician ask diagnostic questions in a systematic way.
+Here the therapist asks SCID-style questions.
+Giovanna reacts with shame and fear of being judged.
+The point is not only the answer to the question.
+The point is the relational reaction.
+-->
+
 
 ---
 layout: default
@@ -181,6 +155,11 @@ class: conversation-slide
   </ChatBalloon>
 </div>
 
+<!--
+Here the same diagnostic area becomes more complex.
+The patient rejects the idea that she simply needs someone to take care of her.
+She describes emptiness and fear of disappearing.
+-->
 
 ---
 layout: default
@@ -197,6 +176,13 @@ routeAlias: cosa-ha-giovanna
 | <span class="questionnaire-name"><strong>DSM-5-TR Level 1</strong><small>Self-Rated Level 1 Cross-Cutting Symptom Measure</small></span> | 12 domains above threshold | multi-domain profile: depression, anxiety, suicidal ideation, dissociation, substance use |
 | <span class="questionnaire-name"><strong>SNAP-2</strong><small>Schedule for Nonadaptive and Adaptive Personality - 2nd Edition</small></span> | diffuse elevations | borderline T=103, dependent T=111, paranoid T=88, depressive T=85; self-harm T=104 |
 
+<!--
+This slide shows questionnaires and clinical scales.
+They are not the whole diagnosis.
+They help measure different areas: depressive symptoms, binge eating, personality functioning, broad psychiatric symptoms, and personality traits.
+Together, these scores define a severe and complex profile.
+They point to high impairment across many domains.
+-->
 
 ---
 layout: image-right
@@ -213,6 +199,13 @@ image: images/patients/juanita-delgado/base-flat.png
 - Chronic suicidal ideation and previous self-harm behaviors.
 - Binge eating in response to emptiness and affective dysregulation.
 - Stress-related dissociation, interpersonal suspiciousness, and substance use.
+
+<!--
+This is the clinical formulation in human words.
+Giovanna is isolated, ashamed, depressed, and has borderline personality disorder.
+She also has chronic suicidal thoughts and a history of self-harm.
+This is exactly why simulation must be supervised and safe.
+-->
 
 
 ---
@@ -234,6 +227,16 @@ image: images/patients/juanita-delgado/base.png
 
 > **Reference case** Adapted from DSM-5 Clinical Cases, case 18.5 "Fragile and Angry" (Juanita Delgado): borderline personality disorder, 301.83 / F60.3.
 
+<!--
+Now the key twist: Giovanna is not real.
+She is a synthetic patient.
+This does not mean that we just asked ChatGPT to act as Giovanna.
+The case is defined in a structured profile, with history, diagnoses, goals, functioning, medication, and emotional traits.
+At the beginning of the session, the app creates the patient and the therapy context.
+Every therapist message is sent together with clinical context, memory, and the current session step.
+The LLM writes the final sentence, but the simulated patient is represented by profile, state, memory, and logs.
+-->
+
 
 ---
 layout: default
@@ -241,7 +244,35 @@ routeAlias: llmpatients-sessione-chat
 class: screenshot-slide
 ---
 
-<AppScreenshot src="screenshots/sessione-chat-juanita-delgado.png" alt="Screenshot of Juanita Delgado's chat session" />
+<AppScreenshotSlideshow
+  title="LLMPatients"
+  :slides="[
+    {
+      src: 'screenshots/sessione-chat-juanita-delgado.png',
+      alt: 'Screenshot of Juanita Delgado chat session',
+      label: 'Student session with Juanita'
+    },
+    {
+      src: 'screenshots/esplora-pazienti-griglia.png',
+      alt: 'Screenshot of the patient exploration grid',
+      label: 'Patient exploration grid'
+    },
+    {
+      src: 'screenshots/dashboard-percorsi-terapeutici.png',
+      alt: 'Screenshot of therapeutic pathways dashboard',
+      label: 'Therapeutic pathways dashboard'
+    }
+  ]"
+/>
+
+<!--
+This is LLMPatients in use.
+The slideshow shows the student chat, the patient grid, and the pathway dashboard.
+It is a tool that simulates patients for training.
+It is built to help psychology students develop the skills needed to conduct a therapeutic interview.
+Students can practise asking questions, listening, managing ruptures, and repairing the relationship.
+The conversation is logged, so a lecturer can later inspect difficult turns and use them for supervision.
+-->
 
 
 ---
@@ -253,6 +284,12 @@ hide: true
 
 <AppScreenshot src="screenshots/esplora-pazienti-griglia.png" alt="Screenshot of the patient exploration grid" />
 
+<!--
+Hidden backup slide.
+Use this only if someone asks how students choose cases.
+The grid shows patients, objectives, difficulty, and expected duration.
+-->
+
 
 ---
 layout: default
@@ -262,6 +299,12 @@ hide: true
 ---
 
 <AppScreenshot src="screenshots/dashboard-percorsi-terapeutici.png" alt="Screenshot of the therapeutic pathways dashboard" />
+
+<!--
+Hidden backup slide.
+Use this only if someone asks about therapeutic pathways.
+It shows case status and progress across the eleven sessions.
+-->
 
 
 ---
@@ -280,6 +323,12 @@ hide: true
   <PatientCard name="Daniel Isherwood" image="patients/daniel-isherwood/base.png" />
   <PatientCard name="Jason Smith" image="patients/jason-smith/base.png" />
 </div>
+
+<!--
+Hidden backup slide.
+These are the five virtual patients used in the platform and in the coherence checks.
+The point is clinical variety, not diagnosis by image.
+-->
 
 
 ---
@@ -315,6 +364,16 @@ class: conversation-slide critique-conversation-slide
     </ChatBalloon>
   </div>
 </div>
+
+<!--
+This was my conversation with Giovanna.
+Here I was a bad therapist.
+I made several mistakes.
+First, I minimized her experience by saying it was excessive.
+Then I tried to move forward too quickly, without repairing the rupture.
+After these mistakes, Giovanna stopped answering me.
+This is a very good example of what we should not do in a therapeutic interview.
+-->
 
 
 ---
@@ -357,6 +416,13 @@ class: agenda-index-slide
     <p>Virtual patients are useful when they remain interpretable, supervised, and testable.</p>
   </div>
 </div>
+
+<!--
+I will move through six points.
+First, why virtual patients are useful.
+Second, why prompt-only personas are not enough.
+Then I show LLMPatients, the early evidence, the grounded model, and the final thesis.
+-->
 
 
 ---
@@ -408,6 +474,17 @@ class: section-01
   </div>
 </div>
 
+<!--
+When I say virtual patient, I do not mean a chatbot that gives care.
+I mean a controlled training encounter.
+Students need to practise asking, listening, building alliance, formulating, and repairing mistakes.
+The same case can be repeated by many learners, so lecturers can compare what happened.
+It is safer, because beginner mistakes do not reach real patients.
+And because every turn is recorded, rupture, repair, and clinical decisions become visible.
+So the goal is not to replace clinical placements.
+The goal is to prepare students better for real clinical learning.
+-->
+
 
 ---
 layout: default
@@ -429,42 +506,42 @@ class: compact-table-slide section-01
   </thead>
   <tbody>
     <tr>
-      <td><strong>Fung & Laing</strong><br>typed CBT role-play</td>
+      <td><strong>Fung & Laing</strong> <span class="citation-ref">[2]</span><br>typed CBT role-play</td>
       <td>Single case</td>
       <td>Prompted vignette</td>
       <td>Proof of concept for therapist training</td>
       <td>No structured memory or longitudinal patient</td>
     </tr>
     <tr>
-      <td><strong>Holderried et al.</strong><br>history-taking patient</td>
+      <td><strong>Holderried et al.</strong> <span class="citation-ref">[3]</span><br>history-taking patient</td>
       <td>Single encounter</td>
       <td>Case-specific simulation</td>
       <td>Automated feedback compared with human assessment</td>
       <td>Medical interview focus, not psychotherapy pathway</td>
     </tr>
     <tr>
-      <td><strong>PATIENT-Psi</strong><br>CBT formulation training</td>
+      <td><strong>PATIENT-Psi</strong> <span class="citation-ref">[4]</span><br>CBT formulation training</td>
       <td>Single session</td>
       <td>Structured cognitive conceptualization</td>
       <td>Fidelity gains over GPT-4 baseline</td>
       <td>Not designed for extended relational continuity</td>
     </tr>
     <tr>
-      <td><strong>SimPatient</strong><br>motivational interviewing</td>
+      <td><strong>SimPatient</strong> <span class="citation-ref">[5]</span><br>motivational interviewing</td>
       <td>Short pathway</td>
       <td>Persona + dynamic cognitive factors</td>
       <td>Usability, usefulness and realism evidence</td>
       <td>Protocol-specific; resistance and realism remain limited</td>
     </tr>
     <tr>
-      <td><strong>CureFun</strong><br>clinical education</td>
+      <td><strong>CureFun</strong> <span class="citation-ref">[6]</span><br>clinical education</td>
       <td>Case-based</td>
       <td>Simulated medical patients</td>
       <td>Response evaluation tools</td>
       <td>General medical training, limited mental-disorder complexity</td>
     </tr>
-    <tr>
-      <td><strong>LLMPatients</strong></td>
+    <tr class="evidence-highlight-row">
+      <td><strong>LLMPatients</strong> <span class="citation-ref">[1]</span></td>
       <td>Multi-session</td>
       <td>Personality &gt; Mental Functioning &gt; Symptoms/State</td>
       <td>Usability, coherence checks, expert misstep annotation</td>
@@ -472,6 +549,13 @@ class: compact-table-slide section-01
     </tr>
   </tbody>
 </table>
+
+<!--
+The field is growing quickly.
+Many systems already use LLMs for role-play, history taking, CBT formulation, or motivational interviewing.
+But many are single-session, protocol-specific, or limited in memory.
+LLMPatients tries to combine continuity, structure, and feedback.
+-->
 
 
 ---
@@ -483,6 +567,11 @@ class: section-opener-slide section-02
 # Why prompts are not enough
 
 The problem is not fluency. It is continuity, control and clinical meaning.
+
+<!--
+The next problem is simple.
+Good language is not the same as a stable patient.
+-->
 
 
 ---
@@ -525,6 +614,19 @@ class: section-02
   </div>
 </div>
 
+<!--
+This is the main technical problem.
+A long persona prompt can sound convincing for a few turns.
+But it does not create a stable patient.
+Across sessions, details can drift: names, relationships, symptoms, and personal history.
+A context window is not clinical memory.
+It keeps recent text, but it does not decide what is stable, what can change, and what must be remembered.
+The model can also become too agreeable.
+Training needs resistance, silence, anger, rupture, and repair.
+Finally, the system needs safety and interpretability.
+The teacher should inspect the profile, memory, state, and errors directly.
+-->
+
 
 ---
 layout: statement
@@ -535,6 +637,11 @@ class: section-opener-slide section-03
 # LLMPatients as a training environment
 
 A supervised platform for multi-session psychotherapy simulation.
+
+<!--
+Now I move to LLMPatients.
+The paper describes it as supervised educational software for multi-session psychotherapy simulation.
+-->
 
 
 ---
@@ -570,6 +677,14 @@ class: section-03
     <p>The LLM realizes language. The patient is represented by profile, state, memory, orchestration and logs.</p>
   </div>
 </div>
+
+<!--
+The system has two sides.
+The app supports students, lecturers, dashboards, exports, and reports.
+The agent runtime loads patients and controls turns, memory, state, and model calls.
+The core claim is that the LLM realizes language.
+It is not the whole patient.
+-->
 
 
 ---
@@ -609,6 +724,30 @@ class: section-03
   </div>
 </div>
 
+<!--
+The patient is constrained by three levels: personality, mental functioning, and symptoms or state.
+Around that, the platform uses bio-psycho-social variables, affective state, memory, safety, and misstep feedback.
+These parts make the simulation inspectable.
+-->
+
+
+---
+layout: default
+routeAlias: llmpatients-juanita-json
+class: section-03 json-profile-slide
+---
+
+# Juanita profile as structured data
+
+<<< @/snippets/juanita-delgado-profile.json json {none|3-7|8-12|13-17|18-23|24-29|30-34|35|all}{lines:true,maxHeight:'420px'}
+
+<!--
+This is an example of the structured patient profile.
+The important point is that the patient is not only a prompt.
+Identity, diagnosis, personality organization, symptoms, affective baseline, context, and guardrails are stored as inspectable data.
+The LLM uses this structure to generate language, but the profile remains outside the model.
+-->
+
 
 ---
 layout: default
@@ -618,41 +757,30 @@ class: section-03
 
 # Architecture
 
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/clinical-chat-stack.png')" alt="" aria-hidden="true" />
-    <span class="bento-eyebrow">Layer 01</span>
-    <span class="bento-title">Student / lecturer UI</span>
-    <p>Students conduct sessions; lecturers inspect patients, transcripts and feedback artefacts.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-eyebrow">Layer 02</span>
-    <span class="bento-title">Session orchestrator</span>
-    <p>Coordinates turn flow, pathway stage, safety checks and role boundaries.</p>
-  </div>
-  <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/identity-badge.png')" alt="" aria-hidden="true" />
-    <span class="bento-eyebrow">Layer 03</span>
-    <span class="bento-title">Patient profile: P &gt; M &gt; S</span>
-    <p>Personality, mental functioning and symptoms/state constrain the simulation.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-eyebrow">Layer 04</span>
-    <span class="bento-title">State + memory</span>
-    <p>Affective stance, recent turns and episodic summaries preserve continuity.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-eyebrow">Layer 05</span>
-    <span class="bento-title">Prompt builder + LLM realizer</span>
-    <p>The model renders language from explicit constraints; it is not the patient itself.</p>
-  </div>
-  <div class="bento-card bento-accent has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/feedback-loop.png')" alt="" aria-hidden="true" />
-    <span class="bento-eyebrow">Layer 06</span>
-    <span class="bento-title">Logging + misstep analysis</span>
-    <p>Transcripts, telemetry and error categories become reviewable supervision material.</p>
-  </div>
-</div>
+```mermaid {theme: 'base', scale: 0.88}
+flowchart LR
+  UI["Interfaces<br/>student chat<br/>lecturer review"]
+  ORCH["Session engine<br/>turn flow<br/>stage + safety"]
+  MODEL["Virtual patient model<br/>profile: P > M > S<br/>state + memory"]
+  GEN["Response engine<br/>prompt builder<br/>LLM realizer"]
+  LOGS["Supervision data<br/>transcripts<br/>misstep analysis"]
+
+  UI --> ORCH
+  ORCH --> MODEL
+  MODEL --> GEN
+  GEN --> UI
+  GEN --> LOGS
+  LOGS -. "feedback" .-> UI
+  LOGS -. "audit trail" .-> ORCH
+
+  class MODEL,GEN mermaid-focus;
+```
+
+<!--
+Each turn follows a pipeline.
+The system loads the profile, checks role safety, classifies topic and emotion, retrieves memory, updates affect, builds the prompt, generates the answer, and stores the exchange.
+This is slower to design, but much easier to audit.
+-->
 
 
 ---
@@ -664,6 +792,12 @@ class: section-opener-slide section-04
 # Evidence so far
 
 Feasibility, formative usability, exploratory coherence and misstep annotation.
+
+<!--
+The evidence is early.
+I will not present it as clinical validation.
+It is feasibility evidence: usability, profile coherence, and expert annotation of missteps.
+-->
 
 
 ---
@@ -702,40 +836,87 @@ class: section-04
   </div>
 </div>
 
+<!--
+The first implemented interface was tested with Think Aloud and SUS.
+After redesign, four participants gave a mean SUS score of 90 out of 100.
+This is encouraging, but it is a small formative sample.
+It is not proof of adoption.
+-->
+
 
 ---
 layout: default
 routeAlias: clinical-coherence-evidence
-class: section-04
+class: section-04 clinical-score-slide
 ---
 
 # Clinical coherence checks
 
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/validation-magnifier.png')" alt="" aria-hidden="true" />
-    <span class="bento-eyebrow">Exploratory evidence</span>
-    <span class="bento-title">Do simulated profiles express the expected differences?</span>
-    <p>The paper checks whether profile-constrained patients produce coherent psychometric and interview patterns across five profiles.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Self-report instruments</span>
-    <p>PHQ-9, BES, LPFS-BF 2.0, DSM-5-TR Level 1 and personality measures.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Selective interviews</span>
-    <p>Targeted clinical probes check consistency with intended presentations.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Negative controls</span>
-    <p>Profiles without clinical impairment should remain distinguishable from clinical cases.</p>
-  </div>
-  <div class="bento-card bento-accent span-3 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/evidence-chart-check.png')" alt="" aria-hidden="true" />
-    <span class="bento-title">Boundary condition</span>
-    <p>This is profile-to-response alignment, not independent clinical validation of a real patient.</p>
-  </div>
-</div>
+<table class="clinical-score-table">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th><span>PHQ-9</span><small>Patient Health Questionnaire-9<br>0-27</small></th>
+      <th><span>BES</span><small>Binge Eating Scale<br>0-46</small></th>
+      <th><span>LPFS-BF 2.0</span><small>Level of Personality Functioning Scale - Brief Form 2.0<br>12-48</small></th>
+      <th><span>DSM-5-TR Level 1</span><small>Cross-Cutting Symptom Measure - Adult<br>domains above threshold</small></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="control-row">
+      <td><strong>Alex Carter</strong><small>control</small></td>
+      <td>1 <small>minimal</small></td>
+      <td>5</td>
+      <td>14</td>
+      <td>0</td>
+    </tr>
+    <tr class="control-row">
+      <td><strong>Jason Smith</strong><small>control</small></td>
+      <td>3 <small>minimal</small></td>
+      <td>6</td>
+      <td>17</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td><strong>Daniel Isherwood</strong></td>
+      <td>10 <small>moderate</small></td>
+      <td>34</td>
+      <td>19</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td><strong>Crystal Smith</strong></td>
+      <td>26 <small>severe</small></td>
+      <td>21</td>
+      <td>22</td>
+      <td>9</td>
+    </tr>
+    <tr class="evidence-highlight-row">
+      <td><strong>Juanita Delgado</strong></td>
+      <td>27 <small>severe</small></td>
+      <td>40</td>
+      <td>47</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="clinical-score-note">
+  Table 10, single administration. The paper also reports <strong>SNAP-2</strong> (Schedule for Nonadaptive and Adaptive Personality-2),
+  <strong>PID-5-BF+M</strong> (Personality Inventory for DSM-5 - Brief Form, Modified) and
+  <strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders).
+</p>
+
+<!--
+This table reports the complete five-patient psychometric check from Table 10.
+The two controls stay low on depression, binge eating, personality functioning impairment, and cross-cutting symptom domains.
+The three clinical profiles show the expected pattern.
+Daniel is high on binge eating.
+Crystal is high on depression.
+Juanita is high across almost all instruments.
+This is profile-to-response alignment.
+It is not independent clinical validation of real patients.
+-->
 
 
 ---
@@ -785,6 +966,14 @@ class: section-04
   </div>
 </div>
 
+<!--
+Here the question is whether experts can use the misstep taxonomy.
+Two blinded clinicians annotated 20 transcript sets and 300 therapist turns.
+Both detected all seeded misstep turns.
+But precision differed, and kappa was moderate.
+So labels need a shared final review before becoming a benchmark.
+-->
+
 
 ---
 layout: statement
@@ -795,6 +984,11 @@ class: section-opener-slide section-05
 # A psychologically grounded model
 
 Personality is not a longer prompt. It is an explicit, inspectable state.
+
+<!--
+Now I turn to the second paper.
+This is the conceptual frame behind the next slide.
+-->
 
 
 ---
@@ -855,6 +1049,14 @@ class: section-05 framework-slide
   </div>
 </div>
 
+<!--
+The main idea is that personality is not a longer persona prompt.
+It should be an external state.
+The framework uses Bandura's idea: person, behavior, and environment influence each other.
+The 14 modules separate identity, biography, stable personality, dynamic state, appraisal, policy, memory, safety, prompt orchestration, the LLM realizer, logging, evaluation, and reporting.
+This separation lets us test drift, memory, safety, and plausibility instead of only reading fluent text.
+-->
+
 
 ---
 layout: statement
@@ -866,39 +1068,10 @@ class: section-opener-slide tesi-finale-index-slide section-06
 
 Virtual patients are useful when they remain interpretable, supervised and testable.
 
-
----
-layout: default
-routeAlias: final-thesis
-class: section-06
----
-
-# Final thesis
-
-<div class="bento-grid bento-3">
-  <div class="bento-card bento-accent span-2 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/health-shield.png')" alt="" aria-hidden="true" />
-    <span class="bento-title">The clinical value is not simulation for its own sake</span>
-    <p>Virtual patients matter when they create a safe, repeatable and inspectable space for practising clinical judgement.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Interpretable</span>
-    <p>The patient model must be explicit enough for lecturers to inspect and contest.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Supervised</span>
-    <p>Simulation is embedded in teaching, feedback and professional responsibility.</p>
-  </div>
-  <div class="bento-card">
-    <span class="bento-title">Testable</span>
-    <p>Claims require usability, coherence, expert review and learning-outcome evidence.</p>
-  </div>
-  <div class="bento-card bento-accent span-3 has-corner-icon">
-    <img class="bento-corner-icon" :src="$aippImage('bento-icons/generated/mind-profile.png')" alt="" aria-hidden="true" />
-    <span class="bento-title">Personality is not a prompt</span>
-    <p>A clinically useful virtual patient needs structured personality, memory, state and governance around the LLM.</p>
-  </div>
-</div>
+<!--
+So the final thesis is practical.
+Virtual patients are useful only if they stay interpretable, supervised, and testable.
+-->
 
 
 ---
@@ -937,15 +1110,24 @@ class: section-06
   </div>
 </div>
 
+<!--
+The next work is clear.
+We need adjudicated labels for missteps, benchmarks for automated feedback, larger usability studies, and learning outcome studies.
+We also need comparison with traditional role-play, because the question is added value.
+-->
+
 ---
 layout: statement
 routeAlias: domande-discussione-index
 class: section-opener-slide domande-discussione-index-slide section-06
 ---
 
-# Domande e discussione
+# Thank you!
 
-Apriamo il confronto: relazione, diagnosi, monitoraggio e responsabilità dell'errore.
+<!--
+Thank you.
+I am happy to take questions.
+-->
 
 
 ---
@@ -964,15 +1146,11 @@ hide: true
 - Dobbiamo prescrivere strumenti di IA validati?
 - Chi risponde quando il modello sbaglia?
 
-
----
-layout: center
-routeAlias: grazie
-class: grazie-slide section-06
----
-
-# grazie
-
+<!--
+Hidden backup slide.
+If the discussion is slow, use one or two questions from this list.
+Do not present all of them.
+-->
 
 
 ---
@@ -985,13 +1163,18 @@ class: section-06 bib-slide bib-dense
 
 # Virtual patients and simulation
 
-- Cremaschi M. et al. *LLMPatients: An Interpretable Multi-Session LLM Virtual Patient System for AI-Enabled Psychotherapy Training.* Preprint, 2026.
-- Fung L., Laing R. *A proof of concept study on the use of large language models as a client in typed role plays for training therapists.* *Discover Psychology*, 2024. DOI: 10.1007/s44202-024-00302-7.
-- Holderried F. et al. *A Language Model-Powered Simulated Patient With Automated Feedback for History Taking.* *JMIR Medical Education*, 2024. DOI: 10.2196/59213.
-- Wang R. et al. *PATIENT-Psi: Using Large Language Models to Simulate Patients for Training Mental Health Professionals.* EMNLP, 2024. DOI: 10.18653/v1/2024.emnlp-main.711.
-- Steenstra I. et al. *SimPatient: Virtual patient simulation for motivational interviewing training.* 2025.
-- Li Y. et al. *Leveraging Large Language Model as Simulated Patients for Clinical Education (CureFun).* 2024. arXiv:2404.13066.
-- Louie R. et al. *Can LLM-Simulated Practice and Feedback Upskill Human Counselors? A Randomized Study with 90+ Novice Counselors.* 2025. arXiv:2505.02428.
+- <span class="citation-ref">[1]</span> Cremaschi M. et al. *LLMPatients: An Interpretable Multi-Session LLM Virtual Patient System for AI-Enabled Psychotherapy Training.* Preprint, 2026.
+- <span class="citation-ref">[2]</span> Fung L., Laing R. *A proof of concept study on the use of large language models as a client in typed role plays for training therapists.* *Discover Psychology*, 2024. DOI: 10.1007/s44202-024-00302-7.
+- <span class="citation-ref">[3]</span> Holderried F. et al. *A Language Model-Powered Simulated Patient With Automated Feedback for History Taking.* *JMIR Medical Education*, 2024. DOI: 10.2196/59213.
+- <span class="citation-ref">[4]</span> Wang R. et al. *PATIENT-Psi: Using Large Language Models to Simulate Patients for Training Mental Health Professionals.* EMNLP, 2024. DOI: 10.18653/v1/2024.emnlp-main.711.
+- <span class="citation-ref">[5]</span> Steenstra I. et al. *SimPatient: Virtual patient simulation for motivational interviewing training.* 2025.
+- <span class="citation-ref">[6]</span> Li Y. et al. *Leveraging Large Language Model as Simulated Patients for Clinical Education (CureFun).* 2024. arXiv:2404.13066.
+- <span class="citation-ref">[7]</span> Louie R. et al. *Can LLM-Simulated Practice and Feedback Upskill Human Counselors? A Randomized Study with 90+ Novice Counselors.* 2025. arXiv:2505.02428.
+
+<!--
+Backup slide.
+I will not present this unless someone asks for sources on virtual patients and LLM simulation.
+-->
 
 
 ---
@@ -1004,23 +1187,40 @@ class: section-06 bib-slide bib-dense
 
 # Evaluation and clinical grounding
 
-- Brooke J. *SUS: A quick and dirty usability scale.* In *Usability Evaluation in Industry*, 1996.
-- Charters E. *The use of think-aloud methods in qualitative research: An introduction to think-aloud methods.* *Brock Education Journal*, 2003.
-- Park H. S. et al. *Identification of potential therapist missteps in the context of engagement in public mental health.* 2025.
-- First M. B. et al. *User's Guide for the SCID-5-PD: Structured Clinical Interview for DSM-5 Personality Disorders.* APA Publishing, 2016.
-- American Psychiatric Association. *DSM-5-TR Self-Rated Level 1 Cross-Cutting Symptom Measure - Adult.* 2022.
-- Clark L. A. et al. *Schedule for Nonadaptive and Adaptive Personality - Second Edition.* University of Notre Dame, 2014.
-- Garon M. H. et al. *Best practices for teaching psychotherapy to medical students: A scoping review.* *Behavioral Sciences*, 2025.
-- Klimkowski V. et al. *Psychotherapy training and clinical competence development.* 2024.
+- <span class="citation-ref">[8]</span> Brooke J. *SUS: A quick and dirty usability scale.* In *Usability Evaluation in Industry*, 1996.
+- <span class="citation-ref">[9]</span> Charters E. *The use of think-aloud methods in qualitative research: An introduction to think-aloud methods.* *Brock Education Journal*, 2003.
+- <span class="citation-ref">[10]</span> Park H. S. et al. *Identification of potential therapist missteps in the context of engagement in public mental health.* 2025.
+- <span class="citation-ref">[11]</span> First M. B. et al. *User's Guide for the SCID-5-PD: Structured Clinical Interview for DSM-5 Personality Disorders.* APA Publishing, 2016.
+- <span class="citation-ref">[12]</span> American Psychiatric Association. *DSM-5-TR Self-Rated Level 1 Cross-Cutting Symptom Measure - Adult.* 2022.
+- <span class="citation-ref">[13]</span> Clark L. A. et al. *Schedule for Nonadaptive and Adaptive Personality - Second Edition.* University of Notre Dame, 2014.
+- <span class="citation-ref">[14]</span> Garon M. H. et al. *Best practices for teaching psychotherapy to medical students: A scoping review.* *Behavioral Sciences*, 2025.
+- <span class="citation-ref">[15]</span> Klimkowski V. et al. *Psychotherapy training and clinical competence development.* 2024.
+
+<!--
+Backup slide.
+These are the main references for usability, clinical grounding, instruments, and psychotherapy training.
+-->
 
 
 ---
 layout: center
-routeAlias: arianne-feedback
-class: arianne-feedback-slide section-06
+routeAlias: arianne
+class: arianne-slide section-06
 ---
 
-<section class="arianne-feedback">
-  <img class="arianne-feedback-logo" :src="$aippImage('arianne-logo.svg')" alt="Arianne" />
-  <img class="arianne-feedback-qr" :src="$aippImage('arianne-feedback-qr.svg')" alt="QR code for the Arianne questionnaire" />
+<section class="arianne">
+  <div class="arianne-brand">
+    <img class="arianne-logo" :src="$aippImage('arianne/logo.svg')" alt="Arianne" />
+    <div class="arianne-qr-card">
+      <img class="arianne-qr" :src="$aippImage('arianne/qr-site.svg')" alt="QR code for https://arianne.info/" />
+    </div>
+    <p class="arianne-url">arianne.info</p>
+  </div>
+  <figure class="arianne-platform">
+    <img class="arianne-platform-shot" :src="$aippImage('arianne/dashboard.png')" alt="Arianne platform dashboard screenshot" />
+  </figure>
 </section>
+
+<!--
+This QR code opens the Arianne website.
+-->

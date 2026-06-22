@@ -57,6 +57,7 @@
 .slidev-layout:not(.intro-slide) table.evidence-table td {
   padding: 0.38rem 0.58rem;
   line-height: 1.18;
+  vertical-align: middle;
 }
 
 .slidev-layout:not(.intro-slide) table.evidence-table th:first-child,
@@ -92,6 +93,52 @@
 
 .slidev-layout:not(.intro-slide) table.evidence-table th:nth-child(5) {
   width: 12%;
+}
+
+.citation-ref {
+  color: var(--aipp-faint);
+  font-size: 0.74em;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table tr.evidence-highlight-row {
+  background:
+    linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--aipp-accent) 14%, transparent) 0%,
+      color-mix(in srgb, var(--aipp-accent) 26%, transparent) 36%,
+      color-mix(in srgb, var(--aipp-accent) 14%, transparent) 72%
+    );
+  background-size: 220% 100%;
+  animation: evidence-highlight-sheen 4.8s ease-in-out infinite;
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table tr.evidence-highlight-row td {
+  background: transparent;
+  border-top: 1px solid color-mix(in srgb, var(--aipp-accent) 34%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--aipp-accent) 34%, transparent);
+}
+
+.slidev-layout:not(.intro-slide) table.evidence-table tr.evidence-highlight-row td:first-child {
+  border-left: 3px solid var(--aipp-accent);
+}
+
+@keyframes evidence-highlight-sheen {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slidev-layout:not(.intro-slide) table.evidence-table tr.evidence-highlight-row {
+    animation: none;
+  }
 }
 
 /* ---- Questionnaire name + expansion inside table cells ---- */
@@ -628,6 +675,101 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.app-screenshot-slideshow .mockup-browser-toolbar .input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 0.06);
+}
+
+.app-screenshot-slideshow .mockup-browser-toolbar .input span {
+  color: var(--aipp-muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.app-screenshot-slideshow .app-browser-content {
+  position: relative;
+  aspect-ratio: 2732 / 2048;
+  overflow: hidden;
+}
+
+.app-slideshow-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(1.2%);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
+}
+
+.app-slideshow-frame.active {
+  z-index: 1;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.app-slideshow-frame img.app-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.app-slideshow-frame figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.82rem;
+  z-index: 2;
+  max-width: min(72%, 34rem);
+  padding: 0.42rem 0.68rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 0.6rem;
+  color: rgb(255 255 255 / 0.9);
+  background: rgb(10 14 24 / 0.76);
+  box-shadow: 0 0.85rem 2rem rgb(0 0 0 / 0.22);
+  font-size: 0.7rem;
+  font-weight: 680;
+  line-height: 1.12;
+}
+
+.app-slideshow-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.38rem;
+  align-items: center;
+  padding: 0.32rem 0.42rem;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: var(--aipp-radius-pill);
+  background: rgb(10 14 24 / 0.68);
+  box-shadow: 0 0.85rem 2rem rgb(0 0 0 / 0.22);
+}
+
+.app-slideshow-controls button {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--aipp-radius-pill);
+  background: rgb(255 255 255 / 0.4);
+  cursor: pointer;
+  transition:
+    width 180ms ease,
+    background-color 180ms ease;
+}
+
+.app-slideshow-controls button.active {
+  width: 1.6rem;
+  background: var(--aipp-section-03);
 }
 
 /* ============================================================
