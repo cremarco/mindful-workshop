@@ -59,10 +59,10 @@ Researcher at the University of Milano-Bicocca (Department of Informatics, Syste
 
 <!--
 Briefly about me.
-I am a researcher at the University of Milano-Bicocca, in the DISCo department, and at Whattadata.
-My work is at the interface between intelligent systems, clinical data, and digital mental health.
-I work with RAG, clinical taxonomies such as ICD-11, digital monitoring, and tools for adherence, psychoeducation, and clinician support.
-The perspective is technological and interdisciplinary: validation, clinical utility, safety, and responsibility.
+I am a **researcher** at the **University of Milano-Bicocca**, in the **DISCo department**, and at **Whattadata**.
+My work is at the interface between **intelligent systems**, **clinical data**, and **digital mental health**.
+I work with **RAG**, clinical taxonomies such as **ICD-11**, **digital monitoring**, and tools for **adherence**, **psychoeducation**, and **clinician support**.
+The perspective is technological and interdisciplinary: **validation**, **clinical utility**, **safety**, and **responsibility**.
 -->
 
 ---
@@ -81,10 +81,10 @@ class: whattadata-slide
 </section>
 
 <!--
-The solutions I describe today are developed in Whattadata.
-Whattadata is a university spin-off of the University of Milano-Bicocca.
-It works on data, models, and digital platforms for mental health.
-The goal is not only to build prototypes, but to move from design to field validation.
+The solutions I describe today are developed in **Whattadata**.
+Whattadata is a **university spin-off** of the **University of Milano-Bicocca**.
+It works on **data**, **models**, and **digital platforms** for **mental health**.
+The goal is not only to build **prototypes**, but to move from **design** to **field validation**.
 -->
 
 
@@ -116,13 +116,13 @@ class: conversation-slide
 </div>
 
 <!--
-Let us start inside a consultation.
-The SCID is a structured clinical interview.
-It helps the clinician ask diagnostic questions in a systematic way.
-Here the therapist asks SCID-style questions.
-Giovanna reacts with shame and fear of being judged.
-The point is not only the answer to the question.
-The point is the relational reaction.
+Let us start inside a **consultation**.
+The **SCID** is a **structured clinical interview**.
+It helps the clinician ask **diagnostic questions** in a systematic way.
+Here the therapist asks **SCID-style questions**.
+Giovanna reacts with **shame** and **fear of being judged**.
+The point is not only the **answer** to the question.
+The point is the **relational reaction**.
 -->
 
 
@@ -154,9 +154,9 @@ class: conversation-slide
 </div>
 
 <!--
-Here the same diagnostic area becomes more complex.
-The patient rejects the idea that she simply needs someone to take care of her.
-She describes emptiness and fear of disappearing.
+Here the same **diagnostic area** becomes more complex.
+The patient rejects the idea that she simply needs someone to **take care of her**.
+She describes **emptiness** and **fear of disappearing**.
 -->
 
 ---
@@ -175,11 +175,11 @@ routeAlias: cosa-ha-giovanna
 | <span class="questionnaire-name"><strong>SNAP-2</strong><small>Schedule for Nonadaptive and Adaptive Personality - 2nd Edition</small></span> | diffuse elevations | borderline T=103, dependent T=111, paranoid T=88, depressive T=85; self-harm T=104 |
 
 <!--
-This slide shows questionnaires and clinical scales.
-They are not the whole diagnosis.
-They help measure different areas: depressive symptoms, binge eating, personality functioning, broad psychiatric symptoms, and personality traits.
-Together, these scores define a severe and complex profile.
-They point to high impairment across many domains.
+This slide shows **questionnaires** and **clinical scales**.
+They are not the whole **diagnosis**.
+They help measure different areas: **depressive symptoms**, **binge eating**, **personality functioning**, **broad psychiatric symptoms**, and **personality traits**.
+Together, these scores define a **severe** and **complex profile**.
+They point to **high impairment** across many domains.
 -->
 
 ---
@@ -199,10 +199,10 @@ image: images/patients/juanita-delgado/base-flat.png
 - Stress-related dissociation, interpersonal suspiciousness, and substance use.
 
 <!--
-This is the clinical formulation in human words.
-Giovanna is isolated, ashamed, depressed, and has borderline personality disorder.
-She also has chronic suicidal thoughts and a history of self-harm.
-This is exactly why simulation must be supervised and safe.
+This is the **clinical formulation** in human words.
+Giovanna is **isolated**, **ashamed**, **depressed**, and has **borderline personality disorder**.
+She also has **chronic suicidal thoughts** and a history of **self-harm**.
+This is exactly why simulation must be **supervised** and **safe**.
 -->
 
 
@@ -226,13 +226,13 @@ image: images/patients/juanita-delgado/base.png
 > **Reference case** Adapted from DSM-5 Clinical Cases, case 18.5 "Fragile and Angry" (Juanita Delgado): borderline personality disorder, 301.83 / F60.3.
 
 <!--
-Now the key twist: Giovanna is not real.
-She is a synthetic patient.
-This does not mean that we just asked ChatGPT to act as Giovanna.
-The case is defined in a structured profile, with history, diagnoses, goals, functioning, medication, and emotional traits.
-At the beginning of the session, the app creates the patient and the therapy context.
-Every therapist message is sent together with clinical context, memory, and the current session step.
-The LLM writes the final sentence, but the simulated patient is represented by profile, state, memory, and logs.
+Now the **key twist**: Giovanna is not real.
+She is a **synthetic patient**.
+This does not mean that we just asked **ChatGPT** to act as Giovanna.
+The case is defined in a **structured profile**, with **history**, **diagnoses**, **goals**, **functioning**, **medication**, and **emotional traits**.
+At the beginning of the session, the app creates the **patient** and the **therapy context**.
+Every therapist message is sent together with **clinical context**, **memory**, and the current **session step**.
+The **LLM** writes the final sentence, but the simulated patient is represented by **profile**, **state**, **memory**, and **logs**.
 -->
 
 
@@ -264,12 +264,12 @@ class: screenshot-slide
 />
 
 <!--
-This is LLMPatients in use.
-The slideshow shows the student chat, the patient grid, and the pathway dashboard.
-It is a tool that simulates patients for training.
-It is built to help psychology students develop the skills needed to conduct a therapeutic interview.
-Students can practise asking questions, listening, managing ruptures, and repairing the relationship.
-The conversation is logged, so a lecturer can later inspect difficult turns and use them for supervision.
+This is **LLMPatients** in use.
+The slideshow shows the **student chat**, the **patient grid**, and the **pathway dashboard**.
+It is a tool that **simulates patients** for **training**.
+It is built to help **psychology students** develop the skills needed to conduct a **therapeutic interview**.
+Students can practise **asking questions**, **listening**, **managing ruptures**, and **repairing the relationship**.
+The conversation is **logged**, so a lecturer can later inspect **difficult turns** and use them for **supervision**.
 -->
 
 
@@ -283,9 +283,9 @@ hide: true
 <AppScreenshot src="screenshots/esplora-pazienti-griglia.png" alt="Screenshot of the patient exploration grid" />
 
 <!--
-Hidden backup slide.
-Use this only if someone asks how students choose cases.
-The grid shows patients, objectives, difficulty, and expected duration.
+**Hidden backup slide**.
+Use this only if someone asks how students choose **cases**.
+The grid shows **patients**, **objectives**, **difficulty**, and **expected duration**.
 -->
 
 
@@ -299,9 +299,9 @@ hide: true
 <AppScreenshot src="screenshots/dashboard-percorsi-terapeutici.png" alt="Screenshot of the therapeutic pathways dashboard" />
 
 <!--
-Hidden backup slide.
-Use this only if someone asks about therapeutic pathways.
-It shows case status and progress across the eleven sessions.
+**Hidden backup slide**.
+Use this only if someone asks about **therapeutic pathways**.
+It shows **case status** and **progress** across the **eleven sessions**.
 -->
 
 
@@ -323,9 +323,9 @@ hide: true
 </div>
 
 <!--
-Hidden backup slide.
-These are the five virtual patients used in the platform and in the coherence checks.
-The point is clinical variety, not diagnosis by image.
+**Hidden backup slide**.
+These are the **five virtual patients** used in the platform and in the **coherence checks**.
+The point is **clinical variety**, not diagnosis by image.
 -->
 
 
@@ -364,13 +364,13 @@ class: conversation-slide critique-conversation-slide
 </div>
 
 <!--
-This was my conversation with Giovanna.
-Here I was a bad therapist.
-I made several mistakes.
-First, I minimized her experience by saying it was excessive.
-Then I tried to move forward too quickly, without repairing the rupture.
-After these mistakes, Giovanna stopped answering me.
-This is a very good example of what we should not do in a therapeutic interview.
+This was my **conversation with Giovanna**.
+Here I was a **bad therapist**.
+I made several **mistakes**.
+First, I **minimized her experience** by saying it was excessive.
+Then I tried to move forward too quickly, without **repairing the rupture**.
+After these mistakes, Giovanna **stopped answering** me.
+This is a very good example of what we should **not do** in a **therapeutic interview**.
 -->
 
 
@@ -416,10 +416,10 @@ class: agenda-index-slide
 </div>
 
 <!--
-I will move through six points.
-First, why virtual patients are useful.
-Second, why prompt-only personas are not enough.
-Then I show LLMPatients, the early evidence, the grounded model, and the next work.
+I will move through **six points**.
+First, why **virtual patients** are useful.
+Second, why **prompt-only personas** are not enough.
+Then I show **LLMPatients**, the **early evidence**, the **grounded model**, and the **next work**.
 -->
 
 
@@ -475,14 +475,14 @@ class: section-01
 </div>
 
 <!--
-When I say virtual patient, I do not mean a chatbot that gives care.
-I mean a controlled training encounter.
-Students need to practise asking, listening, building alliance, formulating, and repairing mistakes.
-The same case can be repeated by many learners, so lecturers can compare what happened.
-It is safer, because beginner mistakes do not reach real patients.
-And because every turn is recorded, rupture, repair, and clinical decisions become visible.
-So the goal is not to replace clinical placements.
-The goal is to prepare students better for real clinical learning.
+When I say **virtual patient**, I do not mean a chatbot that gives **care**.
+I mean a **controlled training encounter**.
+Students need to practise **asking**, **listening**, **building alliance**, **formulating**, and **repairing mistakes**.
+The same case can be **repeated** by many learners, so lecturers can **compare** what happened.
+It is **safer**, because beginner mistakes do not reach **real patients**.
+And because every turn is **recorded**, **rupture**, **repair**, and **clinical decisions** become visible.
+So the goal is not to replace **clinical placements**.
+The goal is to prepare students better for **real clinical learning**.
 -->
 
 
@@ -551,10 +551,10 @@ class: compact-table-slide section-01
 </table>
 
 <!--
-The field is growing quickly.
-Many systems already use LLMs for role-play, history taking, CBT formulation, or motivational interviewing.
-But many are single-session, protocol-specific, or limited in memory.
-LLMPatients tries to combine continuity, structure, and feedback.
+The field is **growing quickly**.
+Many systems already use **LLMs** for **role-play**, **history taking**, **CBT formulation**, or **motivational interviewing**.
+But many are **single-session**, **protocol-specific**, or limited in **memory**.
+**LLMPatients** tries to combine **continuity**, **structure**, and **feedback**.
 -->
 
 
@@ -572,7 +572,7 @@ The problem is not fluency. It is continuity, control and clinical meaning.
 
 <!--
 The next problem is simple.
-Good language is not the same as a stable patient.
+**Good language** is not the same as a **stable patient**.
 -->
 
 
@@ -617,16 +617,16 @@ class: section-02
 </div>
 
 <!--
-This is the main technical problem.
-A long persona prompt can sound convincing for a few turns.
-But it does not create a stable patient.
-Across sessions, details can drift: names, relationships, symptoms, and personal history.
-A context window is not clinical memory.
-It keeps recent text, but it does not decide what is stable, what can change, and what must be remembered.
-The model can also become too agreeable.
-Training needs resistance, silence, anger, rupture, and repair.
-Finally, the system needs safety and interpretability.
-The teacher should inspect the profile, memory, state, and errors directly.
+This is the main **technical problem**.
+A long **persona prompt** can sound convincing for a few turns.
+But it does not create a **stable patient**.
+Across sessions, details can **drift**: **names**, **relationships**, **symptoms**, and **personal history**.
+A **context window** is not **clinical memory**.
+It keeps recent text, but it does not decide what is **stable**, what can **change**, and what must be **remembered**.
+The model can also become **too agreeable**.
+Training needs **resistance**, **silence**, **anger**, **rupture**, and **repair**.
+Finally, the system needs **safety** and **interpretability**.
+The teacher should inspect the **profile**, **memory**, **state**, and **errors** directly.
 -->
 
 
@@ -643,8 +643,8 @@ class: section-opener-slide section-03
 A supervised platform for multi-session psychotherapy simulation.
 
 <!--
-Now I move to LLMPatients.
-The paper describes it as supervised educational software for multi-session psychotherapy simulation.
+Now I move to **LLMPatients**.
+The paper describes it as **supervised educational software** for **multi-session psychotherapy simulation**.
 -->
 
 
@@ -683,11 +683,11 @@ class: section-03
 </div>
 
 <!--
-The system has two sides.
-The app supports students, lecturers, dashboards, exports, and reports.
-The agent runtime loads patients and controls turns, memory, state, and model calls.
-The core claim is that the LLM realizes language.
-It is not the whole patient.
+The system has **two sides**.
+The **app** supports **students**, **lecturers**, **dashboards**, **exports**, and **reports**.
+The **agent runtime** loads patients and controls **turns**, **memory**, **state**, and **model calls**.
+The core claim is that the **LLM realizes language**.
+It is not the **whole patient**.
 -->
 
 
@@ -729,9 +729,9 @@ class: section-03
 </div>
 
 <!--
-The patient is constrained by three levels: personality, mental functioning, and symptoms or state.
-Around that, the platform uses bio-psycho-social variables, affective state, memory, safety, and misstep feedback.
-These parts make the simulation inspectable.
+The patient is constrained by **three levels**: **personality**, **mental functioning**, and **symptoms or state**.
+Around that, the platform uses **bio-psycho-social variables**, **affective state**, **memory**, **safety**, and **misstep feedback**.
+These parts make the simulation **inspectable**.
 -->
 
 
@@ -746,10 +746,10 @@ class: section-03 json-profile-slide
 <<< @/snippets/juanita-delgado-profile.json json {none|3-7|8-12|13-17|18-23|24-29|30-34|35|all}{lines:true,maxHeight:'420px'}
 
 <!--
-This is an example of the structured patient profile.
-The important point is that the patient is not only a prompt.
-Identity, diagnosis, personality organization, symptoms, affective baseline, context, and guardrails are stored as inspectable data.
-The LLM uses this structure to generate language, but the profile remains outside the model.
+This is an example of the **structured patient profile**.
+The important point is that the patient is not only a **prompt**.
+**Identity**, **diagnosis**, **personality organization**, **symptoms**, **affective baseline**, **context**, and **guardrails** are stored as **inspectable data**.
+The **LLM** uses this structure to generate language, but the **profile remains outside the model**.
 -->
 
 
@@ -781,9 +781,9 @@ flowchart LR
 ```
 
 <!--
-Each turn follows a pipeline.
-The system loads the profile, checks role safety, classifies topic and emotion, retrieves memory, updates affect, builds the prompt, generates the answer, and stores the exchange.
-This is slower to design, but much easier to audit.
+Each turn follows a **pipeline**.
+The system loads the **profile**, checks **role safety**, classifies **topic** and **emotion**, retrieves **memory**, updates **affect**, builds the **prompt**, generates the **answer**, and stores the **exchange**.
+This is slower to design, but much easier to **audit**.
 -->
 
 
@@ -800,9 +800,9 @@ class: section-opener-slide section-04
 Feasibility, formative usability, exploratory coherence and misstep annotation.
 
 <!--
-The evidence is early.
-I will not present it as clinical validation.
-It is feasibility evidence: usability, profile coherence, and expert annotation of missteps.
+The evidence is **early**.
+I will not present it as **clinical validation**.
+It is **feasibility evidence**: **usability**, **profile coherence**, and **expert annotation of missteps**.
 -->
 
 
@@ -843,10 +843,10 @@ class: section-04
 </div>
 
 <!--
-The first implemented interface was tested with Think Aloud and SUS.
-After redesign, four participants gave a mean SUS score of 90 out of 100.
-This is encouraging, but it is a small formative sample.
-It is not proof of adoption.
+The first implemented interface was tested with **Think Aloud** and **SUS**.
+After redesign, four participants gave a mean **SUS score of 90 out of 100**.
+This is encouraging, but it is a **small formative sample**.
+It is not proof of **adoption**.
 -->
 
 
@@ -940,17 +940,17 @@ class: section-04 clinical-score-slide
 </p>
 
 <!--
-This table reports the complete five-patient psychometric check from Table 10.
-The two controls stay low on depression, binge eating, personality functioning impairment, and cross-cutting symptom domains.
-The three clinical profiles show the expected pattern.
-Daniel is high on binge eating.
-Crystal is high on depression.
-Juanita is high across almost all instruments.
-SNAP-2 adds the personality-pathology gradient: no diagnostic elevations in controls, intermediate findings in Daniel, internalising elevations in Crystal, and diffuse elevations in Juanita.
-PID-5-BF+M is reported at group level, so I use it only as a compact group-level summary.
-SCID-5-PD was administered to three profiles: Alex, Daniel, and Juanita.
-This is profile-to-response alignment.
-It is not independent clinical validation of real patients.
+This table reports the complete **five-patient psychometric check** from **Table 10**.
+The two **controls** stay low on **depression**, **binge eating**, **personality functioning impairment**, and **cross-cutting symptom domains**.
+The three **clinical profiles** show the expected pattern.
+**Daniel** is high on **binge eating**.
+**Crystal** is high on **depression**.
+**Juanita** is high across almost all instruments.
+**SNAP-2** adds the **personality-pathology gradient**: no diagnostic elevations in controls, intermediate findings in Daniel, internalising elevations in Crystal, and diffuse elevations in Juanita.
+**PID-5-BF+M** is reported at group level, so I use it only as a compact **group-level summary**.
+**SCID-5-PD** was administered to three profiles: **Alex**, **Daniel**, and **Juanita**.
+This is **profile-to-response alignment**.
+It is not independent **clinical validation** of real patients.
 -->
 
 
@@ -1002,11 +1002,11 @@ class: section-04
 </div>
 
 <!--
-Here the question is whether experts can use the misstep taxonomy.
-Two blinded clinicians annotated 20 transcript sets and 300 therapist turns.
-Both detected all seeded misstep turns.
-But precision differed, and kappa was moderate.
-So labels need a shared final review before becoming a benchmark.
+Here the question is whether experts can use the **misstep taxonomy**.
+Two **blinded clinicians** annotated **20 transcript sets** and **300 therapist turns**.
+Both detected all **seeded misstep turns**.
+But **precision** differed, and **kappa** was moderate.
+So labels need a **shared final review** before becoming a **benchmark**.
 -->
 
 
@@ -1023,8 +1023,8 @@ class: section-opener-slide section-05
 Personality is not a longer prompt. It is an explicit, inspectable state.
 
 <!--
-Now I turn to the second paper.
-This is the conceptual frame behind the next slide.
+Now I turn to the **second paper**.
+This is the **conceptual frame** behind the next slide.
 -->
 
 
@@ -1087,11 +1087,11 @@ class: section-05 framework-slide
 </div>
 
 <!--
-The main idea is that personality is not a longer persona prompt.
-It should be an external state.
-The framework uses Bandura's idea: person, behavior, and environment influence each other.
-The 14 modules separate identity, biography, stable personality, dynamic state, appraisal, policy, memory, safety, prompt orchestration, the LLM realizer, logging, evaluation, and reporting.
-This separation lets us test drift, memory, safety, and plausibility instead of only reading fluent text.
+The main idea is that **personality** is not a longer **persona prompt**.
+It should be an **external state**.
+The framework uses **Bandura's idea**: **person**, **behavior**, and **environment** influence each other.
+The **14 modules** separate **identity**, **biography**, **stable personality**, **dynamic state**, **appraisal**, **policy**, **memory**, **safety**, **prompt orchestration**, the **LLM realizer**, **logging**, **evaluation**, and **reporting**.
+This separation lets us test **drift**, **memory**, **safety**, and **plausibility** instead of only reading fluent text.
 -->
 
 
@@ -1109,8 +1109,8 @@ From early evidence to stronger benchmarks, larger studies, and training outcome
 
 <!--
 Before closing, I want to separate what we have from what still has to be done.
-The next step is not only to make the system more polished.
-It is to test it with stronger labels, larger samples, and real training outcomes.
+The next step is not only to make the system more **polished**.
+It is to test it with **stronger labels**, **larger samples**, and **real training outcomes**.
 -->
 
 
@@ -1152,8 +1152,8 @@ class: section-06
 
 <!--
 The next work is clear.
-We need adjudicated labels for missteps, benchmarks for automated feedback, larger usability studies, and learning outcome studies.
-We also need comparison with traditional role-play, because the question is added value.
+We need **adjudicated labels** for **missteps**, **benchmarks** for **automated feedback**, **larger usability studies**, and **learning outcome studies**.
+We also need comparison with **traditional role-play**, because the question is **added value**.
 -->
 
 ---
@@ -1167,8 +1167,8 @@ class: section-opener-slide domande-discussione-index-slide section-06
 # Thank you!
 
 <!--
-Thank you.
-I am happy to take questions.
+**Thank you**.
+I am happy to take **questions**.
 -->
 
 
@@ -1189,9 +1189,9 @@ hide: true
 - Chi risponde quando il modello sbaglia?
 
 <!--
-Hidden backup slide.
-If the discussion is slow, use one or two questions from this list.
-Do not present all of them.
+**Hidden backup slide**.
+If the discussion is slow, use **one or two questions** from this list.
+Do not present **all** of them.
 -->
 
 
@@ -1214,8 +1214,8 @@ class: section-06 bib-slide bib-dense
 - <span class="citation-ref">[7]</span> Louie R. et al. *Can LLM-Simulated Practice and Feedback Upskill Human Counselors? A Randomized Study with 90+ Novice Counselors.* 2025. arXiv:2505.02428.
 
 <!--
-Backup slide.
-I will not present this unless someone asks for sources on virtual patients and LLM simulation.
+**Backup slide**.
+I will not present this unless someone asks for sources on **virtual patients** and **LLM simulation**.
 -->
 
 
@@ -1239,8 +1239,8 @@ class: section-06 bib-slide bib-dense
 - <span class="citation-ref">[15]</span> Klimkowski V. et al. *Psychotherapy training and clinical competence development.* 2024.
 
 <!--
-Backup slide.
-These are the main references for usability, clinical grounding, instruments, and psychotherapy training.
+**Backup slide**.
+These are the main references for **usability**, **clinical grounding**, **instruments**, and **psychotherapy training**.
 -->
 
 
@@ -1264,5 +1264,5 @@ class: arianne-slide section-06
 </section>
 
 <!--
-This QR code opens the Arianne website.
+This **QR code** opens the **Arianne website**.
 -->
