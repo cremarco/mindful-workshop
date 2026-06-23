@@ -1303,9 +1303,21 @@ class: arianne-slide section-06
     </div>
     <p class="arianne-url">arianne.info</p>
   </div>
+  <figure class="arianne-site-preview">
+    <div class="arianne-site-window" aria-label="Screenshot scrolling della homepage Arianne">
+      <img class="arianne-site-shot" :src="$aippImage('arianne/site-fullpage.png')" alt="Homepage Arianne" />
+    </div>
+  </figure>
   <figure class="arianne-platform">
     <img class="arianne-platform-shot" :src="$aippImage('arianne/dashboard.png')" alt="Arianne platform dashboard screenshot" />
   </figure>
+  <p class="arianne-description">
+    Arianne è un ecosistema digitale per la salute mentale che unisce ricerca e tecnologia per supportare percorsi di psicoterapia più accessibili, continui e centrati sui bisogni di pazienti e terapeuti.
+  </p>
+  <div class="arianne-partners" aria-label="Partner Arianne">
+    <img class="arianne-partner-logo arianne-partner-logo-unimib" :src="$aippImage('dipps/partner-bicocca.png')" alt="Università degli Studi di Milano-Bicocca" />
+    <img class="arianne-partner-logo arianne-partner-logo-whattadata" :src="$aippImage('whattadata-logo.svg')" alt="Whattadata" />
+  </div>
 </section>
 
 <!--
